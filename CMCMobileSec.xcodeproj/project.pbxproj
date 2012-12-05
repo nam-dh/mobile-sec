@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DD41B601665F52800714A39 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */; };
 		5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1861665254600D8DEF6 /* UIKit.framework */; };
 		5215A1891665254600D8DEF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1881665254600D8DEF6 /* Foundation.framework */; };
 		5215A18B1665254600D8DEF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A18A1665254600D8DEF6 /* CoreGraphics.framework */; };
@@ -17,12 +18,22 @@
 		5215A19B1665254700D8DEF6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19A1665254700D8DEF6 /* Default@2x.png */; };
 		5215A19D1665254700D8DEF6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19C1665254700D8DEF6 /* Default-568h@2x.png */; };
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
-		5215A1A31665254700D8DEF6 /* CMCMobileSecurityFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1A21665254700D8DEF6 /* CMCMobileSecurityFirstViewController.m */; };
 		5215A1A51665254700D8DEF6 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1A41665254700D8DEF6 /* first.png */; };
 		5215A1A71665254700D8DEF6 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1A61665254700D8DEF6 /* first@2x.png */; };
 		5215A1AA1665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1A91665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m */; };
 		5215A1AC1665254700D8DEF6 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AB1665254700D8DEF6 /* second.png */; };
 		5215A1AE1665254700D8DEF6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AD1665254700D8DEF6 /* second@2x.png */; };
+		5215A1B816652B1700D8DEF6 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1B716652B1700D8DEF6 /* shield.png */; };
+		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		529C967816654B0E00675698 /* cmc.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967716654B0E00675698 /* cmc.png */; };
+		529C967C16654D8A00675698 /* appSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967A16654D8A00675698 /* appSetting.png */; };
+		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
+		529C967F1665503100675698 /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967E1665503100675698 /* scan.png */; };
+		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
+		529C969516655BE200675698 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C969416655BE200675698 /* sync.png */; };
+		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
+		52D6D2F41665DC6900FCEB2F /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */; };
+		52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +51,29 @@
 		5215A19A1665254700D8DEF6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5215A19C1665254700D8DEF6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5215A19F1665254700D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5215A1A11665254700D8DEF6 /* CMCMobileSecurityFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMCMobileSecurityFirstViewController.h; sourceTree = "<group>"; };
-		5215A1A21665254700D8DEF6 /* CMCMobileSecurityFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMCMobileSecurityFirstViewController.m; sourceTree = "<group>"; };
 		5215A1A41665254700D8DEF6 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		5215A1A61665254700D8DEF6 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		5215A1A81665254700D8DEF6 /* CMCMobileSecuritySecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMCMobileSecuritySecondViewController.h; sourceTree = "<group>"; };
 		5215A1A91665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMCMobileSecuritySecondViewController.m; sourceTree = "<group>"; };
 		5215A1AB1665254700D8DEF6 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		5215A1AD1665254700D8DEF6 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		5215A1B716652B1700D8DEF6 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		529C967716654B0E00675698 /* cmc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmc.png; sourceTree = "<group>"; };
+		529C967A16654D8A00675698 /* appSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appSetting.png; sourceTree = "<group>"; };
+		529C967B16654D8A00675698 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		529C967E1665503100675698 /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
+		529C96891665551200675698 /* SettingOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingOptionsViewController.h; path = CMCMobileSec/SettingOptionsViewController.h; sourceTree = "<group>"; };
+		529C968A1665551200675698 /* SettingOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingOptionsViewController.m; path = CMCMobileSec/SettingOptionsViewController.m; sourceTree = "<group>"; };
+		529C969416655BE200675698 /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
+		52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanOptionViewController.h; path = CMCMobileSec/ScanOptionViewController.h; sourceTree = "<group>"; };
+		52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanOptionViewController.m; path = CMCMobileSec/ScanOptionViewController.m; sourceTree = "<group>"; };
+		52D6D2F21665DC6900FCEB2F /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSelectionViewController.h; sourceTree = "<group>"; };
+		52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSelectionViewController.m; sourceTree = "<group>"; };
+		52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		52D6D2FF1665F28E00FCEB2F /* libnotify.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnotify.dylib; path = "../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system/libnotify.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD41B601665F52800714A39 /* libsqlite3.0.dylib in Frameworks */,
+				52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */,
 				5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */,
 				5215A1891665254600D8DEF6 /* Foundation.framework in Frameworks */,
 				5215A18B1665254600D8DEF6 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +95,12 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */,
+				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
+				52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */,
+				52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */,
+				529C96891665551200675698 /* SettingOptionsViewController.h */,
+				529C968A1665551200675698 /* SettingOptionsViewController.m */,
 				5215A18C1665254600D8DEF6 /* CMCMobileSec */,
 				5215A1851665254600D8DEF6 /* Frameworks */,
 				5215A1831665254600D8DEF6 /* Products */,
@@ -84,6 +118,7 @@
 		5215A1851665254600D8DEF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52D6D2FF1665F28E00FCEB2F /* libnotify.dylib */,
 				5215A1861665254600D8DEF6 /* UIKit.framework */,
 				5215A1881665254600D8DEF6 /* Foundation.framework */,
 				5215A18A1665254600D8DEF6 /* CoreGraphics.framework */,
@@ -97,8 +132,10 @@
 				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
 				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
-				5215A1A11665254700D8DEF6 /* CMCMobileSecurityFirstViewController.h */,
-				5215A1A21665254700D8DEF6 /* CMCMobileSecurityFirstViewController.m */,
+				52D6D2F21665DC6900FCEB2F /* FileSelectionViewController.h */,
+				52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */,
+				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
+				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
 				5215A1A41665254700D8DEF6 /* first.png */,
 				5215A1A61665254700D8DEF6 /* first@2x.png */,
 				5215A1A81665254700D8DEF6 /* CMCMobileSecuritySecondViewController.h */,
@@ -113,6 +150,12 @@
 		5215A18D1665254600D8DEF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				529C969416655BE200675698 /* sync.png */,
+				529C967E1665503100675698 /* scan.png */,
+				529C967A16654D8A00675698 /* appSetting.png */,
+				529C967B16654D8A00675698 /* setting.png */,
+				529C967716654B0E00675698 /* cmc.png */,
+				5215A1B716652B1700D8DEF6 /* shield.png */,
 				5215A18E1665254600D8DEF6 /* CMCMobileSec-Info.plist */,
 				5215A18F1665254600D8DEF6 /* InfoPlist.strings */,
 				5215A1921665254600D8DEF6 /* main.m */,
@@ -134,6 +177,7 @@
 				5215A17E1665254600D8DEF6 /* Sources */,
 				5215A17F1665254600D8DEF6 /* Frameworks */,
 				5215A1801665254600D8DEF6 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,10 +229,32 @@
 				5215A1A71665254700D8DEF6 /* first@2x.png in Resources */,
 				5215A1AC1665254700D8DEF6 /* second.png in Resources */,
 				5215A1AE1665254700D8DEF6 /* second@2x.png in Resources */,
+				5215A1B816652B1700D8DEF6 /* shield.png in Resources */,
+				529C967816654B0E00675698 /* cmc.png in Resources */,
+				529C967C16654D8A00675698 /* appSetting.png in Resources */,
+				529C967D16654D8A00675698 /* setting.png in Resources */,
+				529C967F1665503100675698 /* scan.png in Resources */,
+				529C969516655BE200675698 /* sync.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5215A17E1665254600D8DEF6 /* Sources */ = {
@@ -197,8 +263,11 @@
 			files = (
 				5215A1931665254600D8DEF6 /* main.m in Sources */,
 				5215A1971665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m in Sources */,
-				5215A1A31665254700D8DEF6 /* CMCMobileSecurityFirstViewController.m in Sources */,
 				5215A1AA1665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m in Sources */,
+				5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */,
+				529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */,
+				52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */,
+				52D6D2F41665DC6900FCEB2F /* FileSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +302,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -246,8 +316,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -261,14 +333,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -280,7 +355,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -291,7 +374,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -315,6 +406,7 @@
 				5215A1B31665254700D8DEF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
