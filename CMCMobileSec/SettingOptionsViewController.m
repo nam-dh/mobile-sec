@@ -54,6 +54,11 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSUInteger row = indexPath.row;
+    if (row == 0) {
+        BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
+        [self.navigationController pushViewController:fileSelection animated:YES];
+    }
 }
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BlackListViewController.h"
+
 
 @interface SettingOptionsViewController : UITableViewController
 
