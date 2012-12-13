@@ -1,20 +1,19 @@
 //
-//  BlackListViewController.m
+//  KeywordFilterViewController.m
 //  CMCMobileSec
 //
-//  Created by Nam on 12/7/12.
+//  Created by Nam on 12/12/12.
 //  Copyright (c) 2012 CMC. All rights reserved.
 //
 
-#import "BlackListViewController.h"
+#import "KeywordFilterViewController.h"
 
-@interface BlackListViewController ()
+@interface KeywordFilterViewController ()
 
 @end
 
-@implementation BlackListViewController {
+@implementation KeywordFilterViewController {
     NSMutableArray *tableData;
-
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,7 +36,6 @@
     
     //Once the db is copied, get the initial data to display on the screen.
     [self getInitialDataToDisplay:[self getDBPath]];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,8 +44,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addKeyword:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add new blacklist keyword" message:@"Enter new blacklist keyword to add to blacklist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeDefault;
+    alertTextField.placeholder = @"Wording";
+    [alert show];
+
+}
 - (void)viewDidUnload {
-    
+    [self setKeywordTable:nil];
     [super viewDidUnload];
 }
 
@@ -71,24 +78,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
-//    [self.navigationController pushViewController:detail animated:YES];
+    //    DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+    //    [self.navigationController pushViewController:detail animated:YES];
     NSLog(@"selected");
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
-}
-
-
-- (IBAction)addNumber:(id)sender {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add new phone number" message:@"Enter new phone number to add to blacklist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    UITextField * alertTextField = [alert textFieldAtIndex:0];
-    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
-    alertTextField.placeholder = @"Phone number";
-    [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -98,15 +95,15 @@
         return; //If cancel or 0 length string the string doesn't matter
     }
     if (buttonIndex == 1) {
-        [self insertNumber:[[alertView textFieldAtIndex:0] text] :[self getDBPath]];
+        [self insertKeyword:[[alertView textFieldAtIndex:0] text] :[self getDBPath]];
         
         [tableData removeAllObjects];
         [self getInitialDataToDisplay:[self getDBPath]];
-       // [tableData addObject: [[alertView textFieldAtIndex:0] text]];
+        // [tableData addObject: [[alertView textFieldAtIndex:0] text]];
         
-        [[self blackListTable] reloadData];
+        [[self keywordTable] reloadData];
     }
-
+    
 }
 
 - (void) copyDatabaseIfNeeded {
@@ -147,8 +144,8 @@
         
         sqlite3_stmt *statement;
         // iOS 4 and 5 may require different SQL, as the .db format may change
-        const char *sql4 = "SELECT number from blacklistnumber";  // TODO: different for iOS 4.* ???
-        const char *sql5 = "SELECT number from blacklistnumber";
+        const char *sql4 = "SELECT wording from blacklistwording";  // TODO: different for iOS 4.* ???
+        const char *sql5 = "SELECT wording from blacklistwording";
         
         NSString *osVersion =[[UIDevice currentDevice] systemVersion];
         
@@ -179,7 +176,7 @@
         sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
 }
 
--(void)insertNumber:(NSString *) txt :(NSString *)dbPath{
+-(void)insertKeyword:(NSString *)txt :(NSString *)dbPath{
     sqlite3 *database;
     
     //Open db
@@ -189,7 +186,7 @@
     
     if(insertStmt == nil)
     {
-        char* insertSql = "INSERT INTO blacklistnumber (number) VALUES(?)";
+        char* insertSql = "INSERT INTO blacklistwording (wording) VALUES(?)";
         if(sqlite3_prepare_v2(database, insertSql, -1, &insertStmt, NULL) != SQLITE_OK)
             NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
     }
@@ -206,6 +203,5 @@
     sqlite3_finalize(insertStmt);
     sqlite3_close(database);
 }
-
 
 @end

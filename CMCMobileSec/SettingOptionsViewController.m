@@ -59,6 +59,10 @@
         BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
         [self.navigationController pushViewController:fileSelection animated:YES];
     }
+    if (row == 1) {
+         KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
+        [self.navigationController pushViewController:fileSelection animated:YES];
+    }
 }
 
 @end

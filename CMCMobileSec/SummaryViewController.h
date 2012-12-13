@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SummaryViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UITableViewCell *extStorageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sysStorageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromNumber;
 @property (weak, nonatomic) IBOutlet UILabel *smsContent;
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;

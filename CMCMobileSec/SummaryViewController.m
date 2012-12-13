@@ -7,7 +7,10 @@
 //
 
 #import "SummaryViewController.h"
+#import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import <math.h>
+
 
 
 #include <dlfcn.h>
@@ -35,14 +38,19 @@ static UILabel* c;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Settings";
-
+    self.title = @"Summary";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    
+    float totalSize = [self getTotalDiskSpace];
+    float freeSize = [self getFreeDiskSpace];
+    
+    self.sysStorageLabel.text = [[NSString alloc] initWithFormat:@"free %.1fGB/total %.1f GB", freeSize,totalSize];
+    //    self.sysStorageLabel.text = [[NSString alloc] initWithFormat:@"free %.1fGB", freeSize];
     self.totalReceived.text = [self totalReceivedSMS];
     self.smsContent.text = [self mostRecentSMS];
     self.fromNumber.text = [self mostRecentNumber];
@@ -70,6 +78,41 @@ static UILabel* c;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+- (float)getTotalDiskSpace {
+	float totalSpace = 0.0f;
+	NSError *error = nil;
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+	if (dictionary) {
+		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemSize];
+		totalSpace = [fileSystemSizeInBytes floatValue];
+	} else {
+        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
+        NSLog(@"Erro Obtaining File System Info");
+	}
+    
+    return totalSpace/pow(2.0f,30);
+}
+
+- (float)getFreeDiskSpace {
+	float totalSpace = 0.0f;
+	NSError *error = nil;
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+	if (dictionary) {
+		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
+		totalSpace = [fileSystemSizeInBytes floatValue];
+	} else {
+        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
+        NSLog(@"Erro Obtaining File System Info");
+	}
+    
+    return totalSpace/pow(2.0f,30);
+}
+
 
 - (NSString *) totalReceivedSMS  {
     
@@ -230,6 +273,7 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setFromNumber:nil];
     [self setSmsContent:nil];
     [self setTotalReceived:nil];
+    [self setSysStorageLabel:nil];
     [super viewDidUnload];
 }
 @end

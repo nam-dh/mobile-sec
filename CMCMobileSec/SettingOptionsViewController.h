@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BlackListViewController.h"
+#import "KeywordFilterViewController.h"
 
 
 @interface SettingOptionsViewController : UITableViewController
