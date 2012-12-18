@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fromNumber;
 @property (weak, nonatomic) IBOutlet UILabel *smsContent;
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;
-@property (weak, nonatomic) IBOutlet UILabel *extStorageLabel;
+
 
 
 - (NSString *) mostRecentNumber;
