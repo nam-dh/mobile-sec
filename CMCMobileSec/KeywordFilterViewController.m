@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	// Do any additional setup after loading the view.
     tableData = [[NSMutableArray alloc]init];
     
@@ -60,7 +61,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    return [tableData count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,7 +74,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    if (indexPath.row < [tableData count]) {
+        cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = @"";
+    }
     return cell;
 }
 
@@ -203,5 +208,76 @@
     sqlite3_finalize(insertStmt);
     sqlite3_close(database);
 }
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [_keywordTable setEditing:editing animated:YES];
+    if (editing) {
+        // addButton.enabled = NO;
+    } else {
+        // addButton.enabled = YES;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == [tableData count]) {
+        return UITableViewCellEditingStyleInsert;
+    } else {
+        return UITableViewCellEditingStyleDelete;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // If row is deleted, remove it from the list.
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"%d",indexPath.row);
+        NSLog(@"%@",[tableData objectAtIndex:indexPath.row]);
+        [self removeKeyword:[tableData objectAtIndex:indexPath.row] :[self getDBPath]];
+        [tableData removeObjectAtIndex:indexPath.row];
+        [tableView beginUpdates];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+    } else {
+        if (editingStyle == UITableViewCellEditingStyleInsert) {
+            
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add new blacklist keyword" message:@"Enter new blacklist keyword to add to blacklist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            UITextField * alertTextField = [alert textFieldAtIndex:0];
+            alertTextField.keyboardType = UIKeyboardTypeDefault;
+            alertTextField.placeholder = @"Wording";
+            [alert show];
+        }
+    }
+}
+
+-(void)removeKeyword:(NSString *) txt :(NSString *)dbPath{
+    sqlite3 *database;
+    
+    //Open db
+    sqlite3_open([dbPath UTF8String], &database);
+    
+    static sqlite3_stmt *deleteStmt = nil;
+    
+    if(deleteStmt == nil)
+    {
+        char* insertSql = "DELETE FROM blacklistwording WHERE wording = ?";
+        if(sqlite3_prepare_v2(database, insertSql, -1, &deleteStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    sqlite3_bind_text(deleteStmt, 1, [txt UTF8String], -1, SQLITE_TRANSIENT);
+    if(SQLITE_DONE != sqlite3_step(deleteStmt))
+        NSAssert1(0, @"Error while deleting data. '%s'", sqlite3_errmsg(database));
+    else
+        NSLog(@"Deleted");
+    //Reset the add statement.
+    sqlite3_reset(deleteStmt);
+    deleteStmt = nil;
+    
+    sqlite3_finalize(deleteStmt);
+    sqlite3_close(database);
+}
+
 
 @end

@@ -17,4 +17,7 @@
 - (NSString *) getDBPath;
 - (void) getInitialDataToDisplay:(NSString *)dbPath;
 
+
+-(void)removeKeyword:(NSString *) txt :(NSString *)dbPath;
+
 @end

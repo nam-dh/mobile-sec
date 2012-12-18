@@ -19,5 +19,6 @@
 - (NSString *) getDBPath;
 - (void) getInitialDataToDisplay:(NSString *)dbPath;
 -(void)insertNumber:(NSString *) txt :(NSString *)dbPath;
+-(void)removeNumber:(NSString *) txt :(NSString *)dbPath;
 
 @end
