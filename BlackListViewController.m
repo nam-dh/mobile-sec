@@ -224,7 +224,6 @@
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BlackListViewController *controller = (BlackListViewController *)[[UIApplication sharedApplication] delegate];
     if (indexPath.row == [tableData count]) {
         return UITableViewCellEditingStyleInsert;
     } else {

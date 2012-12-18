@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;
 @property (weak, nonatomic) IBOutlet UILabel *extStorageLabel;
 
+
+- (NSString *) mostRecentNumber;
+
 @end
