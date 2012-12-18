@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
 		3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */; };
-		3DD41B601665F52800714A39 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */; };
 		3DFF2E501671177D0010BAFF /* BlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */; };
 		5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1861665254600D8DEF6 /* UIKit.framework */; };
 		5215A1891665254600D8DEF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1881665254600D8DEF6 /* Foundation.framework */; };
@@ -28,6 +27,7 @@
 		5215A1AE1665254700D8DEF6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AD1665254700D8DEF6 /* second@2x.png */; };
 		5215A1B816652B1700D8DEF6 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1B716652B1700D8DEF6 /* shield.png */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
 		529C967816654B0E00675698 /* cmc.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967716654B0E00675698 /* cmc.png */; };
 		529C967C16654D8A00675698 /* appSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967A16654D8A00675698 /* appSetting.png */; };
 		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
@@ -68,6 +68,7 @@
 		5215A1B716652B1700D8DEF6 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		5285BE4C1680E8DA003191EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		529C967716654B0E00675698 /* cmc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmc.png; sourceTree = "<group>"; };
 		529C967A16654D8A00675698 /* appSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appSetting.png; sourceTree = "<group>"; };
 		529C967B16654D8A00675698 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		52D6D2F21665DC6900FCEB2F /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSelectionViewController.h; sourceTree = "<group>"; };
 		52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSelectionViewController.m; sourceTree = "<group>"; };
 		52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		52D6D2FF1665F28E00FCEB2F /* libnotify.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnotify.dylib; path = "../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system/libnotify.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD41B601665F52800714A39 /* libsqlite3.0.dylib in Frameworks */,
+				5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */,
 				52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */,
 				5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */,
 				5215A1891665254600D8DEF6 /* Foundation.framework in Frameworks */,
@@ -103,8 +103,8 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
 				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
-				52D6D2FD1665F11A00FCEB2F /* libsqlite3.0.dylib */,
 				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
 				52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */,
 				52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */,
@@ -318,7 +318,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -334,7 +334,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};

@@ -209,7 +209,7 @@ Filter spam as trained!</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q9A-xz-drY">
-                                                    <rect key="frame" x="20" y="22" width="59" height="21"/>
+                                                    <rect key="frame" x="20" y="22" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,34 +221,8 @@ Filter spam as trained!</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="WKQ-9R-Zn4">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="54"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="53"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="External storage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rR8-hS-35m">
-                                                    <rect key="frame" x="20" y="2" width="124" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wxt-z4-EXy">
-                                                    <rect key="frame" x="20" y="25" width="59" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shield.png" id="vjI-rN-HvG">
-                                                    <rect key="frame" x="224" y="2" width="68" height="39"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="2lO-uH-pSQ">
-                                        <rect key="frame" x="0.0" y="154" width="320" height="77"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="76"/>
@@ -284,7 +258,7 @@ Filter spam as trained!</string>
                             <tableViewSection headerTitle="SMS Filter" id="rsH-YD-5OP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6zM-Xc-3sG">
-                                        <rect key="frame" x="0.0" y="277" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="223" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -308,7 +282,7 @@ Filter spam as trained!</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ATs-a7-7cN">
-                                        <rect key="frame" x="0.0" y="322" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -332,7 +306,7 @@ Filter spam as trained!</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="143" id="0jA-qA-kw5">
-                                        <rect key="frame" x="0.0" y="366" width="320" height="143"/>
+                                        <rect key="frame" x="0.0" y="312" width="320" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="142"/>
@@ -384,7 +358,6 @@ Filter spam as trained!</string>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Summary" image="cmc.png" id="Ujv-Lq-SG0"/>
                     <connections>
-                        <outlet property="extStorageLabel" destination="Wxt-z4-EXy" id="Ncw-al-ELe"/>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
@@ -393,7 +366,7 @@ Filter spam as trained!</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voo-qu-1s4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="1201"/>
+            <point key="canvasLocation" x="643" y="764"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Fgi-xA-1zT">
@@ -703,7 +676,6 @@ Filter spam as trained!</string>
         <class className="SummaryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="extStorageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
