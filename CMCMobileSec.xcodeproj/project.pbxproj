@@ -27,6 +27,7 @@
 		5215A1AE1665254700D8DEF6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AD1665254700D8DEF6 /* second@2x.png */; };
 		5215A1B816652B1700D8DEF6 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1B716652B1700D8DEF6 /* shield.png */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
 		529C967816654B0E00675698 /* cmc.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967716654B0E00675698 /* cmc.png */; };
 		529C967C16654D8A00675698 /* appSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967A16654D8A00675698 /* appSetting.png */; };
@@ -35,7 +36,6 @@
 		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
 		529C969516655BE200675698 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C969416655BE200675698 /* sync.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
-		52D6D2F41665DC6900FCEB2F /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */; };
 		52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +68,8 @@
 		5215A1B716652B1700D8DEF6 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
+		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
 		5285BE4C1680E8DA003191EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		529C967716654B0E00675698 /* cmc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmc.png; sourceTree = "<group>"; };
 		529C967A16654D8A00675698 /* appSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appSetting.png; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		529C969416655BE200675698 /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
 		52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanOptionViewController.h; path = CMCMobileSec/ScanOptionViewController.h; sourceTree = "<group>"; };
 		52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanOptionViewController.m; path = CMCMobileSec/ScanOptionViewController.m; sourceTree = "<group>"; };
-		52D6D2F21665DC6900FCEB2F /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSelectionViewController.h; sourceTree = "<group>"; };
-		52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSelectionViewController.m; sourceTree = "<group>"; };
 		52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		52D6D2FF1665F28E00FCEB2F /* libnotify.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnotify.dylib; path = "../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system/libnotify.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +103,8 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
+				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
 				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
 				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
 				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
@@ -141,8 +143,6 @@
 				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
 				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
-				52D6D2F21665DC6900FCEB2F /* FileSelectionViewController.h */,
-				52D6D2F31665DC6900FCEB2F /* FileSelectionViewController.m */,
 				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
 				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
 				5215A1A41665254700D8DEF6 /* first.png */,
@@ -281,9 +281,9 @@
 				5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */,
 				529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */,
 				52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */,
-				52D6D2F41665DC6900FCEB2F /* FileSelectionViewController.m in Sources */,
 				3DFF2E501671177D0010BAFF /* BlackListViewController.m in Sources */,
 				3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */,
+				52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

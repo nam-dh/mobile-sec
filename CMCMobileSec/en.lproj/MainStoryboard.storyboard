@@ -481,18 +481,34 @@ Filter spam as trained!</string>
         <!--File Selection View Controller - File Selection-->
         <scene sceneID="bS7-nz-9Pk">
             <objects>
-                <viewController storyboardIdentifier="File Selection" title="File Selection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phl-aP-SNu" customClass="FileSelectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="File Selection" title="File Selection" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phl-aP-SNu" customClass="FileSelectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOF-Pd-IqC">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="963-ya-0lG">
-                                <rect key="frame" x="139" y="154" width="42" height="21"/>
+                            <view contentMode="scaleToFill" id="cot-Qq-tBX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select files and folder to scan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WwN-eM-O6e">
+                                        <rect key="frame" x="20" y="2" width="224" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iL8-Fa-h3W">
+                                <rect key="frame" x="-5" y="46" width="325" height="431"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="phl-aP-SNu" id="k9V-IU-Nt5"/>
+                                    <outlet property="delegate" destination="phl-aP-SNu" id="pdG-nj-8LY"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
