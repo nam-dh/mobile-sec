@@ -384,7 +384,7 @@ Filter spam as trained!</string>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Summary" image="cmc.png" id="Ujv-Lq-SG0"/>
                     <connections>
-                        <outlet property="extStorageLabel" destination="WX6-06-bZp" id="nTY-x1-AVg"/>
+                        <outlet property="extStorageLabel" destination="Wxt-z4-EXy" id="Ncw-al-ELe"/>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
@@ -733,6 +733,7 @@ Filter spam as trained!</string>
         <class className="SummaryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="extStorageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>

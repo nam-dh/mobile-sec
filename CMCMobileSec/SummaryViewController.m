@@ -274,6 +274,7 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setSmsContent:nil];
     [self setTotalReceived:nil];
     [self setSysStorageLabel:nil];
+    [self setExtStorageLabel:nil];
     [super viewDidUnload];
 }
 @end
