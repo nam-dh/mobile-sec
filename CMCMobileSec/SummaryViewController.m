@@ -143,6 +143,7 @@ static UILabel* c;
     } else {
         NSLog(@"Not Open");
     }
+    NSLog(text);
     return text;
 }
 
@@ -334,49 +335,101 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
         } else {
             NSLog(@"Not Open");
         }
-
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:number
-                                                        message:text
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        NSString *prefix=[number substringToIndex:1];
+        NSString *newNumber = nil;
+        
+        if([prefix isEqualToString: @"+"]) {
+            newNumber = [number substringFromIndex:1];
+        }
+        
+        
+        //Search in blacklist number or not
+        //Open db
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+        NSString *documentsDir = [paths objectAtIndex:0];
+        NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"cmc.db"];
+        
+        NSString *result = nil;
+        
+        sqlite3_open([dbPath UTF8String], &database);
+        
+        static sqlite3_stmt *searchNumber = nil;
+        
+        if(searchNumber == nil)
+        {
+            char* insertSql = "select count(*) from message where address = ?";
+            if(sqlite3_prepare_v2(database, insertSql, -1, &searchNumber, NULL) != SQLITE_OK) {
+                //NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
+            }
+        }
+        
+        sqlite3_bind_text(searchNumber, 1, [newNumber UTF8String], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(searchNumber) == SQLITE_ROW) {
+            char *content = (char *)sqlite3_column_text(searchNumber, 0);
+            result = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+            sqlite3_finalize(searchNumber);
+            
+        }
+        sqlite3_close(database);
+        NSString *outText = nil;
+        
+        if([result isEqualToString: @"0"]) {
+            NSLog(@"OK");
+            outText = @"OK";
+        } else {
+            NSLog(@"Spam");
+            outText = @"Spam";
+            
+            //remove
+            if(sqlite3_open([path UTF8String], &database) == SQLITE_OK)
+            {
+                sqlite3_stmt *deleteStmt = nil;
+                
+                if(deleteStmt == nil)
+                {
+                    char* insertSql = "DELETE FROM message WHERE address = ? and text =?";
+                    if(sqlite3_prepare_v2(database, insertSql, -1, &deleteStmt, NULL) != SQLITE_OK) {
+                        //  NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
+                    }
+                }
+                
+                sqlite3_bind_text(deleteStmt, 1, [number UTF8String], -1, SQLITE_TRANSIENT);
+                sqlite3_bind_text(deleteStmt, 2, [text UTF8String], -1, SQLITE_TRANSIENT);
+                if(SQLITE_DONE != sqlite3_step(deleteStmt)) {
+                    //  NSAssert1(0, @"Error while deleting data. '%s'", sqlite3_errmsg(database));
+                    
+                }else
+                    NSLog(@"Deleted");
+                //Reset the add statement.
+                sqlite3_reset(deleteStmt);
+                deleteStmt = nil;
+                
+                sqlite3_finalize(deleteStmt);
+                sqlite3_close(database);
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:number
+                                                                message:outText
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Deleted!"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                
+                
+            } else {
+                NSLog(@"Not Open");
+            }
+            
+        }
+        
+        
+        
+        
         //[alert release];
         
         
-        //remove        
-        if(sqlite3_open([path UTF8String], &database) == SQLITE_OK)
-        {
-            sqlite3_stmt *deleteStmt = nil;
-            
-            if(deleteStmt == nil)
-            {
-                char* insertSql = "DELETE FROM message WHERE address = ? and text =?";
-                if(sqlite3_prepare_v2(database, insertSql, -1, &deleteStmt, NULL) != SQLITE_OK) {
-                  //  NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
-                }
-            }
-            
-            sqlite3_bind_text(deleteStmt, 1, [number UTF8String], -1, SQLITE_TRANSIENT);
-            sqlite3_bind_text(deleteStmt, 2, [text UTF8String], -1, SQLITE_TRANSIENT);
-            if(SQLITE_DONE != sqlite3_step(deleteStmt)) {
-              //  NSAssert1(0, @"Error while deleting data. '%s'", sqlite3_errmsg(database));
-            
-            }else
-                NSLog(@"Deleted");
-            //Reset the add statement.
-            sqlite3_reset(deleteStmt);
-            deleteStmt = nil;
-            
-            sqlite3_finalize(deleteStmt);
-            sqlite3_close(database);
-
-            
-          
-        } else {
-            NSLog(@"Not Open");
-        }
+        
         
                 
     }
@@ -388,5 +441,15 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setTotalReceived:nil];
     [self setSysStorageLabel:nil];
     [super viewDidUnload];
+}
+
+- (NSString *) getDBPath {
+    //Search for standard documents using NSSearchPathForDirectoriesInDomains
+    //First Param = Searching the documents directory
+    //Second Param = Searching the Users directory and not the System
+    //Expand any tildes and identify home directories.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    return [documentsDir stringByAppendingPathComponent:@"cmc.db"];
 }
 @end

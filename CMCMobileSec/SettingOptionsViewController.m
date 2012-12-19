@@ -13,6 +13,7 @@
 @end
 
 @implementation SettingOptionsViewController
+@synthesize toggleTrackingLocationSwitch;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    //[locationManager startUpdatingLocation];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +46,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction) switchValueChanged{
+    if (toggleTrackingLocationSwitch.on) {
+        [locationManager startUpdatingLocation];
+    }else {
+        [locationManager stopUpdatingLocation];
+    }
 }
 
 #pragma mark - Table view data source
@@ -56,14 +71,43 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     NSUInteger row = indexPath.row;
-    if (row == 0) {
-        BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
-        [self.navigationController pushViewController:fileSelection animated:YES];
+    NSUInteger section = indexPath.section;
+    if (section == 2) {
+        if (row == 0) {
+            BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
+            [self.navigationController pushViewController:fileSelection animated:YES];
+        }
+        if (row == 1) {
+            KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
+            [self.navigationController pushViewController:fileSelection animated:YES];
+        }
     }
-    if (row == 1) {
-         KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
-        [self.navigationController pushViewController:fileSelection animated:YES];
+    if (section == 3) {
+        if (row == 2) {
+            
+        }
     }
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    int degrees = newLocation.coordinate.latitude;
+    double decimal = fabs(newLocation.coordinate.latitude - degrees);
+    int minutes = decimal * 60;
+    double seconds = decimal * 3600 - minutes * 60;
+    NSString *lat = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
+                     degrees, minutes, seconds];
+    NSLog(@"lat=%@", lat);
+    degrees = newLocation.coordinate.longitude;
+    decimal = fabs(newLocation.coordinate.longitude - degrees);
+    minutes = decimal * 60;
+    seconds = decimal * 3600 - minutes * 60;
+    NSString *longt = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
+                       degrees, minutes, seconds];
+    NSLog(@"longt=%@", longt);
 }
 
 @end

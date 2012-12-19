@@ -10,9 +10,17 @@
 #import "BlackListViewController.h"
 #import "KeywordFilterViewController.h"
 
+#import <CoreLocation/CoreLocation.h>
 
-@interface SettingOptionsViewController : UITableViewController
+@interface SettingOptionsViewController : UITableViewController <CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+    UISwitch *trackingLocationSwitch;
+}
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *accCell;
 @property (weak, nonatomic) IBOutlet UILabel *updateStatusLabel;
+@property (nonatomic,retain) IBOutlet UISwitch *toggleTrackingLocationSwitch;
+
+-(IBAction) switchValueChanged;
+
 @end
