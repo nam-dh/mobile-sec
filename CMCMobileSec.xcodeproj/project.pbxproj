@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D25DC4A16821FB80006C7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D25DC4916821FB80006C7F5 /* CoreLocation.framework */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
 		3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */; };
 		3DFF2E501671177D0010BAFF /* BlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D25DC4916821FB80006C7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3DB6A4CB1678301A00B9BFEB /* cmc.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmc.db; sourceTree = "<group>"; };
 		3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordFilterViewController.h; sourceTree = "<group>"; };
 		3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordFilterViewController.m; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D25DC4A16821FB80006C7F5 /* CoreLocation.framework in Frameworks */,
 				5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */,
 				52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */,
 				5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
 				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
 				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
 				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
