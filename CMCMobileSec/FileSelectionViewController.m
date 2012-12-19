@@ -59,7 +59,7 @@
     NSString *filename;
     for (i = 0; i < count; i++){
         filename = [filelist objectAtIndex: i];
-        NSLog(@"%@", filename);
+//        NSLog(@"%@", filename);
         [myArray insertObject:filename atIndex:i];
     }
     return myArray;
@@ -99,9 +99,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *fileNameAtIndex = [filepathList objectAtIndex:indexPath.row];
-    NSMutableArray *myArray = nil;  // nil is essentially the same as NULL
-    myArray = [self getAllFileInPath:fileNameAtIndex];
-    int count = [myArray count];
+    NSLog(@"%@", fileNameAtIndex);
+//    NSMutableArray *myArray = nil;  // nil is essentially the same as NULL
+//    myArray = [self getAllFileInPath:fileNameAtIndex];
+//    int count = [myArray count];
+//    int i;
+//    static NSString *CellIdentifier = @"FilenameCell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        
+//    }
+//    for (i = 0; i < count; i++) {
+//        // Configure the cell...
+//        cell.textLabel.text = [myArray objectAtIndex:i];
+//        
+//    }
+//    [[self.view.subviews objectAtIndex:1] reloadData];
+//    [tableView reloadData];
+    filepathList = [self getAllFileInPath:fileNameAtIndex];
+    [tableView reloadData];
+
+
 }
 
 @end
