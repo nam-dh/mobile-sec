@@ -14,7 +14,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *smsContent;
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;
 
+@property (weak, nonatomic) IBOutlet UIButton *systemStorageButton;
+@property (weak, nonatomic) IBOutlet UIButton *historyScanButton;
 
+- (IBAction)systemStorageScan:(id)sender;
+- (IBAction)showScanHistory:(id)sender;
 
 - (NSString *) mostRecentNumber;
 - (NSString *) getDBPath;

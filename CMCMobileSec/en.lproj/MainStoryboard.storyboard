@@ -68,7 +68,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sync.png" id="0Gn-hr-gAt">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="updatebutton63-65X65-.png" id="0Gn-hr-gAt">
                                                     <rect key="frame" x="244" y="13" width="46" height="35"/>
                                                 </imageView>
                                             </subviews>
@@ -447,9 +447,21 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shield.png" id="b51-Xx-ccl">
-                                                    <rect key="frame" x="223" y="4" width="68" height="39"/>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zdz-pm-7np">
+                                                    <rect key="frame" x="234" y="4" width="46" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button" image="fpicon-realtime-65-65x65.png" backgroundImage="fpicon-realtime-65-65x65.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="systemStorageScan:" destination="NyY-Ev-1Sm" eventType="touchUpInside" id="Vq5-Oj-wMg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -479,9 +491,21 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="setting.png" id="F2u-vs-lE8">
-                                                    <rect key="frame" x="231" y="23" width="55" height="30"/>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bep-I9-S5D">
+                                                    <rect key="frame" x="232" y="13" width="48" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button" image="hinticon-46-48x48.png" backgroundImage="hinticon-46-48x48.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="showScanHistory:" destination="NyY-Ev-1Sm" eventType="touchUpInside" id="9fj-Fi-ubu"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -592,8 +616,10 @@ Restoreing data is sent from CMC InfoSec</string>
                     <tabBarItem key="tabBarItem" title="Summary" image="cmc.png" id="Ujv-Lq-SG0"/>
                     <connections>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
+                        <outlet property="historyScanButton" destination="bep-I9-S5D" id="Ocb-1A-Pfe"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
+                        <outlet property="systemStorageButton" destination="Zdz-pm-7np" id="hG6-VJ-m1m"/>
                         <outlet property="totalReceived" destination="giU-mI-grd" id="KHt-7N-lOf"/>
                     </connections>
                 </tableViewController>
@@ -640,8 +666,8 @@ Restoreing data is sent from CMC InfoSec</string>
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="Bn1-wt-ldX" id="s4y-LU-ixk"/>
-                            <outlet property="delegate" destination="Bn1-wt-ldX" id="e9G-HT-Dwf"/>
+                            <outlet property="dataSource" destination="BUr-OI-TPX" id="1pW-zZ-kNl"/>
+                            <outlet property="delegate" destination="Bn1-wt-ldX" id="zsm-HE-k5z"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="history" id="BUr-OI-TPX"/>
@@ -775,7 +801,7 @@ Restoreing data is sent from CMC InfoSec</string>
         <scene sceneID="Z6N-1i-GOa">
             <objects>
                 <navigationController id="wcX-o7-6Fz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" image="cmc.png" id="ySL-jN-gae"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="fpicon-scanfile-65-65x65.png" id="ySL-jN-gae"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="69c-Bh-TbR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -890,52 +916,11 @@ Restoreing data is sent from CMC InfoSec</string>
     </scenes>
     <resources>
         <image name="cmc.png" width="32" height="32"/>
-        <image name="setting.png" width="256" height="256"/>
-        <image name="shield.png" width="256" height="256"/>
-        <image name="sync.png" width="32" height="32"/>
+        <image name="fpicon-realtime-65-65x65.png" width="65" height="65"/>
+        <image name="fpicon-scanfile-65-65x65.png" width="65" height="65"/>
+        <image name="hinticon-46-48x48.png" width="48" height="48"/>
+        <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
-    <classes>
-        <class className="BlackListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addNumber:"/>
-                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="FileSelectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
-        </class>
-        <class className="KeywordFilterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addKeyword:"/>
-                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ScanOptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
-        </class>
-        <class className="SettingOptionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
-                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
-                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SummaryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

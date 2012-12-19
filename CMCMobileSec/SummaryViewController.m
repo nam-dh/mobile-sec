@@ -190,6 +190,12 @@ static UILabel* c;
     return text;
 }
 
+- (IBAction)systemStorageScan:(id)sender {
+}
+
+- (IBAction)showScanHistory:(id)sender {
+}
+
 - (NSString *) mostRecentNumber  {
     NSString *text = @"";
     
@@ -440,8 +446,11 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setSmsContent:nil];
     [self setTotalReceived:nil];
     [self setSysStorageLabel:nil];
+    [self setSystemStorageButton:nil];
+    [self setHistoryScanButton:nil];
     [super viewDidUnload];
 }
+
 
 - (NSString *) getDBPath {
     //Search for standard documents using NSSearchPathForDirectoriesInDomains
