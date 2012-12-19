@@ -17,5 +17,6 @@
 
 
 - (NSString *) mostRecentNumber;
+- (NSString *) getDBPath;
 
 @end
