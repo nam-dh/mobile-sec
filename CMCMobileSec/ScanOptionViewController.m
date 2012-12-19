@@ -58,6 +58,8 @@
     if (row == 0) {
         FileSelectionViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"File Selection"];
         [self.navigationController pushViewController:fileSelection animated:YES];
+    } else if (row == 1) {
+        
     }
 
 }

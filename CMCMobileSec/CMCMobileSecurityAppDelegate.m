@@ -43,4 +43,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void) showPopUp:(NSTimer *) timer {
+    NSLog(@"test");
+    @autoreleasepool {
+        UIAlertView* dialog = [[UIAlertView alloc] init];
+        [dialog setDelegate:self];
+        [dialog setTitle:@"PopUp test "];
+        [dialog setMessage:@"Click to dismiss"];
+        [dialog addButtonWithTitle:@"Yes"];
+        [dialog addButtonWithTitle:@"No"];
+        [dialog show];
+        
+
+    }
+    
+}
+
 @end
