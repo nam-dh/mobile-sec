@@ -14,6 +14,7 @@
 
 @implementation SettingOptionsViewController
 @synthesize toggleTrackingLocationSwitch;
+@synthesize toggleRemoteLockSwitch;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -47,13 +48,43 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction) switchValueChanged{
+-(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
         [locationManager startUpdatingLocation];
     }else {
         [locationManager stopUpdatingLocation];
     }
 }
+
+-(IBAction) remoteLockSwitchValueChanged{
+    if (toggleRemoteLockSwitch.on) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        }
+        else
+        {
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        }
+        [imagePicker setDelegate:self];
+        [self presentModalViewController:imagePicker animated:YES];
+
+    }else {
+        
+    }
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //[self.imageView setImage:image];
+    //save image
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 #pragma mark - Table view data source
 

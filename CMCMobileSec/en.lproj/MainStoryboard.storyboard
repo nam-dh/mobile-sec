@@ -220,6 +220,9 @@ we recommend you to select this option. Thank you!</string>
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="remoteLockSwitchValueChanged" destination="fX4-Xy-e3k" eventType="valueChanged" id="SMq-gH-RaE"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czm-8u-POz">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -252,7 +255,7 @@ of CMC InfoSec</string>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
-                                                        <action selector="switchValueChanged" destination="fX4-Xy-e3k" eventType="valueChanged" id="qWj-cz-5cV"/>
+                                                        <action selector="trackingLocationSwitchValueChanged" destination="fX4-Xy-e3k" eventType="valueChanged" id="PGA-Uo-35o"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nrs-nM-8Cu">
@@ -405,7 +408,8 @@ Restoreing data is sent from CMC InfoSec</string>
                     <navigationItem key="navigationItem" id="53i-bV-c6A"/>
                     <connections>
                         <outlet property="accCell" destination="pnz-9U-QCK" id="abs-14-qOw"/>
-                        <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="YTz-au-h3S"/>
+                        <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="jKP-92-5Tt"/>
+                        <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="Unp-5x-n0K"/>
                         <outlet property="updateStatusLabel" destination="Bdj-ZD-oEf" id="vXe-2f-pVd"/>
                     </connections>
                 </tableViewController>
@@ -914,8 +918,10 @@ Restoreing data is sent from CMC InfoSec</string>
         <class className="SettingOptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="switchValueChanged"/>
+                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
                 <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
             </relationships>
