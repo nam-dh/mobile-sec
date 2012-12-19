@@ -13,6 +13,27 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
+        NSRunLoop* myRunLoop = [NSRunLoop currentRunLoop];
+        
+        CMCMobileSecurityAppDelegate *obj = [[CMCMobileSecurityAppDelegate alloc] init];
+        //[obj start];
+        
+        // Create and schedule the first timer.
+        NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
+        NSTimer* myTimer = [[NSTimer alloc] initWithFireDate:futureDate
+                                                    interval:5
+                                                      target: obj
+                                                    selector:@selector(showPopUp:)
+                                                    userInfo:nil
+                                                     repeats:YES];
+        [myRunLoop addTimer:myTimer forMode:NSDefaultRunLoopMode];
+        
+        // Create and schedule the second timer.
+        [NSTimer scheduledTimerWithTimeInterval:10.0
+                                         target:obj
+                                       selector:@selector(showPopUp:)
+                                       userInfo:nil
+                                        repeats:YES];
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     }
 }
