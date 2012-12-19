@@ -55,13 +55,16 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     NSUInteger row = indexPath.row;
-    if (row == 0) {
-        BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
-        [self.navigationController pushViewController:fileSelection animated:YES];
+    NSUInteger section = indexPath.section;
+    if (section == 2) {
+        if (row == 0) {
+            BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
+            [self.navigationController pushViewController:fileSelection animated:YES];
+        }
+        if (row == 1) {
+            KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
+            [self.navigationController pushViewController:fileSelection animated:YES];
     }
-    if (row == 1) {
-         KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
-        [self.navigationController pushViewController:fileSelection animated:YES];
     }
 }
 
