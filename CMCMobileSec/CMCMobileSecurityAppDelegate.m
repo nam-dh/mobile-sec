@@ -44,18 +44,18 @@
 }
 
 - (void) showPopUp:(NSTimer *) timer {
-    NSLog(@"test");
-    @autoreleasepool {
-        UIAlertView* dialog = [[UIAlertView alloc] init];
-        [dialog setDelegate:self];
-        [dialog setTitle:@"PopUp test "];
-        [dialog setMessage:@"Click to dismiss"];
-        [dialog addButtonWithTitle:@"Yes"];
-        [dialog addButtonWithTitle:@"No"];
-        [dialog show];
-        
-
-    }
+//    NSLog(@"test");
+//    @autoreleasepool {
+//        UIAlertView* dialog = [[UIAlertView alloc] init];
+//        [dialog setDelegate:self];
+//        [dialog setTitle:@"PopUp test "];
+//        [dialog setMessage:@"Click to dismiss"];
+//        [dialog addButtonWithTitle:@"Yes"];
+//        [dialog addButtonWithTitle:@"No"];
+//        [dialog show];
+//        
+//
+//    }
     
 }
 

@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_background.png"]];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.opaque = NO;
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -103,6 +106,12 @@
      */
     NSUInteger row = indexPath.row;
     NSUInteger section = indexPath.section;
+    if (section == 0) {
+        if (row == 0) {
+            UsersRegisterViewController *userRegister = [self.storyboard instantiateViewControllerWithIdentifier:@"user_register"];
+            [self.navigationController pushViewController:userRegister animated:YES];
+        }
+    }
     if (section == 2) {
         if (row == 0) {
             BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];

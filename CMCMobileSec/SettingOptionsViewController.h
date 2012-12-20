@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BlackListViewController.h"
 #import "KeywordFilterViewController.h"
+#import "UsersRegisterViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 

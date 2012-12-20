@@ -191,9 +191,14 @@ static UILabel* c;
 }
 
 - (IBAction)systemStorageScan:(id)sender {
+    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
+    [self.navigationController pushViewController:scanOptions animated:YES];
+
 }
 
 - (IBAction)showScanHistory:(id)sender {
+    HistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
+    [self.navigationController pushViewController:showHistory animated:YES];
 }
 
 - (NSString *) mostRecentNumber  {
