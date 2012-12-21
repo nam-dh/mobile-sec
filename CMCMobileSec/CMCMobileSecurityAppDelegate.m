@@ -7,8 +7,15 @@
 //
 
 #import "CMCMobileSecurityAppDelegate.h"
+#import "UsersRegisterViewController.h"
 
-@implementation CMCMobileSecurityAppDelegate
+@implementation CMCMobileSecurityAppDelegate {
+    NSMutableData *responeData;
+    NSXMLParser *xmlParser;
+    NSMutableString *soapResults;
+    Boolean elementFound;
+
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -59,4 +66,86 @@
     
 }
 
++ (void) copyDatabaseIfNeeded {
+    //Using NSFileManager we can perform many file system operations.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSString *dbPath = [self getDBPath];
+    BOOL success = [fileManager fileExistsAtPath:dbPath];
+    
+    if(!success) {
+        
+        NSLog(@"not success");
+        
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"cmc.db"];
+        success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
+        
+        if (!success){
+            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+            NSLog(@"failed");
+        }
+    }
+}
+
++ (NSString *) getDBPath {
+    //Search for standard documents using NSSearchPathForDirectoriesInDomains
+    //First Param = Searching the documents directory
+    //Second Param = Searching the Users directory and not the System
+    //Expand any tildes and identify home directories.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    return [documentsDir stringByAppendingPathComponent:@"cmc.db"];
+}
+
++(Boolean) checkUserData:(NSString *)dbPath {
+    NSString *text = @"";
+    int i = 0;
+    sqlite3 *database;
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        sqlite3_stmt *statement;
+        
+        const char *sql = "SELECT type from user_data";
+
+        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
+        
+        // Use the while loop if you want more than just the most recent message
+        //while (sqlite3_step(statement) == SQLITE_ROW) {
+        
+        if (sqlite3_step(statement) == SQLITE_ROW) {
+            char *content = (char *)sqlite3_column_text(statement, 0);
+            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+        
+        i = [text intValue];
+        
+        NSLog(@"data=%d", i);
+        
+    }
+    else
+        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+    if (i > 0) return true;
+    else return false;
+}
+
++(void) getsessionKey {
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Init";
+    NSString *method_name = @"Init";
+    NSString *soap_action = @"http://cmcinfosec.com/Init";
+    
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *initEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <imei>123</imei>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, method_name];
+    
+    UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+    [theInstance connectSOAP:url :soap_action :initEnvelopeText];
+}
+
+
+
 @end
+
+NSString* sessionKey;
+int accountType = 1;

@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
-@interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate>
+extern NSString* sessionKey;
+extern int accountType;
+
+@interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 - (void) showPopUp:(NSTimer *) timer;
+
++ (void) copyDatabaseIfNeeded;
++ (NSString *) getDBPath;
++(Boolean) checkUserData:(NSString *)dbPath ;
++(void) getUserData:(NSString *)dbPath;
++(void) getsessionKey ;
+
 @end

@@ -8,10 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UsersRegisterViewController.h"
 #import "CMCMobileSecurityAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
+    //Copy database to the user's phone if needed.
+    [CMCMobileSecurityAppDelegate copyDatabaseIfNeeded];
+    int i = [CMCMobileSecurityAppDelegate checkUserData:[CMCMobileSecurityAppDelegate getDBPath]];
+    if (i==2) {
+        
+        [CMCMobileSecurityAppDelegate getsessionKey];
+        
+    } else {
+        
+        NSLog(@"not valid");
+        
+    }
+   
+    
+    
     @autoreleasepool {
         NSRunLoop* myRunLoop = [NSRunLoop currentRunLoop];
         
@@ -36,4 +52,5 @@ int main(int argc, char *argv[])
                                         repeats:YES];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     }
+    
 }

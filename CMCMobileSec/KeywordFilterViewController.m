@@ -7,6 +7,7 @@
 //
 
 #import "KeywordFilterViewController.h"
+#import "CMCMobileSecurityAppDelegate.h"
 
 @interface KeywordFilterViewController ()
 
@@ -32,11 +33,8 @@
 	// Do any additional setup after loading the view.
     tableData = [[NSMutableArray alloc]init];
     
-    //Copy database to the user's phone if needed.
-    [self copyDatabaseIfNeeded];
-    
     //Once the db is copied, get the initial data to display on the screen.
-    [self getInitialDataToDisplay:[self getDBPath]];
+    [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,46 +98,15 @@
         return; //If cancel or 0 length string the string doesn't matter
     }
     if (buttonIndex == 1) {
-        [self insertKeyword:[[alertView textFieldAtIndex:0] text] :[self getDBPath]];
+        [self insertKeyword:[[alertView textFieldAtIndex:0] text] :[CMCMobileSecurityAppDelegate getDBPath]];
         
         [tableData removeAllObjects];
-        [self getInitialDataToDisplay:[self getDBPath]];
+        [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
         // [tableData addObject: [[alertView textFieldAtIndex:0] text]];
         
         [[self keywordTable] reloadData];
     }
     
-}
-
-- (void) copyDatabaseIfNeeded {
-    //Using NSFileManager we can perform many file system operations.
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    NSString *dbPath = [self getDBPath];
-    BOOL success = [fileManager fileExistsAtPath:dbPath];
-    
-    if(!success) {
-        
-        NSLog(@"not success");
-        
-        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"cmc.db"];
-        success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
-        
-        if (!success){
-            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
-            NSLog(@"failed");
-        }
-    }
-}
-
-- (NSString *) getDBPath {
-    //Search for standard documents using NSSearchPathForDirectoriesInDomains
-    //First Param = Searching the documents directory
-    //Second Param = Searching the Users directory and not the System
-    //Expand any tildes and identify home directories.
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-    NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:@"cmc.db"];
 }
 
 - (void) getInitialDataToDisplay:(NSString *)dbPath {
@@ -232,7 +199,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"%d",indexPath.row);
         NSLog(@"%@",[tableData objectAtIndex:indexPath.row]);
-        [self removeKeyword:[tableData objectAtIndex:indexPath.row] :[self getDBPath]];
+        [self removeKeyword:[tableData objectAtIndex:indexPath.row] :[CMCMobileSecurityAppDelegate getDBPath]];
         [tableData removeObjectAtIndex:indexPath.row];
         [tableView beginUpdates];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]

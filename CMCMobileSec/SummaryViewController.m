@@ -143,7 +143,7 @@ static UILabel* c;
     } else {
         NSLog(@"Not Open");
     }
-    NSLog(text);
+    
     return text;
 }
 

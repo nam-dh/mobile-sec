@@ -17,6 +17,8 @@
     CLLocationManager *locationManager;
     UISwitch *trackingLocationSwitch;
 }
+@property (weak, nonatomic) IBOutlet UILabel *account1;
+@property (weak, nonatomic) IBOutlet UILabel *account2;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *accCell;
 @property (weak, nonatomic) IBOutlet UILabel *updateStatusLabel;

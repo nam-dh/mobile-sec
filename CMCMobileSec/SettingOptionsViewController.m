@@ -7,6 +7,7 @@
 //
 
 #import "SettingOptionsViewController.h"
+#import "CMCMobileSecurityAppDelegate.h"
 
 @interface SettingOptionsViewController ()
 
@@ -44,6 +45,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    if (accountType == 1) {
+        self.account1.text = @"Waiting for Confirmation Code";
+        self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,8 +116,19 @@
     NSUInteger section = indexPath.section;
     if (section == 0) {
         if (row == 0) {
-            UsersRegisterViewController *userRegister = [self.storyboard instantiateViewControllerWithIdentifier:@"user_register"];
-            [self.navigationController pushViewController:userRegister animated:YES];
+            if (accountType == 0) {
+                UsersRegisterViewController *userRegister = [self.storyboard instantiateViewControllerWithIdentifier:@"user_register"];
+                [self.navigationController pushViewController:userRegister animated:YES];
+            } else if (accountType == 1) {
+                
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Account validation" message:@"Please enter the account validation code in CMC Mobile Security email" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+                alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+                UITextField * alertTextField = [alert textFieldAtIndex:0];
+//                alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+                [alert show];
+    
+                
+            }
         }
     }
     if (section == 2) {
@@ -127,6 +146,20 @@
             
         }
     }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString* detailString = [[alertView textFieldAtIndex:0] text];
+    NSLog(@"String is: %@", detailString); //Put it on the debugger
+    if ([detailString length] <= 0 || buttonIndex == 0){
+        return; //If cancel or 0 length string the string doesn't matter
+    }
+    if (buttonIndex == 1) {
+        //validation account
+        
+        NSLog(@"validation account");
+    }
+    
 }
 
 
@@ -150,4 +183,9 @@
     NSLog(@"longt=%@", longt);
 }
 
+- (void)viewDidUnload {
+    [self setAccount1:nil];
+    [self setAccount2:nil];
+    [super viewDidUnload];
+}
 @end
