@@ -280,24 +280,27 @@ qualifiedName:(NSString *)qName
         //---displays the country---
         NSLog(@"%@",soapResults);
         NSString* message = nil;
+        
         if ([soapResults isEqualToString:@"true"] == 1) {
             message = @"Succesfully";
             accountType = 2;
             [self updateActivation:[CMCMobileSecurityAppDelegate getDBPath]];
             
+            [self userLogin:email :password :sessionKey];
+            
         } else {
             message = @"Failed";
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Confirm code submitting"
+                                  message:message
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+            [alert show];
         }
         
         
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Confirm code submitting"
-                              message:message
-                              delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-        //resultLabel.text=soapResults;
+        
 
         
         

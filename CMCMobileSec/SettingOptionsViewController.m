@@ -47,6 +47,8 @@
     if (accountType == 2) {
         UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
         [theInstance2 userLogin:email :password :sessionKey];
+        self.account1.text = @"Email";
+        self.account2.text = email;
     }
     if (accountType == 1) {
         self.account1.text = @"Waiting for Confirmation Code";
@@ -71,6 +73,8 @@
     if (accountType == 2) {
         UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
         [theInstance2 userLogin:email :password :sessionKey];
+        self.account1.text = @"Email";
+        self.account2.text = email;
     }
 }
 
@@ -181,9 +185,6 @@
         //validation account
         
         UsersRegisterViewController *userRegister = [[UsersRegisterViewController alloc] init];
-        
-        NSString* email = @"bolobala333@gmail.com";
-       // NSString* activatekey = @"FB9B3104";
         
         [userRegister activateAccount:email :detailString :sessionKey];
         
