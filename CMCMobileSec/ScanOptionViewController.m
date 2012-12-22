@@ -60,8 +60,60 @@
         [self.navigationController pushViewController:fileSelection animated:YES];
     } else if (row == 1) {
         
+        NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:1 inSection:0];
+        UITableViewCell * cell = [[self tableView] cellForRowAtIndexPath:rowToReload];
+        cell.detailTextLabel.text = @"test";
+        //start thread to scan file
+        NSThread* scanThread = [[NSThread alloc] initWithTarget:self
+                                                       selector:@selector(scanThreadMainMethod) object:nil];
+        [scanThread start];
+
     }
 
+}
+
+- (void)scanThreadMainMethod
+{
+    @autoreleasepool {
+        
+        [self scanVirus];
+        
+        // Add the exitNow BOOL to the thread dictionary.
+        BOOL exitNow = NO;
+        NSMutableDictionary* threadDict = [[NSThread currentThread] threadDictionary];
+        [threadDict setValue:[NSNumber numberWithBool:exitNow] forKey:@"ThreadShouldExitNow"];
+        
+        exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
+        
+    }
+}
+
+- (void) scanVirus{
+
+    //        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
+    NSString *docsDir = @"/";
+    NSFileManager *localFileManager=[[NSFileManager alloc] init];
+    NSDirectoryEnumerator *dirEnum =
+    [localFileManager enumeratorAtPath:docsDir];
+    
+    NSString *file;
+    NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:1 inSection:0];
+    UITableViewCell * cell = [[self tableView] cellForRowAtIndexPath:rowToReload];
+    cell.detailTextLabel.text = @"string";
+    while (file = [dirEnum nextObject]) {
+        //            if ([[file pathExtension] isEqualToString: @"doc"]) {
+        //                // process the document
+        //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
+        //            }
+        
+
+        NSLog(@"%@", file);
+        
+        cell.detailTextLabel.text = file;
+        //            NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
+        //            [[self tableView] reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationNone];
+        //
+    }
 }
 
 @end
