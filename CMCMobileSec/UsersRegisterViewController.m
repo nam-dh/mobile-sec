@@ -43,7 +43,7 @@
     [[self phoneNumber] setKeyboardType:UIKeyboardTypeNumberPad];
 	// Do any additional setup after loading the view.
     
-    [CMCMobileSecurityAppDelegate getsessionKey];
+    [self getsessionKey];
     
     NSLog(@"%@", sessionKey);
 }
@@ -62,27 +62,72 @@
     [super viewDidUnload];
 }
 - (IBAction)register:(id)sender {
-//    NSLog(@"%@",_phoneNumber.text);
-//    NSLog(@"%@",_email.text);
-//    NSLog(@"%@",_password.text);
-//    NSLog(@"%@",_password_confirm.text);
-//    
-//    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Register";
-//    NSString *method_name = @"Register";
-//    NSString *soap_action = @"http://cmcinfosec.com/Register";
-//    
-//    NSLog(@"Sessionkey = %@", sessionKey);
-//    
-//    // construct envelope (not optimized, intended to show basic steps)
-//    NSString *registerEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <email>%@</email>\n" " <password>%@</password>\n" " <message>\"\"</message>\n" " <sessionKey>%@</sessionKey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, _email.text , _password.text, sessionKey ,method_name];
-//    NSLog (@"%@",registerEnvelopeText);
-//    
-//    [self connectSOAP:url :soap_action :registerEnvelopeText];
+    NSLog(@"%@",_phoneNumber.text);
+    NSLog(@"%@",_email.text);
+    NSLog(@"%@",_password.text);
+    NSLog(@"%@",_password_confirm.text);
+    
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Register";
+    NSString *method_name = @"Register";
+    NSString *soap_action = @"http://cmcinfosec.com/Register";
+    
+    NSLog(@"Sessionkey = %@", sessionKey);
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *registerEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <email>%@</email>\n" " <password>%@</password>\n" " <message>\"\"</message>\n" " <sessionKey>%@</sessionKey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, _email.text , _password.text, sessionKey ,method_name];
+    NSLog (@"%@",registerEnvelopeText);
+    
+    [self connectSOAP:url :soap_action :registerEnvelopeText];
     
     int type = 1;
     [self insertUserData:_email.text :_password.text :type :[CMCMobileSecurityAppDelegate getDBPath]];
     accountType = 1;
     
+}
+
+-(void) activateAccount:(NSString*) email :(NSString*) activateKey :(NSString*) sessionKey {
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Activate";
+    NSString *method_name = @"Activate";
+    NSString *soap_action = @"http://cmcinfosec.com/Activate";
+    
+    NSLog(@"Sessionkey = %@", sessionKey);
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *activateEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <email>%@</email>\n" " <activatekey>%@</activatekey>\n" " <message>\"\"</message>\n" " <sessionKey>%@</sessionKey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, email , activateKey, sessionKey ,method_name];
+    
+    NSLog (@"%@",activateEnvelopeText);
+    
+    [self connectSOAP:url :soap_action :activateEnvelopeText];
+ 
+    
+}
+
+-(void) getsessionKey {
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Init";
+    NSString *method_name = @"Init";
+    NSString *soap_action = @"http://cmcinfosec.com/Init";
+    
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *initEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <imei>123</imei>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, method_name];
+    
+    [self connectSOAP:url :soap_action :initEnvelopeText];
+    
+}
+
+-(void) userLogin:(NSString*) email :(NSString*) password :(NSString*) sessionKey {
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Login";
+    NSString *method_name = @"Login";
+    NSString *soap_action = @"http://cmcinfosec.com/Login";
+    
+    NSLog(@"Sessionkey = %@", sessionKey);
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *activateEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <email>%@</email>\n" " <password>%@</password>\n" " <message>\"\"</message>\n" " <needCreateNew>false</needCreateNew>\n" " <sessionKey>%@</sessionKey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, email , password, sessionKey ,method_name];
+    
+    NSLog (@"%@",activateEnvelopeText);
+    
+    [self connectSOAP:url :soap_action :activateEnvelopeText];
 }
 
 -(void) connectSOAP:(NSString *) url :(NSString *) soap_action :(NSString *) envelopeText
@@ -145,7 +190,7 @@
 
 //---when the start of an element is found---
 -(void) parser:(NSXMLParser *) parser didStartElement:(NSString *) elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *) qName attributes:(NSDictionary *)attributeDict {
-    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"RegisterResult"] )
+    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"LoginResult"] || [elementName isEqualToString:@"RegisterResult"] || [elementName isEqualToString:@"ActivateResult"])
     {
         if (!soapResults)
         {
@@ -163,6 +208,7 @@
         [soapResults appendString: string];
     }
 }
+
 
 //---when the end of element is found---
 -(void)parser:(NSXMLParser *)parser
@@ -212,6 +258,59 @@ qualifiedName:(NSString *)qName
         [soapResults setString:@""];
         elementFound = FALSE;
     }
+    if ([elementName isEqualToString:@"ActivateResult"])
+    {
+        //---displays the country---
+        NSLog(@"%@",soapResults);
+        NSString* message = nil;
+        if ([soapResults isEqualToString:@"true"] == 1) {
+            message = @"Succesfully";
+            accountType = 2;
+            [self updateActivation:[CMCMobileSecurityAppDelegate getDBPath]];
+            
+        } else {
+            message = @"Failed";
+        }
+        
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Confirm code submitting"
+                              message:message
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        //resultLabel.text=soapResults;
+
+        
+        
+        [soapResults setString:@""];
+        elementFound = FALSE;
+    }
+    
+    if ([elementName isEqualToString:@"LoginResult"])
+    {
+        //---displays the country---
+        NSLog(@"LoginResult=%@",soapResults);
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"LoginResult!"
+                              message:soapResults
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        //resultLabel.text=soapResults;
+        
+        if ([soapResults isEqualToString:@"true"] == 1) {
+            accountType = 2;
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"theChange" object:nil];
+        }
+        
+        
+        [soapResults setString:@""];
+        elementFound = FALSE;
+    }
 }
 
 
@@ -243,6 +342,36 @@ qualifiedName:(NSString *)qName
     insertStmt = nil;
     
     sqlite3_finalize(insertStmt);
+    sqlite3_close(database);
+}
+
+
+-(void)updateActivation:(NSString *)dbPath{
+    
+    sqlite3 *database;
+    
+    //Open db
+    sqlite3_open([dbPath UTF8String], &database);
+    
+    static sqlite3_stmt *updateStmt = nil;
+    
+    if(updateStmt == nil)
+    {
+        char* updateActivationSql = "UPDATE user_data SET type = \"2\" where type = \"1\"";
+        if(sqlite3_prepare_v2(database, updateActivationSql, -1, &updateStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while update activatation statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    if(SQLITE_DONE != sqlite3_step(updateStmt)) {
+        // NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+    }
+    else
+        NSLog(@"Inserted");
+    //Reset the add statement.
+    sqlite3_reset(updateStmt);
+    updateStmt = nil;
+    
+    sqlite3_finalize(updateStmt);
     sqlite3_close(database);
 }
 

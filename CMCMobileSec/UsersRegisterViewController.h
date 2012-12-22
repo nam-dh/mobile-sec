@@ -17,6 +17,8 @@
 - (IBAction)register:(id)sender;
 
 -(void) connectSOAP:(NSString *) url :(NSString *) soap_action :(NSString *) envelopeText;
-
+-(void) activateAccount:(NSString*) email :(NSString*) activateKey :(NSString*) sessionKey;
+-(void) getsessionKey;
+-(void) userLogin:(NSString*) email :(NSString*) password :(NSString*) sessionKey;
 
 @end

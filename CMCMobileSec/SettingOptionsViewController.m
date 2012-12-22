@@ -45,6 +45,18 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
+    [theInstance2 userLogin:email :password :sessionKey];
+    
+    //add observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"theChange" object:nil];
+}
+
+- (void)makeTheChange
+{
+    self.account1.text = @"Email";
+    self.account2.text = email;
+
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -56,6 +68,7 @@
 
 - (void)didReceiveMemoryWarning
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"theChange" object:nil];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -156,6 +169,13 @@
     }
     if (buttonIndex == 1) {
         //validation account
+        
+        UsersRegisterViewController *userRegister = [[UsersRegisterViewController alloc] init];
+        
+        NSString* email = @"bolobala333@gmail.com";
+       // NSString* activatekey = @"FB9B3104";
+        
+        [userRegister activateAccount:email :detailString :sessionKey];
         
         NSLog(@"validation account");
     }

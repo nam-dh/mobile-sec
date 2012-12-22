@@ -11,6 +11,8 @@
 
 extern NSString* sessionKey;
 extern int accountType;
+extern NSString* email;
+extern NSString* password;
 
 @interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
 
@@ -20,8 +22,9 @@ extern int accountType;
 
 + (void) copyDatabaseIfNeeded;
 + (NSString *) getDBPath;
-+(Boolean) checkUserData:(NSString *)dbPath ;
++(int) checkUserData:(NSString *)dbPath ;
 +(void) getUserData:(NSString *)dbPath;
-+(void) getsessionKey ;
++(NSString*) getEmail:(NSString *)dbPath ;
++(NSString*) getPassword:(NSString *)dbPath ;
 
 @end

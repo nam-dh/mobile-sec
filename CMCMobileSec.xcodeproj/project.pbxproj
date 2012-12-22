@@ -129,7 +129,6 @@
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
 		5215A1A51665254700D8DEF6 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1A41665254700D8DEF6 /* first.png */; };
 		5215A1A71665254700D8DEF6 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1A61665254700D8DEF6 /* first@2x.png */; };
-		5215A1AA1665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1A91665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m */; };
 		5215A1AC1665254700D8DEF6 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AB1665254700D8DEF6 /* second.png */; };
 		5215A1AE1665254700D8DEF6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1AD1665254700D8DEF6 /* second@2x.png */; };
 		5215A1B816652B1700D8DEF6 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 5215A1B716652B1700D8DEF6 /* shield.png */; };
@@ -276,8 +275,6 @@
 		5215A19F1665254700D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5215A1A41665254700D8DEF6 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		5215A1A61665254700D8DEF6 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		5215A1A81665254700D8DEF6 /* CMCMobileSecuritySecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMCMobileSecuritySecondViewController.h; sourceTree = "<group>"; };
-		5215A1A91665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMCMobileSecuritySecondViewController.m; sourceTree = "<group>"; };
 		5215A1AB1665254700D8DEF6 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		5215A1AD1665254700D8DEF6 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		5215A1B716652B1700D8DEF6 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
@@ -364,8 +361,6 @@
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
 				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
 				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
-				5215A1A81665254700D8DEF6 /* CMCMobileSecuritySecondViewController.h */,
-				5215A1A91665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m */,
 				3DFF2E4E1671177D0010BAFF /* BlackListViewController.h */,
 				3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */,
 				3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */,
@@ -703,7 +698,6 @@
 			files = (
 				5215A1931665254600D8DEF6 /* main.m in Sources */,
 				5215A1971665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m in Sources */,
-				5215A1AA1665254700D8DEF6 /* CMCMobileSecuritySecondViewController.m in Sources */,
 				5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */,
 				529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */,
 				52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */,

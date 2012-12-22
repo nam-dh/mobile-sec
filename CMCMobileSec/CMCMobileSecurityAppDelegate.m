@@ -97,7 +97,7 @@
     return [documentsDir stringByAppendingPathComponent:@"cmc.db"];
 }
 
-+(Boolean) checkUserData:(NSString *)dbPath {
++(int) checkUserData:(NSString *)dbPath {
     NSString *text = @"";
     int i = 0;
     sqlite3 *database;
@@ -126,8 +126,68 @@
     }
     else
         sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
-    if (i > 0) return true;
-    else return false;
+    
+    return i;
+}
+
++(NSString*) getEmail:(NSString *)dbPath {
+    NSString *text = @"";
+    sqlite3 *database;
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        sqlite3_stmt *statement;
+        
+        const char *sql = "SELECT email from user_data";
+        
+        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
+        
+        // Use the while loop if you want more than just the most recent message
+        //while (sqlite3_step(statement) == SQLITE_ROW) {
+        
+        if (sqlite3_step(statement) == SQLITE_ROW) {
+            char *content = (char *)sqlite3_column_text(statement, 0);
+            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+        
+        
+        NSLog(@"email=%@", text);
+        
+    }
+    else
+        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+    return text;
+}
+
++(NSString*) getPassword:(NSString *)dbPath {
+    NSString *text = @"";
+    sqlite3 *database;
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        sqlite3_stmt *statement;
+        
+        const char *sql = "SELECT password from user_data";
+        
+        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
+        
+        // Use the while loop if you want more than just the most recent message
+        //while (sqlite3_step(statement) == SQLITE_ROW) {
+        
+        if (sqlite3_step(statement) == SQLITE_ROW) {
+            char *content = (char *)sqlite3_column_text(statement, 0);
+            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+        
+        
+        NSLog(@"password=%@", text);
+        
+    }
+    else
+        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+    return text;
 }
 
 +(void) getsessionKey {
@@ -145,7 +205,10 @@
 
 
 
+
 @end
 
 NSString* sessionKey;
 int accountType = 1;
+NSString* email = nil;
+NSString* password = nil;
