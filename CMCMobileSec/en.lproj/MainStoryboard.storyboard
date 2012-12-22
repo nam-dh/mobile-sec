@@ -758,6 +758,10 @@ Restoreing data is sent from CMC InfoSec</string>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ic_up.png" id="jxl-ta-n7Q">
+                                        <rect key="frame" x="278" y="11" width="34" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -765,6 +769,23 @@ Restoreing data is sent from CMC InfoSec</string>
                                 <rect key="frame" x="-5" y="46" width="325" height="431"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jDy-Ly-yfw">
+                                        <rect key="frame" x="0.0" y="22" width="325" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="button_checkbox_off.png" id="q88-X3-iaJ">
+                                                    <rect key="frame" x="289" y="8" width="27" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="phl-aP-SNu" id="k9V-IU-Nt5"/>
                                     <outlet property="delegate" destination="phl-aP-SNu" id="pdG-nj-8LY"/>
@@ -1133,10 +1154,12 @@ Mobile Security:</string>
     <resources>
         <image name="app_bar_icon.png" width="70" height="70"/>
         <image name="bg_background.png" width="480" height="780"/>
+        <image name="button_checkbox_off.png" width="48" height="48"/>
         <image name="cmc.png" width="32" height="32"/>
         <image name="fpicon-realtime-65-65x65.png" width="65" height="65"/>
         <image name="fpicon-scanfile-65-65x65.png" width="65" height="65"/>
         <image name="hinticon-46-48x48.png" width="48" height="48"/>
+        <image name="ic_up.png" width="56" height="56"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
     <classes>
