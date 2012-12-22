@@ -1117,6 +1117,7 @@ Mobile Security:</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="email" destination="JGr-PS-c7G" id="AaZ-DT-Rt8"/>
                         <outlet property="password" destination="t2G-AQ-YYF" id="Yal-2s-DGM"/>

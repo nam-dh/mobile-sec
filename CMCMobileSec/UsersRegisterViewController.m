@@ -40,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     [[self phoneNumber] setKeyboardType:UIKeyboardTypeNumberPad];
 	// Do any additional setup after loading the view.
     
@@ -78,10 +80,6 @@
     NSLog (@"%@",registerEnvelopeText);
     
     [self connectSOAP:url :soap_action :registerEnvelopeText];
-    
-    int type = 1;
-    [self insertUserData:_email.text :_password.text :type :[CMCMobileSecurityAppDelegate getDBPath]];
-    accountType = 1;
     
 }
 

@@ -66,6 +66,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    NSLog(@"accountType=%d", accountType);
     if (accountType == 1) {
         self.account1.text = @"Waiting for Confirmation Code";
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
