@@ -37,8 +37,7 @@
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
-    //[locationManager startUpdatingLocation];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -75,7 +74,9 @@
 
 -(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
+        NSLog(@"toggleTrackingLocationSwitch");
         [locationManager startUpdatingLocation];
+        
     }else {
         [locationManager stopUpdatingLocation];
     }
@@ -201,6 +202,12 @@
     NSString *longt = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
                        degrees, minutes, seconds];
     NSLog(@"longt=%@", longt);
+    
+    NSString* vector = [NSString stringWithFormat:@"(%@,%@)", lat, longt];
+    
+    NSLog(@"vector=%@", vector);
+    UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+    [theInstance locationReport:vector :sessionKey];
 }
 
 - (void)viewDidUnload {

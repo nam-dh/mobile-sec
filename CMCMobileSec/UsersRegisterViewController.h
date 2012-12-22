@@ -20,5 +20,6 @@
 -(void) activateAccount:(NSString*) email :(NSString*) activateKey :(NSString*) sessionKey;
 -(void) getsessionKey;
 -(void) userLogin:(NSString*) email :(NSString*) password :(NSString*) sessionKey;
+-(void) locationReport:(NSString*) vector :(NSString*) sessionKey;
 
 @end

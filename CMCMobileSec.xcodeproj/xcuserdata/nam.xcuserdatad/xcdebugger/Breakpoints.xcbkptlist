@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/UsersRegisterViewController.m"
-         timestampString = "377863438.571655"
+         timestampString = "377865403.943868"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "186"
-         endingLineNumber = "186"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/UsersRegisterViewController.m"
-         timestampString = "377864321.779333"
+         timestampString = "377865403.943868"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "350"
-         endingLineNumber = "350"
+         startingLineNumber = "373"
+         endingLineNumber = "373"
          landmarkName = "-updateActivation:"
          landmarkType = "5">
       </FileBreakpoint>
