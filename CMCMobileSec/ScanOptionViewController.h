@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "FileSelectionViewController.h"
 
-@interface ScanOptionViewController : UITableViewController
-
+@interface ScanOptionViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic, retain)NSString* filename;
 @end
