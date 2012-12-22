@@ -130,6 +130,20 @@
     [self connectSOAP:url :soap_action :activateEnvelopeText];
 }
 
+
+-(void) locationReport:(NSString*) vector :(NSString*) sessionKey {
+    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=ReportLocation";
+    NSString *method_name = @"ReportLocation";
+    NSString *soap_action = @"http://cmcinfosec.com/Login";
+    
+    // construct envelope (not optimized, intended to show basic steps)
+    NSString *locationReportEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <vectors>%@</vectors>\n" " <sessionKey>%@</sessionKey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, vector, sessionKey ,method_name];
+    
+    NSLog (@"%@",locationReportEnvelopeText);
+    
+    [self connectSOAP:url :soap_action :locationReportEnvelopeText];
+}
+
 -(void) connectSOAP:(NSString *) url :(NSString *) soap_action :(NSString *) envelopeText
 {
     NSData *envelope = [envelopeText dataUsingEncoding:NSUTF8StringEncoding];
@@ -190,7 +204,7 @@
 
 //---when the start of an element is found---
 -(void) parser:(NSXMLParser *) parser didStartElement:(NSString *) elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *) qName attributes:(NSDictionary *)attributeDict {
-    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"LoginResult"] || [elementName isEqualToString:@"RegisterResult"] || [elementName isEqualToString:@"ActivateResult"])
+    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"LoginResult"] || [elementName isEqualToString:@"RegisterResult"] || [elementName isEqualToString:@"ActivateResult"] || [elementName isEqualToString:@"ReportLocationResult"])
     {
         if (!soapResults)
         {
@@ -250,10 +264,13 @@ qualifiedName:(NSString *)qName
         
         if ([soapResults isEqualToString:@"true"] == 1) {
             accountType = 1;
+            email = _email.text;
+            password = _password.text;
             [self insertUserData:_email.text :_password.text :accountType :[CMCMobileSecurityAppDelegate getDBPath]];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
 
         }
-        
         
         [soapResults setString:@""];
         elementFound = FALSE;
@@ -263,24 +280,27 @@ qualifiedName:(NSString *)qName
         //---displays the country---
         NSLog(@"%@",soapResults);
         NSString* message = nil;
+        
         if ([soapResults isEqualToString:@"true"] == 1) {
             message = @"Succesfully";
             accountType = 2;
             [self updateActivation:[CMCMobileSecurityAppDelegate getDBPath]];
             
+            [self userLogin:email :password :sessionKey];
+            
         } else {
             message = @"Failed";
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Confirm code submitting"
+                                  message:message
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+            [alert show];
         }
         
         
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Confirm code submitting"
-                              message:message
-                              delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-        //resultLabel.text=soapResults;
+        
 
         
         
@@ -311,6 +331,15 @@ qualifiedName:(NSString *)qName
         [soapResults setString:@""];
         elementFound = FALSE;
     }
+    if ([elementName isEqualToString:@"ReportLocationResult"])
+    {
+        //---displays the country---
+        NSLog(@"ReportLocationResult=%@",soapResults);
+        
+        [soapResults setString:@""];
+        elementFound = FALSE;
+    }
+
 }
 
 

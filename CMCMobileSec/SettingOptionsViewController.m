@@ -37,17 +37,23 @@
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
-    //[locationManager startUpdatingLocation];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
-    [theInstance2 userLogin:email :password :sessionKey];
-    
+    if (accountType == 2) {
+        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
+        [theInstance2 userLogin:email :password :sessionKey];
+        self.account1.text = @"Email";
+        self.account2.text = email;
+    }
+    if (accountType == 1) {
+        self.account1.text = @"Waiting for Confirmation Code";
+        self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    }
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"theChange" object:nil];
 }
@@ -64,6 +70,12 @@
         self.account1.text = @"Waiting for Confirmation Code";
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
     }
+    if (accountType == 2) {
+        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
+        [theInstance2 userLogin:email :password :sessionKey];
+        self.account1.text = @"Email";
+        self.account2.text = email;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +87,9 @@
 
 -(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
+        NSLog(@"toggleTrackingLocationSwitch");
         [locationManager startUpdatingLocation];
+        
     }else {
         [locationManager stopUpdatingLocation];
     }
@@ -172,9 +186,6 @@
         
         UsersRegisterViewController *userRegister = [[UsersRegisterViewController alloc] init];
         
-        NSString* email = @"bolobala333@gmail.com";
-       // NSString* activatekey = @"FB9B3104";
-        
         [userRegister activateAccount:email :detailString :sessionKey];
         
         NSLog(@"validation account");
@@ -201,6 +212,12 @@
     NSString *longt = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
                        degrees, minutes, seconds];
     NSLog(@"longt=%@", longt);
+    
+    NSString* vector = [NSString stringWithFormat:@"(%@,%@)", lat, longt];
+    
+    NSLog(@"vector=%@", vector);
+    UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+    [theInstance locationReport:vector :sessionKey];
 }
 
 - (void)viewDidUnload {
