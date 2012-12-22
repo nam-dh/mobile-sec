@@ -44,9 +44,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
-    [theInstance2 userLogin:email :password :sessionKey];
-    
+    if (accountType == 2) {
+        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
+        [theInstance2 userLogin:email :password :sessionKey];
+    }
+    if (accountType == 1) {
+        self.account1.text = @"Waiting for Confirmation Code";
+        self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    }
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"theChange" object:nil];
 }
@@ -62,6 +67,10 @@
     if (accountType == 1) {
         self.account1.text = @"Waiting for Confirmation Code";
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    }
+    if (accountType == 2) {
+        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
+        [theInstance2 userLogin:email :password :sessionKey];
     }
 }
 

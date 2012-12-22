@@ -264,10 +264,13 @@ qualifiedName:(NSString *)qName
         
         if ([soapResults isEqualToString:@"true"] == 1) {
             accountType = 1;
+            email = _email.text;
+            password = _password.text;
             [self insertUserData:_email.text :_password.text :accountType :[CMCMobileSecurityAppDelegate getDBPath]];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
 
         }
-        
         
         [soapResults setString:@""];
         elementFound = FALSE;

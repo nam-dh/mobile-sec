@@ -47,26 +47,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/UsersRegisterViewController.m"
-         timestampString = "377865403.943868"
+         timestampString = "377892419.107625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "373"
-         endingLineNumber = "373"
+         startingLineNumber = "376"
+         endingLineNumber = "376"
          landmarkName = "-updateActivation:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CMCMobileSec/main.m"
-         timestampString = "377854566.625711"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "main()"
-         landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
     //Copy database to the user's phone if needed.
     [CMCMobileSecurityAppDelegate copyDatabaseIfNeeded];
     int i = [CMCMobileSecurityAppDelegate checkUserData:[CMCMobileSecurityAppDelegate getDBPath]];
-    email = [CMCMobileSecurityAppDelegate getEmail:[CMCMobileSecurityAppDelegate getDBPath]];
-    password = [CMCMobileSecurityAppDelegate getPassword:[CMCMobileSecurityAppDelegate getDBPath]];
-    if (i==2) {
-        
+    NSLog(@"i=%d", i);
+    accountType = i;
+    if (accountType != 0) {
+        email = [CMCMobileSecurityAppDelegate getEmail:[CMCMobileSecurityAppDelegate getDBPath]];
+        password = [CMCMobileSecurityAppDelegate getPassword:[CMCMobileSecurityAppDelegate getDBPath]];
         
         UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
         [theInstance getsessionKey];
-        
     } else {
         
         NSLog(@"not valid");
