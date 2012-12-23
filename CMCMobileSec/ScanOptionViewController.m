@@ -25,9 +25,18 @@ bool isSelected = false;
     return self;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // cell.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_hint.png"]];
+    [cell setBackgroundView:boxBackView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
+    [self.tableView setBackgroundView:boxBackView];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

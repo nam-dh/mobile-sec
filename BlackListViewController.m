@@ -37,6 +37,7 @@
     //Once the db is copied, get the initial data to display on the screen.
     [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
     
+    
 }
 
 - (void)didReceiveMemoryWarning
