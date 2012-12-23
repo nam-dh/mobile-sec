@@ -10,6 +10,9 @@
 
 @interface FileSelectionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+
 @property(nonatomic, retain)NSMutableArray *filepathList;
+@property(nonatomic, retain)NSMutableArray *dataArray;
 - (NSMutableArray*) getAllFileInPath: (NSString *)path;
+- (NSMutableArray*) initiateDataArray;
 @end

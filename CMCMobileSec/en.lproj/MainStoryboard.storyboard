@@ -777,8 +777,15 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="button_checkbox_off.png" id="q88-X3-iaJ">
-                                                    <rect key="frame" x="289" y="8" width="27" height="27"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" restorationIdentifier="filename" text="file name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V73-qI-2G4">
+                                                    <rect key="frame" x="25" y="11" width="156" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Gvo-mq-YHw">
+                                                    <rect key="frame" x="267" y="3" width="38" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1157,7 +1164,6 @@ Mobile Security:</string>
     <resources>
         <image name="app_bar_icon.png" width="70" height="70"/>
         <image name="bg_background.png" width="480" height="780"/>
-        <image name="button_checkbox_off.png" width="48" height="48"/>
         <image name="cmc.png" width="32" height="32"/>
         <image name="fpicon-realtime-65-65x65.png" width="65" height="65"/>
         <image name="fpicon-scanfile-65-65x65.png" width="65" height="65"/>
