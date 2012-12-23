@@ -15,11 +15,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *password_confirm;
 - (IBAction)register:(id)sender;
+- (IBAction)login:(id)sender;
 
 -(void) connectSOAP:(NSString *) url :(NSString *) soap_action :(NSString *) envelopeText;
 -(void) activateAccount:(NSString*) email :(NSString*) activateKey :(NSString*) sessionKey;
 -(void) getsessionKey;
 -(void) userLogin:(NSString*) email :(NSString*) password :(NSString*) sessionKey;
 -(void) locationReport:(NSString*) vector :(NSString*) sessionKey;
+-(void) downloadFile:(NSString*) sessionKey :(NSString*) type ;
+-(void) uploadFile:(NSMutableData*) fContent :(NSString*) type :(NSString*) token :(NSString*) sessionKey ;
+-(void) userLogout:(NSString*) email :(NSString*) sessionKey ;
+
+extern Boolean failed;
 
 @end

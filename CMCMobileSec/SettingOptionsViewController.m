@@ -72,8 +72,6 @@
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
     }
     if (accountType == 2) {
-        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
-        [theInstance2 userLogin:email :password :sessionKey];
         self.account1.text = @"Email";
         self.account2.text = email;
     }
