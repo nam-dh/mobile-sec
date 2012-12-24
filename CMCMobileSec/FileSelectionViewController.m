@@ -18,6 +18,8 @@
 @synthesize filepathList;
 @synthesize dataArray;
 @synthesize parentDirectory;
+@synthesize fileListToScan;
+BOOL isLoadByUpButton = false;
 //#define MAINLABEL_TAG 1
 //#define SECONDLABEL_TAG 2
 //#define PHOTO_TAG 3
@@ -40,6 +42,8 @@
     NSLog(@"size: %d",[filepathList count]);
     dataArray = [self initiateDataArray];
 
+//    fileListToScan = nil;
+    fileListToScan = [NSMutableArray array];
     
     // add Back button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -89,9 +93,7 @@
     } else {
         parentDirectory = [NSString stringWithFormat:@"%@/%@",parentDirectory, path];
     }
-    
-//    parentDirectory = [path stringByDeletingLastPathComponent];
-    NSLog(@"get parent: %@, current: %@", parentDirectory, path);
+
 
     NSMutableArray *myArray = nil;  // nil is essentially the same as NULL
     
@@ -112,7 +114,6 @@
     NSString *filename;
     for (i = 0; i < count; i++){
         filename = [filelist objectAtIndex: i];
-//        NSLog(@"%@", filename);
         [myArray insertObject:filename atIndex:i];
     }
     return myArray;
@@ -226,9 +227,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     [self tableView: tableView accessoryButtonTappedForRowWithIndexPath: indexPath];
-        dataArray = [self initiateDataArray];
+
+    dataArray = [self initiateDataArray];
     [tableView reloadData];
-    
+    // save checked item
+    [self saveCheckedItem];
+    isLoadByUpButton = false;
+}
+
+- (void) saveCheckedItem {
+    int count = [dataArray count];
+    int i;
+    BOOL checked;
+    NSMutableDictionary *item;
+    NSString *filename;
+    for ( i = 0; i < count; i++) {
+        item = [dataArray objectAtIndex:i];
+        checked = [[item objectForKey:@"checked"] boolValue];
+        if (checked) {
+            filename = [filepathList objectAtIndex: i];
+            // add to list of file to Scan
+            [fileListToScan addObject:filename];
+        }
+    }
 }
 
 - (void)checkButtonTapped:(id)sender event:(id)event
@@ -246,9 +267,6 @@
 
 - (void) upToParent: (id) sender event: (id) event{
     NSString * temp = [parentDirectory stringByDeletingLastPathComponent];
-    
-    
-    NSLog(@"temp = %@", temp);
 
     filepathList = [self getAllFileInPath:temp];
     dataArray = [self initiateDataArray];
@@ -256,10 +274,10 @@
     UITableView * tableview = [self.view.subviews objectAtIndex:1];
     parentDirectory = temp;
     [tableview reloadData];
+    // save checked item
+    [self saveCheckedItem];
+    isLoadByUpButton = true;
     
-
-  //  NSLog(@"up to parent directory with paht = %@", temp);
-    NSLog(@"up to parent directory with path: %@", parentDirectory);
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -281,10 +299,46 @@
     UIImage *theImage = [UIImage imageWithContentsOfFile:imagePath];
 //    photo.image = theImage;
     [button setBackgroundImage:theImage forState:UIControlStateNormal];
+    
+
 }
 
 - (void)viewDidUnload {
 
     [super viewDidUnload];
+}
+- (IBAction)discardButton:(id)sender {
+    NSLog(@"discard Button");
+    ScanOptionViewController * scanOption = [self.storyboard
+                                             instantiateViewControllerWithIdentifier:@"scan_view"];
+    [self.navigationController pushViewController:scanOption animated:YES];
+}
+
+- (IBAction)resetButton:(id)sender {
+    NSLog(@"reset button");
+    [self resetDataArray];
+}
+
+- (void) resetDataArray{
+    int count = [dataArray count];
+    int i = 0;
+    for ( i = 0; i < count; i++) {
+        NSMutableDictionary *item = [dataArray objectAtIndex:i];
+        [item setObject:[NSNumber numberWithBool:false] forKey:@"checked"];
+    }
+    UITableView * tableView = [self.view.subviews objectAtIndex:1];
+    [tableView reloadData];
+}
+
+- (IBAction)finishButton:(id)sender {
+    NSLog(@"finish button");
+    if (!isLoadByUpButton){
+        [self saveCheckedItem];
+    }
+    int count = [fileListToScan count];
+    int i;
+    for (i = 0; i < count; i++){
+        NSLog(@"select:%@ in total: %d", [fileListToScan objectAtIndex:i], count);
+    }
 }
 @end
