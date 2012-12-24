@@ -602,7 +602,6 @@ Restoreing data is sent from CMC InfoSec</string>
         <!--History View Controller - History-->
         <scene sceneID="Fgi-xA-1zT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fl1-fA-MNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="history_view" title="History" id="Bn1-wt-ldX" customClass="HistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6My-T7-rPM">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -809,6 +808,7 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="virusName" destination="ZIl-As-UHE" id="LlG-Dt-EKU"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fl1-fA-MNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1211" y="1583"/>
         </scene>
@@ -1312,8 +1312,6 @@ Mobile Security:</string>
         <image name="ic_up.png" width="56" height="56"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
-<<<<<<< HEAD
-=======
     <classes>
         <class className="BlackListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
@@ -1390,7 +1388,6 @@ Mobile Security:</string>
             </relationships>
         </class>
     </classes>
->>>>>>> a608d1cad88e7b770b019aa7d1050a71dc095191
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
