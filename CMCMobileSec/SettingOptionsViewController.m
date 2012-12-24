@@ -26,12 +26,24 @@
     return self;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+   // cell.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_hint.png"]];
+    [cell setBackgroundView:boxBackView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_background.png"]];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.opaque = NO;
+
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
+    [self.tableView setBackgroundView:boxBackView];
+    
+    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_baricon.png"]]];
+    self.navigationItem.leftBarButtonItem= item;
+    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -72,8 +84,6 @@
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
     }
     if (accountType == 2) {
-        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
-        [theInstance2 userLogin:email :password :sessionKey];
         self.account1.text = @"Email";
         self.account2.text = email;
     }

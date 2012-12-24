@@ -14,6 +14,20 @@
 
 @implementation HistoryViewController
 
+@synthesize smsContent = _smsContent;
+@synthesize smsFrom = _smsFrom;
+@synthesize smsTime = _smsTime;
+@synthesize smsImage = _smsImage;
+
+@synthesize statisticTime = _statisticTime;
+@synthesize statisticImage = _statisticImage;
+@synthesize totalScan = _totalScan;
+@synthesize totalDetected = _totalDetected;
+
+@synthesize detectedImage = _detectedImage;
+@synthesize filename = _filename;
+@synthesize virusName = _virusName;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -26,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
+    [self.tableView setBackgroundView:boxBackView];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,35 +50,35 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // cell.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_hint.png"]];
+    [cell setBackgroundView:boxBackView];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *statisticsCellIdentifier = @"statisticCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:statisticsCellIdentifier];
     
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:statisticsCellIdentifier];
+    }
     // Configure the cell...
-    
+   // cell.imageView.image = [UIImage imageNamed:@"fpicon-realtime-65-65x65.png"];
     return cell;
 }
 
@@ -118,4 +134,20 @@
      */
 }
 
+- (void)viewDidUnload {
+    [self setSmsTime:nil];
+    [self setSmsFrom:nil];
+    [self setSmsContent:nil];
+    [self setBlockBy:nil];
+    [self setStatisticTime:nil];
+    [self setTotalScan:nil];
+    [self setTotalDetected:nil];
+    [self setFilename:nil];
+    [self setVirusName:nil];
+    [self setSmsImage:nil];
+    [self setStatisticImage:nil];
+    [self setDetectedImage:nil];
+    [self setDetectedImage:nil];
+    [super viewDidUnload];
+}
 @end
