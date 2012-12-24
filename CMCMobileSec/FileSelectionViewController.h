@@ -13,6 +13,7 @@
 
 @property(nonatomic, retain)NSMutableArray *filepathList;
 @property(nonatomic, retain)NSMutableArray *dataArray;
+@property(nonatomic, retain)NSString * parentDirectory;
 - (NSMutableArray*) getAllFileInPath: (NSString *)path;
 - (NSMutableArray*) initiateDataArray;
 @end

@@ -140,6 +140,7 @@
 		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
 		529C967F1665503100675698 /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967E1665503100675698 /* scan.png */; };
 		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
+		52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
 		52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
@@ -289,6 +290,7 @@
 		529C967E1665503100675698 /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
 		529C96891665551200675698 /* SettingOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingOptionsViewController.h; path = CMCMobileSec/SettingOptionsViewController.h; sourceTree = "<group>"; };
 		529C968A1665551200675698 /* SettingOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingOptionsViewController.m; path = CMCMobileSec/SettingOptionsViewController.m; sourceTree = "<group>"; };
+		52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_folder_small_ip.png; path = Images/ic_folder_small_ip.png; sourceTree = SOURCE_ROOT; };
 		52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanOptionViewController.h; path = CMCMobileSec/ScanOptionViewController.h; sourceTree = "<group>"; };
 		52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanOptionViewController.m; path = CMCMobileSec/ScanOptionViewController.m; sourceTree = "<group>"; };
 		52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -374,6 +376,7 @@
 		5215A18D1665254600D8DEF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */,
 				3DC0A09B1683839D001B2FAB /* app_bar_icon.png */,
 				3DC0A09C1683839D001B2FAB /* bar_large.png */,
 				3DC0A09D1683839D001B2FAB /* bar_normal.png */,
@@ -670,6 +673,7 @@
 				3DC0A1541683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png in Resources */,
 				3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */,
 				3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */,
+				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

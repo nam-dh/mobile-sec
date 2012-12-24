@@ -17,6 +17,7 @@
 @implementation FileSelectionViewController
 @synthesize filepathList;
 @synthesize dataArray;
+@synthesize parentDirectory;
 //#define MAINLABEL_TAG 1
 //#define SECONDLABEL_TAG 2
 //#define PHOTO_TAG 3
@@ -26,6 +27,10 @@
     if (self) {
         // Custom initialization
     }
+    
+
+    
+    //
     return self;
 }
 
@@ -34,6 +39,19 @@
     filepathList = [self getAllFileInPath:@"/"];
     NSLog(@"size: %d",[filepathList count]);
     dataArray = [self initiateDataArray];
+
+    
+    // add Back button
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGRect frame = CGRectMake(264.0, 6.0, 36.0, 33.0);
+    button.frame = frame;
+    UIImage *image = [UIImage imageNamed:@"ic_up.png"];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(upToParent:event:)  forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor = [UIColor clearColor];
+    UIView *headView = [self.view.subviews objectAtIndex:0];
+    [headView addSubview:button];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -65,6 +83,16 @@
 
 // get all file in a specified directory
 - (NSMutableArray*) getAllFileInPath:(NSString *)path {
+    if (path == @"/") {
+        parentDirectory = path;
+
+    } else {
+        parentDirectory = [NSString stringWithFormat:@"%@/%@",parentDirectory, path];
+    }
+    
+//    parentDirectory = [path stringByDeletingLastPathComponent];
+    NSLog(@"get parent: %@, current: %@", parentDirectory, path);
+
     NSMutableArray *myArray = nil;  // nil is essentially the same as NULL
     
     // Create a new array and assign it to the myArray variable.
@@ -118,7 +146,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 
-        mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(25.0, 11.0, 156.0, 21.0)];
+        mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(60.0, 11.0, 185.0, 21.0)];
         mainLabel.tag = MAINLABEL_TAG;
         mainLabel.font = [UIFont systemFontOfSize:17.0];
         mainLabel.textAlignment = UITextAlignmentLeft;
@@ -132,7 +160,16 @@
     }
     
     // Configure the cell...
-    mainLabel.text = [filepathList objectAtIndex:indexPath.row];
+    NSString *filename = [filepathList objectAtIndex:indexPath.row];
+    mainLabel.text = filename;
+    
+    if ([self isDirectory:filename]) {
+        cell.imageView.image = [UIImage imageNamed:@"ic_folder_small_ip.png"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"ic_file_small.png"];
+    }
+    
+    cell.imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     
     NSMutableDictionary *item = [dataArray objectAtIndex:indexPath.row];
 
@@ -159,27 +196,43 @@
     [button addTarget:self action:@selector(checkButtonTapped:event:)  forControlEvents:UIControlEventTouchUpInside];
     button.backgroundColor = [UIColor clearColor];
     cell.accessoryView = button;
-    
+
     return cell;
+}
+
+- (BOOL) isDirectory: (NSString*) filename {
+    
+    NSFileManager *localFileManager=[[NSFileManager alloc] init];
+    NSDirectoryEnumerator *dirEnum =
+    [localFileManager enumeratorAtPath:filename];
+    if ([dirEnum nextObject]) {
+        return true;
+    }
+    return false;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     NSString *fileNameAtIndex = [filepathList objectAtIndex:indexPath.row];
-    NSLog(@"didSelectRowAtIndexPath is called %@", fileNameAtIndex);
+    if (![self isDirectory:fileNameAtIndex]) {
+        return;
+    }
+
     filepathList = [self getAllFileInPath:fileNameAtIndex];
+
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     [self tableView: tableView accessoryButtonTappedForRowWithIndexPath: indexPath];
+        dataArray = [self initiateDataArray];
     [tableView reloadData];
     
 }
 
 - (void)checkButtonTapped:(id)sender event:(id)event
 {
-    NSLog(@"checkButtonTapped: check on button- event");
     NSSet *touches = [event allTouches];
     UITouch *touch = [touches anyObject];
     UITableView * tableView = [self.view.subviews objectAtIndex:1];
@@ -191,35 +244,38 @@
     }
 }
 
+- (void) upToParent: (id) sender event: (id) event{
+    NSString * temp = [parentDirectory stringByDeletingLastPathComponent];
+    
+    
+    NSLog(@"temp = %@", temp);
+
+    filepathList = [self getAllFileInPath:temp];
+    dataArray = [self initiateDataArray];
+
+    UITableView * tableview = [self.view.subviews objectAtIndex:1];
+    parentDirectory = temp;
+    [tableview reloadData];
+    
+
+  //  NSLog(@"up to parent directory with paht = %@", temp);
+    NSLog(@"up to parent directory with path: %@", parentDirectory);
+}
+
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"accessoryButtonTappedForRowWithIndexPath: is called");
+
     NSMutableDictionary *item = [dataArray objectAtIndex:indexPath.row];
 
 	BOOL checked = [[item objectForKey:@"checked"] boolValue];
-    if (checked) {
-        NSLog(@"before : true");
-    } else {
-        NSLog(@"before : false");
-    }
 	[item setObject:[NSNumber numberWithBool:!checked] forKey:@"checked"];
     
-    //test
-    BOOL temp = [[item objectForKey:@"checked"] boolValue];
-    if (temp) {
-        NSLog(@"after : true");
-    } else {
-        NSLog(@"after : false");
-    }
-	// end test
     UITableViewCell *cell = [item objectForKey:@"cell"];
     UIButton *button = (UIButton *)cell.accessoryView;
     NSString *imagePath;
     if (checked) {
-        NSLog(@"change to unchecked");
         imagePath = [[NSBundle mainBundle] pathForResource: @"button_checkbox_off" ofType:@"png"];
     } else {
-        NSLog(@"change to checked");
         imagePath = [[NSBundle mainBundle] pathForResource: @"button_checkbox_on" ofType:@"png"];
     }
     UIImage *theImage = [UIImage imageWithContentsOfFile:imagePath];
