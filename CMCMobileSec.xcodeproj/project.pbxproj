@@ -127,10 +127,12 @@
 		5215A1971665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */; };
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
 		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
 		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
 		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
+		52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */; };
 		52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
 		52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */; };
@@ -269,12 +271,15 @@
 		5215A19F1665254700D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryViewController.h; path = CMCMobileSec/SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryViewController.m; path = CMCMobileSec/SummaryViewController.m; sourceTree = "<group>"; };
+		5257F557168A1A4600C00465 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
 		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
 		5285BE4C1680E8DA003191EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		529C967B16654D8A00675698 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		529C96891665551200675698 /* SettingOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingOptionsViewController.h; path = CMCMobileSec/SettingOptionsViewController.h; sourceTree = "<group>"; };
 		529C968A1665551200675698 /* SettingOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingOptionsViewController.m; path = CMCMobileSec/SettingOptionsViewController.m; sourceTree = "<group>"; };
+		52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmActionViewController.h; path = CMCMobileSec/ConfirmActionViewController.h; sourceTree = "<group>"; };
+		52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmActionViewController.m; path = CMCMobileSec/ConfirmActionViewController.m; sourceTree = "<group>"; };
 		52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_folder_small_ip.png; path = Images/ic_folder_small_ip.png; sourceTree = SOURCE_ROOT; };
 		52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanOptionViewController.h; path = CMCMobileSec/ScanOptionViewController.h; sourceTree = "<group>"; };
 		52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanOptionViewController.m; path = CMCMobileSec/ScanOptionViewController.m; sourceTree = "<group>"; };
@@ -315,6 +320,9 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				5257F557168A1A4600C00465 /* Default-568h@2x.png */,
+				52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */,
+				52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */,
 				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
 				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
 				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
@@ -640,8 +648,12 @@
 				3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */,
 				3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */,
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
+<<<<<<< HEAD
 				3DB79C55168A2082008E9541 /* Icon.png in Resources */,
 				3DB79C56168A2082008E9541 /* Icon@2x.png in Resources */,
+=======
+				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
+>>>>>>> 6c55a5a191dae73fb9b644149d73abb4e541b558
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,9 +690,13 @@
 				52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */,
 				3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */,
 				3DC0A15C16838A9B001B2FAB /* UsersRegisterViewController.m in Sources */,
+<<<<<<< HEAD
 				3DB79C5C168A260B008E9541 /* Base64.m in Sources */,
 				3DB79C60168A26BD008E9541 /* ServerConnection.m in Sources */,
 				3DB79C63168A29F5008E9541 /* DataBaseConnect.m in Sources */,
+=======
+				52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */,
+>>>>>>> 6c55a5a191dae73fb9b644149d73abb4e541b558
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
