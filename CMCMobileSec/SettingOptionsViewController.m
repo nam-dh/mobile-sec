@@ -16,6 +16,8 @@
 @implementation SettingOptionsViewController
 @synthesize toggleTrackingLocationSwitch;
 @synthesize toggleRemoteLockSwitch;
+@synthesize toggleKeepConnectSwitch;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -123,6 +125,12 @@
 
     }else {
         
+    }
+}
+
+-(IBAction) keepConnectwitchValueChanged {
+    if (toggleKeepConnectSwitch.on) {
+        NSLog(@"keep connect");
     }
 }
 

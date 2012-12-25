@@ -158,6 +158,9 @@
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="keepConnectwitchValueChanged" destination="fX4-Xy-e3k" eventType="valueChanged" id="e1x-yF-Xjk"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hGl-jf-JAB">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -379,6 +382,7 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="accCell" destination="pnz-9U-QCK" id="abs-14-qOw"/>
                         <outlet property="account1" destination="dCi-Bq-xbg" id="6XP-gx-0XO"/>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
+                        <outlet property="toggleKeepConnectSwitch" destination="9jE-lg-gk8" id="xkN-e8-YeU"/>
                         <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="6H9-e2-DB7"/>
                         <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="0uc-Fk-uJn"/>
                         <outlet property="updateStatusLabel" destination="Bdj-ZD-oEf" id="vXe-2f-pVd"/>
@@ -1353,11 +1357,13 @@ Mobile Security:</string>
         <class className="SettingOptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="keepConnectwitchValueChanged"/>
                 <relationship kind="action" name="remoteLockSwitchValueChanged"/>
                 <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
                 <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
