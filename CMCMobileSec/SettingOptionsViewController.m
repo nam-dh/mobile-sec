@@ -130,7 +130,8 @@
 
 -(IBAction) keepConnectwitchValueChanged {
     if (toggleKeepConnectSwitch.on) {
-        NSLog(@"keep connect");
+        UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+        [theInstance downloadFile:sessionKey :@"cmd"];
     }
 }
 

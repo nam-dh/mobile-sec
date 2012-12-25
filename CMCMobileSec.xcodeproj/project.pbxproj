@@ -20,6 +20,7 @@
 		3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25DC6E168250C40006C7F5 /* HistoryViewController.m */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
 		3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */; };
+		3DB79C4C16892E4F008E9541 /* UIDevice-IOKitExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB79C4B16892E4F008E9541 /* UIDevice-IOKitExtension.m */; };
 		3DC0A09A168382FA001B2FAB /* bg_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A099168382FA001B2FAB /* bg_background.png */; };
 		3DC0A0F91683839F001B2FAB /* app_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A09B1683839D001B2FAB /* app_bar_icon.png */; };
 		3DC0A0FA1683839F001B2FAB /* bar_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A09C1683839D001B2FAB /* bar_large.png */; };
@@ -150,6 +151,8 @@
 		3DB6A4CB1678301A00B9BFEB /* cmc.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmc.db; sourceTree = "<group>"; };
 		3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeywordFilterViewController.h; path = CMCMobileSec/KeywordFilterViewController.h; sourceTree = "<group>"; };
 		3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeywordFilterViewController.m; path = CMCMobileSec/KeywordFilterViewController.m; sourceTree = "<group>"; };
+		3DB79C4A16892E4F008E9541 /* UIDevice-IOKitExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-IOKitExtension.h"; sourceTree = "<group>"; };
+		3DB79C4B16892E4F008E9541 /* UIDevice-IOKitExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-IOKitExtension.m"; sourceTree = "<group>"; };
 		3DC0A099168382FA001B2FAB /* bg_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_background.png; path = ../Images/bg_background.png; sourceTree = "<group>"; };
 		3DC0A09B1683839D001B2FAB /* app_bar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_bar_icon.png; path = ../Images/app_bar_icon.png; sourceTree = "<group>"; };
 		3DC0A09C1683839D001B2FAB /* bar_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bar_large.png; path = ../Images/bar_large.png; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */,
 				3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */,
 				3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */,
+				3DB79C4A16892E4F008E9541 /* UIDevice-IOKitExtension.h */,
+				3DB79C4B16892E4F008E9541 /* UIDevice-IOKitExtension.m */,
 				5215A18D1665254600D8DEF6 /* Supporting Files */,
 				5215A1851665254600D8DEF6 /* Frameworks */,
 				5215A1831665254600D8DEF6 /* Products */,
@@ -659,6 +664,7 @@
 				52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */,
 				3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */,
 				3DC0A15C16838A9B001B2FAB /* UsersRegisterViewController.m in Sources */,
+				3DB79C4C16892E4F008E9541 /* UIDevice-IOKitExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
