@@ -373,7 +373,7 @@ Restoreing data is sent from CMC InfoSec</string>
                             <outlet property="delegate" destination="fX4-Xy-e3k" id="IFZ-tD-4da"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" image="cmc.png" id="tB5-0n-9So"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting_baricon.png" id="tB5-0n-9So"/>
                     <navigationItem key="navigationItem" title="Settings" id="53i-bV-c6A"/>
                     <connections>
                         <outlet property="accCell" destination="pnz-9U-QCK" id="abs-14-qOw"/>
@@ -584,7 +584,7 @@ Restoreing data is sent from CMC InfoSec</string>
                             <outlet property="delegate" destination="NyY-Ev-1Sm" id="krr-ck-hd1"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Summary" image="cmc.png" id="Ujv-Lq-SG0"/>
+                    <tabBarItem key="tabBarItem" title="Summary" image="app_bar_icon.png" id="Ujv-Lq-SG0"/>
                     <navigationItem key="navigationItem" title="Summary" id="PEX-Ys-a3f"/>
                     <connections>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
@@ -1112,7 +1112,7 @@ Restoreing data is sent from CMC InfoSec</string>
         <scene sceneID="Z6N-1i-GOa">
             <objects>
                 <navigationController id="wcX-o7-6Fz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" image="fpicon-scanfile-65-65x65.png" id="ySL-jN-gae"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="firstpage_menuicon_scanfile.png" id="ySL-jN-gae"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="69c-Bh-TbR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1131,7 +1131,7 @@ Restoreing data is sent from CMC InfoSec</string>
         <scene sceneID="loZ-8Q-jul">
             <objects>
                 <navigationController id="QWS-cp-tGb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="cmc.png" id="AtD-cy-qx8"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting_baricon.png" id="AtD-cy-qx8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="80t-70-D8B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1228,7 +1228,7 @@ Restoreing data is sent from CMC InfoSec</string>
         <scene sceneID="uEg-C4-rDc">
             <objects>
                 <navigationController id="nlu-0l-ULf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summary" image="cmc.png" id="vr0-CP-3ha"/>
+                    <tabBarItem key="tabBarItem" title="Summary" image="app_bar_icon.png" id="vr0-CP-3ha"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wke-yo-XxQ">
@@ -1456,15 +1456,102 @@ Mobile Security:</string>
         </scene>
     </scenes>
     <resources>
-        <image name="app_bar_icon.png" width="70" height="70"/>
+        <image name="app_bar_icon.png" width="25" height="25"/>
         <image name="bg_background.png" width="480" height="780"/>
-        <image name="cmc.png" width="16" height="16"/>
+        <image name="firstpage_menuicon_scanfile.png" width="25" height="25"/>
         <image name="fpicon-realtime-65-65x65.png" width="65" height="65"/>
-        <image name="fpicon-scanfile-65-65x65.png" width="65" height="65"/>
         <image name="hinticon-46-48x48.png" width="48" height="48"/>
         <image name="ic_up.png" width="56" height="56"/>
+        <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
+    <classes>
+        <class className="BlackListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNumber:"/>
+                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ConfirmActionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmActionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startScan:"/>
+            </relationships>
+        </class>
+        <class className="FileSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="discardButton:"/>
+                <relationship kind="action" name="finishButton:"/>
+                <relationship kind="action" name="resetButton:"/>
+            </relationships>
+        </class>
+        <class className="HistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="blockBy" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detectedImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="filename" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsFrom" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="smsTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statisticImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="statisticTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalDetected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="virusName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KeywordFilterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addKeyword:"/>
+                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ScanOptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
+        </class>
+        <class className="SettingOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
+                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showScanHistory:"/>
+                <relationship kind="action" name="systemStorageScan:"/>
+                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="historyScanButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UsersRegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="register:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password_confirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
