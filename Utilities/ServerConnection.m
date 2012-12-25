@@ -57,7 +57,7 @@
     NSString *soap_action = @"http://cmcinfosec.com/Init";
     
     // construct envelope (not optimized, intended to show basic steps)
-    NSString *initEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <imei>%@</imei>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, imei,method_name];
+    NSString *initEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <imei>%@</imei>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, deviceID,method_name];
     
     [self connectSOAP:url :soap_action :initEnvelopeText];
     
