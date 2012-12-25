@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UsersRegisterViewController.h"
 #import "CMCMobileSecurityAppDelegate.h"
+#import "ServerConnection.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         email = [CMCMobileSecurityAppDelegate getEmail:[CMCMobileSecurityAppDelegate getDBPath]];
         password = [CMCMobileSecurityAppDelegate getPassword:[CMCMobileSecurityAppDelegate getDBPath]];
         
-        UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
         [theInstance getsessionKey];
     } else {
         

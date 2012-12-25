@@ -8,6 +8,7 @@
 
 #import "SettingOptionsViewController.h"
 #import "CMCMobileSecurityAppDelegate.h"
+#import "ServerConnection.h"
 
 @interface SettingOptionsViewController ()
 
@@ -16,6 +17,8 @@
 @implementation SettingOptionsViewController
 @synthesize toggleTrackingLocationSwitch;
 @synthesize toggleRemoteLockSwitch;
+@synthesize toggleKeepConnectSwitch;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,7 +32,8 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
    // cell.backgroundColor = [UIColor lightGrayColor];
-    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_hint.png"]];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
+    boxBackView.alpha = 0.45;
     [cell setBackgroundView:boxBackView];
 }
 
@@ -57,8 +61,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     if (accountType == 2) {
-        UsersRegisterViewController *theInstance2 = [[UsersRegisterViewController alloc] init];
-        [theInstance2 userLogin:email :password :sessionKey];
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
+        [theInstance userLogin:email :password :sessionKey];
         self.account1.text = @"Email";
         self.account2.text = email;
     }
@@ -98,8 +102,13 @@
 
 -(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
-        NSLog(@"toggleTrackingLocationSwitch");
-        [locationManager startUpdatingLocation];
+        
+        NSString *type = @"cmd";
+        
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
+        [theInstance downloadFile:sessionKey :type];
+        //NSLog(@"toggleTrackingLocationSwitch");
+        //[locationManager startUpdatingLocation];
         
     }else {
         [locationManager stopUpdatingLocation];
@@ -123,6 +132,13 @@
 
     }else {
         
+    }
+}
+
+-(IBAction) keepConnectwitchValueChanged {
+    if (toggleKeepConnectSwitch.on) {
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
+        [theInstance deviceNameReporting:sessionKey];
     }
 }
 
@@ -195,8 +211,7 @@
     if (buttonIndex == 1) {
         //validation account
         
-        UsersRegisterViewController *userRegister = [[UsersRegisterViewController alloc] init];
-        
+        ServerConnection *userRegister = [[ServerConnection alloc] init];
         [userRegister activateAccount:email :detailString :sessionKey];
         
         NSLog(@"validation account");
@@ -227,7 +242,7 @@
     NSString* vector = [NSString stringWithFormat:@"(%@,%@)", lat, longt];
     
     NSLog(@"vector=%@", vector);
-    UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
+    ServerConnection *theInstance = [[ServerConnection alloc] init];
     [theInstance locationReport:vector :sessionKey];
 }
 

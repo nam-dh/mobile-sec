@@ -24,8 +24,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *updateStatusLabel;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleTrackingLocationSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleRemoteLockSwitch;
+@property (nonatomic,retain) IBOutlet UISwitch *toggleKeepConnectSwitch;
 
 -(IBAction) trackingLocationSwitchValueChanged;
 -(IBAction) remoteLockSwitchValueChanged;
+
+-(IBAction) keepConnectwitchValueChanged;
 
 @end
