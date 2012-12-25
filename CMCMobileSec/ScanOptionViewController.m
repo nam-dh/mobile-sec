@@ -238,13 +238,14 @@ int detectedVirusNum = 0;
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
         //            }
         
+
+        filename = file;
         //send notification
-        
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"scanOnDemand" object:nil];
-        NSThread* printResult = [[NSThread alloc] initWithTarget:self
-                                                        selector:@selector(printResultToTable:)
-                                                          object:[docsDir stringByAppendingPathComponent:file]];
-        [printResult start];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"scanOnDemand" object:nil];
+//        NSThread* printResult = [[NSThread alloc] initWithTarget:self
+//                                                        selector:@selector(printResultToTable:)
+//                                                          object:[docsDir stringByAppendingPathComponent:file]];
+//        [printResult start];
 
         NSLog(@"%@", file);
         exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
