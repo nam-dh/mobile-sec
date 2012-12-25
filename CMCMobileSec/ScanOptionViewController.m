@@ -16,14 +16,17 @@
 #define MAINLABEL_TAG 1
 #define SECONDLABEL_TAG 2
 #define BUTTON_TAG 3
+#define PROGRESS_TAG 4
 @synthesize filename;
-@synthesize itemToScan;
+//@synthesize itemToScan;
 
 
 bool isSelected = false;
 bool exitNow;
+bool isScanOnDemand = false;
 NSMutableDictionary* threadDict;
-
+int countedFileNumber = 0;
+int detectedVirusNum = 0;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -45,7 +48,7 @@ NSMutableDictionary* threadDict;
     [super viewDidLoad];
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
-    filename = @"scan result";
+    filename = @" ";
 
     // Add the exitNow BOOL to the thread dictionary.
     exitNow = NO;
@@ -58,6 +61,8 @@ NSMutableDictionary* threadDict;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //add observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
 }
 
 
@@ -95,8 +100,16 @@ NSMutableDictionary* threadDict;
      */
     NSUInteger row = indexPath.row;
     if (row == 0) {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        if (isSelected == true) {
+            [self showPopUp];
+            return;
+        } else {
+            [threadDict setValue:[NSNumber numberWithBool:FALSE] forKey:@"ThreadShouldExitNow"];
+        }
+        
         FileSelectionViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"File Selection"];
-        [self.navigationController pushViewController:fileSelection animated:NO];
+        [self.navigationController pushViewController:fileSelection animated:YES];
     } else if (row == 1) {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
         if (isSelected == true) {
@@ -122,6 +135,7 @@ NSMutableDictionary* threadDict;
 {
     UILabel *mainLabel;
     UILabel *secondLabel;
+    UILabel *progLabel;
     UIButton * button;
     static NSString *CellIdentifier = @"ScanCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -152,22 +166,35 @@ NSMutableDictionary* threadDict;
 //        CGRect frame = CGRectMake(215.0, 5.0, 60.0, 45.0);
 //        button.frame = frame;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        CGRect frame = CGRectMake(215.0, 5.0, 60.0, 45.0);
+        CGRect frame = CGRectMake(220.0, 54.0, 60.0, 45.0);
         button.frame = frame;
         [button setTitle:@"Stop" forState:UIControlStateNormal]; 
         button.tag = BUTTON_TAG;
         [button addTarget:self action:@selector(stopScan:event:)  forControlEvents:UIControlEventTouchUpInside];
         button.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:button];
+        
+        //add scan progress text
+        progLabel = [[UILabel alloc] initWithFrame:CGRectMake(220.0, 17.0, 60.0, 24.0)];
+        progLabel.tag = PROGRESS_TAG;
+        progLabel.font = [UIFont systemFontOfSize:14.0];
+        progLabel.textAlignment = UITextAlignmentRight;
+        progLabel.textColor = [UIColor blackColor];
+        [cell.contentView addSubview:progLabel];
 
     } else {
         mainLabel = (UILabel *)[cell.contentView viewWithTag:MAINLABEL_TAG];
         secondLabel = (UILabel *)[cell.contentView viewWithTag:SECONDLABEL_TAG];
+        progLabel = (UILabel *) [cell.contentView viewWithTag:PROGRESS_TAG];
         button = (UIButton *)[cell.contentView viewWithTag:BUTTON_TAG];
     }
     if (indexPath.row == 0) {
 //        cell.textLabel.text = @"Scan on Demand";
         mainLabel.text = @"Scan On Demand";
+        if (isScanOnDemand) {
+            secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
+            progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];
+        }
         
     } else if (indexPath.row == 1) {
 //        cell.textLabel.text = @"Scan Whole System";
@@ -175,7 +202,12 @@ NSMutableDictionary* threadDict;
 //        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
 //        cell.detailTextLabel.numberOfLines = 0;
 //        cell.detailTextLabel.text  = filename;
-        secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
+        if (!isScanOnDemand && isSelected){
+            secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
+            progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];
+        } else{
+            secondLabel.text = @" ";
+        }
     }
 
     
@@ -184,11 +216,33 @@ NSMutableDictionary* threadDict;
     return cell;
 }
 
+- (void) scanOnDemand{
+    //start thread to scan file
+    NSThread* scanOnDemandThread = [[NSThread alloc] initWithTarget:self
+                                                   selector:@selector(scanOnDemandMainMethod) object:nil];
+    [scanOnDemandThread start];
+
+}
+
+- (void) scanOnDemandMainMethod{
+    @autoreleasepool {
+        int count = [gItemToScan count];
+        int i;
+        NSString * dir;
+        isScanOnDemand = true;
+        isSelected = true;
+        for (i = 0; i < count; i++) {
+            dir = [gItemToScan objectAtIndex:i];
+            [self scanItemInPath:dir];
+        }
+    }
+}
+
 - (void)scanThreadMainMethod
 {
     @autoreleasepool {
         
-        [self scanAllSystem];
+        [self scanItemInPath:@"/"];
         
 
         
@@ -197,16 +251,17 @@ NSMutableDictionary* threadDict;
     }
 }
 
-- (void) scanAllSystem{
+- (void) scanItemInPath:(NSString*) dir{
 
     //        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
-    NSString *docsDir = @"/";
+    NSString *docsDir = dir;
     NSFileManager *localFileManager=[[NSFileManager alloc] init];
     NSDirectoryEnumerator *dirEnum =
     [localFileManager enumeratorAtPath:docsDir];
     
     NSString *file;
     while (file = [dirEnum nextObject]) {
+        countedFileNumber++;
         
         //            if ([[file pathExtension] isEqualToString: @"doc"]) {
         //                // process the document
@@ -248,7 +303,7 @@ NSMutableDictionary* threadDict;
 
 - (void)stopScan:(id)sender event:(id)event {
     NSLog(@"stop button is onclick");
-    isSelected = false;
+
     [threadDict setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];
     filename = @"scan is finished";
 //    [[self tableView] reloadData];
@@ -256,6 +311,10 @@ NSMutableDictionary* threadDict;
                                                     selector:@selector(printResultToTable:)
                                                       object:filename];
     [printResult start];
+    isSelected = false;
+    isScanOnDemand = false;
+    countedFileNumber = 0;
+    detectedVirusNum = 0;
 }
 
 @end

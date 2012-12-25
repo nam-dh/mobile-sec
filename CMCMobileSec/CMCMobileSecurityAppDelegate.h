@@ -13,6 +13,7 @@ extern NSString* sessionKey;
 extern int accountType;
 extern NSString* email;
 extern NSString* password;
+extern NSMutableArray* gItemToScan;
 
 @interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
 

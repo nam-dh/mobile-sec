@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ScanOptionsViewController.h"
+#import "CMCMobileSecurityAppDelegate.h"
+
 
 @interface ConfirmActionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 - (IBAction)startScan:(id)sender;

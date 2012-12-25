@@ -12,6 +12,6 @@
 
 @interface ScanOptionViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, retain)NSString* filename;
-@property(nonatomic, retain)NSMutableArray *itemToScan;
+//@property(nonatomic, retain)NSMutableArray *itemToScan;
 
 @end

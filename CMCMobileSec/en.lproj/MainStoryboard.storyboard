@@ -863,7 +863,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ih2-38-LfW">
-                                                    <rect key="frame" x="215" y="5" width="60" height="46"/>
+                                                    <rect key="frame" x="220" y="54" width="60" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Stop">
@@ -874,6 +874,13 @@ Restoreing data is sent from CMC InfoSec</string>
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="prog" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KkK-XK-MfH">
+                                                    <rect key="frame" x="220" y="17" width="60" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1465,93 +1472,6 @@ Mobile Security:</string>
         <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
-    <classes>
-        <class className="BlackListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addNumber:"/>
-                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ConfirmActionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmActionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startScan:"/>
-            </relationships>
-        </class>
-        <class className="FileSelectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="discardButton:"/>
-                <relationship kind="action" name="finishButton:"/>
-                <relationship kind="action" name="resetButton:"/>
-            </relationships>
-        </class>
-        <class className="HistoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="blockBy" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detectedImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="filename" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smsFrom" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smsImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="smsTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="statisticImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="statisticTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalDetected" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalScan" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="virusName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="KeywordFilterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addKeyword:"/>
-                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ScanOptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
-        </class>
-        <class className="SettingOptionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
-                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
-                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SummaryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showScanHistory:"/>
-                <relationship kind="action" name="systemStorageScan:"/>
-                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="historyScanButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UsersRegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="register:"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password_confirm" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

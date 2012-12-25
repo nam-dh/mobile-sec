@@ -125,6 +125,7 @@
 		5215A1971665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */; };
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
 		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
 		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
@@ -263,6 +264,7 @@
 		5215A19F1665254700D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryViewController.h; path = CMCMobileSec/SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryViewController.m; path = CMCMobileSec/SummaryViewController.m; sourceTree = "<group>"; };
+		5257F557168A1A4600C00465 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
 		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
 		5285BE4C1680E8DA003191EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -298,6 +300,7 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				5257F557168A1A4600C00465 /* Default-568h@2x.png */,
 				52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */,
 				52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */,
 				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
@@ -628,6 +631,7 @@
 				3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */,
 				3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */,
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
+				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

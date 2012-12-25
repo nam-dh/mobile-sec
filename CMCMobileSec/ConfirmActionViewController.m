@@ -67,7 +67,9 @@
     NSLog(@"start scanning...");
 
     ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
-
-    [self.navigationController pushViewController:scanOptions animated:NO];
+    gItemToScan = fileListToScan;
+    [self.navigationController pushViewController:scanOptions animated:YES];
+    //send notification
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"scanOnDemand" object:nil];
 }
 @end

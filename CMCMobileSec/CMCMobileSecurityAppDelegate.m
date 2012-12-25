@@ -212,3 +212,4 @@ NSString* sessionKey;
 int accountType = 1;
 NSString* email = nil;
 NSString* password = nil;
+NSMutableArray * gItemToScan = nil;
