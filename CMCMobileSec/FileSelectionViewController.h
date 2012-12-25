@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanOptionViewController.h"
 
 @interface FileSelectionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+- (IBAction)discardButton:(id)sender;
+- (IBAction)resetButton:(id)sender;
+- (IBAction)finishButton:(id)sender;
 
 
 @property(nonatomic, retain)NSMutableArray *filepathList;
 @property(nonatomic, retain)NSMutableArray *dataArray;
+@property(nonatomic, retain)NSMutableArray *fileListToScan;
 @property(nonatomic, retain)NSString * parentDirectory;
 - (NSMutableArray*) getAllFileInPath: (NSString *)path;
 - (NSMutableArray*) initiateDataArray;
