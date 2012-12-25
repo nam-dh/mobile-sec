@@ -7,7 +7,7 @@
 //
 
 #import "CMCMobileSecurityAppDelegate.h"
-#import "UsersRegisterViewController.h"
+#import "ServerConnection.h"
 
 @implementation CMCMobileSecurityAppDelegate {
     NSMutableData *responeData;
@@ -190,19 +190,6 @@
     return text;
 }
 
-+(void) getsessionKey {
-    NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=Init";
-    NSString *method_name = @"Init";
-    NSString *soap_action = @"http://cmcinfosec.com/Init";
-    
-    
-    // construct envelope (not optimized, intended to show basic steps)
-    NSString *initEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <imei>123</imei>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, method_name];
-    
-    UsersRegisterViewController *theInstance = [[UsersRegisterViewController alloc] init];
-    [theInstance connectSOAP:url :soap_action :initEnvelopeText];
-}
-
 
 
 
@@ -213,3 +200,5 @@ int accountType = 1;
 NSString* email = nil;
 NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
+NSString *deviceID = @"123
+";
