@@ -200,4 +200,5 @@ int accountType = 1;
 NSString* email = nil;
 NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
-NSString *deviceID = @"123";
+NSString *deviceID = @"123
+";
