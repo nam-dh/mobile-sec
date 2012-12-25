@@ -13,8 +13,13 @@
 @end
 
 @implementation ScanOptionViewController
+#define MAINLABEL_TAG 1
+#define SECONDLABEL_TAG 2
+#define BUTTON_TAG 3
 @synthesize filename;
 bool isSelected = false;
+bool exitNow;
+NSMutableDictionary* threadDict;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +42,13 @@ bool isSelected = false;
     [super viewDidLoad];
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
+    filename = @"scan result";
+    
+    // Add the exitNow BOOL to the thread dictionary.
+    exitNow = NO;
+    threadDict = [[NSThread currentThread] threadDictionary];
+    [threadDict setValue:[NSNumber numberWithBool:exitNow] forKey:@"ThreadShouldExitNow"];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -79,14 +91,14 @@ bool isSelected = false;
     NSUInteger row = indexPath.row;
     if (row == 0) {
         FileSelectionViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"File Selection"];
-        [self.navigationController pushViewController:fileSelection animated:YES];
+        [self.navigationController pushViewController:fileSelection animated:NO];
     } else if (row == 1) {
         if (isSelected == true) {
             [self showPopUp];
             return;
         }
         isSelected = true;
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+      [tableView deselectRowAtIndexPath:indexPath animated:NO];
         
         //start thread to scan file
         NSThread* scanThread = [[NSThread alloc] initWithTarget:self
@@ -100,23 +112,65 @@ bool isSelected = false;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ScanWholeCell";
+    UILabel *mainLabel;
+    UILabel *secondLabel;
+    UIButton * button;
+    static NSString *CellIdentifier = @"ScanCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     // Configure the cell...
 
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 15.0, 170.0, 21.0)];
+        mainLabel.tag = MAINLABEL_TAG;
+        mainLabel.font = [UIFont systemFontOfSize:17.0];
+        mainLabel.textAlignment = UITextAlignmentLeft;
+        mainLabel.textColor = [UIColor blackColor];
+//        mainLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:mainLabel];
+        
+        secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 194.0, 85.0)];
+        secondLabel.tag = SECONDLABEL_TAG;
+        secondLabel.font = [UIFont systemFontOfSize:14.0];
+        secondLabel.textAlignment = UITextAlignmentLeft;
+        secondLabel.textColor = [UIColor blackColor];
+        secondLabel.lineBreakMode = UILineBreakModeWordWrap;
+        secondLabel.numberOfLines = 0;
 
+         [cell.contentView addSubview:secondLabel];
+        // add Button
+//        button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        CGRect frame = CGRectMake(215.0, 5.0, 60.0, 45.0);
+//        button.frame = frame;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        CGRect frame = CGRectMake(215.0, 5.0, 60.0, 45.0);
+        button.frame = frame;
+        [button setTitle:@"Stop" forState:UIControlStateNormal]; 
+        button.tag = BUTTON_TAG;
+        [button addTarget:self action:@selector(stopScan:event:)  forControlEvents:UIControlEventTouchUpInside];
+        button.backgroundColor = [UIColor clearColor];
+        [cell.contentView addSubview:button];
+
+    } else {
+        mainLabel = (UILabel *)[cell.contentView viewWithTag:MAINLABEL_TAG];
+        secondLabel = (UILabel *)[cell.contentView viewWithTag:SECONDLABEL_TAG];
+        button = (UIButton *)[cell.contentView viewWithTag:BUTTON_TAG];
     }
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"Scan on Demand";
+//        cell.textLabel.text = @"Scan on Demand";
+        mainLabel.text = @"Scan On Demand";
+        
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"Scan Whole System";
-        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.detailTextLabel.numberOfLines = 0;
-        cell.detailTextLabel.text  = filename;
+//        cell.textLabel.text = @"Scan Whole System";
+        mainLabel.text =  @"Scan Whole System";;
+//        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+//        cell.detailTextLabel.numberOfLines = 0;
+//        cell.detailTextLabel.text  = filename;
+        secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
     }
+
+    
 
 
     return cell;
@@ -128,12 +182,9 @@ bool isSelected = false;
         
         [self scanVirus];
         
-        // Add the exitNow BOOL to the thread dictionary.
-        BOOL exitNow = NO;
-        NSMutableDictionary* threadDict = [[NSThread currentThread] threadDictionary];
-        [threadDict setValue:[NSNumber numberWithBool:exitNow] forKey:@"ThreadShouldExitNow"];
+
         
-        exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
+      
         
     }
 }
@@ -148,6 +199,7 @@ bool isSelected = false;
     
     NSString *file;
     while (file = [dirEnum nextObject]) {
+        
         //            if ([[file pathExtension] isEqualToString: @"doc"]) {
         //                // process the document
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
@@ -158,8 +210,12 @@ bool isSelected = false;
         [printResult start];
 
         NSLog(@"%@", file);
-        
+        exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
+        if (exitNow) {
+            return;
+        }
         [NSThread sleepForTimeInterval:0.5];
+        
     }
 }
 
@@ -180,6 +236,17 @@ bool isSelected = false;
         
     }
     
+}
+
+- (void)stopScan:(id)sender event:(id)event {
+    NSLog(@"stop button is onclick");
+    [threadDict setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];
+    filename = @"scan is finished";
+//    [[self tableView] reloadData];
+    NSThread* printResult = [[NSThread alloc] initWithTarget:self
+                                                    selector:@selector(printResultToTable:)
+                                                      object:filename];
+    [printResult start];
 }
 
 @end

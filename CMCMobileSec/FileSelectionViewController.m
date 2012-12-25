@@ -38,6 +38,7 @@ BOOL isLoadByUpButton = false;
 
 - (void)viewDidLoad
 {
+    parentDirectory = @"/";
     filepathList = [self getAllFileInPath:@"/"];
     NSLog(@"size: %d",[filepathList count]);
     dataArray = [self initiateDataArray];
@@ -87,11 +88,19 @@ BOOL isLoadByUpButton = false;
 
 // get all file in a specified directory
 - (NSMutableArray*) getAllFileInPath:(NSString *)path {
+    NSLog(@"path = %@", path);
+    NSLog(@"parent in case -1 %@", parentDirectory);
     if (path == @"/") {
-        parentDirectory = path;
+//        parentDirectory = path;
 
     } else {
-        parentDirectory = [NSString stringWithFormat:@"%@/%@",parentDirectory, path];
+        if (parentDirectory == @"/"){
+            parentDirectory = [NSString stringWithFormat:@"/%@",path];
+                NSLog(@"parent flag1:%@", parentDirectory);
+        } else {
+            parentDirectory = [NSString stringWithFormat:@"%@/%@",parentDirectory, path];
+            NSLog(@"parent flag2:%@", parentDirectory);
+        }
     }
 
 
@@ -230,9 +239,7 @@ BOOL isLoadByUpButton = false;
 
     dataArray = [self initiateDataArray];
     [tableView reloadData];
-    // save checked item
-    [self saveCheckedItem];
-    isLoadByUpButton = false;
+
 }
 
 - (void) saveCheckedItem {
@@ -267,26 +274,34 @@ BOOL isLoadByUpButton = false;
 
 - (void) upToParent: (id) sender event: (id) event{
     NSString * temp = [parentDirectory stringByDeletingLastPathComponent];
-
+    NSLog(@"temp = %@", temp);
     filepathList = [self getAllFileInPath:temp];
     dataArray = [self initiateDataArray];
 
     UITableView * tableview = [self.view.subviews objectAtIndex:1];
     parentDirectory = temp;
+    NSLog(@"parent as assigned = %@", parentDirectory);
     [tableview reloadData];
-    // save checked item
-    [self saveCheckedItem];
-    isLoadByUpButton = true;
+
     
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
 
+    NSLog(@"accessoryButton is called");
     NSMutableDictionary *item = [dataArray objectAtIndex:indexPath.row];
 
 	BOOL checked = [[item objectForKey:@"checked"] boolValue];
 	[item setObject:[NSNumber numberWithBool:!checked] forKey:@"checked"];
+    
+    // add to list of file to scan
+    if (!checked) {
+        NSLog(@"call when checked");
+        [self addItemToScanList:[filepathList objectAtIndex:indexPath.row]];
+    } else {
+        [self removeItemToScanList:[filepathList objectAtIndex:indexPath.row]];
+    }
     
     UITableViewCell *cell = [item objectForKey:@"cell"];
     UIButton *button = (UIButton *)cell.accessoryView;
@@ -300,7 +315,35 @@ BOOL isLoadByUpButton = false;
 //    photo.image = theImage;
     [button setBackgroundImage:theImage forState:UIControlStateNormal];
     
+    
+    
+}
 
+- (void) addItemToScanList: (NSString*) filename{
+    int indexOfItemInList = [self isElementExisted:filename];
+    NSLog(@"add:%d", indexOfItemInList);
+    if (indexOfItemInList == -1) {
+        [fileListToScan addObject:filename];
+    }
+}
+
+- (void) removeItemToScanList: (NSString*) filename{
+    int indexOfItemInList = [self isElementExisted:filename];
+    if (indexOfItemInList != -1) {
+        [fileListToScan removeObjectAtIndex:indexOfItemInList];
+    }
+}
+
+- (int) isElementExisted: (NSString*) filename{
+    int count = [fileListToScan count];
+    int i;
+    for (i = 0; i < count; i++) {
+        NSString * temp = [fileListToScan objectAtIndex:i];
+        if (temp == filename) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 - (void)viewDidUnload {
@@ -332,9 +375,6 @@ BOOL isLoadByUpButton = false;
 
 - (IBAction)finishButton:(id)sender {
     NSLog(@"finish button");
-    if (!isLoadByUpButton){
-        [self saveCheckedItem];
-    }
     int count = [fileListToScan count];
     int i;
     for (i = 0; i < count; i++){
