@@ -17,6 +17,9 @@
 #define SECONDLABEL_TAG 2
 #define BUTTON_TAG 3
 @synthesize filename;
+@synthesize itemToScan;
+
+
 bool isSelected = false;
 bool exitNow;
 NSMutableDictionary* threadDict;
@@ -43,7 +46,7 @@ NSMutableDictionary* threadDict;
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
     filename = @"scan result";
-    
+
     // Add the exitNow BOOL to the thread dictionary.
     exitNow = NO;
     threadDict = [[NSThread currentThread] threadDictionary];
@@ -56,6 +59,8 @@ NSMutableDictionary* threadDict;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -93,12 +98,15 @@ NSMutableDictionary* threadDict;
         FileSelectionViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"File Selection"];
         [self.navigationController pushViewController:fileSelection animated:NO];
     } else if (row == 1) {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
         if (isSelected == true) {
             [self showPopUp];
             return;
+        } else {
+            [threadDict setValue:[NSNumber numberWithBool:FALSE] forKey:@"ThreadShouldExitNow"];
         }
         isSelected = true;
-      [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
         
         //start thread to scan file
         NSThread* scanThread = [[NSThread alloc] initWithTarget:self
@@ -180,7 +188,7 @@ NSMutableDictionary* threadDict;
 {
     @autoreleasepool {
         
-        [self scanVirus];
+        [self scanAllSystem];
         
 
         
@@ -189,7 +197,7 @@ NSMutableDictionary* threadDict;
     }
 }
 
-- (void) scanVirus{
+- (void) scanAllSystem{
 
     //        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
     NSString *docsDir = @"/";
@@ -240,6 +248,7 @@ NSMutableDictionary* threadDict;
 
 - (void)stopScan:(id)sender event:(id)event {
     NSLog(@"stop button is onclick");
+    isSelected = false;
     [threadDict setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];
     filename = @"scan is finished";
 //    [[self tableView] reloadData];

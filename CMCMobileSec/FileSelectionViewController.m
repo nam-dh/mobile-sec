@@ -296,11 +296,12 @@ BOOL isLoadByUpButton = false;
 	[item setObject:[NSNumber numberWithBool:!checked] forKey:@"checked"];
     
     // add to list of file to scan
+    NSString * temp = [parentDirectory stringByAppendingPathComponent:[filepathList objectAtIndex:indexPath.row]];
     if (!checked) {
         NSLog(@"call when checked");
-        [self addItemToScanList:[filepathList objectAtIndex:indexPath.row]];
+        [self addItemToScanList:temp];
     } else {
-        [self removeItemToScanList:[filepathList objectAtIndex:indexPath.row]];
+        [self removeItemToScanList:temp];
     }
     
     UITableViewCell *cell = [item objectForKey:@"cell"];
@@ -373,6 +374,8 @@ BOOL isLoadByUpButton = false;
     [tableView reloadData];
 }
 
+
+
 - (IBAction)finishButton:(id)sender {
     NSLog(@"finish button");
     int count = [fileListToScan count];
@@ -380,5 +383,11 @@ BOOL isLoadByUpButton = false;
     for (i = 0; i < count; i++){
         NSLog(@"select:%@ in total: %d", [fileListToScan objectAtIndex:i], count);
     }
+    if (count > 0) {
+        ConfirmActionViewController *confirmAction = [self.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+        confirmAction.fileListToScan = fileListToScan;
+        [self.navigationController pushViewController:confirmAction animated:NO];
+    }
+        
 }
 @end

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FileSelectionViewController.h"
+#import "ConfirmActionViewController.h"
 
 @interface ScanOptionViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, retain)NSString* filename;
+@property(nonatomic, retain)NSMutableArray *itemToScan;
+
 @end
