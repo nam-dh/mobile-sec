@@ -10,6 +10,7 @@
 #import "CMCMobileSecurityAppDelegate.h"
 #import "UsersRegisterViewController.h"
 #import "DataBaseConnect.h"
+#import "Base64.h"
 
 @implementation ServerConnection {
     NSMutableData *responeData;
@@ -351,6 +352,12 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"DownloadFileResult=%@",soapResults);
+        
+        //Decode Base64
+        NSData* data = nil;
+        Base64 *theInstance = [[Base64 alloc] init];
+        [theInstance initialize];
+        data = [theInstance decode:soapResults];
         
         [soapResults setString:@""];
         elementFound = FALSE;

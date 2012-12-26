@@ -16,14 +16,14 @@
 
 }
 
-+ (void) initialize;
+- (void) initialize;
 
-+ (NSString*) encode:(const uint8_t*) input length:(NSInteger) length;
+- (NSString*) encode:(const uint8_t*) input length:(NSInteger) length;
 
-+ (NSString*) encode:(NSData*) rawBytes;
+- (NSString*) encode:(NSData*) rawBytes;
 
-+ (NSData*) decode:(const char*) string length:(NSInteger) inputLength;
+- (NSData*) decode:(const char*) string length:(NSInteger) inputLength;
 
-+ (NSData*) decode:(NSString*) string;
+- (NSData*) decode:(NSString*) string;
 
 @end

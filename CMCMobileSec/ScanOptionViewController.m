@@ -63,6 +63,15 @@ int detectedVirusNum = 0;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(print) name:@"printResult" object:nil];
+    self.tableView.dataSource = self;
+
+}
+
+-(void)print{
+    NSLog(@"print");
+    [[self tableView] reloadData];
 }
 
 
@@ -267,10 +276,13 @@ int detectedVirusNum = 0;
         //                // process the document
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
         //            }
-        NSThread* printResult = [[NSThread alloc] initWithTarget:self
-                                                        selector:@selector(printResultToTable:)
-                                                          object:[docsDir stringByAppendingPathComponent:file]];
-        [printResult start];
+        
+        filename = file;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"printResult" object:nil];
+//        NSThread* printResult = [[NSThread alloc] initWithTarget:self
+//                                                        selector:@selector(printResultToTable:)
+//                                                          object:[docsDir stringByAppendingPathComponent:file]];
+//        [printResult start];
 
         NSLog(@"%@", file);
         exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
