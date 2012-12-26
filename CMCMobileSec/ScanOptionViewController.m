@@ -54,24 +54,12 @@ int detectedVirusNum = 0;
     exitNow = NO;
     threadDict = [[NSThread currentThread] threadDictionary];
     [threadDict setValue:[NSNumber numberWithBool:exitNow] forKey:@"ThreadShouldExitNow"];
-    
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //add observer
+    // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(print) name:@"printResult" object:nil];
-    self.tableView.dataSource = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"reloadTableView" object:nil];
 
-}
-
--(void)print{
-    NSLog(@"print");
-    [[self tableView] reloadData];
 }
 
 
@@ -100,13 +88,7 @@ int detectedVirusNum = 0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
     NSUInteger row = indexPath.row;
     if (row == 0) {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -128,7 +110,6 @@ int detectedVirusNum = 0;
             [threadDict setValue:[NSNumber numberWithBool:FALSE] forKey:@"ThreadShouldExitNow"];
         }
         isSelected = true;
-
         
         //start thread to scan file
         NSThread* scanThread = [[NSThread alloc] initWithTarget:self
@@ -146,19 +127,19 @@ int detectedVirusNum = 0;
     UILabel *secondLabel;
     UILabel *progLabel;
     UIButton * button;
-    static NSString *CellIdentifier = @"ScanCell";
+    static NSString *CellIdentifier = @"scan_demand";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     // Configure the cell...
 
-    
     if (cell == nil) {
+        NSLog(@"cell = nil with row = %d", indexPath.row);
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 15.0, 170.0, 21.0)];
         mainLabel.tag = MAINLABEL_TAG;
         mainLabel.font = [UIFont systemFontOfSize:17.0];
         mainLabel.textAlignment = UITextAlignmentLeft;
         mainLabel.textColor = [UIColor blackColor];
-//        mainLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:mainLabel];
         
         secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 194.0, 85.0)];
@@ -168,12 +149,9 @@ int detectedVirusNum = 0;
         secondLabel.textColor = [UIColor blackColor];
         secondLabel.lineBreakMode = UILineBreakModeWordWrap;
         secondLabel.numberOfLines = 0;
-
-         [cell.contentView addSubview:secondLabel];
+        [cell.contentView addSubview:secondLabel];
+        
         // add Button
-//        button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        CGRect frame = CGRectMake(215.0, 5.0, 60.0, 45.0);
-//        button.frame = frame;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         CGRect frame = CGRectMake(220.0, 54.0, 60.0, 45.0);
         button.frame = frame;
@@ -198,7 +176,6 @@ int detectedVirusNum = 0;
         button = (UIButton *)[cell.contentView viewWithTag:BUTTON_TAG];
     }
     if (indexPath.row == 0) {
-//        cell.textLabel.text = @"Scan on Demand";
         mainLabel.text = @"Scan On Demand";
         if (isScanOnDemand) {
             secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
@@ -206,11 +183,7 @@ int detectedVirusNum = 0;
         }
         
     } else if (indexPath.row == 1) {
-//        cell.textLabel.text = @"Scan Whole System";
-        mainLabel.text =  @"Scan Whole System";;
-//        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-//        cell.detailTextLabel.numberOfLines = 0;
-//        cell.detailTextLabel.text  = filename;
+        mainLabel.text =  @"Scan Whole System";
         if (!isScanOnDemand && isSelected){
             secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
             progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];
@@ -218,10 +191,6 @@ int detectedVirusNum = 0;
             secondLabel.text = @" ";
         }
     }
-
-    
-
-
     return cell;
 }
 
@@ -231,6 +200,10 @@ int detectedVirusNum = 0;
                                                    selector:@selector(scanOnDemandMainMethod) object:nil];
     [scanOnDemandThread start];
 
+}
+
+- (void) reloadTableView{
+    [[self tableView] reloadData];
 }
 
 - (void) scanOnDemandMainMethod{
@@ -250,19 +223,11 @@ int detectedVirusNum = 0;
 - (void)scanThreadMainMethod
 {
     @autoreleasepool {
-        
         [self scanItemInPath:@"/"];
-        
-
-        
-      
-        
     }
 }
 
 - (void) scanItemInPath:(NSString*) dir{
-
-    //        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents"];
     NSString *docsDir = dir;
     NSFileManager *localFileManager=[[NSFileManager alloc] init];
     NSDirectoryEnumerator *dirEnum =
@@ -276,15 +241,16 @@ int detectedVirusNum = 0;
         //                // process the document
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
         //            }
-        
-        filename = file;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"printResult" object:nil];
-//        NSThread* printResult = [[NSThread alloc] initWithTarget:self
-//                                                        selector:@selector(printResultToTable:)
-//                                                          object:[docsDir stringByAppendingPathComponent:file]];
-//        [printResult start];
 
-        NSLog(@"%@", file);
+        filename = file;
+        //send notification
+       //[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:[self tableView]];
+        NSThread* printResult = [[NSThread alloc] initWithTarget:self
+                                                        selector:@selector(printResultToTable:)
+                                                          object:[docsDir stringByAppendingPathComponent:file]];
+        [printResult start];
+
+//        NSLog(@"%@", file);
         exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
         if (exitNow) {
             return;
@@ -300,7 +266,6 @@ int detectedVirusNum = 0;
 }
 
 - (void) showPopUp{
-    //    NSLog(@"test");
     @autoreleasepool {
         UIAlertView* dialog = [[UIAlertView alloc] init];
         [dialog setDelegate:self];

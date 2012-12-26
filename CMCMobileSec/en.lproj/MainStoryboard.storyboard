@@ -827,7 +827,7 @@ Restoreing data is sent from CMC InfoSec</string>
                         <sections>
                             <tableViewSection id="WVG-PH-BMb">
                                 <cells>
-                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScanCell" textLabel="Ikg-iw-TEL" rowHeight="157" style="IBUITableViewCellStyleDefault" id="OKl-z5-Eqx">
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scan_demand" textLabel="Ikg-iw-TEL" rowHeight="157" style="IBUITableViewCellStyleDefault" id="OKl-z5-Eqx">
                                         <rect key="frame" x="0.0" y="10" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -845,7 +845,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScanCell" rowHeight="154" id="ZX1-Ep-Y0F">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scan_whole" rowHeight="154" id="ZX1-Ep-Y0F">
                                         <rect key="frame" x="0.0" y="168" width="320" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
