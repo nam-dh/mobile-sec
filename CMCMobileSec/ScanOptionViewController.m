@@ -125,11 +125,13 @@ int detectedVirusNum = 0;
     UILabel *secondLabel;
     UILabel *progLabel;
     UIButton * button;
-    static NSString *CellIdentifier = @"ScanCell";
+    static NSString *CellIdentifier = @"scan_demand";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     // Configure the cell...
 
     if (cell == nil) {
+        NSLog(@"cell = nil with row = %d", indexPath.row);
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 15.0, 170.0, 21.0)];
         mainLabel.tag = MAINLABEL_TAG;
@@ -241,13 +243,13 @@ int detectedVirusNum = 0;
 
         filename = file;
         //send notification
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"scanOnDemand" object:nil];
-//        NSThread* printResult = [[NSThread alloc] initWithTarget:self
-//                                                        selector:@selector(printResultToTable:)
-//                                                          object:[docsDir stringByAppendingPathComponent:file]];
-//        [printResult start];
+       //[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:[self tableView]];
+        NSThread* printResult = [[NSThread alloc] initWithTarget:self
+                                                        selector:@selector(printResultToTable:)
+                                                          object:[docsDir stringByAppendingPathComponent:file]];
+        [printResult start];
 
-        NSLog(@"%@", file);
+//        NSLog(@"%@", file);
         exitNow = [[threadDict valueForKey:@"ThreadShouldExitNow"] boolValue];
         if (exitNow) {
             return;
