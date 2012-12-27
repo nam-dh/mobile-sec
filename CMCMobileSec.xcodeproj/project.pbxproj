@@ -16,11 +16,13 @@
 		3D25DC6416824A1B0006C7F5 /* settingbaricon-65--65x65.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */; };
 		3D25DC6716824AB70006C7F5 /* updatebutton63-65X65-.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */; };
 		3D25DC6916824DE50006C7F5 /* hinticon-46-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */; };
+        
 		3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25DC6E168250C40006C7F5 /* HistoryViewController.m */; };
 		3D3D1510168BC37C004AD3BD /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D150F168BC37C004AD3BD /* FileDecryption.m */; };
 		3D3D151C168C729A004AD3BD /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D151B168C729A004AD3BD /* NSData+MD5.m */; };
 		3D5EEBE9168C7A5B0017CAA3 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBE8168C7A5B0017CAA3 /* NSData+Base64.m */; };
 		3D5EEBEC168C7BDF0017CAA3 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBEB168C7BDF0017CAA3 /* NSString+MD5.m */; };
+
 		3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */; };
 		3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F2168A33FA008BF51F /* ServerConnection.m */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
@@ -134,6 +136,9 @@
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
 		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
 		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
+		52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */; };
+		52B3B03C168B51090070B3B6 /* HistoryNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */; };
+		52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */; };
 		52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */; };
 		52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
@@ -150,6 +155,7 @@
 		3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settingbaricon-65--65x65.png"; path = "Images/settingbaricon-65--65x65.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "updatebutton63-65X65-.png"; path = "Images/updatebutton63-65X65-.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hinticon-46-48x48.png"; path = "Images/hinticon-46-48x48.png"; sourceTree = SOURCE_ROOT; };
+<<<<<<< HEAD
 		3D25DC6D168250C40006C7F5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = CMCMobileSec/HistoryViewController.h; sourceTree = "<group>"; };
 		3D25DC6E168250C40006C7F5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = CMCMobileSec/HistoryViewController.m; sourceTree = "<group>"; };
 		3D3D150E168BC37C004AD3BD /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
@@ -160,6 +166,10 @@
 		3D5EEBE8168C7A5B0017CAA3 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Utilities/NSData+Base64.m"; sourceTree = "<group>"; };
 		3D5EEBEA168C7BDF0017CAA3 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "Utilities/NSString+MD5.h"; sourceTree = "<group>"; };
 		3D5EEBEB168C7BDF0017CAA3 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "Utilities/NSString+MD5.m"; sourceTree = "<group>"; };
+=======
+		3D8B49ED168A33FA008BF51F /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = Utilities/Base64.h; sourceTree = "<group>"; };
+		3D8B49EE168A33FA008BF51F /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = Utilities/Base64.m; sourceTree = "<group>"; };
+>>>>>>> 7d2bf01394332082f0b2c7314deaf20feaf7a263
 		3D8B49EF168A33FA008BF51F /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBaseConnect.h; path = Utilities/DataBaseConnect.h; sourceTree = "<group>"; };
 		3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBaseConnect.m; path = Utilities/DataBaseConnect.m; sourceTree = "<group>"; };
 		3D8B49F1168A33FA008BF51F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = Utilities/ServerConnection.h; sourceTree = "<group>"; };
@@ -285,6 +295,12 @@
 		529C967B16654D8A00675698 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		529C96891665551200675698 /* SettingOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingOptionsViewController.h; path = CMCMobileSec/SettingOptionsViewController.h; sourceTree = "<group>"; };
 		529C968A1665551200675698 /* SettingOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingOptionsViewController.m; path = CMCMobileSec/SettingOptionsViewController.m; sourceTree = "<group>"; };
+		52B3B037168B4D740070B3B6 /* HistoryNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationController.h; path = CMCMobileSec/HistoryNavigationController.h; sourceTree = "<group>"; };
+		52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationController.m; path = CMCMobileSec/HistoryNavigationController.m; sourceTree = "<group>"; };
+		52B3B03A168B51090070B3B6 /* HistoryNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationBar.h; path = CMCMobileSec/HistoryNavigationBar.h; sourceTree = "<group>"; };
+		52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationBar.m; path = CMCMobileSec/HistoryNavigationBar.m; sourceTree = "<group>"; };
+		52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanHistoryViewController.h; path = CMCMobileSec/ScanHistoryViewController.h; sourceTree = "<group>"; };
+		52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanHistoryViewController.m; path = CMCMobileSec/ScanHistoryViewController.m; sourceTree = "<group>"; };
 		52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmActionViewController.h; path = CMCMobileSec/ConfirmActionViewController.h; sourceTree = "<group>"; };
 		52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmActionViewController.m; path = CMCMobileSec/ConfirmActionViewController.m; sourceTree = "<group>"; };
 		52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_folder_small_ip.png; path = Images/ic_folder_small_ip.png; sourceTree = SOURCE_ROOT; };
@@ -473,8 +489,38 @@
 			isa = PBXGroup;
 			children = (
 				3D8B49EB168A33E3008BF51F /* Utilities */,
+<<<<<<< HEAD
 				3D3D1511168BC661004AD3BD /* ViewController */,
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
+=======
+				52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */,
+				52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */,
+				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
+				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
+				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
+				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
+				52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */,
+				52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */,
+				529C96891665551200675698 /* SettingOptionsViewController.h */,
+				529C968A1665551200675698 /* SettingOptionsViewController.m */,
+				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
+				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
+				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
+				52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */,
+				52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */,
+				52B3B03A168B51090070B3B6 /* HistoryNavigationBar.h */,
+				52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */,
+				52B3B037168B4D740070B3B6 /* HistoryNavigationController.h */,
+				52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */,
+				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
+				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
+				3DFF2E4E1671177D0010BAFF /* BlackListViewController.h */,
+				3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */,
+				3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */,
+				3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */,
+				3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */,
+				3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */,
+>>>>>>> 7d2bf01394332082f0b2c7314deaf20feaf7a263
 				5215A18D1665254600D8DEF6 /* Supporting Files */,
 				5215A1851665254600D8DEF6 /* Frameworks */,
 				5215A1831665254600D8DEF6 /* Products */,
@@ -712,15 +758,20 @@
 				3DFF2E501671177D0010BAFF /* BlackListViewController.m in Sources */,
 				3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */,
 				52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */,
-				3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */,
 				3DC0A15C16838A9B001B2FAB /* UsersRegisterViewController.m in Sources */,
 				52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */,
 				3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */,
 				3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */,
+<<<<<<< HEAD
 				3D3D1510168BC37C004AD3BD /* FileDecryption.m in Sources */,
 				3D3D151C168C729A004AD3BD /* NSData+MD5.m in Sources */,
 				3D5EEBE9168C7A5B0017CAA3 /* NSData+Base64.m in Sources */,
 				3D5EEBEC168C7BDF0017CAA3 /* NSString+MD5.m in Sources */,
+=======
+				52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */,
+				52B3B03C168B51090070B3B6 /* HistoryNavigationBar.m in Sources */,
+				52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */,
+>>>>>>> 7d2bf01394332082f0b2c7314deaf20feaf7a263
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
