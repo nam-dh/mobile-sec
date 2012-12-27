@@ -17,6 +17,7 @@
 		3D25DC6716824AB70006C7F5 /* updatebutton63-65X65-.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */; };
 		3D25DC6916824DE50006C7F5 /* hinticon-46-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */; };
 		3D25DC6F168250C40006C7F5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25DC6E168250C40006C7F5 /* HistoryViewController.m */; };
+		3D3D1510168BC37C004AD3BD /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D150F168BC37C004AD3BD /* FileDecryption.m */; };
 		3D8B49F3168A33FA008BF51F /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49EE168A33FA008BF51F /* Base64.m */; };
 		3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */; };
 		3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F2168A33FA008BF51F /* ServerConnection.m */; };
@@ -149,13 +150,15 @@
 		3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hinticon-46-48x48.png"; path = "Images/hinticon-46-48x48.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6D168250C40006C7F5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = CMCMobileSec/HistoryViewController.h; sourceTree = "<group>"; };
 		3D25DC6E168250C40006C7F5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = CMCMobileSec/HistoryViewController.m; sourceTree = "<group>"; };
+		3D3D150E168BC37C004AD3BD /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
+		3D3D150F168BC37C004AD3BD /* FileDecryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileDecryption.m; path = Utilities/FileDecryption.m; sourceTree = "<group>"; };
 		3D8B49ED168A33FA008BF51F /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = Utilities/Base64.h; sourceTree = "<group>"; };
 		3D8B49EE168A33FA008BF51F /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = Utilities/Base64.m; sourceTree = "<group>"; };
 		3D8B49EF168A33FA008BF51F /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBaseConnect.h; path = Utilities/DataBaseConnect.h; sourceTree = "<group>"; };
 		3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBaseConnect.m; path = Utilities/DataBaseConnect.m; sourceTree = "<group>"; };
 		3D8B49F1168A33FA008BF51F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = Utilities/ServerConnection.h; sourceTree = "<group>"; };
 		3D8B49F2168A33FA008BF51F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerConnection.m; path = Utilities/ServerConnection.m; sourceTree = "<group>"; };
-		3DB6A4CB1678301A00B9BFEB /* cmc.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cmc.db; sourceTree = "<group>"; };
+		3DB6A4CB1678301A00B9BFEB /* cmc.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cmc.db; path = ../cmc.db; sourceTree = "<group>"; };
 		3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeywordFilterViewController.h; path = CMCMobileSec/KeywordFilterViewController.h; sourceTree = "<group>"; };
 		3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeywordFilterViewController.m; path = CMCMobileSec/KeywordFilterViewController.m; sourceTree = "<group>"; };
 		3DC0A099168382FA001B2FAB /* bg_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_background.png; path = ../Images/bg_background.png; sourceTree = "<group>"; };
@@ -302,6 +305,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D3D1511168BC661004AD3BD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */,
+				52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */,
+				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
+				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
+				52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */,
+				52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */,
+				529C96891665551200675698 /* SettingOptionsViewController.h */,
+				529C968A1665551200675698 /* SettingOptionsViewController.m */,
+				3D25DC6D168250C40006C7F5 /* HistoryViewController.h */,
+				3D25DC6E168250C40006C7F5 /* HistoryViewController.m */,
+				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
+				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
+				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
+				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
+				3DFF2E4E1671177D0010BAFF /* BlackListViewController.h */,
+				3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */,
+				3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */,
+				3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */,
+				3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */,
+				3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		3D8B49EB168A33E3008BF51F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +341,8 @@
 				3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */,
 				3D8B49F1168A33FA008BF51F /* ServerConnection.h */,
 				3D8B49F2168A33FA008BF51F /* ServerConnection.m */,
+				3D3D150E168BC37C004AD3BD /* FileDecryption.h */,
+				3D3D150F168BC37C004AD3BD /* FileDecryption.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -430,32 +462,9 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
-				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
-				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
 				3D8B49EB168A33E3008BF51F /* Utilities */,
-				52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */,
-				52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */,
-				52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */,
-				52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */,
-				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
-				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
-				52D6D2EB1665BBA100FCEB2F /* ScanOptionViewController.h */,
-				52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */,
-				529C96891665551200675698 /* SettingOptionsViewController.h */,
-				529C968A1665551200675698 /* SettingOptionsViewController.m */,
-				3D25DC6D168250C40006C7F5 /* HistoryViewController.h */,
-				3D25DC6E168250C40006C7F5 /* HistoryViewController.m */,
-				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
-				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
+				3D3D1511168BC661004AD3BD /* ViewController */,
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
-				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
-				5215A1C31665332900D8DEF6 /* SummaryViewController.m */,
-				3DFF2E4E1671177D0010BAFF /* BlackListViewController.h */,
-				3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */,
-				3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */,
-				3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */,
-				3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */,
-				3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */,
 				5215A18D1665254600D8DEF6 /* Supporting Files */,
 				5215A1851665254600D8DEF6 /* Frameworks */,
 				5215A1831665254600D8DEF6 /* Products */,
@@ -473,6 +482,9 @@
 		5215A1851665254600D8DEF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
+				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
+				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
 				52D6D2FF1665F28E00FCEB2F /* libnotify.dylib */,
 				5215A1861665254600D8DEF6 /* UIKit.framework */,
 				5215A1881665254600D8DEF6 /* Foundation.framework */,
@@ -484,6 +496,7 @@
 		5215A18D1665254600D8DEF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
 				3D8B49F6168A343D008BF51F /* Images */,
 				5215A18E1665254600D8DEF6 /* CMCMobileSec-Info.plist */,
 				5215A18F1665254600D8DEF6 /* InfoPlist.strings */,
@@ -695,6 +708,7 @@
 				3D8B49F3168A33FA008BF51F /* Base64.m in Sources */,
 				3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */,
 				3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */,
+				3D3D1510168BC37C004AD3BD /* FileDecryption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
