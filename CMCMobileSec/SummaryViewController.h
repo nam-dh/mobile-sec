@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HistoryViewController.h"
+
 #import "ScanOptionsViewController.h"
 
 @interface SummaryViewController : UITableViewController

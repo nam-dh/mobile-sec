@@ -206,8 +206,8 @@ static UILabel* c;
 }
 
 - (IBAction)showScanHistory:(id)sender {
-    HistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
-    [self.navigationController pushViewController:showHistory animated:YES];
+//    HistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
+//    [self.navigationController pushViewController:showHistory animated:YES];
 }
 
 - (NSString *) mostRecentNumber  {
