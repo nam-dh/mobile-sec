@@ -15,7 +15,7 @@
 static char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 static char decodingTable[128];
 
-+ (void) initialize {
+- (void) initialize {
 	if (self == [Base64 class]) {
 		memset(decodingTable, 0, ArrayLength(decodingTable));
 		for (NSInteger i = 0; i < ArrayLength(encodingTable); i++) {
@@ -25,7 +25,7 @@ static char decodingTable[128];
 }
 
 
-+ (NSString*) encode:(const uint8_t*) input length:(NSInteger) length {
+- (NSString*) encode:(const uint8_t*) input length:(NSInteger) length {
     NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
     uint8_t* output = (uint8_t*)data.mutableBytes;
 	
@@ -51,12 +51,12 @@ static char decodingTable[128];
 }
 
 
-+ (NSString*) encode:(NSData*) rawBytes {
+- (NSString*) encode:(NSData*) rawBytes {
     return [self encode:(const uint8_t*) rawBytes.bytes length:rawBytes.length];
 }
 
 
-+ (NSData*) decode:(const char*) string length:(NSInteger) inputLength {
+- (NSData*) decode:(const char*) string length:(NSInteger) inputLength {
 	if ((string == NULL) || (inputLength % 4 != 0)) {
 		return nil;
 	}
@@ -90,7 +90,7 @@ static char decodingTable[128];
 }
 
 
-+ (NSData*) decode:(NSString*) string {
+- (NSData*) decode:(NSString*) string {
 	return [self decode:[string cStringUsingEncoding:NSASCIIStringEncoding] length:string.length];
 }
 

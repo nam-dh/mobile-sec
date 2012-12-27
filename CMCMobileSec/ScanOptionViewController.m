@@ -57,7 +57,9 @@ int detectedVirusNum = 0;
 
     // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"reloadTableView" object:nil];
+
 }
 
 
@@ -239,7 +241,6 @@ int detectedVirusNum = 0;
         //                // process the document
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
         //            }
-        
 
         filename = file;
         //send notification
