@@ -12,4 +12,6 @@
 
 @interface  FileDecryption :NSObject
 
++(NSData*) cryptPBEWithMD5AndDES:(CCOperation)op usingData:(NSData*)data withPassword:(NSString*)password andSalt:(NSData*)salt andIterating:(int)numIterations;
+
 @end

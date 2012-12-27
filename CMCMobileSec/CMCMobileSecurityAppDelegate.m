@@ -201,3 +201,6 @@ NSString* email = nil;
 NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
 NSString *deviceID = @"123";
+NSString *tokenKey = nil;
+NSString *md5hash = nil;
+NSString *downloadFile = nil;

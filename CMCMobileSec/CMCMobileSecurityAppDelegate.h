@@ -15,6 +15,9 @@ extern NSString* email;
 extern NSString* password;
 extern NSMutableArray* gItemToScan;
 extern NSString *deviceID;
+extern NSString *tokenKey;
+extern NSString *md5hash;
+extern NSString *downloadFile;
 
 @interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
 

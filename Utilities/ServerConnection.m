@@ -10,7 +10,10 @@
 #import "CMCMobileSecurityAppDelegate.h"
 #import "UsersRegisterViewController.h"
 #import "DataBaseConnect.h"
-#import "Base64.h"
+#import "NSData+MD5.h"
+#import "NSData+Base64.h"
+#import "NSString+MD5.h"
+#import "FileDecryption.h"
 
 @implementation ServerConnection {
     NSMutableData *responeData;
@@ -217,7 +220,7 @@
 
 //---when the start of an element is found---
 -(void) parser:(NSXMLParser *) parser didStartElement:(NSString *) elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *) qName attributes:(NSDictionary *)attributeDict {
-    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"LoginResult"] || [elementName isEqualToString:@"LogoutResult"] || [elementName isEqualToString:@"RegisterResult"] || [elementName isEqualToString:@"ActivateResult"] || [elementName isEqualToString:@"ReportLocationResult"] || [elementName isEqualToString:@"DownloadFileResult"] || [elementName isEqualToString:@"UploadFileResult"]|| [elementName isEqualToString:@"UpdateDeviceInfo"] || [elementName isEqualToString:@"message"])
+    if( [elementName isEqualToString:@"InitResult"] || [elementName isEqualToString:@"LoginResult"] || [elementName isEqualToString:@"LogoutResult"] || [elementName isEqualToString:@"RegisterResult"] || [elementName isEqualToString:@"ActivateResult"] || [elementName isEqualToString:@"ReportLocationResult"] || [elementName isEqualToString:@"DownloadFileResult"] || [elementName isEqualToString:@"UploadFileResult"]|| [elementName isEqualToString:@"UpdateDeviceInfo"] || [elementName isEqualToString:@"message"] || [elementName isEqualToString:@"md5hash"] || [elementName isEqualToString:@"tokenkey"])
     {
         if (!soapResults)
         {
@@ -352,12 +355,16 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"DownloadFileResult=%@",soapResults);
+        //Save downoad File
+        downloadFile = [soapResults copy];
         
-        //Decode Base64
-        NSData* data = nil;
-        Base64 *theInstance = [[Base64 alloc] init];
-        [theInstance initialize];
-        data = [theInstance decode:soapResults];
+
+        NSData *data = [NSData dataFromBase64String:downloadFile];
+        
+        NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"data=%@", newStr1);
+        
         
         [soapResults setString:@""];
         elementFound = FALSE;
@@ -403,7 +410,82 @@ qualifiedName:(NSString *)qName
         [soapResults setString:@""];
         elementFound = FALSE;
     }
-    
+    if ([elementName isEqualToString:@"md5hash"])
+    {
+        //---displays the country---
+        
+        NSLog(@"md5hash=%@",soapResults);
+        md5hash = [soapResults copy];
+        
+        //Decode Base64
+        NSData* data = nil;
+        //        Base64 *theInstance = [[Base64 alloc] init];
+        //        [theInstance initialize];
+        //        data = [theInstance decode:soapResults];
+        data = [NSData dataFromBase64String:downloadFile];
+        
+        NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"data=%@", newStr1);
+        
+        if (data) {
+            NSLog(@"%@",[data MD5]);
+            if ([md5hash isEqualToString:[data MD5]]) {
+                
+                
+                NSLog(@"tokenkey=%@",tokenKey);
+                NSData* tokenKey_bin =[tokenKey dataUsingEncoding:NSUTF8StringEncoding];
+                
+                
+                NSData* digest=[[tokenKey_bin MD5] dataUsingEncoding:NSUTF8StringEncoding];
+                
+                const char *byte = [digest bytes];
+                NSLog(@"byte=%s",byte);
+                
+                digest=[[tokenKey MD5] dataUsingEncoding:NSUTF8StringEncoding];
+                byte = [digest bytes];
+                NSLog(@"byte=%s",byte);
+                
+                char salt_byte[9];
+                salt_byte[8] = 0;
+                
+                for (int i=0; i<8; i++) {
+                    salt_byte[i] = byte[i];
+                    
+                }
+                NSLog(@"salt=%s",salt_byte);
+                NSData *salt = [NSData dataWithBytes:salt_byte length:9];
+                
+                NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                
+                NSLog(@"data=%@", newStr1);
+                
+                NSData* decrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCDecrypt usingData:data withPassword:password andSalt:salt andIterating:20];
+                const char *byte1 = [decrypt bytes];
+                NSLog(@"byte=%s",byte1);
+                
+                
+                NSString* newStr = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
+                
+                NSLog(@"encode=%@", newStr);
+                                
+                
+                
+            }
+        }
+
+        [soapResults setString:@""];
+        elementFound = FALSE;
+    }
+    if ([elementName isEqualToString:@"tokenkey"])
+    {
+        //---displays the country---
+        
+        NSLog(@"tokenkey=%@",soapResults);
+        tokenKey = [soapResults copy];
+        [soapResults setString:@""];
+        elementFound = FALSE;
+    }
     
 }
 
