@@ -11,46 +11,42 @@
 @implementation FileInteractionHelper
 
 + (void) configureDaemon {
-    // Get the application's main data directory
-    NSArray* theDirs = [[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-                                                              inDomains:NSUserDomainMask];
-    if ([theDirs count] > 0)
-    {
-        // Build a path to ~/Library/Application Support/<bundle_ID>/Data
-        // where <bundleID> is the actual bundle ID of the application.
-        NSURL* appSupportDir = (NSURL*)[theDirs objectAtIndex:0];
-        NSString* appBundleID = [[NSBundle mainBundle] bundleIdentifier];
-        NSURL* appDataDir = [[appSupportDir URLByAppendingPathComponent:appBundleID]
-                             URLByAppendingPathComponent:@"Data"];
+    NSURL* configurationFilePath = [[NSBundle mainBundle] URLForResource:@"com.cmcinfosec.CMCMobileSec" withExtension:@"plist"];
+    
+    NSURL * temp = [NSURL fileURLWithPath:@"/User/Documents/temp" isDirectory:YES];
+    NSURL* destination = [temp URLByAppendingPathComponent:@"com.cmcinfosec.CMCMobileSec.plist" isDirectory:NO];
+    NSLog(@"destination: %@", destination);
+    
+    // Perform the copy asynchronously.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        // Copy the data to ~/Library/Application Support/<bundle_ID>/Data.backup
-        NSURL* backupDir = [appDataDir URLByAppendingPathExtension:@"backup"];
+        NSFileManager* theFM = [[NSFileManager alloc] init];
+        NSError* anError;
         
-        NSLog(@"source: %@", appDataDir);
-        NSLog(@"destination: %@", backupDir);
+        //            if (![theFM createDirectoryAtURL:appDataDir withIntermediateDirectories:YES attributes:nil error:&anError]) {
+        //                NSLog(@"create appDataDir:%@", anError);
+        //            }
+        //            if (![theFM createDirectoryAtURL:backupDir withIntermediateDirectories:YES attributes:nil error:&anError]){
+        //                NSLog(@"create backupDir:%@", anError);
+        //            }
         
-        // Perform the copy asynchronously.
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // It's good habit to alloc/init the file manager for move/copy operations,
-            // just in case you decide to add a delegate later.
-            NSFileManager* theFM = [[NSFileManager alloc] init];
-            NSError* anError;
-            
-            // Just try to copy the directory.
-            if (![theFM copyItemAtURL:appDataDir toURL:backupDir error:&anError]) {
-                NSLog(@"error:%@", anError);
-                // If an error occurs, it's probably because a previous backup directory
-                // already exists.  Delete the old directory and try again.
-                if ([theFM removeItemAtURL:backupDir error:&anError]) {
-                    // If the operation failed again, abort for real.
-                    if (![theFM copyItemAtURL:appDataDir toURL:backupDir error:&anError]) {
-                        // Report the error....
-                    }
+        // Just try to copy the file
+        if (![theFM copyItemAtURL:configurationFilePath toURL:destination error:&anError]) {
+            NSLog(@"error:%@", anError);
+            // If an error occurs, it's probably because a previous backup directory
+            // already exists.  Delete the old directory and try again.
+            if ([theFM removeItemAtURL:destination error:&anError]) {
+                // If the operation failed again, abort for real.
+                if (![theFM copyItemAtURL:configurationFilePath toURL:destination error:&anError]) {
+                    NSLog(@"error occur when try in copy");
                 }
             }
-            
-        });
-    }
+        }
+        
+        
+        
+    });
+    
 
 }
 @end
