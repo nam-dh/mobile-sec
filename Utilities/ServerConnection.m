@@ -426,7 +426,7 @@ qualifiedName:(NSString *)qName
         
         NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        NSLog(@"data=%@", newStr1);
+       // NSLog(@"data=%@", newStr1);
         
         if (data) {
             NSLog(@"%@",[data MD5]);
@@ -442,10 +442,6 @@ qualifiedName:(NSString *)qName
                 const char *byte = [digest bytes];
                 NSLog(@"byte=%s",byte);
                 
-                digest=[[tokenKey MD5] dataUsingEncoding:NSUTF8StringEncoding];
-                byte = [digest bytes];
-                NSLog(@"byte=%s",byte);
-                
                 char salt_byte[9];
                 salt_byte[8] = 0;
                 
@@ -456,16 +452,11 @@ qualifiedName:(NSString *)qName
                 NSLog(@"salt=%s",salt_byte);
                 NSData *salt = [NSData dataWithBytes:salt_byte length:9];
                 
-                NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                
-                NSLog(@"data=%@", newStr1);
-                
                 NSData* decrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCDecrypt usingData:data withPassword:password andSalt:salt andIterating:20];
-                const char *byte1 = [decrypt bytes];
-                NSLog(@"byte=%s",byte1);
                 
-                
+              //  NSLog(@"%@",[decrypt description]);
                 NSString* newStr = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
+                
                 
                 NSLog(@"encode=%@", newStr);
                                 
