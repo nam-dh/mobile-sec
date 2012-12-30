@@ -10,9 +10,12 @@
 
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
+#import "FileInteractionHelper.h"
 
 int main(int argc, char *argv[])
 {
+    [FileInteractionHelper configureDaemon];
+    
     //Copy database to the user's phone if needed.
     [CMCMobileSecurityAppDelegate copyDatabaseIfNeeded];
     int i = [CMCMobileSecurityAppDelegate checkUserData:[CMCMobileSecurityAppDelegate getDBPath]];
