@@ -153,6 +153,9 @@ qualifiedName:(NSString *)qName
             
             failed = false;
             
+            ServerConnection *serverConnect = [[ServerConnection alloc] init];
+            [serverConnect deviceNameReporting:sessionKey];
+            
         } else {
             failed = true;
         }
@@ -284,6 +287,7 @@ qualifiedName:(NSString *)qName
 //                
                 NSString* cmdString = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
                 
+                NSLog(@"cmdString=%@",cmdString);
                 
                 if (cmdString != NULL) {
                     ServerCmdPraser *theInstance = [[ServerCmdPraser alloc] init];
@@ -301,7 +305,6 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         
-        NSLog(@"tokenkey=%@",soapResults);
         tokenKey = [soapResults copy];
         [soapResults setString:@""];
         elementFound = FALSE;

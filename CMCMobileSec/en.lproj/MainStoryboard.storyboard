@@ -103,6 +103,9 @@
                                                     <rect key="frame" x="216" y="5" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="blackListValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="zn2-JC-adB"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -132,6 +135,9 @@
                                                     <rect key="frame" x="216" y="5" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="keywordFilterValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="Rxo-lk-e6P"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -260,6 +266,9 @@ services of CMC InfoSec</string>
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="autoBackupSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="fzE-rc-dhj"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aRj-l1-afu">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -291,6 +300,9 @@ up, encrypted and sent to CMC InfoSec server</string>
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="remoteBackupSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="hFs-vo-4XF"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLB-tf-NNP">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -323,6 +335,9 @@ be sent to CMC InfoSec server</string>
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="remoteClearDataSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="HIx-YQ-Dpi"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CvH-4E-zsV">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -354,6 +369,9 @@ web services of CMC InfoSec</string>
                                                     <rect key="frame" x="216" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
+                                                    <connections>
+                                                        <action selector="remoteRestoreDataSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="laa-4d-KsA"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KJq-qr-gVs">
                                                     <rect key="frame" x="8" y="31" width="481" height="43"/>
@@ -382,6 +400,12 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="accCell" destination="pnz-9U-QCK" id="abs-14-qOw"/>
                         <outlet property="account1" destination="dCi-Bq-xbg" id="6XP-gx-0XO"/>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
+                        <outlet property="autoBackupSwitch" destination="UHN-LH-hrg" id="9P1-gZ-0kp"/>
+                        <outlet property="blackListSwitch" destination="dWH-Qh-ZQe" id="MwB-cw-fZH"/>
+                        <outlet property="keyWordSwitch" destination="oPp-BV-XRX" id="sBN-3u-2He"/>
+                        <outlet property="remoteBackupSwitch" destination="tt1-FE-mxu" id="EzW-Sj-nHo"/>
+                        <outlet property="remoteClearSwitch" destination="aZ3-ko-w1f" id="rR9-We-h5n"/>
+                        <outlet property="remoteRestoreSwitch" destination="7Cw-b0-53F" id="3Ke-YA-OBe"/>
                         <outlet property="toggleKeepConnectSwitch" destination="9jE-lg-gk8" id="5NX-eM-fyS"/>
                         <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="6H9-e2-DB7"/>
                         <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="0uc-Fk-uJn"/>
@@ -1550,12 +1574,24 @@ Mobile Security:</string>
         <class className="SettingOptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="autoBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="blackListValueChanged:"/>
                 <relationship kind="action" name="keepConnectwitchValueChanged"/>
+                <relationship kind="action" name="keywordFilterValueChanged:"/>
+                <relationship kind="action" name="remoteBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteClearDataSwitchValueChanged:"/>
                 <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="remoteRestoreDataSwitchValueChanged:"/>
                 <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
                 <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>

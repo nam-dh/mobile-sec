@@ -18,7 +18,12 @@
 @synthesize toggleTrackingLocationSwitch;
 @synthesize toggleRemoteLockSwitch;
 @synthesize toggleKeepConnectSwitch;
-
+@synthesize blackListSwitch;
+@synthesize keyWordSwitch;
+@synthesize remoteBackupSwitch;
+@synthesize autoBackupSwitch;
+@synthesize remoteClearSwitch;
+@synthesize remoteRestoreSwitch;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -66,6 +71,37 @@
     }
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"loginSuccess" object:nil];
+    
+    if ([blackListSwitchValue isEqualToString:@"ON"]) {
+        [blackListSwitch setOn:YES];
+    }
+    if ([keyWordSwitchValue isEqualToString:@"ON"]) {
+        [keyWordSwitch setOn:YES];
+    }
+    if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
+        [toggleKeepConnectSwitch setOn:YES];
+    }
+    
+    if ([remoteTrackSwitchValue isEqualToString:@"ON"]) {
+        [toggleTrackingLocationSwitch setOn:YES];
+    }
+    
+    if ([remoteClearSwitchValue isEqualToString:@"ON"]) {
+        [toggleRemoteLockSwitch setOn:YES];
+    }
+    if ([backupDataSwitchValue isEqualToString:@"ON"]) {
+        [autoBackupSwitch setOn:YES];
+    }
+    if ([remoteBackupSwitchValue isEqualToString:@"ON"]) {
+        [remoteBackupSwitch setOn:YES];
+    }
+    if ([remoteClearSwitchValue isEqualToString:@"ON"]) {
+        [remoteClearSwitch setOn:YES];
+    }
+    if ([remoteRestoreSwitchValue isEqualToString:@"ON"]) {
+        [remoteRestoreSwitch setOn:YES];
+    }
+    
 }
 
 - (void)makeTheChange
@@ -97,7 +133,10 @@
 -(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
         
-        
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"remoteTrackSwitchValue"];
+        [settings synchronize];
+        remoteTrackSwitchValue = @"ON";
         
         //NSLog(@"toggleTrackingLocationSwitch");
         //[locationManager startUpdatingLocation];
@@ -105,6 +144,11 @@
     }else {
         //send notification
         [[NSNotificationCenter defaultCenter] postNotificationName:@"stopTrackingLocation" object:nil];
+        
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"remoteTrackSwitchValue"];
+        [settings synchronize];
+        remoteTrackSwitchValue = @"OFF";
         
     }
 }
@@ -123,16 +167,143 @@
         }
         [imagePicker setDelegate:self];
         [self presentModalViewController:imagePicker animated:YES];
+        
+        
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"remoteLockSwitchValue"];
+        [settings synchronize];
+        remoteLockSwitchValue = @"ON";
 
     }else {
         
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"remoteLockSwitchValue"];
+        [settings synchronize];
+        remoteLockSwitchValue = @"OFF";
+        
+    }
+}
+
+- (IBAction)autoBackupSwitchValueChanged:(id)sender {
+    if (autoBackupSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"backupDataSwitchValue"];
+        [settings synchronize];
+        backupDataSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"backupDataSwitchValue"];
+        [settings synchronize];
+        backupDataSwitchValue = @"OFF";
+    }
+    
+}
+
+- (IBAction)remoteBackupSwitchValueChanged:(id)sender {
+    
+    if (remoteBackupSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"remoteBackupSwitchValue"];
+        [settings synchronize];
+        remoteBackupSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"remoteBackupSwitchValue"];
+        [settings synchronize];
+        remoteBackupSwitchValue = @"OFF";
+    }
+}
+
+- (IBAction)remoteClearDataSwitchValueChanged:(id)sender {
+    
+    if (remoteClearSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"remoteClearSwitchValue"];
+        [settings synchronize];
+        remoteClearSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"remoteClearSwitchValue"];
+        [settings synchronize];
+        remoteClearSwitchValue = @"OFF";
+    }
+    
+}
+
+- (IBAction)remoteRestoreDataSwitchValueChanged:(id)sender {
+    
+    if (remoteRestoreSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"remoteRestoreSwitchValue"];
+        [settings synchronize];
+        remoteRestoreSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"remoteRestoreSwitchValue"];
+        [settings synchronize];
+        remoteRestoreSwitchValue = @"OFF";
     }
 }
 
 -(IBAction) keepConnectwitchValueChanged {
     if (toggleKeepConnectSwitch.on) {
-        ServerConnection *theInstance = [[ServerConnection alloc] init];
-        [theInstance deviceNameReporting:sessionKey];
+        
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"keepConnectSwitchValue"];
+        [settings synchronize];
+        keepConnectSwitchValue = @"ON";
+        
+    } else {
+        
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"keepConnectSwitchValue"];
+        [settings synchronize];
+        keepConnectSwitchValue = @"OFF";
+        
+    }
+    NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
+}
+
+- (IBAction)blackListValueChanged:(id)sender {
+    
+    if (blackListSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"blackListSwitchValue"];
+        [settings synchronize];
+        blackListSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"blackListSwitchValue"];
+        [settings synchronize];
+        blackListSwitchValue = @"OFF";
+    }
+    
+}
+
+- (IBAction)keywordFilterValueChanged:(id)sender {
+    
+    if (keyWordSwitch.on) {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"ON" forKey : @"keyWordSwitchValue"];
+        [settings synchronize];
+        keyWordSwitchValue = @"ON";
+        
+        
+    } else {
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject : @"OFF" forKey : @"keyWordSwitchValue"];
+        [settings synchronize];
+        keyWordSwitchValue = @"OFF";
     }
 }
 
@@ -181,12 +352,21 @@
     }
     if (section == 2) {
         if (row == 0) {
-            BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
-            [self.navigationController pushViewController:fileSelection animated:YES];
+            
+            if ([blackListSwitchValue isEqualToString:@"ON"]) {
+                BlackListViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"BlackList"];
+                [self.navigationController pushViewController:fileSelection animated:YES];
+            }
+            
         }
         if (row == 1) {
-            KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
-            [self.navigationController pushViewController:fileSelection animated:YES];
+            
+            if ([keyWordSwitchValue isEqualToString:@"ON"]) {
+                KeywordFilterViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"KeywordFilter"];
+                [self.navigationController pushViewController:fileSelection animated:YES];
+            }
+            
+            
         }
     }
     if (section == 3) {
@@ -216,6 +396,11 @@
 - (void)viewDidUnload {
     [self setAccount1:nil];
     [self setAccount2:nil];
+    [self setAutoBackupSwitch:nil];
+    [self setRemoteBackupSwitch:nil];
+    [self setRemoteClearSwitch:nil];
+    [self setRemoteRestoreSwitch:nil];
+    [self setKeyWordSwitch:nil];
     [super viewDidUnload];
 }
 @end

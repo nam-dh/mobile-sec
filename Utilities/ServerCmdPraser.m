@@ -65,17 +65,33 @@
         NSLog(@"CmdKey=%@",soapResults);
         
         if ([soapResults isEqualToString:@"CMC_TRACK"]) {
-            //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"trackingLocation" object:nil];
+            
+            if ([remoteTrackSwitchValue isEqualToString:@"ON"]) {
+                //send notification
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"trackingLocation" object:nil];
+            }
+            
         } else if ([soapResults isEqualToString:@"CMC_LOCK"]) {
-            //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+           
+            if ([remoteLockSwitchValue isEqualToString:@"ON"]) {
+                //send notification
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+            }
+            
         } else if ([soapResults isEqualToString:@"CMC_BACKUP"]) {
-            //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+            
+            if ([backupDataSwitchValue isEqualToString:@"ON"]) {
+                //send notification
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"backupData" object:nil];
+            }
+            
         } else if ([soapResults isEqualToString:@"CMC_LOCATE"]) {
-            //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+            
+            if ([remoteTrackSwitchValue isEqualToString:@"ON"]) {
+                //send notification
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"trackingLocation" object:nil];
+            }
+            
         }
         
         [soapResults setString:@""];
