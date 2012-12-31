@@ -79,6 +79,19 @@
    
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (segmentIndex == 1) {
+        return 85;
+    } else{
+        return 60;
+    }
+//    if (indexPath.section == 1 && indexPath.row == 1) {
+//        return SPECIAL_HEIGHT;
+//    }
+//    return NORMAL_HEIGHT;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"history_cell";
@@ -94,10 +107,11 @@
         cell.textLabel.text = time;
         NSString* totalScan = [item objectForKey:@"totalScanned"];
         NSString* totalDetected = [item objectForKey:@"totalDetected"];
+        NSString* haveVirus = [item objectForKey:@"havevirus"];
         cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.detailTextLabel.numberOfLines = 0;
 
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Total scanned: %@ files\nTotal detected: %@ files", totalScan, totalDetected];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Total scanned: %@ files\nTotal detected: %@ files\nHave virus: %@", totalScan, totalDetected, haveVirus];
         //    cell.detailTextLabel.text = @"detail";
     } else{
         cell.textLabel.text = @"text label";

@@ -51,8 +51,23 @@
     
     language= [defaults objectForKey:@"language"];
     
+    // prepare to history
+    NSThread* prepareHistoryThread = [[NSThread alloc] initWithTarget:self
+                                                           selector:@selector(prepareHistory) object:nil];
+    [prepareHistoryThread start];
+    
     
     return YES;
+}
+
+-(void) prepareHistory {
+    if (gScanHistory == nil) {
+        gScanHistory = [NSMutableArray array];
+    }
+    //load from database
+    gScanHistory = [DataBaseConnect getScanStatistic:[DataBaseConnect getDBPath]];
+    
+    
 }
 
 //add observer
