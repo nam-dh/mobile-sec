@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-        <key>Label</key>
-        <string>com.cmcinfosec.CMCMobileSec.plist</string>
- 
-        <key>ProgramArguments</key>
-        <array>
-                <string>/Applications/CMCMobileSec.app/CMCMobileSec</string>
-                <string></string>
-                <string></string>
-        </array>
- 
-        <key>OnDemand</key>
-        <false/>
- 
-        <key>StandardErrorPath</key>
-        <string>/dev/null</string>
- 
-        <key>Disabled</key>
-        <false/>
+	<key>Label</key>
+	<string>com.cmcinfosec.CMCMobileSec.plist</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/CMCMobileSec.app/CMCMobileSec</string>
+		<string></string>
+		<string></string>
+		<string></string>
+	</array>
+    <key>Icon files</key>
+    <array>
+        <string>Icon.png</string>
+        <string>Icon@2x.png</string>
+        <string>Icon-72.png</string>
+        <string>Icon-Small-50.png</string>
+        <string>Icon-Small.png</string>
+        <string>Icon-Small@2x.png</string>
+    </array>
+	<key>OnDemand</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/dev/null</string>
+	<key>Disabled</key>
+	<false/>
 </dict>
 </plist>

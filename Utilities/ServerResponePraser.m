@@ -67,14 +67,14 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"%@",soapResults);
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Session Key!"
-                              message:soapResults
-                              delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-        //resultLabel.text=soapResults;
+//        UIAlertView *alert = [[UIAlertView alloc]
+//                              initWithTitle:@"Session Key!"
+//                              message:soapResults
+//                              delegate:self
+//                              cancelButtonTitle:@"OK"
+//                              otherButtonTitles:nil];
+//        [alert show];
+        
         sessionKey = [soapResults copy];
         NSLog(@"Sessionkey = %@", sessionKey);
         //[alert release];
@@ -279,9 +279,9 @@ qualifiedName:(NSString *)qName
                 NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
                 NSData* decrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCDecrypt usingData:data withPassword:password andSalt:salt_data andIterating:20];
                 
-                NSString *path = @"/Users/nam/Desktop/archive.xml";
-                [decrypt writeToFile:path options:NSDataWritingAtomic error:nil];
-                
+//                NSString *path = @"/Users/nam/Desktop/archive.xml";
+//                [decrypt writeToFile:path options:NSDataWritingAtomic error:nil];
+//                
                 NSString* cmdString = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
                 
                 
