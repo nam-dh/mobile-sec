@@ -8,6 +8,7 @@
 
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
+#import "DataBaseConnect.h"
 
 @implementation CMCMobileSecurityAppDelegate {
     NSMutableData *responeData;
@@ -20,7 +21,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(trackingLocation) name:@"trackingLocation" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopTrackingLocation) name:@"stopTrackingLocation" object:nil];
+    
+
+    
     return YES;
+}
+
+//add observer
+
+- (void)trackingLocation
+{
+    NSLog(@"tracking location");
+    [locationManager startUpdatingLocation];
+    
+}
+- (void)stopTrackingLocation
+{
+    NSLog(@"stop tracking location");
+    [locationManager stopUpdatingLocation];
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -50,146 +77,41 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void) showPopUp:(NSTimer *) timer {
-//    NSLog(@"test");
-//    @autoreleasepool {
-//        UIAlertView* dialog = [[UIAlertView alloc] init];
-//        [dialog setDelegate:self];
-//        [dialog setTitle:@"PopUp test "];
-//        [dialog setMessage:@"Click to dismiss"];
-//        [dialog addButtonWithTitle:@"Yes"];
-//        [dialog addButtonWithTitle:@"No"];
-//        [dialog show];
-//        
-//
-//    }
+- (void) requestServer:(NSTimer *) timer {
+    
+    if ((accountType == 2) && (login== false)){
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
+        [theInstance userLogin:email :password :sessionKey];
+    }
+    
+    NSString *type = @"cmd";
+    
+    ServerConnection *theInstance = [[ServerConnection alloc] init];
+    [theInstance downloadFile:sessionKey :type];
     
 }
 
-+ (void) copyDatabaseIfNeeded {
-    //Using NSFileManager we can perform many file system operations.
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    NSString *dbPath = [self getDBPath];
-    BOOL success = [fileManager fileExistsAtPath:dbPath];
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
     
-    if(!success) {
-        
-        NSLog(@"not success");
-        
-        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"cmc.db"];
-        success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
-        
-        if (!success){
-            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
-            NSLog(@"failed");
-        }
-    }
-}
-
-+ (NSString *) getDBPath {
-    //Search for standard documents using NSSearchPathForDirectoriesInDomains
-    //First Param = Searching the documents directory
-    //Second Param = Searching the Users directory and not the System
-    //Expand any tildes and identify home directories.
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-    NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:@"cmc.db"];
-}
-
-+(int) checkUserData:(NSString *)dbPath {
-    NSString *text = @"";
-    int i = 0;
-    sqlite3 *database;
-    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
-        
-        sqlite3_stmt *statement;
-        
-        const char *sql = "SELECT type from user_data";
-
-        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
-        
-        // Use the while loop if you want more than just the most recent message
-        //while (sqlite3_step(statement) == SQLITE_ROW) {
-        
-        if (sqlite3_step(statement) == SQLITE_ROW) {
-            char *content = (char *)sqlite3_column_text(statement, 0);
-            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
-        }
-        sqlite3_finalize(statement);
-        sqlite3_close(database);
-        
-        i = [text intValue];
-        
-        NSLog(@"data=%d", i);
-        
-    }
-    else
-        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+    float latt = newLocation.coordinate.latitude;
+    float longi = newLocation.coordinate.longitude;
+    latt = 21.0409;
+    longi = 105.7981;
     
-    return i;
-}
+    
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+    // NSTimeInterval is defined as double
+    NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
+    long lnumber = [timeStampObj longValue];
+    
+    NSString* vector = [NSString stringWithFormat:@"%ld:%f:%f", lnumber, latt, longi];
 
-+(NSString*) getEmail:(NSString *)dbPath {
-    NSString *text = @"";
-    sqlite3 *database;
-    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
-        
-        sqlite3_stmt *statement;
-        
-        const char *sql = "SELECT email from user_data";
-        
-        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
-        
-        // Use the while loop if you want more than just the most recent message
-        //while (sqlite3_step(statement) == SQLITE_ROW) {
-        
-        if (sqlite3_step(statement) == SQLITE_ROW) {
-            char *content = (char *)sqlite3_column_text(statement, 0);
-            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
-        }
-        sqlite3_finalize(statement);
-        sqlite3_close(database);
-        
-        
-        NSLog(@"email=%@", text);
-        
-    }
-    else
-        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
-    return text;
+    ServerConnection *theInstance = [[ServerConnection alloc] init];
+    [theInstance locationReport:vector :sessionKey];
 }
-
-+(NSString*) getPassword:(NSString *)dbPath {
-    NSString *text = @"";
-    sqlite3 *database;
-    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
-        
-        sqlite3_stmt *statement;
-        
-        const char *sql = "SELECT password from user_data";
-        
-        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
-        
-        // Use the while loop if you want more than just the most recent message
-        //while (sqlite3_step(statement) == SQLITE_ROW) {
-        
-        if (sqlite3_step(statement) == SQLITE_ROW) {
-            char *content = (char *)sqlite3_column_text(statement, 0);
-            text = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
-        }
-        sqlite3_finalize(statement);
-        sqlite3_close(database);
-        
-        
-        NSLog(@"password=%@", text);
-        
-    }
-    else
-        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
-    return text;
-}
-
 
 
 
@@ -204,3 +126,4 @@ NSString *deviceID = @"123";
 NSString *tokenKey = nil;
 NSString *md5hash = nil;
 NSString *downloadFile = nil;
+Boolean login = false;

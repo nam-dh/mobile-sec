@@ -7,7 +7,7 @@
 //
 
 #import "KeywordFilterViewController.h"
-#import "CMCMobileSecurityAppDelegate.h"
+#import "DataBaseConnect.h"
 
 @interface KeywordFilterViewController ()
 
@@ -34,7 +34,7 @@
     tableData = [[NSMutableArray alloc]init];
     
     //Once the db is copied, get the initial data to display on the screen.
-    [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
+    [self getInitialDataToDisplay:[DataBaseConnect getDBPath]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,10 +98,10 @@
         return; //If cancel or 0 length string the string doesn't matter
     }
     if (buttonIndex == 1) {
-        [self insertKeyword:[[alertView textFieldAtIndex:0] text] :[CMCMobileSecurityAppDelegate getDBPath]];
+        [self insertKeyword:[[alertView textFieldAtIndex:0] text] :[DataBaseConnect getDBPath]];
         
         [tableData removeAllObjects];
-        [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
+        [self getInitialDataToDisplay:[DataBaseConnect getDBPath]];
         // [tableData addObject: [[alertView textFieldAtIndex:0] text]];
         
         [[self keywordTable] reloadData];
@@ -199,7 +199,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"%d",indexPath.row);
         NSLog(@"%@",[tableData objectAtIndex:indexPath.row]);
-        [self removeKeyword:[tableData objectAtIndex:indexPath.row] :[CMCMobileSecurityAppDelegate getDBPath]];
+        [self removeKeyword:[tableData objectAtIndex:indexPath.row] :[DataBaseConnect getDBPath]];
         [tableData removeObjectAtIndex:indexPath.row];
         [tableView beginUpdates];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]

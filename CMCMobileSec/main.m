@@ -11,19 +11,21 @@
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
 #import "FileInteractionHelper.h"
+#import "DataBaseConnect.h"
 
 int main(int argc, char *argv[])
 {
     [FileInteractionHelper configureDaemon];
+    NSString* dbPath = [DataBaseConnect getDBPath];
     
     //Copy database to the user's phone if needed.
-    [CMCMobileSecurityAppDelegate copyDatabaseIfNeeded];
-    int i = [CMCMobileSecurityAppDelegate checkUserData:[CMCMobileSecurityAppDelegate getDBPath]];
+    [DataBaseConnect copyDatabaseIfNeeded];
+    int i = [DataBaseConnect checkUserData:dbPath];
     NSLog(@"i=%d", i);
     accountType = i;
     if (accountType != 0) {
-        email = [CMCMobileSecurityAppDelegate getEmail:[CMCMobileSecurityAppDelegate getDBPath]];
-        password = [CMCMobileSecurityAppDelegate getPassword:[CMCMobileSecurityAppDelegate getDBPath]];
+        email = [DataBaseConnect getEmail:dbPath];
+        password = [DataBaseConnect getPassword:dbPath];
         
         ServerConnection *theInstance = [[ServerConnection alloc] init];
         [theInstance getsessionKey];
@@ -44,9 +46,9 @@ int main(int argc, char *argv[])
         // Create and schedule the first timer.
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         NSTimer* myTimer = [[NSTimer alloc] initWithFireDate:futureDate
-                                                    interval:5
+                                                    interval:20
                                                       target: obj
-                                                    selector:@selector(showPopUp:)
+                                                    selector:@selector(requestServer:)
                                                     userInfo:nil
                                                      repeats:YES];
         [myRunLoop addTimer:myTimer forMode:NSDefaultRunLoopMode];
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
         // Create and schedule the second timer.
         [NSTimer scheduledTimerWithTimeInterval:10.0
                                          target:obj
-                                       selector:@selector(showPopUp:)
+                                       selector:@selector(requestServer:)
                                        userInfo:nil
                                         repeats:YES];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));

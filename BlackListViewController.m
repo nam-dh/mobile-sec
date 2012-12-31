@@ -8,6 +8,7 @@
 
 #import "BlackListViewController.h"
 #import "CMCMobileSecurityAppDelegate.h"
+#import "DataBaseConnect.h"
 
 @interface BlackListViewController ()
 
@@ -35,7 +36,7 @@
     tableData = [[NSMutableArray alloc]init];
     
     //Once the db is copied, get the initial data to display on the screen.
-    [self getInitialDataToDisplay:[CMCMobileSecurityAppDelegate getDBPath]];
+    [self getInitialDataToDisplay:[DataBaseConnect getDBPath]];
     
     
 }
@@ -101,7 +102,7 @@
         return; //If cancel or 0 length string the string doesn't matter
     }
     if (buttonIndex == 1) {
-        [self insertNumber:[[alertView textFieldAtIndex:0] text] :[CMCMobileSecurityAppDelegate getDBPath]];
+        [self insertNumber:[[alertView textFieldAtIndex:0] text] :[DataBaseConnect getDBPath]];
         
         //[tableData addObject:text];
         
@@ -204,7 +205,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"%d",indexPath.row);
         NSLog(@"%@",[tableData objectAtIndex:indexPath.row]);
-        [self removeNumber:[tableData objectAtIndex:indexPath.row] :[CMCMobileSecurityAppDelegate getDBPath]];
+        [self removeNumber:[tableData objectAtIndex:indexPath.row] :[DataBaseConnect getDBPath]];
         [tableData removeObjectAtIndex:indexPath.row];
         [tableView beginUpdates];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]

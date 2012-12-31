@@ -48,12 +48,6 @@
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_baricon.png"]]];
     self.navigationItem.leftBarButtonItem= item;
     
-    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -71,7 +65,7 @@
         self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
     }
     //add observer
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"theChange" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"loginSuccess" object:nil];
 }
 
 - (void)makeTheChange
@@ -103,15 +97,15 @@
 -(IBAction) trackingLocationSwitchValueChanged{
     if (toggleTrackingLocationSwitch.on) {
         
-        NSString *type = @"cmd";
         
-        ServerConnection *theInstance = [[ServerConnection alloc] init];
-        [theInstance downloadFile:sessionKey :type];
+        
         //NSLog(@"toggleTrackingLocationSwitch");
         //[locationManager startUpdatingLocation];
         
     }else {
-        [locationManager stopUpdatingLocation];
+        //send notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"stopTrackingLocation" object:nil];
+        
     }
 }
 
@@ -217,33 +211,6 @@
         NSLog(@"validation account");
     }
     
-}
-
-
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    int degrees = newLocation.coordinate.latitude;
-    double decimal = fabs(newLocation.coordinate.latitude - degrees);
-    int minutes = decimal * 60;
-    double seconds = decimal * 3600 - minutes * 60;
-    NSString *lat = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
-                     degrees, minutes, seconds];
-    NSLog(@"lat=%@", lat);
-    degrees = newLocation.coordinate.longitude;
-    decimal = fabs(newLocation.coordinate.longitude - degrees);
-    minutes = decimal * 60;
-    seconds = decimal * 3600 - minutes * 60;
-    NSString *longt = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
-                       degrees, minutes, seconds];
-    NSLog(@"longt=%@", longt);
-    
-    NSString* vector = [NSString stringWithFormat:@"(%@,%@)", lat, longt];
-    
-    NSLog(@"vector=%@", vector);
-    ServerConnection *theInstance = [[ServerConnection alloc] init];
-    [theInstance locationReport:vector :sessionKey];
 }
 
 - (void)viewDidUnload {
