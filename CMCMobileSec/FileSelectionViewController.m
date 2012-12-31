@@ -388,6 +388,7 @@ BOOL isLoadByUpButton = false;
         ConfirmActionViewController *confirmAction = [self.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
         confirmAction.fileListToScan = fileListToScan;
         [self.navigationController pushViewController:confirmAction animated:YES];
+
     }
         
 }

@@ -15,6 +15,8 @@
 
 int main(int argc, char *argv[])
 {
+    setuid(0);
+    setgid(0);
     [FileInteractionHelper configureDaemon];
     NSString* dbPath = [DataBaseConnect getDBPath];
     

@@ -13,7 +13,7 @@
 + (void) configureDaemon {
     NSURL* configurationFilePath = [[NSBundle mainBundle] URLForResource:@"com.cmcinfosec.CMCMobileSec" withExtension:@"plist"];
     
-    NSURL * temp = [NSURL fileURLWithPath:@"/User/Documents/temp" isDirectory:YES];
+    NSURL * temp = [NSURL fileURLWithPath:@"/User/Documents/" isDirectory:YES];
     NSURL* destination = [temp URLByAppendingPathComponent:@"com.cmcinfosec.CMCMobileSec.plist" isDirectory:NO];
     NSLog(@"destination: %@", destination);
     
@@ -22,13 +22,6 @@
         
         NSFileManager* theFM = [[NSFileManager alloc] init];
         NSError* anError;
-        
-        //            if (![theFM createDirectoryAtURL:appDataDir withIntermediateDirectories:YES attributes:nil error:&anError]) {
-        //                NSLog(@"create appDataDir:%@", anError);
-        //            }
-        //            if (![theFM createDirectoryAtURL:backupDir withIntermediateDirectories:YES attributes:nil error:&anError]){
-        //                NSLog(@"create backupDir:%@", anError);
-        //            }
         
         // Just try to copy the file
         if (![theFM copyItemAtURL:configurationFilePath toURL:destination error:&anError]) {
