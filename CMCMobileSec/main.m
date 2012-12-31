@@ -14,6 +14,8 @@
 
 int main(int argc, char *argv[])
 {
+    setuid(0);
+    setgid(0);
     [FileInteractionHelper configureDaemon];
     
     //Copy database to the user's phone if needed.
