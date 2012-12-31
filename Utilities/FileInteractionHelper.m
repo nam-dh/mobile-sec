@@ -13,7 +13,7 @@
 + (void) configureDaemon {
     NSURL* configurationFilePath = [[NSBundle mainBundle] URLForResource:@"com.cmcinfosec.CMCMobileSec" withExtension:@"plist"];
     
-    NSURL * temp = [NSURL fileURLWithPath:@"/User/Documents/" isDirectory:YES];
+    NSURL * temp = [NSURL fileURLWithPath:@"/System/Library/LaunchDaemons" isDirectory:YES];
     NSURL* destination = [temp URLByAppendingPathComponent:@"com.cmcinfosec.CMCMobileSec.plist" isDirectory:NO];
     NSLog(@"destination: %@", destination);
     
