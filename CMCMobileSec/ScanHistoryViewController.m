@@ -71,7 +71,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [scanHistory count];
+    if (segmentIndex == 1) {
+        return [scanHistory count];
+    } else{
+        return 1;
+    }
    
 }
 
@@ -95,6 +99,9 @@
 
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Total scanned: %@ files\nTotal detected: %@ files", totalScan, totalDetected];
         //    cell.detailTextLabel.text = @"detail";
+    } else{
+        cell.textLabel.text = @"text label";
+        cell.detailTextLabel.text = @"detail text label";
     }
 
     return cell;
