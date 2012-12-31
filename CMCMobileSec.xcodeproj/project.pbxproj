@@ -20,6 +20,8 @@
 		3D5EEBFB168CBF620017CAA3 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF5168CBF620017CAA3 /* NSData+Base64.m */; };
 		3D5EEBFC168CBF620017CAA3 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF7168CBF620017CAA3 /* NSData+MD5.m */; };
 		3D5EEBFD168CBF620017CAA3 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF9168CBF620017CAA3 /* NSString+MD5.m */; };
+		3D8A627C16918CA50002DCE5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8A627A16918CA40002DCE5 /* Icon.png */; };
+		3D8A627D16918CA50002DCE5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8A627B16918CA50002DCE5 /* Icon@2x.png */; };
 		3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */; };
 		3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F2168A33FA008BF51F /* ServerConnection.m */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
@@ -164,6 +166,8 @@
 		3D5EEBF7168CBF620017CAA3 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "Utilities/NSData+MD5.m"; sourceTree = "<group>"; };
 		3D5EEBF8168CBF620017CAA3 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "Utilities/NSString+MD5.h"; sourceTree = "<group>"; };
 		3D5EEBF9168CBF620017CAA3 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "Utilities/NSString+MD5.m"; sourceTree = "<group>"; };
+		3D8A627A16918CA40002DCE5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
+		3D8A627B16918CA50002DCE5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D8B49EF168A33FA008BF51F /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBaseConnect.h; path = Utilities/DataBaseConnect.h; sourceTree = "<group>"; };
 		3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBaseConnect.m; path = Utilities/DataBaseConnect.m; sourceTree = "<group>"; };
 		3D8B49F1168A33FA008BF51F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = Utilities/ServerConnection.h; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 		3D8B49F6168A343D008BF51F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3D8A627A16918CA40002DCE5 /* Icon.png */,
+				3D8A627B16918CA50002DCE5 /* Icon@2x.png */,
 				5257F557168A1A4600C00465 /* Default-568h@2x.png */,
 				52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */,
 				3DC0A09B1683839D001B2FAB /* app_bar_icon.png */,
@@ -705,6 +711,8 @@
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
 				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
 				52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */,
+				3D8A627C16918CA50002DCE5 /* Icon.png in Resources */,
+				3D8A627D16918CA50002DCE5 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
