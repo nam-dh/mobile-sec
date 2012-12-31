@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
+#import <CoreLocation/CoreLocation.h>
 
 extern NSString* sessionKey;
 extern int accountType;
@@ -19,18 +20,16 @@ extern NSString *deviceID;
 extern NSString *tokenKey;
 extern NSString *md5hash;
 extern NSString *downloadFile;
+extern Boolean login;
 
-@interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
+@interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate, CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (void) showPopUp:(NSTimer *) timer;
+- (void) requestServer:(NSTimer *) timer;
 
-+ (void) copyDatabaseIfNeeded;
-+ (NSString *) getDBPath;
-+(int) checkUserData:(NSString *)dbPath ;
-+(void) getUserData:(NSString *)dbPath;
-+(NSString*) getEmail:(NSString *)dbPath ;
-+(NSString*) getPassword:(NSString *)dbPath ;
+
 
 @end

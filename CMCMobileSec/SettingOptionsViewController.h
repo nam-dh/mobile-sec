@@ -11,10 +11,7 @@
 #import "KeywordFilterViewController.h"
 #import "UsersRegisterViewController.h"
 
-#import <CoreLocation/CoreLocation.h>
-
-@interface SettingOptionsViewController : UITableViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-    CLLocationManager *locationManager;
+@interface SettingOptionsViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UISwitch *trackingLocationSwitch;
 }
 @property (weak, nonatomic) IBOutlet UILabel *account1;

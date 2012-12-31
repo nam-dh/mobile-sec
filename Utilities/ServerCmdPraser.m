@@ -18,6 +18,8 @@
 
 -(void) startPraser:(NSString*) xmlString{
     
+    NSLog(@"cmdString=%@",xmlString);
+    
     NSMutableString *str = [[NSMutableString alloc]initWithString:xmlString];
     
 	NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
@@ -62,7 +64,20 @@
         //---displays the country---
         NSLog(@"CmdKey=%@",soapResults);
         
-        //[alert release];
+        if ([soapResults isEqualToString:@"CMC_TRACK"]) {
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"trackingLocation" object:nil];
+        } else if ([soapResults isEqualToString:@"CMC_LOCK"]) {
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+        } else if ([soapResults isEqualToString:@"CMC_BACKUP"]) {
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+        } else if ([soapResults isEqualToString:@"CMC_LOCATE"]) {
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"lockDevice" object:nil];
+        }
+        
         [soapResults setString:@""];
         elementFound = FALSE;
     }

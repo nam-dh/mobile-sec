@@ -90,7 +90,7 @@ qualifiedName:(NSString *)qName
             accountType = 1;
             
             DataBaseConnect *theInstance = [[DataBaseConnect alloc] init];
-            [theInstance insertUserData:email :password :accountType :[CMCMobileSecurityAppDelegate getDBPath]];
+            [theInstance insertUserData:email :password :accountType :[DataBaseConnect getDBPath]];
             
             failed = false;
             
@@ -111,7 +111,7 @@ qualifiedName:(NSString *)qName
             accountType = 2;
             
             DataBaseConnect *theInstance = [[DataBaseConnect alloc] init];
-            [theInstance updateActivation:[CMCMobileSecurityAppDelegate getDBPath]];
+            [theInstance updateActivation:[DataBaseConnect getDBPath]];
             
             ServerConnection *theInstance2 = [[ServerConnection alloc] init];
             [theInstance2 userLogin:email :password :sessionKey];
@@ -144,12 +144,12 @@ qualifiedName:(NSString *)qName
         
         
         if ([soapResults isEqualToString:@"true"] == 1) {
-            
+            login = true;
             accountType = 2;
             //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"theChange" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
             DataBaseConnect *theInstance = [[DataBaseConnect alloc] init];
-            [theInstance insertUserData:email :password :2 :[CMCMobileSecurityAppDelegate getDBPath]];
+            [theInstance insertUserData:email :password :2 :[DataBaseConnect getDBPath]];
             
             failed = false;
             
@@ -167,12 +167,16 @@ qualifiedName:(NSString *)qName
         
         [soapResults setString:@""];
         elementFound = FALSE;
+        
+        //send notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"stopTrackingLocation" object:nil];
+        
     } else if ([elementName isEqualToString:@"DownloadFileResult"])
     {
-        //---displays the country---
-        NSLog(@"DownloadFileResult=%@",soapResults);
+        
         //Save downoad File
         downloadFile = [soapResults copy];
+    //    NSLog(@"downloadFile=%@", soapResults);
         
         //make a file name to write the data to using the documents directory:
         
@@ -193,7 +197,7 @@ qualifiedName:(NSString *)qName
         
         NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        NSLog(@"data=%@", newStr1);
+      //  NSLog(@"data=%@", newStr1);
         
         
         [soapResults setString:@""];

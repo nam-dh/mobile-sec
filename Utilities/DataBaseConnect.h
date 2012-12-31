@@ -13,5 +13,11 @@
 
 -(void)insertUserData:(NSString *) email :(NSString *) password :(int) type :(NSString *)dbPath;
 -(void)updateActivation:(NSString *)dbPath;
++ (void) copyDatabaseIfNeeded;
++ (NSString *) getDBPath;
++(int) checkUserData:(NSString *)dbPath ;
++(void) getUserData:(NSString *)dbPath;
++(NSString*) getEmail:(NSString *)dbPath ;
++(NSString*) getPassword:(NSString *)dbPath ;
 
 @end
