@@ -15,6 +15,7 @@ extern int accountType;
 extern NSString* email;
 extern NSString* password;
 extern NSMutableArray* gItemToScan;
+extern NSMutableArray* gScanHistory;
 extern NSString *deviceID;
 extern NSString *tokenKey;
 extern NSString *md5hash;
