@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMCMobileSecurityAppDelegate.h"
 
 @interface ScanHistoryViewController : UITableViewController{
     UIColor *defaultTintColor;
 
 }
+@property(nonatomic, retain)NSMutableArray* scanHistory;
+
+@property int segmentIndex;
 
 @end

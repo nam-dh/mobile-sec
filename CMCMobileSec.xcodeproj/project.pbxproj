@@ -130,6 +130,7 @@
 		5215A1971665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */; };
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
+		522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */ = {isa = PBXBuildFile; fileRef = 522654C416918D61003A5276 /* history_icon_realtimescan50.png */; };
 		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
 		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
@@ -286,6 +287,7 @@
 		5215A19F1665254700D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryViewController.h; path = CMCMobileSec/SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryViewController.m; path = CMCMobileSec/SummaryViewController.m; sourceTree = "<group>"; };
+		522654C416918D61003A5276 /* history_icon_realtimescan50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_icon_realtimescan50.png; path = Images/history_icon_realtimescan50.png; sourceTree = SOURCE_ROOT; };
 		5257F557168A1A4600C00465 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
 		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		3D8B49F6168A343D008BF51F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				522654C416918D61003A5276 /* history_icon_realtimescan50.png */,
 				5257F557168A1A4600C00465 /* Default-568h@2x.png */,
 				52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */,
 				3DC0A09B1683839D001B2FAB /* app_bar_icon.png */,
@@ -705,6 +708,7 @@
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
 				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
 				52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */,
+				522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

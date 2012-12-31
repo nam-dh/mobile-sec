@@ -296,6 +296,27 @@ int detectedVirusNum = 0;
                                                     selector:@selector(printResultToTable:)
                                                       object:filename];
     [printResult start];
+    // prepare to store in history
+    if (gScanHistory == nil) {
+        gScanHistory = [NSMutableArray array];
+    }
+    NSDate *now = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd/MM/yyyy HH:mm:ss"];
+    NSString* time = [format stringFromDate:now];
+    NSLog(@"time:%@", time);
+    NSString* totalScan = [NSString stringWithFormat:@"%d", countedFileNumber];
+    NSString* totalDetected = [NSString stringWithFormat:@"%d", detectedVirusNum];
+    NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+    [item setObject:time forKey:@"time"];
+    [item setObject:totalScan forKey:@"totalScanned"];
+    [item setObject:totalDetected forKey:@"totalDetected"];
+    [gScanHistory addObject:item];
+
+    NSLog(@"count index 1 = %d", [gScanHistory count]);
+    //send notification
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHistory" object:nil];
+    //
     isSelected = false;
     isScanOnDemand = false;
     countedFileNumber = 0;

@@ -200,6 +200,7 @@ int accountType = 1;
 NSString* email = nil;
 NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
+NSMutableArray * gScanHistory = nil;
 NSString *deviceID = @"123";
 NSString *tokenKey = nil;
 NSString *md5hash = nil;

@@ -13,6 +13,8 @@
 @end
 
 @implementation ScanHistoryViewController
+@synthesize scanHistory;
+@synthesize segmentIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +37,7 @@
     
 	NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"SMS", @""), NSLocalizedString(@"Statistics", @""), NSLocalizedString(@"Detected", @""),nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
-	segmentedControl.selectedSegmentIndex = 0;
+	segmentedControl.selectedSegmentIndex = 1;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 400, 30);
@@ -44,8 +46,12 @@
 	
     defaultTintColor = segmentedControl.tintColor;
 	self.navigationItem.titleView = segmentedControl;
-	
-    
+	scanHistory = gScanHistory;
+    segmentIndex = 1;
+   
+    // observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHistory) name:@"updateHistory" object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,25 +64,39 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [scanHistory count];
+   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    static NSString *CellIdentifier = @"history_cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+
     // Configure the cell...
-    
+    if (segmentIndex == 1){
+        NSMutableDictionary* item = [scanHistory objectAtIndex:indexPath.row];
+        NSString* time = [item objectForKey:@"time"];
+        cell.textLabel.text = time;
+        NSString* totalScan = [item objectForKey:@"totalScanned"];
+        NSString* totalDetected = [item objectForKey:@"totalDetected"];
+        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.detailTextLabel.numberOfLines = 0;
+
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Total scanned: %@ files\nTotal detected: %@ files", totalScan, totalDetected];
+        //    cell.detailTextLabel.text = @"detail";
+    }
+
     return cell;
 }
 
@@ -138,10 +158,13 @@
 	UISegmentedControl *segmentedControl = (UISegmentedControl *)self.navigationItem.rightBarButtonItem.customView;
 	
 	// Before we show this view make sure the segmentedControl matches the nav bar style
-	if (self.navigationController.navigationBar.barStyle == UIBarStyleBlackTranslucent || self.navigationController.navigationBar.barStyle == UIBarStyleBlackOpaque)
-		segmentedControl.tintColor = [UIColor darkGrayColor];
-	else
-		segmentedControl.tintColor = defaultTintColor;
+	if (self.navigationController.navigationBar.barStyle == UIBarStyleBlackTranslucent || self.navigationController.navigationBar.barStyle == UIBarStyleBlackOpaque){
+        segmentedControl.tintColor = [UIColor darkGrayColor];
+    } else{
+        segmentedControl.tintColor = defaultTintColor;
+    }
+    NSLog(@"segment index: %d", segmentIndex);
+    
 }
 
 - (IBAction)segmentAction:(id)sender
@@ -149,7 +172,14 @@
 	// The segmented control was clicked, handle it here
 	UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
 	NSLog(@"Segment clicked: %d", segmentedControl.selectedSegmentIndex);
+    segmentIndex = segmentedControl.selectedSegmentIndex;
+    [[self tableView] reloadData];
 }
 
+- (void) updateHistory{
+    NSLog(@"updateHistory is called");
+    scanHistory = gScanHistory;
+    [[self tableView] reloadData];
+}
 
 @end
