@@ -16,12 +16,12 @@
 		3D25DC6416824A1B0006C7F5 /* settingbaricon-65--65x65.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */; };
 		3D25DC6716824AB70006C7F5 /* updatebutton63-65X65-.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */; };
 		3D25DC6916824DE50006C7F5 /* hinticon-46-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */; };
+		3D454A8516919AF9007FF3A9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8316919AF9007FF3A9 /* Icon.png */; };
+		3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8416919AF9007FF3A9 /* Icon@2x.png */; };
 		3D5EEBFA168CBF620017CAA3 /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */; };
 		3D5EEBFB168CBF620017CAA3 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF5168CBF620017CAA3 /* NSData+Base64.m */; };
 		3D5EEBFC168CBF620017CAA3 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF7168CBF620017CAA3 /* NSData+MD5.m */; };
 		3D5EEBFD168CBF620017CAA3 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF9168CBF620017CAA3 /* NSString+MD5.m */; };
-		3D8A627C16918CA50002DCE5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8A627A16918CA40002DCE5 /* Icon.png */; };
-		3D8A627D16918CA50002DCE5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8A627B16918CA50002DCE5 /* Icon@2x.png */; };
 		3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */; };
 		3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F2168A33FA008BF51F /* ServerConnection.m */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
@@ -159,6 +159,8 @@
 		3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settingbaricon-65--65x65.png"; path = "Images/settingbaricon-65--65x65.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "updatebutton63-65X65-.png"; path = "Images/updatebutton63-65X65-.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hinticon-46-48x48.png"; path = "Images/hinticon-46-48x48.png"; sourceTree = SOURCE_ROOT; };
+		3D454A8316919AF9007FF3A9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
+		3D454A8416919AF9007FF3A9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
 		3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileDecryption.m; path = Utilities/FileDecryption.m; sourceTree = "<group>"; };
 		3D5EEBF4168CBF620017CAA3 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Utilities/NSData+Base64.h"; sourceTree = "<group>"; };
@@ -167,8 +169,6 @@
 		3D5EEBF7168CBF620017CAA3 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "Utilities/NSData+MD5.m"; sourceTree = "<group>"; };
 		3D5EEBF8168CBF620017CAA3 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "Utilities/NSString+MD5.h"; sourceTree = "<group>"; };
 		3D5EEBF9168CBF620017CAA3 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "Utilities/NSString+MD5.m"; sourceTree = "<group>"; };
-		3D8A627A16918CA40002DCE5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
-		3D8A627B16918CA50002DCE5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D8B49EF168A33FA008BF51F /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBaseConnect.h; path = Utilities/DataBaseConnect.h; sourceTree = "<group>"; };
 		3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBaseConnect.m; path = Utilities/DataBaseConnect.m; sourceTree = "<group>"; };
 		3D8B49F1168A33FA008BF51F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = Utilities/ServerConnection.h; sourceTree = "<group>"; };
@@ -390,12 +390,9 @@
 		3D8B49F6168A343D008BF51F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				3D8A627A16918CA40002DCE5 /* Icon.png */,
-				3D8A627B16918CA50002DCE5 /* Icon@2x.png */,
-=======
+				3D454A8316919AF9007FF3A9 /* Icon.png */,
+				3D454A8416919AF9007FF3A9 /* Icon@2x.png */,
 				522654C416918D61003A5276 /* history_icon_realtimescan50.png */,
->>>>>>> 406c0609961fc722462c25afdc0aeb891defc952
 				5257F557168A1A4600C00465 /* Default-568h@2x.png */,
 				52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */,
 				3DC0A09B1683839D001B2FAB /* app_bar_icon.png */,
@@ -717,11 +714,9 @@
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
 				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
 				52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */,
-				3D8A627C16918CA50002DCE5 /* Icon.png in Resources */,
-				3D8A627D16918CA50002DCE5 /* Icon@2x.png in Resources */,
-                
 				522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */,
-                
+				3D454A8516919AF9007FF3A9 /* Icon.png in Resources */,
+				3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
