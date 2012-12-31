@@ -1,5 +1,5 @@
 //
-//  NSObject+ServerConnection.h
+//  ServerConnection.h
 //  CMCMobileSec
 //
 //  Created by Nam on 12/26/12.

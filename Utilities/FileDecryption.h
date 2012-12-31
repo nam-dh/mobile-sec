@@ -1,5 +1,5 @@
 //
-//  NSObject+FileDecryption.h
+//  FileDecryption.h
 //  CMCMobileSec
 //
 //  Created by Nam on 12/27/12.
