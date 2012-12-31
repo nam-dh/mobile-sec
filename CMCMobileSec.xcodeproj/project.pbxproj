@@ -119,6 +119,8 @@
 		3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F71683839F001B2FAB /* vpi__tab_unselected_holo.9.png */; };
 		3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F81683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png */; };
 		3DC0A15C16838A9B001B2FAB /* UsersRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */; };
+		3DC5417E169139AA0080956D /* ServerCmdPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5417D169139AA0080956D /* ServerCmdPraser.m */; };
+		3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC54180169157EE0080956D /* ServerResponePraser.m */; };
 		3DFF2E501671177D0010BAFF /* BlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */; };
 		5215A1871665254600D8DEF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1861665254600D8DEF6 /* UIKit.framework */; };
 		5215A1891665254600D8DEF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5215A1881665254600D8DEF6 /* Foundation.framework */; };
@@ -265,6 +267,10 @@
 		3DC0A0F81683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_unselected_pressed_holo.9.png; path = ../Images/vpi__tab_unselected_pressed_holo.9.png; sourceTree = "<group>"; };
 		3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersRegisterViewController.h; path = CMCMobileSec/UsersRegisterViewController.h; sourceTree = "<group>"; };
 		3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersRegisterViewController.m; path = CMCMobileSec/UsersRegisterViewController.m; sourceTree = "<group>"; };
+		3DC5417C169139AA0080956D /* ServerCmdPraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerCmdPraser.h; path = Utilities/ServerCmdPraser.h; sourceTree = "<group>"; };
+		3DC5417D169139AA0080956D /* ServerCmdPraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerCmdPraser.m; path = Utilities/ServerCmdPraser.m; sourceTree = "<group>"; };
+		3DC5417F169157EE0080956D /* ServerResponePraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerResponePraser.h; path = Utilities/ServerResponePraser.h; sourceTree = "<group>"; };
+		3DC54180169157EE0080956D /* ServerResponePraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerResponePraser.m; path = Utilities/ServerResponePraser.m; sourceTree = "<group>"; };
 		3DFF2E4E1671177D0010BAFF /* BlackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackListViewController.h; sourceTree = SOURCE_ROOT; };
 		3DFF2E4F1671177D0010BAFF /* BlackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackListViewController.m; sourceTree = SOURCE_ROOT; };
 		5215A1821665254600D8DEF6 /* CMCMobileSec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMCMobileSec.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,9 +360,9 @@
 			isa = PBXGroup;
 			children = (
 				3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */,
+				3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */,
 				52A549BB168CD7E700470BCD /* FileInteractionHelper.h */,
 				52A549BC168CD7E700470BCD /* FileInteractionHelper.m */,
-				3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */,
 				3D5EEBF4168CBF620017CAA3 /* NSData+Base64.h */,
 				3D5EEBF5168CBF620017CAA3 /* NSData+Base64.m */,
 				3D5EEBF6168CBF620017CAA3 /* NSData+MD5.h */,
@@ -367,6 +373,10 @@
 				3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */,
 				3D8B49F1168A33FA008BF51F /* ServerConnection.h */,
 				3D8B49F2168A33FA008BF51F /* ServerConnection.m */,
+				3DC5417C169139AA0080956D /* ServerCmdPraser.h */,
+				3DC5417D169139AA0080956D /* ServerCmdPraser.m */,
+				3DC5417F169157EE0080956D /* ServerResponePraser.h */,
+				3DC54180169157EE0080956D /* ServerResponePraser.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -741,6 +751,8 @@
 				3D5EEBFC168CBF620017CAA3 /* NSData+MD5.m in Sources */,
 				3D5EEBFD168CBF620017CAA3 /* NSString+MD5.m in Sources */,
 				52A549BD168CD7E700470BCD /* FileInteractionHelper.m in Sources */,
+				3DC5417E169139AA0080956D /* ServerCmdPraser.m in Sources */,
+				3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,19 +838,25 @@
 		5215A1B21665254700D8DEF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
+				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib\"",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system\"",
+					"\"$(SRCROOT)\"\n",
+					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -846,19 +864,24 @@
 		5215A1B31665254700D8DEF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
+				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib\"",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/iOS DeviceSupport/5.1.1 (9B206)/Symbols/usr/lib/system\"",
+					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

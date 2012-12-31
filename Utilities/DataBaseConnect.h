@@ -1,5 +1,5 @@
 //
-//  NSObject+DataBaseConnect.h
+//  DataBaseConnect.h
 //  CMCMobileSec
 //
 //  Created by Nam on 12/26/12.
