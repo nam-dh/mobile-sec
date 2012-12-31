@@ -31,6 +31,26 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopTrackingLocation) name:@"stopTrackingLocation" object:nil];
     
 
+    //load settings
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    blackListSwitchValue = [defaults objectForKey:@"blackListSwitchValue"];
+    keyWordSwitchValue = [defaults objectForKey:@"keyWordSwitchValue"];
+    keepConnectSwitchValue= [defaults objectForKey:@"keepConnectSwitchValue"];
+
+    remoteLockSwitchValue= [defaults objectForKey:@"remoteLockSwitchValue"];
+    
+    remoteTrackSwitchValue = [defaults objectForKey:@"remoteTrackSwitchValue"];
+
+    backupDataSwitchValue= [defaults objectForKey:@"backupDataSwitchValue"];
+    
+    remoteBackupSwitchValue= [defaults objectForKey:@"remoteBackupSwitchValue"];
+    
+    remoteClearSwitchValue= [defaults objectForKey:@"remoteClearSwitchValue"];
+    
+    remoteRestoreSwitchValue= [defaults objectForKey:@"remoteRestoreSwitchValue"];
+    
+    language= [defaults objectForKey:@"language"];
+    
     
     return YES;
 }
@@ -39,13 +59,11 @@
 
 - (void)trackingLocation
 {
-    NSLog(@"tracking location");
     [locationManager startUpdatingLocation];
     
 }
 - (void)stopTrackingLocation
 {
-    NSLog(@"stop tracking location");
     [locationManager stopUpdatingLocation];
     
 }
@@ -79,15 +97,27 @@
 
 - (void) requestServer:(NSTimer *) timer {
     
-    if ((accountType == 2) && (login== false)){
-        ServerConnection *theInstance = [[ServerConnection alloc] init];
-        [theInstance userLogin:email :password :sessionKey];
+    NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
+    
+    if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
+        
+        if ((accountType == 2) && (login== false)){
+            ServerConnection *theInstance = [[ServerConnection alloc] init];
+            [theInstance userLogin:email :password :sessionKey];
+        }
+        
+        if (login) {
+            
+            NSString *type = @"cmd";
+            
+            ServerConnection *theInstance = [[ServerConnection alloc] init];
+            [theInstance downloadFile:sessionKey :type];
+            
+        }
+        
     }
     
-    NSString *type = @"cmd";
     
-    ServerConnection *theInstance = [[ServerConnection alloc] init];
-    [theInstance downloadFile:sessionKey :type];
     
 }
 
@@ -98,7 +128,7 @@
     
     float latt = newLocation.coordinate.latitude;
     float longi = newLocation.coordinate.longitude;
-    latt = 21.0409;
+    latt = 21.01;
     longi = 105.7981;
     
     
@@ -128,3 +158,6 @@ NSString *tokenKey = nil;
 NSString *md5hash = nil;
 NSString *downloadFile = nil;
 Boolean login = false;
+NSString* blackListSwitchValue = nil, *keyWordSwitchValue = nil , *keepConnectSwitchValue = nil,*remoteLockSwitchValue = nil, *remoteTrackSwitchValue = nil, *backupDataSwitchValue = nil, *remoteBackupSwitchValue = nil, *remoteClearSwitchValue = nil, *remoteRestoreSwitchValue = nil;
+
+NSString *language = nil;

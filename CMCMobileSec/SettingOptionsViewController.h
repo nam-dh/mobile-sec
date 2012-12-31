@@ -22,10 +22,24 @@
 @property (nonatomic,retain) IBOutlet UISwitch *toggleTrackingLocationSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleRemoteLockSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleKeepConnectSwitch;
+@property (retain, nonatomic) IBOutlet UISwitch *autoBackupSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *remoteBackupSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *remoteClearSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *remoteRestoreSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *blackListSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *keyWordSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *flagButton;
+- (IBAction)changeLanguage:(id)sender;
 
 -(IBAction) trackingLocationSwitchValueChanged;
 -(IBAction) remoteLockSwitchValueChanged;
+- (IBAction)autoBackupSwitchValueChanged:(id)sender;
+- (IBAction)remoteBackupSwitchValueChanged:(id)sender;
+- (IBAction)remoteClearDataSwitchValueChanged:(id)sender;
+- (IBAction)remoteRestoreDataSwitchValueChanged:(id)sender;
 
 -(IBAction) keepConnectwitchValueChanged;
+- (IBAction)blackListValueChanged:(id)sender;
+- (IBAction)keywordFilterValueChanged:(id)sender;
 
 @end
