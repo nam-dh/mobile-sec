@@ -22,6 +22,8 @@
     Boolean elementFound;
 }
 
+NSString* tokenkey_send = @"634925929652812500";
+
 -(void) startPraser:(NSMutableData*) xmlData{
     
     if(xmlParser)
@@ -168,6 +170,41 @@ qualifiedName:(NSString *)qName
         //---displays the country---
         NSLog(@"ReportLocationResult=%@",soapResults);
         
+        if ([soapResults isEqualToString:@"0"]) {
+            NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_TRACK</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>12/27/2012 23:35:52</FinishTime>\r\n    <ResultDetail></ResultDetail>\r\n    <LicKey1></LicKey1>\r\n    <LicKey2></LicKey2>\r\n    <LicKey3></LicKey3>\r\n  </Command>\r\n<Command>";
+            
+            
+            NSData* tokenKey_bin =[tokenkey_send dataUsingEncoding:NSUTF8StringEncoding];
+            
+            //get md5 of token key binary
+            NSString* x = [tokenKey_bin MD5];
+            
+            char byte_16[16];
+            for (int i =0; i< 15; i++) {
+                byte_16[i] = [self getValueOfHex:[x characterAtIndex:i*2]] * 16 + [self getValueOfHex:[x characterAtIndex:i*2+1]];
+            }
+            
+            char salt_byte[9];
+            
+            for (int i=0; i<8; i++) {
+                salt_byte[i] = byte_16[i];
+            }
+            
+            NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
+            
+            NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[report dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
+            
+            NSString* base64String = [encrypt base64EncodedString];
+            
+            NSLog(@"base64String=%@", base64String);
+            
+            
+            ServerConnection *serverConnect = [[ServerConnection alloc] init];
+            
+            [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
+            
+        }
+        
         [soapResults setString:@""];
         elementFound = FALSE;
         
@@ -260,7 +297,7 @@ qualifiedName:(NSString *)qName
         
         if (data) {
             //check md5 and lenght
-            if ([md5hash isEqualToString:[data MD5]] && (data.length == 1920)) {
+            if ([md5hash isEqualToString:[data MD5]]) {
                 
                 
                 NSData* tokenKey_bin =[tokenKey dataUsingEncoding:NSUTF8StringEncoding];
@@ -282,9 +319,13 @@ qualifiedName:(NSString *)qName
                 NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
                 NSData* decrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCDecrypt usingData:data withPassword:password andSalt:salt_data andIterating:20];
                 
-//                NSString *path = @"/Users/nam/Desktop/archive.xml";
-//                [decrypt writeToFile:path options:NSDataWritingAtomic error:nil];
-//                
+                NSString *path = @"/Users/nam/Desktop/archive.xml";
+                [decrypt writeToFile:path options:NSDataWritingAtomic error:nil];
+                
+                //unsigned char* array = (unsigned char*) [decrypt bytes];
+                
+                NSLog(@"array=%@", [decrypt description]);
+                
                 NSString* cmdString = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
                 
                 NSLog(@"cmdString=%@",cmdString);

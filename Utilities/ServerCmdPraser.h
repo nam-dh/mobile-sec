@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ServerCmdPraser : NSObject <NSXMLParserDelegate>
 

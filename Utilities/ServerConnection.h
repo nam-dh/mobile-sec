@@ -19,7 +19,7 @@
 -(void) userLogin:(NSString*) email :(NSString*) password :(NSString*) sessionKey;
 -(void) locationReport:(NSString*) vector :(NSString*) sessionKey;
 -(void) downloadFile:(NSString*) sessionKey :(NSString*) type ;
--(void) uploadFile:(NSMutableData*) fContent :(NSString*) type :(NSString*) token :(NSString*) sessionKey ;
+-(void) uploadFile:(NSString*) fContent :(NSString*) type :(NSString*) token :(NSString*) sessionKey ;
 -(void) userLogout:(NSString*) email :(NSString*) sessionKey ;
 -(void) deviceNameReporting:(NSString*) sessionKey ;
 

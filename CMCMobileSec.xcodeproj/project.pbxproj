@@ -24,6 +24,8 @@
 		3D5EEBFD168CBF620017CAA3 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF9168CBF620017CAA3 /* NSString+MD5.m */; };
 		3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */; };
 		3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B49F2168A33FA008BF51F /* ServerConnection.m */; };
+		3DACB17B169200370016F282 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DACB17A169200370016F282 /* AudioToolbox.framework */; };
+		3DACB17D1692017D0016F282 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DACB17C1692017D0016F282 /* alert.mp3 */; };
 		3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CB1678301A00B9BFEB /* cmc.db */; };
 		3DB6A4D01678316900B9BFEB /* KeywordFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */; };
 		3DC0A09A168382FA001B2FAB /* bg_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A099168382FA001B2FAB /* bg_background.png */; };
@@ -173,6 +175,8 @@
 		3D8B49F0168A33FA008BF51F /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBaseConnect.m; path = Utilities/DataBaseConnect.m; sourceTree = "<group>"; };
 		3D8B49F1168A33FA008BF51F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = Utilities/ServerConnection.h; sourceTree = "<group>"; };
 		3D8B49F2168A33FA008BF51F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerConnection.m; path = Utilities/ServerConnection.m; sourceTree = "<group>"; };
+		3DACB17A169200370016F282 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3DACB17C1692017D0016F282 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = Images/alert.mp3; sourceTree = SOURCE_ROOT; };
 		3DB6A4CB1678301A00B9BFEB /* cmc.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cmc.db; path = ../cmc.db; sourceTree = "<group>"; };
 		3DB6A4CE1678316900B9BFEB /* KeywordFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeywordFilterViewController.h; path = CMCMobileSec/KeywordFilterViewController.h; sourceTree = "<group>"; };
 		3DB6A4CF1678316900B9BFEB /* KeywordFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeywordFilterViewController.m; path = CMCMobileSec/KeywordFilterViewController.m; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DACB17B169200370016F282 /* AudioToolbox.framework in Frameworks */,
 				3D25DC4A16821FB80006C7F5 /* CoreLocation.framework in Frameworks */,
 				5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */,
 				52D6D2FC1665F10E00FCEB2F /* CoreTelephony.framework in Frameworks */,
@@ -527,6 +532,7 @@
 		5215A1851665254600D8DEF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3DACB17A169200370016F282 /* AudioToolbox.framework */,
 				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
 				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
 				3D25DC4916821FB80006C7F5 /* CoreLocation.framework */,
@@ -540,6 +546,7 @@
 		5215A18D1665254600D8DEF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DACB17C1692017D0016F282 /* alert.mp3 */,
 				52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */,
 				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
 				3D8B49F6168A343D008BF51F /* Images */,
@@ -717,6 +724,7 @@
 				522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */,
 				3D454A8516919AF9007FF3A9 /* Icon.png in Resources */,
 				3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */,
+				3DACB17D1692017D0016F282 /* alert.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
