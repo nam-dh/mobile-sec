@@ -84,6 +84,14 @@ int detectedVirusNum = 0;
     return 2;
 }
 
+//----------------------TABLEVIEWCELL HEIGHT -------------------------------------------
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 154;
+    
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +123,7 @@ int detectedVirusNum = 0;
         NSThread* scanThread = [[NSThread alloc] initWithTarget:self
                                                        selector:@selector(scanThreadMainMethod) object:nil];
         [scanThread start];
-        [[self tableView] reloadData];
+        
     }
 
 }
@@ -131,8 +139,9 @@ int detectedVirusNum = 0;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-
+    BOOL isFirstTime = true;
     if (cell == nil) {
+
         NSLog(@"cell = nil with row = %d", indexPath.row);
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 15.0, 170.0, 21.0)];
@@ -170,6 +179,7 @@ int detectedVirusNum = 0;
         [cell.contentView addSubview:progLabel];
 
     } else {
+        isFirstTime = false;
         mainLabel = (UILabel *)[cell.contentView viewWithTag:MAINLABEL_TAG];
         secondLabel = (UILabel *)[cell.contentView viewWithTag:SECONDLABEL_TAG];
         progLabel = (UILabel *) [cell.contentView viewWithTag:PROGRESS_TAG];
@@ -187,9 +197,7 @@ int detectedVirusNum = 0;
         if (!isScanOnDemand && isSelected){
             secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
             progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];
-        } else{
-            secondLabel.text = @" ";
-        }
+        } 
     }
     return cell;
 }
@@ -283,7 +291,7 @@ int detectedVirusNum = 0;
 
     [threadDict setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];
     filename = @"scan is finished";
-//    [[self tableView] reloadData];
+
     NSThread* printResult = [[NSThread alloc] initWithTarget:self
                                                     selector:@selector(printResultToTable:)
                                                       object:filename];
