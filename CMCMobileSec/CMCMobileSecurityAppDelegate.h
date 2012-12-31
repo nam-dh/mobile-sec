@@ -22,6 +22,8 @@ extern NSString *md5hash;
 extern NSString *downloadFile;
 extern Boolean login;
 extern NSString* blackListSwitchValue, *keyWordSwitchValue, *keepConnectSwitchValue ,*remoteLockSwitchValue, *remoteTrackSwitchValue, *backupDataSwitchValue, *remoteBackupSwitchValue, *remoteClearSwitchValue, *remoteRestoreSwitchValue;
+extern NSString *language;
+
 
 @interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate, CLLocationManagerDelegate> {
     CLLocationManager *locationManager;

@@ -49,6 +49,8 @@
     
     remoteRestoreSwitchValue= [defaults objectForKey:@"remoteRestoreSwitchValue"];
     
+    language= [defaults objectForKey:@"language"];
+    
     
     return YES;
 }
@@ -157,3 +159,5 @@ NSString *md5hash = nil;
 NSString *downloadFile = nil;
 Boolean login = false;
 NSString* blackListSwitchValue = nil, *keyWordSwitchValue = nil , *keepConnectSwitchValue = nil,*remoteLockSwitchValue = nil, *remoteTrackSwitchValue = nil, *backupDataSwitchValue = nil, *remoteBackupSwitchValue = nil, *remoteClearSwitchValue = nil, *remoteRestoreSwitchValue = nil;
+
+NSString *language = nil;

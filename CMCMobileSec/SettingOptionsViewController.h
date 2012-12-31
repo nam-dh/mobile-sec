@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *remoteRestoreSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *blackListSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *keyWordSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *flagButton;
+- (IBAction)changeLanguage:(id)sender;
 
 -(IBAction) trackingLocationSwitchValueChanged;
 -(IBAction) remoteLockSwitchValueChanged;

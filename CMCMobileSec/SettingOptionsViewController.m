@@ -24,6 +24,7 @@
 @synthesize autoBackupSwitch;
 @synthesize remoteClearSwitch;
 @synthesize remoteRestoreSwitch;
+@synthesize flagButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -101,6 +102,16 @@
     if ([remoteRestoreSwitchValue isEqualToString:@"ON"]) {
         [remoteRestoreSwitch setOn:YES];
     }
+	
+    if ([language isEqualToString:@"ENG"]) {
+       [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal]; 
+    } else {
+        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
+        language = @"VIE";
+    }
+    
+    
+    
     
 }
 
@@ -128,6 +139,16 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"theChange" object:nil];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)changeLanguage:(id)sender {
+    if ([language isEqualToString:@"ENG"]) {
+        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
+        language = @"VIE";
+    } else {
+        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal];
+        language = @"ENG";
+    }
 }
 
 -(IBAction) trackingLocationSwitchValueChanged{
@@ -401,6 +422,7 @@
     [self setRemoteClearSwitch:nil];
     [self setRemoteRestoreSwitch:nil];
     [self setKeyWordSwitch:nil];
+    [self setFlagButton:nil];
     [super viewDidUnload];
 }
 @end
