@@ -30,6 +30,15 @@
 - (void)viewDidLoad
 {
 //    [super viewDidLoad];
+    
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
+    [self.tableView setBackgroundView:boxBackView];
+    
+    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cmc_bar.png"]]];
+    self.navigationItem.leftBarButtonItem= item;
+    
+    
     self.title = NSLocalizedString(@"History", @"");
     self.navigationItem.prompt = NSLocalizedString(@"Please select the appropriate history", @"History");
 

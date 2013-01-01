@@ -86,9 +86,11 @@
     NSLog(@"%@",_email.text);
     NSLog(@"%@",_password.text);
     NSLog(@"%@",_password_confirm.text);
+    email = _email.text;
+    password = _password.text;
     
     ServerConnection *theInstance = [[ServerConnection alloc] init];
-    [theInstance registerAccount:email :password :sessionKey];
+    [theInstance registerAccount:_email.text :_password.text :sessionKey];
     
     if (failed == false){
         [self.navigationController popToRootViewControllerAnimated:YES];

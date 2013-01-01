@@ -122,12 +122,13 @@
 }
 
 -(void) uploadFile:(NSString*) fContent :(NSString*) type :(NSString*) token :(NSString*) sessionKey {
+    
     NSString *url = @"http://mobi.cmcinfosec.com/CMCMobileSecurity.asmx?op=UploadFile";
     NSString *method_name = @"UploadFile";
     NSString *soap_action = @"http://cmcinfosec.com/UploadFile";
     
     // construct envelope (not optimized, intended to show basic steps)
-    NSString *uploadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <fs>%p</fs>\n" " <type>%@</type>\n" " <token>%@</token>\n" " <sessionkey>%@</sessionkey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, fContent, type, token, sessionKey, method_name];
+    NSString *uploadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <fs>%@</fs>\n" " <type>%@</type>\n" " <token>%@</token>\n" " <sessionkey>%@</sessionkey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, fContent, type, token, sessionKey, method_name];
     
     NSLog (@"%@",uploadFileEnvelopeText);
     

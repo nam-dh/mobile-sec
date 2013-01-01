@@ -96,6 +96,9 @@ qualifiedName:(NSString *)qName
             
             failed = false;
             
+            //send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
+            
         } else {
             failed = true;
         }
@@ -114,11 +117,12 @@ qualifiedName:(NSString *)qName
             
             DataBaseConnect *theInstance = [[DataBaseConnect alloc] init];
             [theInstance updateActivation:[DataBaseConnect getDBPath]];
-            
-            ServerConnection *theInstance2 = [[ServerConnection alloc] init];
-            [theInstance2 userLogin:email :password :sessionKey];
-            
             failed = false;
+            
+            NSThread* userLoginThread = [[NSThread alloc] initWithTarget:self
+                                                                     selector:@selector(userLogin) object:nil];
+            [userLoginThread start];
+        
             
         } else {
             failed = true;
@@ -194,7 +198,12 @@ qualifiedName:(NSString *)qName
             
             NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[report dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
             
-            NSString* base64String = [encrypt base64EncodedString];
+            NSData *encrypt1 = [NSData dataWithContentsOfFile:
+                                [@"/Users/nam/Desktop/out.txt" stringByExpandingTildeInPath]];
+            
+            NSLog(@"encrypt1=%@", [encrypt1 description]);
+            
+            NSString* base64String = [encrypt1 base64EncodedString];
             
             NSLog(@"base64String=%@", base64String);
             
@@ -351,6 +360,11 @@ qualifiedName:(NSString *)qName
         elementFound = FALSE;
     }
     
+}
+
+-(void) userLogin {
+    ServerConnection *theInstance2 = [[ServerConnection alloc] init];
+    [theInstance2 userLogin:email :password :sessionKey];
 }
 
 -(int)getValueOfHex:(char)hex

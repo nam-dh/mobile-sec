@@ -9,6 +9,9 @@
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
 #import "DataBaseConnect.h"
+#import "NSData+MD5.h"
+#import "FileDecryption.h"
+#import "NSData+Base64.h"
 
 @implementation CMCMobileSecurityAppDelegate {
     NSMutableData *responeData;
@@ -21,6 +24,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    UIImage *image = [UIImage imageNamed:@"bar_normal.png"];
+    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -56,8 +63,56 @@
                                                            selector:@selector(prepareHistory) object:nil];
     [prepareHistoryThread start];
     
+    [self testEncrypt];
     
     return YES;
+}
+
+
+-(void) testEncrypt{
+    
+    NSString* tokenkey_send = @"634925929652812500";
+    
+    
+    NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_TRACK</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>12/31/2012 15:41:55</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <LicKey1>\r\n    </LicKey1>\r\n    <LicKey2>\r\n    </LicKey2>\r\n    <LicKey3>\r\n    </LicKey3>\r\n  </Command>\r\n</Commands>";
+    
+    
+    NSData* tokenKey_bin =[tokenkey_send dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //get md5 of token key binary
+    NSString* x = [tokenKey_bin MD5];
+    
+    char byte_16[16];
+    for (int i =0; i< 15; i++) {
+        byte_16[i] = [self getValueOfHex:[x characterAtIndex:i*2]] * 16 + [self getValueOfHex:[x characterAtIndex:i*2+1]];
+    }
+    
+    char salt_byte[9];
+    
+    for (int i=0; i<8; i++) {
+        salt_byte[i] = byte_16[i];
+    }
+    
+    NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
+    
+    password = @"123456";
+    
+    NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[report dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
+    
+    NSString* base64String = [encrypt base64EncodedString];
+    
+    NSLog(@"base64String=%@", base64String);
+    
+    
+    ServerConnection *serverConnect = [[ServerConnection alloc] init];
+    
+    [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
+}
+
+-(int)getValueOfHex:(char)hex
+{
+    if (hex > 'a') return hex - 'a' + 10;
+    else return hex - '0';
 }
 
 -(void) prepareHistory {
