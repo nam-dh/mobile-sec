@@ -92,7 +92,16 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"trackingLocation" object:nil];
             }
             
+        } else if ([soapResults isEqualToString:@"CMC_ALERT"]) {
+            
+            SystemSoundID sounds[10];
+            NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"alert" ofType:@"mp3"];
+            CFURLRef soundURL = (__bridge CFURLRef)[NSURL fileURLWithPath:soundPath];
+            AudioServicesCreateSystemSoundID(soundURL, &sounds[0]);
+            AudioServicesPlaySystemSound(sounds[0]);
+            
         }
+        
         
         [soapResults setString:@""];
         elementFound = FALSE;

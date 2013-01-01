@@ -881,33 +881,33 @@ Restoreing data is sent from CMC InfoSec</string>
         <scene sceneID="LAq-hg-FK0">
             <objects>
                 <tableViewController id="j2I-iE-u0O" userLabel="Scan History" customClass="ScanHistoryViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rlk-6S-ebP">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rlk-6S-ebP">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="history_cell" textLabel="Lwt-fO-c0Q" detailTextLabel="8km-9f-bcF" imageView="Dq1-cA-QPQ" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="FUa-vV-QIz">
-                                <rect key="frame" x="0.0" y="22" width="320" height="65"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="history_cell" textLabel="Lwt-fO-c0Q" detailTextLabel="8km-9f-bcF" imageView="Dq1-cA-QPQ" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="FUa-vV-QIz">
+                                <rect key="frame" x="0.0" y="22" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lwt-fO-c0Q">
-                                            <rect key="frame" x="67" y="12" width="33" height="20"/>
+                                            <rect key="frame" x="70" y="26" width="29" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8km-9f-bcF">
-                                            <rect key="frame" x="67" y="32" width="59" height="20"/>
+                                            <rect key="frame" x="70" y="45" width="51" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="history_icon_realtimescan50.png" id="Dq1-cA-QPQ">
-                                            <rect key="frame" x="7" y="7" width="50" height="50"/>
+                                            <rect key="frame" x="10" y="19" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1237,6 +1237,10 @@ Restoreing data is sent from CMC InfoSec</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nNJ-4m-SuA">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="AZk-kM-FaM" kind="relationship" relationship="rootViewController" id="wRX-ws-99X"/>
                     </connections>

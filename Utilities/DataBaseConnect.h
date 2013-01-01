@@ -20,4 +20,8 @@
 +(NSString*) getEmail:(NSString *)dbPath ;
 +(NSString*) getPassword:(NSString *)dbPath ;
 
+-(void)insertScanStatistic:(NSString *) time :(NSString *) filenumber :(NSString *) dectectedNumber :(NSString*) virus :(NSString *)dbPath;
+-(void)insertDetected:(NSString *) filename :(NSString*) virus :(NSString *)dbPath;
++(NSMutableArray *) getScanStatistic:(NSString *)dbPath;
+
 @end

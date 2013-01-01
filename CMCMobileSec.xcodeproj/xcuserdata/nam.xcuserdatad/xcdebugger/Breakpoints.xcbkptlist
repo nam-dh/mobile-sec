@@ -20,13 +20,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Utilities/ServerConnection.m"
-         timestampString = "378624788.800727"
+         filePath = "Utilities/DataBaseConnect.m"
+         timestampString = "378671085.699937"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
-         landmarkName = "-connectionDidFinishLoading:"
+         startingLineNumber = "294"
+         endingLineNumber = "294"
+         landmarkName = "+getScanStatistic:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

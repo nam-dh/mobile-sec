@@ -7,6 +7,7 @@
 //
 
 #import "ScanOptionViewController.h"
+#import "DataBaseConnect.h"
 
 @interface ScanOptionViewController ()
 
@@ -46,8 +47,14 @@ int detectedVirusNum = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
+    
+    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cmc_bar.png"]]];
+    self.navigationItem.leftBarButtonItem= item;
+    
     filename = @" ";
 
     // Add the exitNow BOOL to the thread dictionary.
@@ -296,10 +303,7 @@ int detectedVirusNum = 0;
                                                     selector:@selector(printResultToTable:)
                                                       object:filename];
     [printResult start];
-    // prepare to store in history
-    if (gScanHistory == nil) {
-        gScanHistory = [NSMutableArray array];
-    }
+    
     NSDate *now = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yyyy HH:mm:ss"];
@@ -307,16 +311,24 @@ int detectedVirusNum = 0;
     NSLog(@"time:%@", time);
     NSString* totalScan = [NSString stringWithFormat:@"%d", countedFileNumber];
     NSString* totalDetected = [NSString stringWithFormat:@"%d", detectedVirusNum];
+    NSString* haveVirus = @"";
     NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
     [item setObject:time forKey:@"time"];
     [item setObject:totalScan forKey:@"totalScanned"];
     [item setObject:totalDetected forKey:@"totalDetected"];
+    [item setObject:haveVirus forKey:@"havevirus"];
     [gScanHistory addObject:item];
 
     NSLog(@"count index 1 = %d", [gScanHistory count]);
     //send notification
     [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHistory" object:nil];
     //
+    
+    //add to database
+    DataBaseConnect *dataBaseConnect = [[DataBaseConnect alloc] init];
+    [dataBaseConnect insertScanStatistic:time :totalScan :totalDetected :haveVirus :[DataBaseConnect getDBPath]];
+    
+    
     isSelected = false;
     isScanOnDemand = false;
     countedFileNumber = 0;

@@ -197,4 +197,119 @@
     }
 }
 
+-(void)insertScanStatistic:(NSString *) time :(NSString *) filenumber :(NSString *) dectectedNumber :(NSString*) virus :(NSString *)dbPath{
+    sqlite3 *database;
+    
+    //Open db
+    sqlite3_open([dbPath UTF8String], &database);
+    
+    static sqlite3_stmt *insertStmt = nil;
+    
+    if(insertStmt == nil)
+    {
+        char* insertSql = "INSERT INTO scanstatistic (time, filenumber, detectednumber , havevirus) VALUES(?,?,?,?)";
+        if(sqlite3_prepare_v2(database, insertSql, -1, &insertStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    sqlite3_bind_text(insertStmt, 1, [time UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 2, [filenumber UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 3, [dectectedNumber UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 4, [virus UTF8String], -1, SQLITE_TRANSIENT);
+    
+    if(SQLITE_DONE != sqlite3_step(insertStmt)) {
+        // NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+    }
+    else
+        NSLog(@"Inserted");
+    //Reset the add statement.
+    sqlite3_reset(insertStmt);
+    insertStmt = nil;
+    
+    sqlite3_finalize(insertStmt);
+    sqlite3_close(database);
+}
+
+-(void)insertDetected:(NSString *) filename :(NSString*) virus :(NSString *)dbPath{
+    sqlite3 *database;
+    
+    //Open db
+    sqlite3_open([dbPath UTF8String], &database);
+    
+    static sqlite3_stmt *insertStmt = nil;
+    
+    if(insertStmt == nil)
+    {
+        char* insertSql = "INSERT INTO detected (filename, virus) VALUES(?,?)";
+        if(sqlite3_prepare_v2(database, insertSql, -1, &insertStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    sqlite3_bind_text(insertStmt, 1, [filename UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 2, [virus UTF8String], -1, SQLITE_TRANSIENT);
+    
+    if(SQLITE_DONE != sqlite3_step(insertStmt)) {
+        // NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+    }
+    else
+        NSLog(@"Inserted");
+    //Reset the add statement.
+    sqlite3_reset(insertStmt);
+    insertStmt = nil;
+    
+    sqlite3_finalize(insertStmt);
+    sqlite3_close(database);
+}
+
++(NSMutableArray *) getScanStatistic:(NSString *)dbPath {
+    
+    NSMutableArray* data = [NSMutableArray array];
+    
+    NSString *time = @"";
+    NSString *filenumber = @"";
+    NSString *detectednumber = @"";
+    NSString *havevirus = @"";
+    
+    sqlite3 *database;
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        sqlite3_stmt *statement;
+        
+        const char *sql = "select time, filenumber, detectednumber, havevirus from scanstatistic";
+        
+        sqlite3_prepare_v2(database, sql, -1, &statement, NULL);
+        
+        // Use the while loop if you want more than just the most recent message
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+        
+        //if (sqlite3_step(statement) == SQLITE_ROW) {
+            char *content = (char *)sqlite3_column_text(statement, 0);
+            time = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+            content = (char *)sqlite3_column_text(statement, 1);
+            filenumber = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+            content = (char *)sqlite3_column_text(statement, 1);
+            detectednumber = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+            content = (char *)sqlite3_column_text(statement, 1);
+            havevirus = [NSString stringWithCString: content encoding: NSUTF8StringEncoding];
+            
+            NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+            [item setObject:time forKey:@"time"];
+            [item setObject:filenumber forKey:@"totalScanned"];
+            [item setObject:detectednumber forKey:@"totalDetected"];
+            [item setObject:havevirus forKey:@"havevirus"];
+            [data addObject:item];
+            
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+        
+        
+        //NSLog(@"email=%@", text);
+        
+    }
+    else
+        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+    return data;
+}
+
 @end

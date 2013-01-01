@@ -51,7 +51,7 @@
     [self.tableView setBackgroundView:boxBackView];
     
     
-    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_baricon.png"]]];
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cmc_bar.png"]]];
     self.navigationItem.leftBarButtonItem= item;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -72,6 +72,8 @@
     }
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"loginSuccess" object:nil];
+    //add observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeToValidate) name:@"registerSuccess" object:nil];
     
     if ([blackListSwitchValue isEqualToString:@"ON"]) {
         [blackListSwitch setOn:YES];
@@ -120,6 +122,13 @@
     self.account1.text = @"Email";
     self.account2.text = email;
 
+}
+
+- (void)changeToValidate
+{
+    self.account1.text = @"Waiting for Confirmation Code";
+    self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -188,6 +197,7 @@
         }
         [imagePicker setDelegate:self];
         [self presentModalViewController:imagePicker animated:YES];
+       // [imagePicker takePicture];
         
         
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -203,6 +213,15 @@
         remoteLockSwitchValue = @"OFF";
         
     }
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //[self.imageView setImage:image];
+    //save image
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)autoBackupSwitchValueChanged:(id)sender {
@@ -326,15 +345,6 @@
         [settings synchronize];
         keyWordSwitchValue = @"OFF";
     }
-}
-
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //[self.imageView setImage:image];
-    //save image
-    
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 
