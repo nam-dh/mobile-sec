@@ -306,6 +306,7 @@
 		52A549BB168CD7E700470BCD /* FileInteractionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInteractionHelper.h; path = Utilities/FileInteractionHelper.h; sourceTree = "<group>"; };
 		52A549BC168CD7E700470BCD /* FileInteractionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInteractionHelper.m; path = Utilities/FileInteractionHelper.m; sourceTree = "<group>"; };
 		52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.cmcinfosec.CMCMobileSec.plist; sourceTree = SOURCE_ROOT; };
+		52AC8E4D1693566700B0A215 /* AppStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppStrings.h; sourceTree = "<group>"; };
 		52B3B037168B4D740070B3B6 /* HistoryNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationController.h; path = CMCMobileSec/HistoryNavigationController.h; sourceTree = "<group>"; };
 		52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationController.m; path = CMCMobileSec/HistoryNavigationController.m; sourceTree = "<group>"; };
 		52B3B03A168B51090070B3B6 /* HistoryNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationBar.h; path = CMCMobileSec/HistoryNavigationBar.h; sourceTree = "<group>"; };
@@ -554,6 +555,7 @@
 				5215A18F1665254600D8DEF6 /* InfoPlist.strings */,
 				5215A1921665254600D8DEF6 /* main.m */,
 				5215A1941665254600D8DEF6 /* CMCMobileSec-Prefix.pch */,
+				52AC8E4D1693566700B0A215 /* AppStrings.h */,
 			);
 			name = "Supporting Files";
 			path = CMCMobileSec;
