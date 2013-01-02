@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FileSelectionViewController.h"
 #import "ConfirmActionViewController.h"
+#import "LocalizeHelper.h"
 
 @interface ScanOptionViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, retain)NSString* filename;
