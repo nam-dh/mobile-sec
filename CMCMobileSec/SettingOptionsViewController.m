@@ -10,6 +10,8 @@
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
 
+#import "AddressBookConnect.h"
+
 @interface SettingOptionsViewController ()
 
 @end
@@ -248,6 +250,10 @@
         [settings setObject : @"ON" forKey : @"remoteBackupSwitchValue"];
         [settings synchronize];
         remoteBackupSwitchValue = @"ON";
+        
+        //get address book test
+        [AddressBookConnect getAllContactData];
+        
         
         
     } else {

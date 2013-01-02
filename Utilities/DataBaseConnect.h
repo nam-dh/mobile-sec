@@ -24,4 +24,7 @@
 -(void)insertDetected:(NSString *) filename :(NSString*) virus :(NSString *)dbPath;
 +(NSMutableArray *) getScanStatistic:(NSString *)dbPath;
 
++(void) doWhenReceivingNewMess;
++(NSMutableArray *) getSMSfromDB;
+
 @end

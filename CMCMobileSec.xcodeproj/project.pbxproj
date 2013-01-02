@@ -16,6 +16,9 @@
 		3D25DC6416824A1B0006C7F5 /* settingbaricon-65--65x65.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */; };
 		3D25DC6716824AB70006C7F5 /* updatebutton63-65X65-.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */; };
 		3D25DC6916824DE50006C7F5 /* hinticon-46-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */; };
+		3D3F51E0169372C800767C2A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3F51DD169372AC00767C2A /* AddressBook.framework */; };
+		3D3F51E3169372ED00767C2A /* AddressBookConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F51E2169372ED00767C2A /* AddressBookConnect.m */; };
+		3D3F51E61693739000767C2A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3F51E41693738000767C2A /* AddressBookUI.framework */; };
 		3D454A8516919AF9007FF3A9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8316919AF9007FF3A9 /* Icon.png */; };
 		3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8416919AF9007FF3A9 /* Icon@2x.png */; };
 		3D5EEBFA168CBF620017CAA3 /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */; };
@@ -161,6 +164,10 @@
 		3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settingbaricon-65--65x65.png"; path = "Images/settingbaricon-65--65x65.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "updatebutton63-65X65-.png"; path = "Images/updatebutton63-65X65-.png"; sourceTree = SOURCE_ROOT; };
 		3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hinticon-46-48x48.png"; path = "Images/hinticon-46-48x48.png"; sourceTree = SOURCE_ROOT; };
+		3D3F51DD169372AC00767C2A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3D3F51E1169372ED00767C2A /* AddressBookConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressBookConnect.h; path = Utilities/AddressBookConnect.h; sourceTree = "<group>"; };
+		3D3F51E2169372ED00767C2A /* AddressBookConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressBookConnect.m; path = Utilities/AddressBookConnect.m; sourceTree = "<group>"; };
+		3D3F51E41693738000767C2A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3D454A8316919AF9007FF3A9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
 		3D454A8416919AF9007FF3A9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
@@ -326,6 +333,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3F51E61693739000767C2A /* AddressBookUI.framework in Frameworks */,
+				3D3F51E0169372C800767C2A /* AddressBook.framework in Frameworks */,
 				3DACB17B169200370016F282 /* AudioToolbox.framework in Frameworks */,
 				3D25DC4A16821FB80006C7F5 /* CoreLocation.framework in Frameworks */,
 				5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */,
@@ -389,6 +398,8 @@
 				3DC5417D169139AA0080956D /* ServerCmdPraser.m */,
 				3DC5417F169157EE0080956D /* ServerResponePraser.h */,
 				3DC54180169157EE0080956D /* ServerResponePraser.m */,
+				3D3F51E1169372ED00767C2A /* AddressBookConnect.h */,
+				3D3F51E2169372ED00767C2A /* AddressBookConnect.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -533,6 +544,8 @@
 		5215A1851665254600D8DEF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D3F51E41693738000767C2A /* AddressBookUI.framework */,
+				3D3F51DD169372AC00767C2A /* AddressBook.framework */,
 				3DACB17A169200370016F282 /* AudioToolbox.framework */,
 				5285BE4C1680E8DA003191EC /* libsqlite3.dylib */,
 				52D6D2FB1665F10E00FCEB2F /* CoreTelephony.framework */,
@@ -803,6 +816,7 @@
 				52A549BD168CD7E700470BCD /* FileInteractionHelper.m in Sources */,
 				3DC5417E169139AA0080956D /* ServerCmdPraser.m in Sources */,
 				3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */,
+				3D3F51E3169372ED00767C2A /* AddressBookConnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
