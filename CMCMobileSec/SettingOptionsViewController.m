@@ -45,6 +45,23 @@
     [cell setBackgroundView:boxBackView];
 }
 
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
+	tableView.sectionHeaderHeight = headerView.frame.size.height;
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, headerView.frame.size.width - 20, 22)] ;
+	label.text = [self tableView:tableView titleForHeaderInSection:section];
+	label.font = [UIFont boldSystemFontOfSize:15.5];
+	label.shadowOffset = CGSizeMake(0, 1);
+	//label.shadowColor = [UIColor whiteColor];
+	label.backgroundColor = [UIColor clearColor];
+    
+	label.textColor = [UIColor whiteColor];
+    
+	[headerView addSubview:label];
+	return headerView;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

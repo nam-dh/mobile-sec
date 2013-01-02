@@ -38,8 +38,26 @@ static UILabel* c;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // cell.backgroundColor = [UIColor lightGrayColor];
-    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_hint.png"]];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
+    boxBackView.alpha = 0.45;
     [cell setBackgroundView:boxBackView];
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
+	tableView.sectionHeaderHeight = headerView.frame.size.height;
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, headerView.frame.size.width - 20, 22)] ;
+	label.text = [self tableView:tableView titleForHeaderInSection:section];
+	label.font = [UIFont boldSystemFontOfSize:15.5];
+	label.shadowOffset = CGSizeMake(0, 1);
+	//label.shadowColor = [UIColor whiteColor];
+	label.backgroundColor = [UIColor clearColor];
+    
+	label.textColor = [UIColor whiteColor];
+    
+	[headerView addSubview:label];
+	return headerView;
 }
 
 - (void)viewDidLoad

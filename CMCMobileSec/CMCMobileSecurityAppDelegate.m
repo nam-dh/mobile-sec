@@ -12,6 +12,7 @@
 #import "NSData+MD5.h"
 #import "FileDecryption.h"
 #import "NSData+Base64.h"
+#import "ServerResponePraser.h"
 
 @implementation CMCMobileSecurityAppDelegate {
     NSMutableData *responeData;
@@ -77,32 +78,12 @@
     NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_TRACK</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>12/31/2012 15:41:55</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <LicKey1>\r\n    </LicKey1>\r\n    <LicKey2>\r\n    </LicKey2>\r\n    <LicKey3>\r\n    </LicKey3>\r\n  </Command>\r\n</Commands>";
     
     
-    NSData* tokenKey_bin =[tokenkey_send dataUsingEncoding:NSUTF8StringEncoding];
+    NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
     
-    //get md5 of token key binary
-    NSString* x = [tokenKey_bin MD5];
-    
-    char byte_16[16];
-    for (int i =0; i< 15; i++) {
-        byte_16[i] = [self getValueOfHex:[x characterAtIndex:i*2]] * 16 + [self getValueOfHex:[x characterAtIndex:i*2+1]];
-    }
-    
-    char salt_byte[9];
-    
-    for (int i=0; i<8; i++) {
-        salt_byte[i] = byte_16[i];
-    }
-    
-    NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
-    
-    password = @"123456";
-    
-    NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[report dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
-    
-    NSString* base64String = [encrypt base64EncodedString];
-    
-    NSLog(@"base64String=%@", base64String);
-    
+    NSData* data = nil;
+    data = [NSData dataFromBase64String:base64String];
+    NSString* data1 = [ServerResponePraser decryptCmdData:data :tokenkey_send];
+    NSLog(@"data after =%@", data1);
     
     ServerConnection *serverConnect = [[ServerConnection alloc] init];
     

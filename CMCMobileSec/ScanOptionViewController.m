@@ -165,14 +165,16 @@ int detectedVirusNum = 0;
         mainLabel.tag = MAINLABEL_TAG;
         mainLabel.font = [UIFont systemFontOfSize:17.0];
         mainLabel.textAlignment = UITextAlignmentLeft;
-        mainLabel.textColor = [UIColor blackColor];
+        mainLabel.textColor = [UIColor whiteColor];
+        mainLabel.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:mainLabel];
         
         secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 181.0, 84.0)];
         secondLabel.tag = SECONDLABEL_TAG;
         secondLabel.font = [UIFont systemFontOfSize:14.0];
         secondLabel.textAlignment = UITextAlignmentLeft;
-        secondLabel.textColor = [UIColor blackColor];
+        secondLabel.textColor = [UIColor whiteColor];
+        secondLabel.backgroundColor = [UIColor clearColor];
         secondLabel.lineBreakMode = UILineBreakModeWordWrap;
         secondLabel.numberOfLines = 0;
         [cell.contentView addSubview:secondLabel];
@@ -192,7 +194,8 @@ int detectedVirusNum = 0;
         progLabel.tag = PROGRESS_TAG;
         progLabel.font = [UIFont systemFontOfSize:14.0];
         progLabel.textAlignment = UITextAlignmentRight;
-        progLabel.textColor = [UIColor blackColor];
+        progLabel.textColor = [UIColor whiteColor];
+        progLabel.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:progLabel];
 
     } else {
