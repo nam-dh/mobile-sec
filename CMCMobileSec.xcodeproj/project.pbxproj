@@ -135,6 +135,9 @@
 		5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */; };
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
 		522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */ = {isa = PBXBuildFile; fileRef = 522654C416918D61003A5276 /* history_icon_realtimescan50.png */; };
+		52279BF51693EC5B00AE2A2A /* localize.py in Resources */ = {isa = PBXBuildFile; fileRef = 52279BF41693EC5B00AE2A2A /* localize.py */; };
+		525620141693CED800A49C5A /* LocalizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 525620131693CED800A49C5A /* LocalizeHelper.m */; };
+		5256201B1693D13700A49C5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525620191693D13700A49C5A /* Localizable.strings */; };
 		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
 		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
@@ -296,6 +299,12 @@
 		5215A1C21665332900D8DEF6 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryViewController.h; path = CMCMobileSec/SummaryViewController.h; sourceTree = "<group>"; };
 		5215A1C31665332900D8DEF6 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryViewController.m; path = CMCMobileSec/SummaryViewController.m; sourceTree = "<group>"; };
 		522654C416918D61003A5276 /* history_icon_realtimescan50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_icon_realtimescan50.png; path = Images/history_icon_realtimescan50.png; sourceTree = SOURCE_ROOT; };
+		52279BED1693D17800AE2A2A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = CMCMobileSec/vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		52279BEE1693D88300AE2A2A /* vi */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = vi; path = vi.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		52279BF41693EC5B00AE2A2A /* localize.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = localize.py; sourceTree = "<group>"; };
+		525620121693CED800A49C5A /* LocalizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizeHelper.h; path = Utilities/LocalizeHelper.h; sourceTree = "<group>"; };
+		525620131693CED800A49C5A /* LocalizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizeHelper.m; path = Utilities/LocalizeHelper.m; sourceTree = "<group>"; };
+		5256201A1693D13700A49C5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = CMCMobileSec/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5257F557168A1A4600C00465 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
 		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
@@ -389,6 +398,8 @@
 				3DC5417D169139AA0080956D /* ServerCmdPraser.m */,
 				3DC5417F169157EE0080956D /* ServerResponePraser.h */,
 				3DC54180169157EE0080956D /* ServerResponePraser.m */,
+				525620121693CED800A49C5A /* LocalizeHelper.h */,
+				525620131693CED800A49C5A /* LocalizeHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -547,6 +558,8 @@
 		5215A18D1665254600D8DEF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52279BF41693EC5B00AE2A2A /* localize.py */,
+				525620191693D13700A49C5A /* Localizable.strings */,
 				3DACB17C1692017D0016F282 /* alert.mp3 */,
 				52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */,
 				3DB6A4CB1678301A00B9BFEB /* cmc.db */,
@@ -572,7 +585,6 @@
 				5215A17F1665254600D8DEF6 /* Frameworks */,
 				5215A1801665254600D8DEF6 /* Resources */,
 				50524F424C454D533F /* ShellScript */,
-				3D27B5BD16935E0200C4D33D /* ShellScript */,
 				3D27B5BE16935E0B00C4D33D /* ShellScript */,
 			);
 			buildRules = (
@@ -600,6 +612,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				vn,
+				vi,
 			);
 			mainGroup = 5215A1771665254600D8DEF6;
 			productRefGroup = 5215A1831665254600D8DEF6 /* Products */;
@@ -729,25 +743,14 @@
 				3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */,
 				3DACB17D1692017D0016F282 /* alert.mp3 in Resources */,
 				3D820A5F16931C2200A626B2 /* cmc_bar.png in Resources */,
+				5256201B1693D13700A49C5A /* Localizable.strings in Resources */,
+				52279BF51693EC5B00AE2A2A /* localize.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D27B5BD16935E0200C4D33D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
-		};
 		3D27B5BE16935E0B00C4D33D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "python CMCMobileSec/localize.py --mainIdiom=en --mainStoryboard=CMCMobileSec/en.lproj/MainStoryboard.storyboard vi\n\n";
 		};
 		50524F424C454D533F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -772,7 +775,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ “${PLATFORM_NAME}” == “iphoneos” ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements511/gen_entitlements.py “com.yourcompany.${PROJECT_NAME}” “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent”;\ncodesign -f -s “iPhone Developer” —entitlements “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent” “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/”\nfi";
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ “${PLATFORM_NAME}” == “iphoneos” ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements511/gen_entitlements.py “com.yourcompany.${PROJECT_NAME}” “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent”;\ncodesign -f -s “iPhone Developer” —entitlements “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent” “${BUILT_PRODUCTS_DIR}/${WRAPPER_zNAME}/”\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -803,6 +806,7 @@
 				52A549BD168CD7E700470BCD /* FileInteractionHelper.m in Sources */,
 				3DC5417E169139AA0080956D /* ServerCmdPraser.m in Sources */,
 				3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */,
+				525620141693CED800A49C5A /* LocalizeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,9 +825,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				5215A19F1665254700D8DEF6 /* en */,
+				52279BEE1693D88300AE2A2A /* vi */,
 			);
 			name = MainStoryboard.storyboard;
 			path = CMCMobileSec;
+			sourceTree = "<group>";
+		};
+		525620191693D13700A49C5A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5256201A1693D13700A49C5A /* en */,
+				52279BED1693D17800AE2A2A /* vi */,
+			);
+			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

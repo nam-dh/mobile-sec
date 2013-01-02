@@ -9,6 +9,11 @@
 #ifndef CMCMobileSec_AppStrings_h
 #define CMCMobileSec_AppStrings_h
 
+#define menu_title_scan_custom @"Scan On Demand"
+
+#define Translate(key) \
+[[NSBundle mainBundle] localizedStringForKey:(menu_title_scan_custom) value:@"Quét theo chỉ định" table:nil]
+
 
 
 #endif

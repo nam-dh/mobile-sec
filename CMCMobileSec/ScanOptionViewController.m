@@ -46,6 +46,7 @@ int detectedVirusNum = 0;
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
@@ -66,10 +67,19 @@ int detectedVirusNum = 0;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"reloadTableView" object:nil];
-
+    
+    // observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguage) name:@"reloadLanguage" object:nil];
 }
 
-
+- (void) reloadLanguage{
+    if([language isEqualToString:@"ENG"]){
+        LocalizationSetLanguage(@"en");
+    } else{
+        LocalizationSetLanguage(@"vi");
+    }
+    [[self tableView] reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -158,7 +168,7 @@ int detectedVirusNum = 0;
         mainLabel.textColor = [UIColor blackColor];
         [cell.contentView addSubview:mainLabel];
         
-        secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 194.0, 85.0)];
+        secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 181.0, 84.0)];
         secondLabel.tag = SECONDLABEL_TAG;
         secondLabel.font = [UIFont systemFontOfSize:14.0];
         secondLabel.textAlignment = UITextAlignmentLeft;
@@ -169,9 +179,9 @@ int detectedVirusNum = 0;
         
         // add Button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        CGRect frame = CGRectMake(220.0, 54.0, 60.0, 45.0);
+        CGRect frame = CGRectMake(209.0, 54.0, 83.0, 45.0);
         button.frame = frame;
-        [button setTitle:@"Stop" forState:UIControlStateNormal]; 
+        [button setTitle:LocalizedString(@"gnr_stop") forState:UIControlStateNormal];
         button.tag = BUTTON_TAG;
         [button addTarget:self action:@selector(stopScan:event:)  forControlEvents:UIControlEventTouchUpInside];
         button.backgroundColor = [UIColor clearColor];
@@ -192,15 +202,16 @@ int detectedVirusNum = 0;
         progLabel = (UILabel *) [cell.contentView viewWithTag:PROGRESS_TAG];
         button = (UIButton *)[cell.contentView viewWithTag:BUTTON_TAG];
     }
+    button.titleLabel.text = LocalizedString(@"gnr_stop");
     if (indexPath.row == 0) {
-        mainLabel.text = @"Scan On Demand";
+        mainLabel.text = LocalizedString(@"menu_title_scan_custom");
         if (isScanOnDemand) {
             secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
             progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];
         }
         
     } else if (indexPath.row == 1) {
-        mainLabel.text =  @"Scan Whole System";
+        mainLabel.text =  LocalizedString(@"menu_title_scan_full");
         if (!isScanOnDemand && isSelected){
             secondLabel.text  = [NSString stringWithFormat:@"scanning:%@",filename];
             progLabel.text = [NSString stringWithFormat:@"%d / %d", detectedVirusNum, countedFileNumber];

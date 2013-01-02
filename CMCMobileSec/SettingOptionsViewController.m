@@ -106,10 +106,12 @@
     }
 	
     if ([language isEqualToString:@"ENG"]) {
-       [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal]; 
+       [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal];
+        
     } else {
         [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
         language = @"VIE";
+
     }
     
     
@@ -151,13 +153,19 @@
 }
 
 - (IBAction)changeLanguage:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([language isEqualToString:@"ENG"]) {
         [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
         language = @"VIE";
+        [defaults setObject:@"VIE" forKey:@"language"];
     } else {
         [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal];
         language = @"ENG";
+        [defaults setObject:@"ENG" forKey:@"language"];
     }
+    [defaults synchronize];
+    //send notification
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadLanguage" object:nil];
 }
 
 -(IBAction) trackingLocationSwitchValueChanged{
