@@ -926,7 +926,7 @@ Restoreing data is sent from CMC InfoSec</string>
             </objects>
             <point key="canvasLocation" x="1119" y="2342"/>
         </scene>
-        <!--Scan Option View Controller-->
+        <!--Scan Option View Controller - Scan-->
         <scene sceneID="Huo-1E-Igg">
             <objects>
                 <tableViewController storyboardIdentifier="scan_view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AZk-kM-FaM" customClass="ScanOptionViewController" sceneMemberID="viewController">
@@ -1004,7 +1004,7 @@ Restoreing data is sent from CMC InfoSec</string>
                             <outlet property="delegate" destination="AZk-kM-FaM" id="G7K-J9-ZRW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bnn-HV-buG"/>
+                    <navigationItem key="navigationItem" title="Scan" id="bnn-HV-buG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMj-6b-HmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1608,6 +1608,9 @@ Mobile Security:</string>
         </class>
         <class className="ScanHistoryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="segmentAction:"/>
+            </relationships>
         </class>
         <class className="ScanOptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>

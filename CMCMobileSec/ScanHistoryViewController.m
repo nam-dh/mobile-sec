@@ -40,7 +40,7 @@
     
     
     self.title = NSLocalizedString(@"History", @"");
-    self.navigationItem.prompt = NSLocalizedString(@"Please select the appropriate history", @"History");
+   // self.navigationItem.prompt = NSLocalizedString(@"Please select the appropriate history", @"History");
 
     // segmented control as the custom title view
     
@@ -114,17 +114,19 @@
         NSMutableDictionary* item = [scanHistory objectAtIndex:indexPath.row];
         NSString* time = [item objectForKey:@"time"];
         cell.textLabel.text = time;
+        cell.textLabel.textColor = [UIColor whiteColor];
         NSString* totalScan = [item objectForKey:@"totalScanned"];
         NSString* totalDetected = [item objectForKey:@"totalDetected"];
         NSString* haveVirus = [item objectForKey:@"havevirus"];
         cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
         cell.detailTextLabel.numberOfLines = 0;
 
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Total scanned: %@ files\nTotal detected: %@ files\nHave virus: %@", totalScan, totalDetected, haveVirus];
         //    cell.detailTextLabel.text = @"detail";
     } else{
-        cell.textLabel.text = @"text label";
-        cell.detailTextLabel.text = @"detail text label";
+        cell.textLabel.text = @"";
+        cell.detailTextLabel.text = @"";
     }
 
     return cell;
