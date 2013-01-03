@@ -20,6 +20,16 @@
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *accCell;
 @property (weak, nonatomic) IBOutlet UILabel *updateStatusLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *blackListLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subBlackListLabel;
+@property (weak, nonatomic) IBOutlet UILabel *keywordFilterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subKeywordFilterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *autoConnectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subAutoConnectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lockLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subLockLabel;
+
 @property (nonatomic,retain) IBOutlet UISwitch *toggleTrackingLocationSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleRemoteLockSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleKeepConnectSwitch;

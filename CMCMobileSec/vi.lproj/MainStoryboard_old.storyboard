@@ -100,7 +100,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="dWH-Qh-ZQe">
-                                                    <rect key="frame" x="216" y="5" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="5" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
@@ -437,12 +437,20 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="account1" destination="dCi-Bq-xbg" id="6XP-gx-0XO"/>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
                         <outlet property="autoBackupSwitch" destination="UHN-LH-hrg" id="9P1-gZ-0kp"/>
+                        <outlet property="autoConnectLabel" destination="oiL-wq-bYN" id="Gxr-Ob-cID"/>
+                        <outlet property="blackListLabel" destination="h1s-4i-amf" id="vAq-LT-Pcy"/>
                         <outlet property="blackListSwitch" destination="dWH-Qh-ZQe" id="MwB-cw-fZH"/>
                         <outlet property="flagButton" destination="U8N-T1-rY3" id="UDM-fq-lSR"/>
                         <outlet property="keyWordSwitch" destination="oPp-BV-XRX" id="sBN-3u-2He"/>
+                        <outlet property="keywordFilterLabel" destination="VHI-v6-H9g" id="1jX-QP-luT"/>
+                        <outlet property="lockLabel" destination="ui5-Ob-f7m" id="nvb-Mt-ypn"/>
                         <outlet property="remoteBackupSwitch" destination="tt1-FE-mxu" id="EzW-Sj-nHo"/>
                         <outlet property="remoteClearSwitch" destination="aZ3-ko-w1f" id="rR9-We-h5n"/>
                         <outlet property="remoteRestoreSwitch" destination="7Cw-b0-53F" id="3Ke-YA-OBe"/>
+                        <outlet property="subAutoConnectLabel" destination="hGl-jf-JAB" id="l4a-S8-VXT"/>
+                        <outlet property="subBlackListLabel" destination="f2H-JA-c5W" id="sgv-RS-lQn"/>
+                        <outlet property="subKeywordFilterLabel" destination="6rh-YF-alu" id="9Lq-bL-AMR"/>
+                        <outlet property="subLockLabel" destination="czm-8u-POz" id="FmV-jp-VSs"/>
                         <outlet property="toggleKeepConnectSwitch" destination="9jE-lg-gk8" id="5NX-eM-fyS"/>
                         <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="6H9-e2-DB7"/>
                         <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="0uc-Fk-uJn"/>
@@ -978,7 +986,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <rect key="frame" x="220" y="54" width="60" height="46"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="Dừng">
+                                            <state key="normal" title="Stop">
                                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1608,9 +1616,6 @@ Mobile Security:</string>
         </class>
         <class className="ScanHistoryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmentAction:"/>
-            </relationships>
         </class>
         <class className="ScanOptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
@@ -1632,12 +1637,20 @@ Mobile Security:</string>
                 <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="autoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="flagButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="keywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="subAutoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subBlackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subKeywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLockLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>

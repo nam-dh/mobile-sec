@@ -27,6 +27,14 @@
 @synthesize remoteClearSwitch;
 @synthesize remoteRestoreSwitch;
 @synthesize flagButton;
+@synthesize blackListLabel;
+@synthesize subBlackListLabel;
+@synthesize keywordFilterLabel;
+@synthesize subKeywordFilterLabel;
+@synthesize autoConnectLabel;
+@synthesize subAutoConnectLabel;
+@synthesize lockLabel;
+@synthesize subLockLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -90,25 +98,20 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguage) name:@"reloadLanguage" object:nil];
     
-    self.account1.text = LocalizedString(@"set_acc_title_unregistered");
-    
-    self.account2.lineBreakMode = UILineBreakModeWordWrap;
-    self.account2.numberOfLines = 0;
-    self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
-    
-    if (accountType == 2) {
-        ServerConnection *theInstance = [[ServerConnection alloc] init];
-        [theInstance userLogin:email :password :sessionKey];
-        self.account1.text = @"Email";
-        self.account2.text = email;
+    if ([language isEqualToString:@"ENG"]) {
+        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal];
+        
+    } else {
+        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
+        language = @"VIE";
+        
     }
-    if (accountType == 1) {
-        self.account1.text = LocalizedString(@"set_acc_title_waiting");
-        self.account2.text = LocalizedString(@"set_acc_sub_waiting");
-    }
+    [self reloadLanguage];        
+    
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"loginSuccess" object:nil];
     //add observer
@@ -144,15 +147,7 @@
         [remoteRestoreSwitch setOn:YES];
     }
 	
-    if ([language isEqualToString:@"ENG"]) {
-       [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_english.png"] forState:UIControlStateNormal];
         
-    } else {
-        [flagButton setImage:[UIImage imageNamed:@"setting_laguageicon_vietnamese.png"] forState:UIControlStateNormal];
-        language = @"VIE";
-
-    }
-    
 
     
     
@@ -164,14 +159,13 @@
     } else{
         LocalizationSetLanguage(@"vi");
     }
-    [self reloadTableView];
-    //[[self tableView] reloadData];
+    [self configureView];
+    [[self tableView] reloadData];
 }
 
-- (void) reloadTableView{
-    
+- (void) configureView{
     self.account1.text = LocalizedString(@"set_acc_title_unregistered");
-   
+    
     self.account2.lineBreakMode = UILineBreakModeWordWrap;
     self.account2.numberOfLines = 0;
     self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
@@ -186,6 +180,17 @@
         self.account1.text = LocalizedString(@"set_acc_title_waiting");
         self.account2.text = LocalizedString(@"set_acc_sub_waiting");
     }
+    
+    self.blackListLabel.text = LocalizedString(@"ftr_blacklist");
+    self.subBlackListLabel.text = LocalizedString(@"set_filter_sub_blacklist");
+    self.keywordFilterLabel.text = LocalizedString(@"set_filter_title_keyword");
+    self.subKeywordFilterLabel.text = LocalizedString(@"set_filter_sub_keyword");
+    
+    self.autoConnectLabel.text = LocalizedString(@"set_antitheft_title_autoconnect");
+    self.subAutoConnectLabel.text = LocalizedString(@"set_antitheft_sub_autoconnect");
+    self.lockLabel.text = LocalizedString(@"set_antitheft_title_lock");
+    self.subLockLabel.text = LocalizedString(@"set_antitheft_sub_lock");
+    
 }
 
 - (void)makeTheChange
@@ -514,6 +519,15 @@
     [self setRemoteRestoreSwitch:nil];
     [self setKeyWordSwitch:nil];
     [self setFlagButton:nil];
+    [self setBlackListLabel:nil];
+    [self setSubBlackListLabel:nil];
+    [self setBlackListLabel:nil];
+    [self setKeywordFilterLabel:nil];
+    [self setSubKeywordFilterLabel:nil];
+    [self setAutoConnectLabel:nil];
+    [self setSubAutoConnectLabel:nil];
+    [self setLockLabel:nil];
+    [self setSubLockLabel:nil];
     [super viewDidUnload];
 }
 @end
