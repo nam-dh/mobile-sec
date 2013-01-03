@@ -8,3 +8,13 @@
 "menu_title_scan_custom" = "Scan ondemand";
 "menu_title_scan_full" = "Scan whole system";
 "gnr_stop" = "Stop";
+"set_settings" = "Settings";
+"set_menu_header_acc" = "Account";
+"set_acc_title_unregistered" = "User Account is not registered";
+"set_acc_sub_unregistered" = "Click to register and unlock Anti-Theft options";
+"set_menu_header_update" = "Update";
+"set_menu_header_filter" = "SMS Filter";
+"set_menu_header_antitheft" = "Anti-Theft";
+"language" = "English";
+"set_acc_title_waiting" = "Waiting for Confirmation Code";
+"set_acc_sub_waiting" = "Confirmation code was sent to Email\nClick here and send us your code to complete registration\nThank you!";

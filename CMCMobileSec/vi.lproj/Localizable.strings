@@ -8,3 +8,13 @@
 "menu_title_scan_custom" = "Quét theo chỉ định";
 "menu_title_scan_full" = "Quét toàn bộ";
 "gnr_stop" = "Dừng";
+"set_settings" = "Tùy chỉnh";
+"set_menu_header_acc" = "Tài khoản cá nhân";
+"set_acc_title_unregistered" = "Chưa có tài khoản quản lý";
+"set_acc_sub_unregistered" = "Cần tài khoản để có thể sử dụng tính các năng Chống thất lạc";
+"set_menu_header_update" = "Cập nhật";
+"set_menu_header_filter" = "Bộ lọc tin";
+"set_menu_header_antitheft" = "Chống thất lạc";
+"language" = "Tiếng Việt";
+"set_acc_title_waiting" = "Điền mã xác nhận";
+"set_acc_sub_waiting" = "Mã xác nhận đã gửi tới Email\nBấm vào đây, điền mã và gửi đi để hoàn tất thủ tục\nXin cảm ơn!";

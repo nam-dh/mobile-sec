@@ -40,6 +40,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
    // cell.backgroundColor = [UIColor lightGrayColor];
+
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
     boxBackView.alpha = 0.45;
     [cell setBackgroundView:boxBackView];
@@ -51,6 +52,17 @@
 	tableView.sectionHeaderHeight = headerView.frame.size.height;
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, headerView.frame.size.width - 20, 22)] ;
 	label.text = [self tableView:tableView titleForHeaderInSection:section];
+    if (section == 0) {
+        label.text = LocalizedString(@"set_menu_header_acc");
+    } else if (section == 1) {
+        label.text = LocalizedString(@"set_menu_header_update");
+    } else if ( section == 2) {
+        label.text = LocalizedString(@"set_menu_header_filter");
+    } else if (section == 3){
+        label.text = LocalizedString(@"set_menu_header_antitheft");
+    } else if (section == 4) {
+        label.text = LocalizedString(@"language");
+    }
 	label.font = [UIFont boldSystemFontOfSize:15.5];
 	label.shadowOffset = CGSizeMake(0, 1);
 	//label.shadowColor = [UIColor whiteColor];
@@ -78,6 +90,14 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguage) name:@"reloadLanguage" object:nil];
+    
+    self.account1.text = LocalizedString(@"set_acc_title_unregistered");
+    
+    self.account2.lineBreakMode = UILineBreakModeWordWrap;
+    self.account2.numberOfLines = 0;
+    self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
     
     if (accountType == 2) {
         ServerConnection *theInstance = [[ServerConnection alloc] init];
@@ -86,8 +106,8 @@
         self.account2.text = email;
     }
     if (accountType == 1) {
-        self.account1.text = @"Waiting for Confirmation Code";
-        self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+        self.account1.text = LocalizedString(@"set_acc_title_waiting");
+        self.account2.text = LocalizedString(@"set_acc_sub_waiting");
     }
     //add observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeTheChange) name:@"loginSuccess" object:nil];
@@ -133,9 +153,39 @@
 
     }
     
+
     
     
+}
+
+- (void) reloadLanguage{
+    if([language isEqualToString:@"ENG"]){
+        LocalizationSetLanguage(@"en");
+    } else{
+        LocalizationSetLanguage(@"vi");
+    }
+    [self reloadTableView];
+    //[[self tableView] reloadData];
+}
+
+- (void) reloadTableView{
     
+    self.account1.text = LocalizedString(@"set_acc_title_unregistered");
+   
+    self.account2.lineBreakMode = UILineBreakModeWordWrap;
+    self.account2.numberOfLines = 0;
+    self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
+    
+    if (accountType == 2) {
+        ServerConnection *theInstance = [[ServerConnection alloc] init];
+        [theInstance userLogin:email :password :sessionKey];
+        self.account1.text = @"Email";
+        self.account2.text = email;
+    }
+    if (accountType == 1) {
+        self.account1.text = LocalizedString(@"set_acc_title_waiting");
+        self.account2.text = LocalizedString(@"set_acc_sub_waiting");
+    }
 }
 
 - (void)makeTheChange
@@ -147,16 +197,16 @@
 
 - (void)changeToValidate
 {
-    self.account1.text = @"Waiting for Confirmation Code";
-    self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+    self.account1.text = LocalizedString(@"set_acc_title_waiting");
+    self.account2.text = LocalizedString(@"set_acc_sub_waiting");
     
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     NSLog(@"accountType=%d", accountType);
     if (accountType == 1) {
-        self.account1.text = @"Waiting for Confirmation Code";
-        self.account2.text = @"Please enter confirmation code in email from CMC Mobile";
+        self.account1.text = LocalizedString(@"set_acc_title_waiting");
+        self.account2.text = LocalizedString(@"set_acc_sub_waiting");
     }
     if (accountType == 2) {
         self.account1.text = @"Email";

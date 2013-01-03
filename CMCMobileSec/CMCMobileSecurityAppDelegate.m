@@ -58,6 +58,9 @@
     remoteRestoreSwitchValue= [defaults objectForKey:@"remoteRestoreSwitchValue"];
     
     language= [defaults objectForKey:@"language"];
+    if (language == nil) {
+        language = @"ENG";
+    }
     
     // prepare to history
     NSThread* prepareHistoryThread = [[NSThread alloc] initWithTarget:self

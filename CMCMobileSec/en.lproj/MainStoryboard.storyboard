@@ -16,11 +16,11 @@
                         <sections>
                             <tableViewSection headerTitle="Account" id="0sp-bU-H2l">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="51" id="pnz-9U-QCK">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="53"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="68" id="pnz-9U-QCK">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="50"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="account1" text="User Account is not registered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dCi-Bq-xbg">
@@ -44,7 +44,7 @@
                             <tableViewSection headerTitle="Update" id="ZXS-yU-UPW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="lB1-Cv-dfv">
-                                        <rect key="frame" x="0.0" y="145" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="162" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="62"/>
@@ -80,7 +80,7 @@
                             <tableViewSection headerTitle="SMS Filter" id="fZf-0N-4qR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="59" id="PxO-G4-LdS">
-                                        <rect key="frame" x="0.0" y="256" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="273" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="58"/>
@@ -112,7 +112,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="59" id="LgU-q7-awG">
-                                        <rect key="frame" x="0.0" y="316" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="333" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="58"/>
@@ -148,7 +148,7 @@
                             <tableViewSection headerTitle="Anti-Theft" id="axv-Fw-5O7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="76" id="GIg-Kn-Bpm">
-                                        <rect key="frame" x="0.0" y="422" width="320" height="77"/>
+                                        <rect key="frame" x="0.0" y="439" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="75"/>
@@ -182,7 +182,7 @@ we recommend you to select this option. Thank you!</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="Bay-Xz-PcH">
-                                        <rect key="frame" x="0.0" y="499" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="516" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -216,7 +216,7 @@ of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="g26-my-kbG">
-                                        <rect key="frame" x="0.0" y="574" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="591" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -250,7 +250,7 @@ services of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="Mgp-uC-vrV">
-                                        <rect key="frame" x="0.0" y="649" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="666" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -284,7 +284,7 @@ up, encrypted and sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="81" id="aJd-ce-aJh">
-                                        <rect key="frame" x="0.0" y="724" width="320" height="81"/>
+                                        <rect key="frame" x="0.0" y="741" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="80"/>
@@ -319,7 +319,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FQ4-RL-UKl">
-                                        <rect key="frame" x="0.0" y="805" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="822" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -353,7 +353,7 @@ web services of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="qYG-Ks-uef">
-                                        <rect key="frame" x="0.0" y="880" width="320" height="76"/>
+                                        <rect key="frame" x="0.0" y="897" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -391,7 +391,7 @@ Restoreing data is sent from CMC InfoSec</string>
                             <tableViewSection headerTitle="Language" id="pkj-MP-DHj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="PTn-G4-yOu">
-                                        <rect key="frame" x="0.0" y="1002" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="1019" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="62"/>
@@ -968,14 +968,14 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scanning:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p4d-QB-LZ9">
-                                            <rect key="frame" x="20" y="49" width="181" height="84"/>
+                                            <rect key="frame" x="20" y="49" width="170" height="84"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ih2-38-LfW">
-                                            <rect key="frame" x="209" y="54" width="83" height="45"/>
+                                            <rect key="frame" x="192" y="54" width="100" height="46"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="Stop">

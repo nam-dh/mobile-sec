@@ -169,7 +169,7 @@ int detectedVirusNum = 0;
         mainLabel.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:mainLabel];
         
-        secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 181.0, 84.0)];
+        secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 49.0, 192.0, 84.0)];
         secondLabel.tag = SECONDLABEL_TAG;
         secondLabel.font = [UIFont systemFontOfSize:14.0];
         secondLabel.textAlignment = UITextAlignmentLeft;
@@ -181,7 +181,7 @@ int detectedVirusNum = 0;
         
         // add Button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        CGRect frame = CGRectMake(209.0, 54.0, 83.0, 45.0);
+        CGRect frame = CGRectMake(220.0, 54.0, 54.0, 45.0);
         button.frame = frame;
         [button setTitle:LocalizedString(@"gnr_stop") forState:UIControlStateNormal];
         button.tag = BUTTON_TAG;
@@ -205,7 +205,7 @@ int detectedVirusNum = 0;
         progLabel = (UILabel *) [cell.contentView viewWithTag:PROGRESS_TAG];
         button = (UIButton *)[cell.contentView viewWithTag:BUTTON_TAG];
     }
-    button.titleLabel.text = LocalizedString(@"gnr_stop");
+    [button setTitle:LocalizedString(@"gnr_stop") forState:UIControlStateNormal];
     if (indexPath.row == 0) {
         mainLabel.text = LocalizedString(@"menu_title_scan_custom");
         if (isScanOnDemand) {
