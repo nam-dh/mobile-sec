@@ -182,13 +182,29 @@
     }
     
     self.blackListLabel.text = LocalizedString(@"ftr_blacklist");
+    
+    self.subBlackListLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subBlackListLabel.numberOfLines = 0;
     self.subBlackListLabel.text = LocalizedString(@"set_filter_sub_blacklist");
+    
     self.keywordFilterLabel.text = LocalizedString(@"set_filter_title_keyword");
+    
+    self.subKeywordFilterLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subKeywordFilterLabel.numberOfLines = 0;
     self.subKeywordFilterLabel.text = LocalizedString(@"set_filter_sub_keyword");
     
+    self.autoConnectLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.autoConnectLabel.numberOfLines = 0;
     self.autoConnectLabel.text = LocalizedString(@"set_antitheft_title_autoconnect");
+    
+    self.subAutoConnectLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subAutoConnectLabel.numberOfLines = 0;
     self.subAutoConnectLabel.text = LocalizedString(@"set_antitheft_sub_autoconnect");
+    
     self.lockLabel.text = LocalizedString(@"set_antitheft_title_lock");
+    
+    self.subLockLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subLockLabel.numberOfLines = 0;
     self.subLockLabel.text = LocalizedString(@"set_antitheft_sub_lock");
     
 }

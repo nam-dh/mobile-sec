@@ -30,7 +30,7 @@
 "set_antitheft_title_clear" = "Allow Remote Clear Data";
 "set_antitheft_title_restore" = "Allow Remote Restore Data";
 "set_antitheft_sub_autoconnect" = "To remote this device, visit http://mobi.cmcinfosec.com";
-"set_antitheft_sub_lock" = "Remotely lock this device by SMS or web services of CMC InfoSec";
+"set_antitheft_sub_lock" = "Remotely lock this device by SMS or web \nservices of CMC InfoSec";
 "set_antitheft_sub_report" = "You can track position of this device by using web services of CMC InfoSec";
 "set_antitheft_sub_autobackup" = "Periodically, your Contact and SMS will be backed up, encrypted and sent to CMC InfoSec server";
 "set_antitheft_sub_clear" = "Remotely clear all Contacts and SMS by SMS or web services of CMC InfoSec";

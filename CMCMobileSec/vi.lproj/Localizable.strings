@@ -22,7 +22,7 @@
 "set_filter_title_keyword" = "Chặn từ khóa";
 "set_filter_sub_blacklist" = "Bấm vào để xem và quản lý danh sách số bị chặn";
 "set_filter_sub_keyword" = "Bấm vào để xem và quản lý danh sách từ khóa bị chặn";
-"set_antitheft_title_autoconnect" = "Cho phép điều khiển từ website";
+"set_antitheft_title_autoconnect" = "Cho phép điều khiển từ \nwebsite";
 "set_antitheft_title_lock" = "Cho phép khóa thiết bị";
 "set_antitheft_title_report" = "Cho phép theo dõi vị trí";
 "set_antitheft_title_autobackup" = "Tự động sao lưu";
@@ -30,7 +30,7 @@
 "set_antitheft_title_clear" = "Cho phép xóa dữ liệu";
 "set_antitheft_title_restore" = "Cho phép phục hồi dữ liệu";
 "set_antitheft_sub_autoconnect" = "Vào website http://mobi.cmcinfosec.com để điều khiển thiết bị này";
-"set_antitheft_sub_lock" = "Khóa thiết bị từ xa bằng SMS hoặc qua website của CMC InfoSec";
+"set_antitheft_sub_lock" = "Khóa thiết bị từ xa bằng SMS hoặc qua website\ncủa CMC InfoSec";
 "set_antitheft_sub_report" = "Bạn có thể theo dõi vị trí thiết bị thông qua website của CMC InfoSec";
 "set_antitheft_sub_autobackup" = "Danh bạ và Hộp tin sẽ định kì được sao lưu, mã hóa và gửi tới máy chủ của CMC InfoSec";
 "set_antitheft_sub_clear" = "Xóa toàn bộ Danh bạ và Hộp tin từ xa bằng SMS hoặc qua website của CMC InfoSec";
