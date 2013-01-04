@@ -29,6 +29,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *subAutoConnectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subLockLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reportLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subReportLabel;
+@property (weak, nonatomic) IBOutlet UILabel *autoBackupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subAutoBackupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *allowBackupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subAllowBackupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *clearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subClearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *restoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subRestoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subLanguageLabel;
 
 @property (nonatomic,retain) IBOutlet UISwitch *toggleTrackingLocationSwitch;
 @property (nonatomic,retain) IBOutlet UISwitch *toggleRemoteLockSwitch;

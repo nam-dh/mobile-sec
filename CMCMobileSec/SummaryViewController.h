@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ScanOptionsViewController.h"
+#import "LocalizeHelper.h"
 
 @interface SummaryViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *sysStorageLabel;
@@ -18,6 +19,17 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *systemStorageButton;
 @property (weak, nonatomic) IBOutlet UIButton *historyScanButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *storageTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
+@property (weak, nonatomic) IBOutlet UILabel *memoryClearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hintClearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *receivedHeaderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spamHeaderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *recentHeaderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blockLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fromLabel;
+
 
 - (IBAction)systemStorageScan:(id)sender;
 - (IBAction)showScanHistory:(id)sender;

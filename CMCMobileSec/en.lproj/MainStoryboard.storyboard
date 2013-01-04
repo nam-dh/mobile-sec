@@ -271,7 +271,7 @@ services of CMC InfoSec</string>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aRj-l1-afu">
-                                                    <rect key="frame" x="8" y="31" width="481" height="43"/>
+                                                    <rect key="frame" x="8" y="26" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Periodically, your Contact and SMS will be backed
 up, encrypted and sent to CMC InfoSec server</string>
@@ -436,10 +436,13 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="accCell" destination="pnz-9U-QCK" id="abs-14-qOw"/>
                         <outlet property="account1" destination="dCi-Bq-xbg" id="6XP-gx-0XO"/>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
+                        <outlet property="allowBackupLabel" destination="Pbc-Sf-9Nx" id="f8P-Ql-DUB"/>
+                        <outlet property="autoBackupLabel" destination="cqO-16-Bj5" id="0UV-xp-RsO"/>
                         <outlet property="autoBackupSwitch" destination="UHN-LH-hrg" id="9P1-gZ-0kp"/>
                         <outlet property="autoConnectLabel" destination="oiL-wq-bYN" id="Gxr-Ob-cID"/>
                         <outlet property="blackListLabel" destination="h1s-4i-amf" id="vAq-LT-Pcy"/>
                         <outlet property="blackListSwitch" destination="dWH-Qh-ZQe" id="MwB-cw-fZH"/>
+                        <outlet property="clearLabel" destination="Acx-j5-vat" id="ZKc-zP-v77"/>
                         <outlet property="flagButton" destination="U8N-T1-rY3" id="UDM-fq-lSR"/>
                         <outlet property="keyWordSwitch" destination="oPp-BV-XRX" id="sBN-3u-2He"/>
                         <outlet property="keywordFilterLabel" destination="VHI-v6-H9g" id="1jX-QP-luT"/>
@@ -447,10 +450,18 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="remoteBackupSwitch" destination="tt1-FE-mxu" id="EzW-Sj-nHo"/>
                         <outlet property="remoteClearSwitch" destination="aZ3-ko-w1f" id="rR9-We-h5n"/>
                         <outlet property="remoteRestoreSwitch" destination="7Cw-b0-53F" id="3Ke-YA-OBe"/>
+                        <outlet property="reportLabel" destination="SmX-3R-4Ma" id="efr-bW-g9P"/>
+                        <outlet property="restoreLabel" destination="WL9-i7-1q3" id="B82-ak-Zda"/>
+                        <outlet property="subAllowBackupLabel" destination="jLB-tf-NNP" id="zFX-kN-3wa"/>
+                        <outlet property="subAutoBackupLabel" destination="aRj-l1-afu" id="7Rt-Fk-mNk"/>
                         <outlet property="subAutoConnectLabel" destination="hGl-jf-JAB" id="l4a-S8-VXT"/>
                         <outlet property="subBlackListLabel" destination="f2H-JA-c5W" id="sgv-RS-lQn"/>
+                        <outlet property="subClearLabel" destination="CvH-4E-zsV" id="xR9-qc-XIg"/>
                         <outlet property="subKeywordFilterLabel" destination="6rh-YF-alu" id="9Lq-bL-AMR"/>
+                        <outlet property="subLanguageLabel" destination="y1A-wz-p4G" id="Pl1-Hx-pbo"/>
                         <outlet property="subLockLabel" destination="czm-8u-POz" id="FmV-jp-VSs"/>
+                        <outlet property="subReportLabel" destination="Nrs-nM-8Cu" id="0kF-nO-g7K"/>
+                        <outlet property="subRestoreLabel" destination="KJq-qr-gVs" id="EYk-pl-NrF"/>
                         <outlet property="toggleKeepConnectSwitch" destination="9jE-lg-gk8" id="5NX-eM-fyS"/>
                         <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="6H9-e2-DB7"/>
                         <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="0uc-Fk-uJn"/>
@@ -524,7 +535,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="All memory is CLEAR!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QgD-Lb-3aR">
-                                                    <rect key="frame" x="20" y="27" width="139" height="21"/>
+                                                    <rect key="frame" x="20" y="27" width="139" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -660,9 +671,18 @@ Restoreing data is sent from CMC InfoSec</string>
                     <tabBarItem key="tabBarItem" title="Summary" image="app_bar_icon.png" id="Ujv-Lq-SG0"/>
                     <navigationItem key="navigationItem" title="Summary" id="PEX-Ys-a3f"/>
                     <connections>
+                        <outlet property="blockLabel" destination="cIr-gP-HKf" id="Gp6-rB-PSb"/>
+                        <outlet property="fromLabel" destination="MIt-Pa-bcz" id="A1N-GR-lV0"/>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
+                        <outlet property="hintClearLabel" destination="gsu-C8-8qf" id="AYg-k1-3sQ"/>
+                        <outlet property="hintLabel" destination="baC-mi-kFk" id="kk2-05-eRw"/>
                         <outlet property="historyScanButton" destination="bep-I9-S5D" id="Ocb-1A-Pfe"/>
+                        <outlet property="memoryClearLabel" destination="QgD-Lb-3aR" id="2Af-Wb-PHB"/>
+                        <outlet property="receivedHeaderLabel" destination="UWS-Bg-UsL" id="Ma6-3i-S9v"/>
+                        <outlet property="recentHeaderLabel" destination="upo-Bq-9tZ" id="4Qp-ei-Hz8"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
+                        <outlet property="spamHeaderLabel" destination="EH7-U8-HZk" id="h0L-w1-dcO"/>
+                        <outlet property="storageTextLabel" destination="97a-9O-Ebb" id="piA-zk-n7b"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
                         <outlet property="systemStorageButton" destination="Zdz-pm-7np" id="hG6-VJ-m1m"/>
                         <outlet property="totalReceived" destination="giU-mI-grd" id="KHt-7N-lOf"/>
@@ -1636,10 +1656,13 @@ Mobile Security:</string>
                 <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="allowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="autoConnectLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blackListLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flagButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="keywordFilterLabel" candidateClass="UILabel"/>
@@ -1647,10 +1670,18 @@ Mobile Security:</string>
                 <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="reportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAllowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoBackupLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subAutoConnectLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subBlackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subClearLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subKeywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLanguageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subLockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subReportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subRestoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
@@ -1662,9 +1693,18 @@ Mobile Security:</string>
             <relationships>
                 <relationship kind="action" name="showScanHistory:"/>
                 <relationship kind="action" name="systemStorageScan:"/>
+                <relationship kind="outlet" name="blockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="historyScanButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="memoryClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spamHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="storageTextLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>

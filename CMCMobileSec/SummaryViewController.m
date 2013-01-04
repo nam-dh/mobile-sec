@@ -11,6 +11,7 @@
 #import <sqlite3.h>
 #import <math.h>
 #import "DataBaseConnect.h"
+#import "CMCMobileSecurityAppDelegate.h"
 
 
 #include <dlfcn.h>
@@ -23,6 +24,15 @@ id(*CTTelephonyCenterGetDefault)();
 @end
 
 @implementation SummaryViewController
+@synthesize storageTextLabel;
+@synthesize hintLabel;
+@synthesize hintClearLabel;
+@synthesize memoryClearLabel;
+@synthesize receivedHeaderLabel;
+@synthesize spamHeaderLabel;
+@synthesize recentHeaderLabel;
+@synthesize blockLabel;
+@synthesize fromLabel;
 
 static UILabel* c;
 
@@ -48,7 +58,12 @@ static UILabel* c;
 	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
 	tableView.sectionHeaderHeight = headerView.frame.size.height;
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, headerView.frame.size.width - 20, 22)] ;
-	label.text = [self tableView:tableView titleForHeaderInSection:section];
+    if( section == 0) {
+        label.text = LocalizedString(@"firstpage_scanfile_name");
+    } else if (section == 1) {
+        label.text = LocalizedString(@"firstpage_filter_name");
+    }
+    
 	label.font = [UIFont boldSystemFontOfSize:15.5];
 	label.shadowOffset = CGSizeMake(0, 1);
 	//label.shadowColor = [UIColor whiteColor];
@@ -62,7 +77,13 @@ static UILabel* c;
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    
+    // observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguage) name:@"reloadLanguage" object:nil];
+    
+    [self reloadLanguageSettings];
     
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
@@ -70,12 +91,7 @@ static UILabel* c;
     
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cmc_bar.png"]]];
     self.navigationItem.leftBarButtonItem= item;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
     
     float totalSize = [self getTotalDiskSpace];
     float freeSize = [self getFreeDiskSpace];
@@ -95,7 +111,24 @@ static UILabel* c;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+- (void) reloadLanguageSettings{
+    if([language isEqualToString:@"ENG"]){
+        LocalizationSetLanguage(@"en");
+    } else{
+        LocalizationSetLanguage(@"vi");
+    }
+    [self configureView];
+}
+
+- (void) configureView{
+    self.storageTextLabel.text = LocalizedString(@"firstpage_scanfile_header_systemstorage");
+    self.hintLabel.text = LocalizedString(@"firstpage_scanfile_hint");
+    self.hintClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
+    self.receivedHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalreceived");
+    self.spamHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalspam");
+    self.recentHeaderLabel.text = LocalizedString(@"firstpage_filter_recent");
+    self.fromLabel.text = LocalizedString(@"firstpage_filter_recent_from");
+}
 
 #pragma mark - Table view delegate
 
@@ -314,6 +347,15 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setSysStorageLabel:nil];
     [self setSystemStorageButton:nil];
     [self setHistoryScanButton:nil];
+    [self setStorageTextLabel:nil];
+    [self setHintLabel:nil];
+    [self setMemoryClearLabel:nil];
+    [self setHintClearLabel:nil];
+    [self setReceivedHeaderLabel:nil];
+    [self setSpamHeaderLabel:nil];
+    [self setRecentHeaderLabel:nil];
+    [self setBlockLabel:nil];
+    [self setFromLabel:nil];
     [super viewDidUnload];
 }
 

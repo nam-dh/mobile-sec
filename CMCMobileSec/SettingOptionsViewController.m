@@ -35,6 +35,17 @@
 @synthesize subAutoConnectLabel;
 @synthesize lockLabel;
 @synthesize subLockLabel;
+@synthesize reportLabel;
+@synthesize subReportLabel;
+@synthesize autoBackupLabel;
+@synthesize subAutoBackupLabel;
+@synthesize allowBackupLabel;
+@synthesize subAllowBackupLabel;
+@synthesize clearLabel;
+@synthesize subClearLabel;
+@synthesize restoreLabel;
+@synthesize subRestoreLabel;
+@synthesize subLanguageLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -206,6 +217,31 @@
     self.subLockLabel.lineBreakMode = UILineBreakModeWordWrap;
     self.subLockLabel.numberOfLines = 0;
     self.subLockLabel.text = LocalizedString(@"set_antitheft_sub_lock");
+    
+    self.reportLabel.text = LocalizedString(@"set_antitheft_title_report");
+    self.subReportLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subReportLabel.numberOfLines = 0;
+    self.subReportLabel.text = LocalizedString(@"set_antitheft_sub_report");
+    
+    self.autoBackupLabel.text = LocalizedString(@"set_antitheft_title_autobackup");
+    self.subAutoBackupLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subAutoBackupLabel.numberOfLines = 0;
+    self.subAutoBackupLabel.text = LocalizedString(@"set_antitheft_sub_autobackup");
+    
+    self.allowBackupLabel.text = LocalizedString(@"set_antitheft_title_backup");
+    self.subAllowBackupLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subAllowBackupLabel.numberOfLines = 0;
+    self.subAllowBackupLabel.text = LocalizedString(@"set_antitheft_sub_backup");
+    
+    self.clearLabel.text = LocalizedString(@"set_antitheft_title_clear");
+    self.subClearLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subClearLabel.numberOfLines = 0;
+    self.subClearLabel.text = LocalizedString(@"set_antitheft_sub_clear");
+    
+    self.restoreLabel.text = LocalizedString(@"set_antitheft_title_restore");
+    self.subRestoreLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.subRestoreLabel.numberOfLines = 0;
+    self.subRestoreLabel.text = LocalizedString(@"set_antitheft_sub_restore");
     
 }
 
@@ -544,6 +580,17 @@
     [self setSubAutoConnectLabel:nil];
     [self setLockLabel:nil];
     [self setSubLockLabel:nil];
+    [self setReportLabel:nil];
+    [self setSubReportLabel:nil];
+    [self setAutoBackupLabel:nil];
+    [self setSubAutoBackupLabel:nil];
+    [self setAllowBackupLabel:nil];
+    [self setSubAllowBackupLabel:nil];
+    [self setClearLabel:nil];
+    [self setSubClearLabel:nil];
+    [self setRestoreLabel:nil];
+    [self setSubRestoreLabel:nil];
+    [self setSubLanguageLabel:nil];
     [super viewDidUnload];
 }
 @end

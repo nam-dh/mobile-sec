@@ -27,21 +27,30 @@
 "set_antitheft_title_report" = "Cho phép theo dõi vị trí";
 "set_antitheft_title_autobackup" = "Tự động sao lưu";
 "set_antitheft_title_backup" = "Cho phép sao lưu dữ liệu";
+"set_antitheft_sub_backup" = "Sao lưu Danh bạ và Hộp tin từ xa bằng SMS hoặc qua\nwebsite của CMC InfoSec";
 "set_antitheft_title_clear" = "Cho phép xóa dữ liệu";
 "set_antitheft_title_restore" = "Cho phép phục hồi dữ liệu";
-"set_antitheft_sub_autoconnect" = "Vào website http://mobi.cmcinfosec.com để điều khiển thiết bị này";
+"set_antitheft_sub_autoconnect" = "Vào website http://mobi.cmcinfosec.com để\nđiều khiển thiết bị này";
 "set_antitheft_sub_lock" = "Khóa thiết bị từ xa bằng SMS hoặc qua website\ncủa CMC InfoSec";
-"set_antitheft_sub_report" = "Bạn có thể theo dõi vị trí thiết bị thông qua website của CMC InfoSec";
-"set_antitheft_sub_autobackup" = "Danh bạ và Hộp tin sẽ định kì được sao lưu, mã hóa và gửi tới máy chủ của CMC InfoSec";
-"set_antitheft_sub_clear" = "Xóa toàn bộ Danh bạ và Hộp tin từ xa bằng SMS hoặc qua website của CMC InfoSec";
-"set_antitheft_sub_restore" = "Phục hồi Danh bạ và Hộp tin từ xa bằng SMS hoặc qua website của CMC InfoSec";
+"set_antitheft_sub_report" = "Bạn có thể theo dõi vị trí thiết bị thông qua website của\nCMC InfoSec";
+"set_antitheft_sub_autobackup" = "Danh bạ và Hộp tin sẽ định kì được sao lưu, mã hóa và\ngửi tới máy chủ của CMC InfoSec";
+"set_antitheft_sub_clear" = "Xóa toàn bộ Danh bạ và Hộp tin từ xa bằng SMS hoặc\nqua website của CMC InfoSec";
+"set_antitheft_sub_restore" = "Phục hồi Danh bạ và Hộp tin từ xa bằng SMS hoặc qua\nwebsite của CMC InfoSec";
 
 
+"firstpage_scanfile_name" = "Quét File";
+"firstpage_filter_name" = "Chặn Tin Rác";
 
+"firstpage_scanfile_header_systemstorage" = "Bộ nhớ hệ thống";
+"firstpage_scanfile_hint" = "BẢNG THÔNG BÁO";
+"firstpage_scanfile_hint_storageclear" = "Hệ thống AN TOÀN!";
+"firstpage_scanfile_hint_clear_instruction" = "Xin hãy bấm nút để xem chi tiết!";
 
-
-
-
+"firstpage_filter_header_totalreceived" = "Tổng số nhận được";
+"firstpage_filter_header_totalspam" = "Tổng số tin rác";
+"firstpage_filter_recent" = "TIN MỚI NHẤT";
+"firstpage_filter_recent_blocker" = "Bị chặn bởi: ";
+"firstpage_filter_recent_from" = "Gửi từ: ";
 
 
 

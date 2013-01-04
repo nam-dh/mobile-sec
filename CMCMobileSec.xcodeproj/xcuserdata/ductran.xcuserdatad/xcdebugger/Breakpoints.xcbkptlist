@@ -81,5 +81,18 @@
          landmarkName = "@implementation ScanHistoryViewController"
          landmarkType = "3">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CMCMobileSec/SettingOptionsViewController.h"
+         timestampString = "378960522.202625"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "@interface SettingOptionsViewController"
+         landmarkType = "2">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -27,11 +27,37 @@
 "set_antitheft_title_report" = "Allow Remote Track Device";
 "set_antitheft_title_autobackup" = "Auto Backup Data";
 "set_antitheft_title_backup" = "Allow Remote Backup Data";
+"set_antitheft_sub_backup" = "Remotely back your Contact and SMS up by SMS or\nweb services of CMC InfoSec. The backup data\'ll be\nsent to CMC InfoSec server";
 "set_antitheft_title_clear" = "Allow Remote Clear Data";
 "set_antitheft_title_restore" = "Allow Remote Restore Data";
 "set_antitheft_sub_autoconnect" = "To remote this device, visit http://mobi.cmcinfosec.com";
 "set_antitheft_sub_lock" = "Remotely lock this device by SMS or web \nservices of CMC InfoSec";
-"set_antitheft_sub_report" = "You can track position of this device by using web services of CMC InfoSec";
-"set_antitheft_sub_autobackup" = "Periodically, your Contact and SMS will be backed up, encrypted and sent to CMC InfoSec server";
-"set_antitheft_sub_clear" = "Remotely clear all Contacts and SMS by SMS or web services of CMC InfoSec";
-"set_antitheft_sub_restore" = "Remotely restore your Contact and SMS. Restoring data is sent from CMC InfoSec";
+"set_antitheft_sub_report" = "You can track position of this device by using web\nservices of CMC InfoSec";
+"set_antitheft_sub_autobackup" = "Periodically, your Contact and SMS will be backed up,\nencrypted and sent to CMC InfoSec server";
+"set_antitheft_sub_clear" = "Remotely clear all Contacts and SMS by SMS or\nweb services of CMC InfoSec";
+"set_antitheft_sub_restore" = "Remotely restore your Contact and SMS. Restoring data\nis sent from CMC InfoSec";
+
+
+"firstpage_scanfile_name" = "Scan File";
+"firstpage_filter_name" = "SMS Filter";
+
+"firstpage_scanfile_header_systemstorage" = "System storage";
+"firstpage_scanfile_hint" = "HINT";
+"firstpage_scanfile_hint_storageclear" = "All memory is CLEAR!";
+"firstpage_scanfile_hint_clear_instruction" = "Click button to view history!";
+
+"firstpage_filter_header_totalreceived" = "Total received";
+"firstpage_filter_header_totalspam" = "Total spam";
+"firstpage_filter_recent" = "RECENT";
+"firstpage_filter_recent_blocker" = "Block by:";
+"firstpage_filter_recent_from" = "From: ";
+
+
+
+
+
+
+
+
+
+
