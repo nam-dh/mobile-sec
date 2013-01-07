@@ -354,9 +354,7 @@ BOOL isLoadByUpButton = false;
 }
 - (IBAction)discardButton:(id)sender {
     NSLog(@"discard Button");
-    ScanOptionViewController * scanOption = [self.storyboard
-                                             instantiateViewControllerWithIdentifier:@"scan_view"];
-    [self.navigationController pushViewController:scanOption animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)resetButton:(id)sender {

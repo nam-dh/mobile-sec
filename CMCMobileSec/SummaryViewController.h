@@ -10,6 +10,7 @@
 
 //#import "ScanOptionsViewController.h"
 #import "LocalizeHelper.h"
+#import "FileSelectionViewController.h"
 
 @interface SummaryViewController : UITableViewController<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *sysStorageLabel;
@@ -35,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalScanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalDetectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scanStatus;
+
+- (IBAction)scanOnDemandButton:(id)sender;
 
 
 - (IBAction)systemStorageScan:(id)sender;

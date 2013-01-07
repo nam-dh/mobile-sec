@@ -67,7 +67,7 @@
 - (IBAction)startScan:(id)sender {
     NSLog(@"start scanning...");
 
-    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
+
     gItemToScan = fileListToScan;
 //    [self.navigationController pushViewController:scanOptions animated:YES];
     [self.navigationController popToRootViewControllerAnimated:YES];

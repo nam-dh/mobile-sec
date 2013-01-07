@@ -151,6 +151,7 @@
 		52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */; };
 		52B3B03C168B51090070B3B6 /* HistoryNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */; };
 		52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */; };
+		52BD87F7169B361C004F524C /* button_checkbox_off_bak.png in Resources */ = {isa = PBXBuildFile; fileRef = 52BD87F6169B361C004F524C /* button_checkbox_off_bak.png */; };
 		52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */; };
 		52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
@@ -329,6 +330,7 @@
 		52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationBar.m; path = CMCMobileSec/HistoryNavigationBar.m; sourceTree = "<group>"; };
 		52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanHistoryViewController.h; path = CMCMobileSec/ScanHistoryViewController.h; sourceTree = "<group>"; };
 		52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanHistoryViewController.m; path = CMCMobileSec/ScanHistoryViewController.m; sourceTree = "<group>"; };
+		52BD87F6169B361C004F524C /* button_checkbox_off_bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_checkbox_off_bak.png; path = Images/button_checkbox_off_bak.png; sourceTree = SOURCE_ROOT; };
 		52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmActionViewController.h; path = CMCMobileSec/ConfirmActionViewController.h; sourceTree = "<group>"; };
 		52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmActionViewController.m; path = CMCMobileSec/ConfirmActionViewController.m; sourceTree = "<group>"; };
 		52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_folder_small_ip.png; path = Images/ic_folder_small_ip.png; sourceTree = SOURCE_ROOT; };
@@ -418,6 +420,7 @@
 		3D8B49F6168A343D008BF51F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				52BD87F6169B361C004F524C /* button_checkbox_off_bak.png */,
 				3D820A5E16931C2200A626B2 /* cmc_bar.png */,
 				3D454A8316919AF9007FF3A9 /* Icon.png */,
 				3D454A8416919AF9007FF3A9 /* Icon@2x.png */,
@@ -758,6 +761,7 @@
 				3D820A5F16931C2200A626B2 /* cmc_bar.png in Resources */,
 				5256201B1693D13700A49C5A /* Localizable.strings in Resources */,
 				52279BF51693EC5B00AE2A2A /* localize.py in Resources */,
+				52BD87F7169B361C004F524C /* button_checkbox_off_bak.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,6 +48,9 @@ NSMutableDictionary* threadDictionary;
 int scannedFileNum = 0;
 int detectedFileNum = 0;
 
+BOOL isScanAll = FALSE;
+BOOL isScanonDemand = FALSE;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -63,12 +66,13 @@ int detectedFileNum = 0;
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
     boxBackView.alpha = 0.45;
     [cell setBackgroundView:boxBackView];
+    NSIndexPath *indexPathForScanBoard = [self getIndexPathForScanBoard];
     if (!isScanning) {
-        if (indexPath.section == 0 && indexPath.row == 2) {
+        if (indexPath.section == indexPathForScanBoard.section && indexPath.row == indexPathForScanBoard.row) {
             [cell setHidden:TRUE];
         }
     } else {
-        if (indexPath.section == 0 && indexPath.row == 2) {
+        if (indexPath.section == indexPathForScanBoard.section && indexPath.row == indexPathForScanBoard.row) {
             [cell setHidden:FALSE];
         }
     }
@@ -105,6 +109,7 @@ int detectedFileNum = 0;
     
     // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguageSettings) name:@"reloadLanguage" object:nil];
+
     
     [self reloadLanguageSettings];
     
@@ -129,6 +134,8 @@ int detectedFileNum = 0;
     exitThreadNow = NO;
     threadDictionary = [[NSThread currentThread] threadDictionary];
     [threadDictionary setValue:[NSNumber numberWithBool:exitThreadNow] forKey:@"ThreadShouldExitNow"];
+    // observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -251,9 +258,39 @@ int detectedFileNum = 0;
     return text;
 }
 
+- (IBAction)scanOnDemandButton:(id)sender {
+    isScanonDemand = TRUE;
+    isScanAll = FALSE;
+    [self showConfirmAlert];
+}
+
+- (void) scanOnDemand{
+    //start thread to scan file
+    isScanning = TRUE;
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+    NSThread* scanOnDemandThread = [[NSThread alloc] initWithTarget:self
+                                                           selector:@selector(scanOnDemandMainMethod) object:nil];
+    [scanOnDemandThread start];
+}
+
+- (void) scanOnDemandMainMethod{
+    @autoreleasepool {
+        int count = [gItemToScan count];
+        int i;
+        NSString * dir;
+        for (i = 0; i < count; i++) {
+            dir = [gItemToScan objectAtIndex:i];
+            [self scanItemInPath:dir];
+        }
+    }
+}
+
 - (IBAction)systemStorageScan:(id)sender {
 //    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
 //    [self.navigationController pushViewController:scanOptions animated:YES];
+    isScanAll = TRUE;
+    isScanonDemand = FALSE;
     [self showConfirmAlert];
     
 }
@@ -276,16 +313,23 @@ int detectedFileNum = 0;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         NSLog(@"OK");
-        isScanning = TRUE;
         [threadDictionary setValue:[NSNumber numberWithBool:FALSE] forKey:@"ThreadShouldExitNow"];
-        
-        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
-        [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
 
         //start thread to scan file
-        NSThread* scanThread = [[NSThread alloc] initWithTarget:self
-                                                       selector:@selector(scanThreadMainMethod) object:nil];
-        [scanThread start];
+        if(isScanAll) {
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+            [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+            isScanning = TRUE;
+            NSThread* scanThread = [[NSThread alloc] initWithTarget:self
+                                                           selector:@selector(scanThreadMainMethod) object:nil];
+            [scanThread start];
+        } else if(isScanonDemand) {
+            
+            FileSelectionViewController *fileSelection = [self.storyboard instantiateViewControllerWithIdentifier:@"File Selection"];
+            [self.navigationController pushViewController:fileSelection animated:YES];
+        }
+        
+
 
     }
 }
@@ -312,18 +356,20 @@ int detectedFileNum = 0;
         //                // process the document
         //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
         //            }
+        exitThreadNow = [[threadDictionary valueForKey:@"ThreadShouldExitNow"] boolValue];
+        if (exitThreadNow) {
+            return;
+        }
         
         NSThread* printResult = [[NSThread alloc] initWithTarget:self
                                                         selector:@selector(updateFilenameLabel:)
                                                           object:[docsDir stringByAppendingPathComponent:file]];
         [printResult start];
-        
-        exitThreadNow = [[threadDictionary valueForKey:@"ThreadShouldExitNow"] boolValue];
-        if (exitThreadNow) {
-            return;
-        }
         [NSThread sleepForTimeInterval:0.5];
         
+    }
+    if(scannedFileNum == 0) {
+        [self updateFilenameLabel:[docsDir stringByAppendingPathComponent:file]];
     }
 }
 
@@ -340,7 +386,7 @@ int detectedFileNum = 0;
 }
 
 - (NSIndexPath*) getIndexPathForScanBoard{
-    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     return indexPath;
 }
 
@@ -351,6 +397,8 @@ int detectedFileNum = 0;
 
 - (IBAction)stopScann:(id)sender {
     isScanning = FALSE;
+    isScanAll = FALSE;
+    isScanonDemand = FALSE;
     
     [threadDictionary setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];    
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
