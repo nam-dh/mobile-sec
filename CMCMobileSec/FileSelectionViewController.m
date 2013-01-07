@@ -332,6 +332,7 @@ BOOL isLoadByUpButton = false;
 
 - (void) removeItemToScanList: (NSString*) filename{
     int indexOfItemInList = [self isElementExisted:filename];
+    NSLog(@"remove:%d", indexOfItemInList);
     if (indexOfItemInList != -1) {
         [fileListToScan removeObjectAtIndex:indexOfItemInList];
     }
@@ -342,7 +343,9 @@ BOOL isLoadByUpButton = false;
     int i;
     for (i = 0; i < count; i++) {
         NSString * temp = [fileListToScan objectAtIndex:i];
-        if (temp == filename) {
+        NSLog(@"%@", temp);
+        NSLog(@"%@", filename);
+        if ([temp isEqualToString:filename]) {
             return i;
         }
     }
@@ -388,6 +391,8 @@ BOOL isLoadByUpButton = false;
         confirmAction.fileListToScan = fileListToScan;
         [self.navigationController pushViewController:confirmAction animated:YES];
 
+    } else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
         
 }

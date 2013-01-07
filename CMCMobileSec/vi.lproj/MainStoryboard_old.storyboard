@@ -765,7 +765,7 @@ Restoreing data is sent from CMC InfoSec</string>
         <!--Scan History-->
         <scene sceneID="LAq-hg-FK0">
             <objects>
-                <tableViewController id="j2I-iE-u0O" userLabel="Scan History" customClass="ScanHistoryViewController" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="history_view" id="j2I-iE-u0O" userLabel="Scan History" customClass="ScanHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rlk-6S-ebP">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

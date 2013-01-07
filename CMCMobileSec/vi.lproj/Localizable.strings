@@ -57,5 +57,6 @@
 "his_label_statistics_totalscanned" = "S.lượng file: ";
 "his_label_statistics_totaldetected" = "S.lượng malware: ";
 "his_label_statistics_scanning" = "Đang quét: ";
+"set_settings" = "Cài đặt";
 
 

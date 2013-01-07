@@ -47,6 +47,7 @@ BOOL exitThreadNow;
 NSMutableDictionary* threadDictionary;
 int scannedFileNum = 0;
 int detectedFileNum = 0;
+NSArray* listOfInfectedFile;
 
 BOOL isScanAll = FALSE;
 BOOL isScanonDemand = FALSE;
@@ -113,7 +114,7 @@ BOOL isScanonDemand = FALSE;
 {
     
     [super viewDidLoad];
-    
+    listOfInfectedFile = [NSArray array];
     // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguageSettings) name:@"reloadLanguage" object:nil];
 
@@ -168,6 +169,7 @@ BOOL isScanonDemand = FALSE;
 }
 
 - (void) configureView{
+    self.title = @"CMC\nMOBILE SECURITY";
     self.storageTextLabel.text = LocalizedString(@"firstpage_scanfile_header_systemstorage");
     self.hintLabel.text = LocalizedString(@"firstpage_scanfile_hint");
     self.memoryClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
@@ -301,8 +303,6 @@ BOOL isScanonDemand = FALSE;
 }
 
 - (IBAction)systemStorageScan:(id)sender {
-//    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
-//    [self.navigationController pushViewController:scanOptions animated:YES];
     isScanAll = TRUE;
     isScanonDemand = FALSE;
     [self showConfirmAlert];
@@ -374,12 +374,14 @@ BOOL isScanonDemand = FALSE;
         if (exitThreadNow) {
             return;
         }
-        
-        NSThread* printResult = [[NSThread alloc] initWithTarget:self
-                                                        selector:@selector(updateFilenameLabel:)
-                                                          object:[docsDir stringByAppendingPathComponent:file]];
-        [printResult start];
-        [NSThread sleepForTimeInterval:0.5];
+        if (scannedFileNum % 9 == 0) {
+            NSThread* printResult = [[NSThread alloc] initWithTarget:self
+                                                            selector:@selector(updateFilenameLabel:)
+                                                              object:[docsDir stringByAppendingPathComponent:file]];
+            [printResult start];
+            [NSThread sleepForTimeInterval:0.4];
+        }
+       
         
     }
     if(scannedFileNum == 0) {
@@ -392,6 +394,8 @@ BOOL isScanonDemand = FALSE;
     if (fromIndex < 0) fromIndex = 0;
     filenameLabel.text = [file substringFromIndex:fromIndex];
     NSLog(@"filename: %@", filenameLabel.text);
+    numberOfScanned.text = [[NSString alloc] initWithFormat:@"%d", scannedFileNum ];
+    numberOfDetected.text = [[NSString alloc] initWithFormat:@"%d", detectedFileNum];
     
     NSIndexPath * indexPath = [self getIndexPathForScanBoard];
     NSArray* rowToReload = [NSArray arrayWithObject:indexPath];
@@ -407,6 +411,8 @@ BOOL isScanonDemand = FALSE;
 - (IBAction)showScanHistory:(id)sender {
 //    HistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
 //    [self.navigationController pushViewController:showHistory animated:YES];
+    ScanHistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
+    [self.navigationController pushViewController:showHistory animated:YES];
 }
 
 - (IBAction)stopScann:(id)sender {
@@ -417,6 +423,34 @@ BOOL isScanonDemand = FALSE;
     [threadDictionary setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];    
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
     [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd/MM/yyyy HH:mm:ss"];
+    NSString* time = [format stringFromDate:now];
+    NSLog(@"time:%@", time);
+    NSString* totalScan = [NSString stringWithFormat:@"%d", scannedFileNum];
+    NSString* totalDetected = [NSString stringWithFormat:@"%d", detectedFileNum];
+    NSString* haveVirus = @"";
+    NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+    [item setObject:time forKey:@"time"];
+    [item setObject:totalScan forKey:@"totalScanned"];
+    [item setObject:totalDetected forKey:@"totalDetected"];
+    [item setObject:haveVirus forKey:@"havevirus"];
+    [gScanHistory addObject:item];
+    
+
+    //send notification
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHistory" object:nil];
+    //
+    
+    //add to database
+    DataBaseConnect *dataBaseConnect = [[DataBaseConnect alloc] init];
+    [dataBaseConnect insertScanStatistic:time :totalScan :totalDetected :haveVirus :[DataBaseConnect getDBPath]];
+
+    scannedFileNum = 0;
+    detectedFileNum = 0;
+    
 }
 
 - (NSString *) mostRecentNumber  {
