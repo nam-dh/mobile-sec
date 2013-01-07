@@ -51,6 +51,9 @@
 "firstpage_filter_recent" = "RECENT";
 "firstpage_filter_recent_blocker" = "Block by:";
 "firstpage_filter_recent_from" = "From: ";
+"firstpage_scanfile_confirm" = "Do you really want to scan?";
+"gnr_cancel" = "Cancel";
+"firstpage_scanfile_duplicated" = "Please wait! Other scanner is running.";
 
 
 

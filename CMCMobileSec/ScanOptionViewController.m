@@ -136,10 +136,7 @@ int detectedVirusNum = 0;
         }
         isSelected = true;
         
-        //start thread to scan file
-        NSThread* scanThread = [[NSThread alloc] initWithTarget:self
-                                                       selector:@selector(scanThreadMainMethod) object:nil];
-        [scanThread start];
+
         
     }
 

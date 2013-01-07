@@ -51,6 +51,9 @@
 "firstpage_filter_recent" = "TIN MỚI NHẤT";
 "firstpage_filter_recent_blocker" = "Bị chặn bởi: ";
 "firstpage_filter_recent_from" = "Gửi từ: ";
+"firstpage_scanfile_confirm" = "Bạn thực sự muốn thực hiện thao tác quét file?";
+"gnr_cancel" = "Hủy";
+"firstpage_scanfile_duplicated" = "Xin hãy chờ! Đang có tiến trình quét khác chạy.";
 
 
 

@@ -33,8 +33,16 @@ id(*CTTelephonyCenterGetDefault)();
 @synthesize recentHeaderLabel;
 @synthesize blockLabel;
 @synthesize fromLabel;
+@synthesize numberOfScanned;
+@synthesize numberOfDetected;
+@synthesize filenameLabel;
 
 static UILabel* c;
+BOOL isScanning = FALSE;
+BOOL exitThreadNow;
+NSMutableDictionary* threadDictionary;
+int scannedFileNum = 0;
+int detectedFileNum = 0;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,6 +59,17 @@ static UILabel* c;
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
     boxBackView.alpha = 0.45;
     [cell setBackgroundView:boxBackView];
+    if (!isScanning) {
+        if (indexPath.section == 0 && indexPath.row == 2) {
+            [cell setHidden:TRUE];
+        }
+    } else {
+        if (indexPath.section == 0 && indexPath.row == 2) {
+            [cell setHidden:FALSE];
+        }
+    }
+    
+
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -81,7 +100,7 @@ static UILabel* c;
     [super viewDidLoad];
     
     // observer
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguage) name:@"reloadLanguage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLanguageSettings) name:@"reloadLanguage" object:nil];
     
     [self reloadLanguageSettings];
     
@@ -103,6 +122,11 @@ static UILabel* c;
     self.fromNumber.text = [self mostRecentNumber];
     c.text = @"hello";
     [self registerCallback];
+    
+    // Add the exitNow BOOL to the thread dictionary.
+    exitThreadNow = NO;
+    threadDictionary = [[NSThread currentThread] threadDictionary];
+    [threadDictionary setValue:[NSNumber numberWithBool:exitThreadNow] forKey:@"ThreadShouldExitNow"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,7 +147,8 @@ static UILabel* c;
 - (void) configureView{
     self.storageTextLabel.text = LocalizedString(@"firstpage_scanfile_header_systemstorage");
     self.hintLabel.text = LocalizedString(@"firstpage_scanfile_hint");
-    self.hintClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
+    self.memoryClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
+    self.hintClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_clear_instruction");
     self.receivedHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalreceived");
     self.spamHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalspam");
     self.recentHeaderLabel.text = LocalizedString(@"firstpage_filter_recent");
@@ -142,6 +167,8 @@ static UILabel* c;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
 
 - (float)getTotalDiskSpace {
 	float totalSpace = 0.0f;
@@ -255,14 +282,109 @@ static UILabel* c;
 }
 
 - (IBAction)systemStorageScan:(id)sender {
-    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
-    [self.navigationController pushViewController:scanOptions animated:YES];
+//    ScanOptionsViewController *scanOptions = [self.storyboard instantiateViewControllerWithIdentifier:@"scan_view"];
+//    [self.navigationController pushViewController:scanOptions animated:YES];
+    [self showConfirmAlert];
+    
+}
 
+-( void) showConfirmAlert{
+    if (!isScanning) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm" message:LocalizedString(@"firstpage_scanfile_confirm") delegate:self cancelButtonTitle:LocalizedString(@"gnr_cancel") otherButtonTitles:@"OK", nil];
+        [alert show];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] init];
+        [alert setDelegate:self];
+        [alert setTitle:nil];
+        [alert setMessage:LocalizedString(@"firstpage_scanfile_duplicated")];
+        [alert addButtonWithTitle:@"OK"];
+        [alert show];
+    }
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        NSLog(@"OK");
+        isScanning = TRUE;
+        [threadDictionary setValue:[NSNumber numberWithBool:FALSE] forKey:@"ThreadShouldExitNow"];
+        
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+        [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+
+        //start thread to scan file
+        NSThread* scanThread = [[NSThread alloc] initWithTarget:self
+                                                       selector:@selector(scanThreadMainMethod) object:nil];
+        [scanThread start];
+
+    }
+}
+
+
+- (void)scanThreadMainMethod
+{
+    @autoreleasepool {
+       [self scanItemInPath:@"/"];
+    }
+}
+
+- (void) scanItemInPath:(NSString*) dir{
+    NSString *docsDir = dir;
+    NSFileManager *localFileManager=[[NSFileManager alloc] init];
+    NSDirectoryEnumerator *dirEnum =
+    [localFileManager enumeratorAtPath:docsDir];
+    NSString *file;
+    
+    while (file = [dirEnum nextObject]) {
+        scannedFileNum++;
+        
+        //            if ([[file pathExtension] isEqualToString: @"doc"]) {
+        //                // process the document
+        //         //       [self scanDocument: [docsDir stringByAppendingPathComponent:file]];
+        //            }
+        
+        NSThread* printResult = [[NSThread alloc] initWithTarget:self
+                                                        selector:@selector(updateFilenameLabel:)
+                                                          object:[docsDir stringByAppendingPathComponent:file]];
+        [printResult start];
+        
+        exitThreadNow = [[threadDictionary valueForKey:@"ThreadShouldExitNow"] boolValue];
+        if (exitThreadNow) {
+            return;
+        }
+        [NSThread sleepForTimeInterval:0.5];
+        
+    }
+}
+
+- (void) updateFilenameLabel:(NSString*) file{
+    int fromIndex = file.length - 25;
+    if (fromIndex < 0) fromIndex = 0;
+    filenameLabel.text = [file substringFromIndex:fromIndex];
+    NSLog(@"filename: %@", filenameLabel.text);
+    
+    NSIndexPath * indexPath = [self getIndexPathForScanBoard];
+    NSArray* rowToReload = [NSArray arrayWithObject:indexPath];
+    [[self tableView] reloadRowsAtIndexPaths:rowToReload withRowAnimation:UITableViewRowAnimationNone];
+    
+}
+
+- (NSIndexPath*) getIndexPathForScanBoard{
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    return indexPath;
 }
 
 - (IBAction)showScanHistory:(id)sender {
 //    HistoryViewController *showHistory = [self.storyboard instantiateViewControllerWithIdentifier:@"history_view"];
 //    [self.navigationController pushViewController:showHistory animated:YES];
+}
+
+- (IBAction)stopScann:(id)sender {
+    isScanning = FALSE;
+    
+    [threadDictionary setValue:[NSNumber numberWithBool:TRUE] forKey:@"ThreadShouldExitNow"];    
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [[self tableView] reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (NSString *) mostRecentNumber  {
@@ -356,6 +478,9 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setRecentHeaderLabel:nil];
     [self setBlockLabel:nil];
     [self setFromLabel:nil];
+    [self setFilenameLabel:nil];
+    [self setNumberOfScanned:nil];
+    [self setNumberOfDetected:nil];
     [super viewDidUnload];
 }
 

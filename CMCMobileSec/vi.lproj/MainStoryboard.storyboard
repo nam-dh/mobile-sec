@@ -521,27 +521,27 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="2lO-uH-pSQ">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="77"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="69" id="2lO-uH-pSQ">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="76"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HINT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="baC-mi-kFk">
-                                                    <rect key="frame" x="20" y="5" width="204" height="26"/>
+                                                    <rect key="frame" x="20" y="4" width="204" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="All memory is CLEAR!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QgD-Lb-3aR">
-                                                    <rect key="frame" x="20" y="27" width="139" height="20"/>
+                                                    <rect key="frame" x="20" y="23" width="139" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click button to view history!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gsu-C8-8qf">
-                                                    <rect key="frame" x="20" y="47" width="170" height="21"/>
+                                                    <rect key="frame" x="20" y="40" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -565,12 +565,80 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="129" id="Wvz-9n-uAp">
+                                        <rect key="frame" x="0.0" y="169" width="320" height="129"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan Board" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WZd-J1-6P8">
+                                                    <rect key="frame" x="20" y="10" width="89" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UTS-gz-mE0">
+                                                    <rect key="frame" x="20" y="44" width="92" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total detected:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDL-cS-Lt4">
+                                                    <rect key="frame" x="19" y="70" width="93" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scanning:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BJc-3P-HZU">
+                                                    <rect key="frame" x="20" y="96" width="63" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QjF-GX-BEv">
+                                                    <rect key="frame" x="222" y="10" width="58" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <state key="normal" title="Stop">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="stopScann:" destination="NyY-Ev-1Sm" eventType="touchUpInside" id="e56-of-sCe"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="scanned file" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pgt-wN-zRe">
+                                                    <rect key="frame" x="205" y="44" width="75" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="detected file" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="juC-TN-iwW">
+                                                    <rect key="frame" x="204" y="70" width="76" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="filename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A43-fX-5P4">
+                                                    <rect key="frame" x="91" y="98" width="189" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="SMS Filter" id="rsH-YD-5OP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6zM-Xc-3sG">
-                                        <rect key="frame" x="0.0" y="223" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="344" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -594,7 +662,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ATs-a7-7cN">
-                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="389" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -618,7 +686,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="143" id="0jA-qA-kw5">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="143"/>
+                                        <rect key="frame" x="0.0" y="433" width="320" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="142"/>
@@ -672,12 +740,15 @@ Restoreing data is sent from CMC InfoSec</string>
                     <navigationItem key="navigationItem" title="Summary" id="PEX-Ys-a3f"/>
                     <connections>
                         <outlet property="blockLabel" destination="cIr-gP-HKf" id="Gp6-rB-PSb"/>
+                        <outlet property="filenameLabel" destination="A43-fX-5P4" id="5zI-lq-ftt"/>
                         <outlet property="fromLabel" destination="MIt-Pa-bcz" id="A1N-GR-lV0"/>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
                         <outlet property="hintClearLabel" destination="gsu-C8-8qf" id="AYg-k1-3sQ"/>
                         <outlet property="hintLabel" destination="baC-mi-kFk" id="kk2-05-eRw"/>
                         <outlet property="historyScanButton" destination="bep-I9-S5D" id="Ocb-1A-Pfe"/>
                         <outlet property="memoryClearLabel" destination="QgD-Lb-3aR" id="2Af-Wb-PHB"/>
+                        <outlet property="numberOfDetected" destination="juC-TN-iwW" id="vL5-cH-XnP"/>
+                        <outlet property="numberOfScanned" destination="Pgt-wN-zRe" id="rFE-hO-smq"/>
                         <outlet property="receivedHeaderLabel" destination="UWS-Bg-UsL" id="Ma6-3i-S9v"/>
                         <outlet property="recentHeaderLabel" destination="upo-Bq-9tZ" id="4Qp-ei-Hz8"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
@@ -1692,14 +1763,18 @@ Mobile Security:</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showScanHistory:"/>
+                <relationship kind="action" name="stopScann:"/>
                 <relationship kind="action" name="systemStorageScan:"/>
                 <relationship kind="outlet" name="blockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filenameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hintClearLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="historyScanButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="memoryClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfDetected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfScanned" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>

@@ -598,7 +598,7 @@
 				5215A17F1665254600D8DEF6 /* Frameworks */,
 				5215A1801665254600D8DEF6 /* Resources */,
 				50524F424C454D533F /* ShellScript */,
-				3D27B5BE16935E0B00C4D33D /* ShellScript */,
+				52C183161699BCB200157B94 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -777,11 +777,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-
-/* Begin PBXShellScriptBuildPhase section */
-		3D27B5BE16935E0B00C4D33D /* ShellScript */ = {
+		52C183161699BCB200157B94 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -792,20 +788,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python CMCMobileSec/localize.py --mainIdiom=en --mainStoryboard=CMCMobileSec/en.lproj/MainStoryboard.storyboard vi\n\n";
-		};
-		50524F424C454D533F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ “${PLATFORM_NAME}” == “iphoneos” ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements511/gen_entitlements.py “com.yourcompany.${PROJECT_NAME}” “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent”;\ncodesign -f -s “iPhone Developer” —entitlements “${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent” “${BUILT_PRODUCTS_DIR}/${WRAPPER_zNAME}/”\nfi";
+			shellScript = "python CMCMobileSec/localize.py --mainIdiom=en --mainStoryboard=CMCMobileSec/en.lproj/MainStoryboard.storyboard vi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -900,7 +883,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -924,7 +906,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

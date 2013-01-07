@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ScanOptionsViewController.h"
+//#import "ScanOptionsViewController.h"
 #import "LocalizeHelper.h"
 
-@interface SummaryViewController : UITableViewController
+@interface SummaryViewController : UITableViewController<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *sysStorageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromNumber;
 @property (weak, nonatomic) IBOutlet UILabel *smsContent;
@@ -29,10 +29,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *recentHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *blockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
+@property (weak, nonatomic) IBOutlet UILabel *filenameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfScanned;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfDetected;
 
 
 - (IBAction)systemStorageScan:(id)sender;
 - (IBAction)showScanHistory:(id)sender;
+- (IBAction)stopScann:(id)sender;
 
 - (NSString *) mostRecentNumber;
 - (NSString *) getDBPath;
