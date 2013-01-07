@@ -149,7 +149,6 @@
 		52A549BD168CD7E700470BCD /* FileInteractionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A549BC168CD7E700470BCD /* FileInteractionHelper.m */; };
 		52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */; };
 		52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */; };
-		52B3B03C168B51090070B3B6 /* HistoryNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */; };
 		52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */; };
 		52BD87F7169B361C004F524C /* button_checkbox_off_bak.png in Resources */ = {isa = PBXBuildFile; fileRef = 52BD87F6169B361C004F524C /* button_checkbox_off_bak.png */; };
 		52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */; };
@@ -323,11 +322,8 @@
 		52A549BB168CD7E700470BCD /* FileInteractionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInteractionHelper.h; path = Utilities/FileInteractionHelper.h; sourceTree = "<group>"; };
 		52A549BC168CD7E700470BCD /* FileInteractionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInteractionHelper.m; path = Utilities/FileInteractionHelper.m; sourceTree = "<group>"; };
 		52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.cmcinfosec.CMCMobileSec.plist; sourceTree = SOURCE_ROOT; };
-		52AC8E4D1693566700B0A215 /* AppStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppStrings.h; sourceTree = "<group>"; };
 		52B3B037168B4D740070B3B6 /* HistoryNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationController.h; path = CMCMobileSec/HistoryNavigationController.h; sourceTree = "<group>"; };
 		52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationController.m; path = CMCMobileSec/HistoryNavigationController.m; sourceTree = "<group>"; };
-		52B3B03A168B51090070B3B6 /* HistoryNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryNavigationBar.h; path = CMCMobileSec/HistoryNavigationBar.h; sourceTree = "<group>"; };
-		52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationBar.m; path = CMCMobileSec/HistoryNavigationBar.m; sourceTree = "<group>"; };
 		52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanHistoryViewController.h; path = CMCMobileSec/ScanHistoryViewController.h; sourceTree = "<group>"; };
 		52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanHistoryViewController.m; path = CMCMobileSec/ScanHistoryViewController.m; sourceTree = "<group>"; };
 		52BD87F6169B361C004F524C /* button_checkbox_off_bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_checkbox_off_bak.png; path = Images/button_checkbox_off_bak.png; sourceTree = SOURCE_ROOT; };
@@ -372,8 +368,6 @@
 				529C968A1665551200675698 /* SettingOptionsViewController.m */,
 				52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */,
 				52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */,
-				52B3B03A168B51090070B3B6 /* HistoryNavigationBar.h */,
-				52B3B03B168B51090070B3B6 /* HistoryNavigationBar.m */,
 				52B3B037168B4D740070B3B6 /* HistoryNavigationController.h */,
 				52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */,
 				5215A1C21665332900D8DEF6 /* SummaryViewController.h */,
@@ -584,7 +578,6 @@
 				5215A18F1665254600D8DEF6 /* InfoPlist.strings */,
 				5215A1921665254600D8DEF6 /* main.m */,
 				5215A1941665254600D8DEF6 /* CMCMobileSec-Prefix.pch */,
-				52AC8E4D1693566700B0A215 /* AppStrings.h */,
 			);
 			name = "Supporting Files";
 			path = CMCMobileSec;
@@ -814,7 +807,6 @@
 				3D8B49F4168A33FA008BF51F /* DataBaseConnect.m in Sources */,
 				3D8B49F5168A33FA008BF51F /* ServerConnection.m in Sources */,
 				52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */,
-				52B3B03C168B51090070B3B6 /* HistoryNavigationBar.m in Sources */,
 				52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */,
 				3D5EEBFA168CBF620017CAA3 /* FileDecryption.m in Sources */,
 				3D5EEBFB168CBF620017CAA3 /* NSData+Base64.m in Sources */,
