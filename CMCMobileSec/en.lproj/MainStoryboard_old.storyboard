@@ -1071,7 +1071,7 @@ Restoreing data is sent from CMC InfoSec</string>
             <objects>
                 <tableViewController storyboardIdentifier="scan_view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AZk-kM-FaM" customClass="ScanOptionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" sectionIndexMinimumDisplayRowCount="2" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9dm-7x-Fnd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1356,9 +1356,8 @@ Restoreing data is sent from CMC InfoSec</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wcX-o7-6Fz" kind="relationship" relationship="viewControllers" id="EV4-UL-78U"/>
-                        <segue destination="QWS-cp-tGb" kind="relationship" relationship="viewControllers" id="3Tx-0R-bUM"/>
                         <segue destination="nlu-0l-ULf" kind="relationship" relationship="viewControllers" id="iS2-1j-NBa"/>
+                        <segue destination="QWS-cp-tGb" kind="relationship" relationship="viewControllers" id="3Tx-0R-bUM"/>
                         <segue destination="AMx-vZ-pn6" kind="relationship" relationship="viewControllers" id="Eo6-co-F5T"/>
                     </connections>
                 </tabBarController>
