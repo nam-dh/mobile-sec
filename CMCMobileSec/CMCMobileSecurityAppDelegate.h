@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
 
 extern NSString* sessionKey;
 extern int accountType;
@@ -23,6 +25,8 @@ extern NSString *downloadFile;
 extern Boolean login;
 extern NSString* blackListSwitchValue, *keyWordSwitchValue, *keepConnectSwitchValue ,*remoteLockSwitchValue, *remoteTrackSwitchValue, *backupDataSwitchValue, *remoteBackupSwitchValue, *remoteClearSwitchValue, *remoteRestoreSwitchValue;
 extern NSString *language;
+extern AVCaptureStillImageOutput *stillImageOutput;
+extern AVCaptureSession *session;
 
 
 @interface CMCMobileSecurityAppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate, CLLocationManagerDelegate> {
@@ -31,6 +35,8 @@ extern NSString *language;
 
 @property (strong, nonatomic) UIWindow *window;
 
+
+- (void)doCapture;
 - (void) requestServer:(NSTimer *) timer;
 
 

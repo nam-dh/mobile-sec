@@ -19,7 +19,6 @@
     NSXMLParser *xmlParser;
     NSMutableString *soapResults;
     Boolean elementFound;
-
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,6 +37,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(trackingLocation) name:@"trackingLocation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopTrackingLocation) name:@"stopTrackingLocation" object:nil];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockDevice) name:@"lockDevice" object:nil];
 
     //load settings
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -67,7 +68,9 @@
                                                            selector:@selector(prepareHistory) object:nil];
     [prepareHistoryThread start];
     
-    [self testEncrypt];
+   // [self testEncrypt];
+    
+    [self setupAVCapture];
     
     return YES;
 }
@@ -121,6 +124,12 @@
     [locationManager stopUpdatingLocation];
     
 }
+
+- (void) lockDevice
+{
+    //capture picture
+    [self doCapture];
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -156,8 +165,13 @@
     if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
         
         if ((accountType == 2) && (login== false)){
-            ServerConnection *theInstance = [[ServerConnection alloc] init];
-            [theInstance userLogin:email :password :sessionKey];
+            if (sessionKey == nil) {
+                ServerConnection *theInstance = [[ServerConnection alloc] init];
+                [theInstance getsessionKey];
+            } else {
+                ServerConnection *theInstance = [[ServerConnection alloc] init];
+                [theInstance userLogin:email :password :sessionKey];
+            }
         }
         
         if (login) {
@@ -206,8 +220,8 @@
     
     float latt = newLocation.coordinate.latitude;
     float longi = newLocation.coordinate.longitude;
-    latt = 21.01;
-    longi = 105.7981;
+    //latt = 21.01;
+    //longi = 105.7981;
     
     
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
@@ -221,10 +235,124 @@
     [theInstance locationReport:vector :sessionKey];
 }
 
+- (BOOL)setupAVCapture
+{
+    NSError *error = nil;
+    
+    session = [AVCaptureSession new];
+    [session setSessionPreset:AVCaptureSessionPresetHigh];
+    
+    // Select a video device, make an input
+    AVCaptureDevice *device = [self frontFacingCameraIfAvailable];
+    
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+    if (error)
+        return NO;
+    if ([session canAddInput:input])
+        [session addInput:input];
+    
+    // Make a still image output
+    stillImageOutput = [AVCaptureStillImageOutput new];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [stillImageOutput setOutputSettings:outputSettings];
+    if ([session canAddOutput:stillImageOutput])
+        [session addOutput:stillImageOutput];
+    
+    [session startRunning];
+    
+    return YES;
+}
+
+-(AVCaptureDevice *)frontFacingCameraIfAvailable{
+    
+    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *captureDevice = nil;
+    
+    for (AVCaptureDevice *device in videoDevices){
+        
+        if (device.position == AVCaptureDevicePositionFront){
+            
+            captureDevice = device;
+            break;
+        }
+    }
+    
+    //  couldn't find one on the front, so just get the default video device.
+    if (!captureDevice){
+        
+        captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+    
+    return captureDevice;
+}
+
+- (void)doCapture {
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in stillImageOutput.connections)
+    {
+        for (AVCaptureInputPort *port in [connection inputPorts])
+        {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo] )
+            {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) { break; }
+    }
+    NSLog(@"stillImageoutput: %@", stillImageOutput);
+    [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
+                                                  completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *__strong error) {
+                                                      // Do something with the captured image
+                                                      CFDictionaryRef exifAttachments = CMGetAttachment( imageDataSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+                                                      if (exifAttachments)
+                                                      {
+                                                          // Do something with the attachments.
+                                                          NSLog(@"attachements: %@", exifAttachments);
+                                                      }
+                                                      else
+                                                          NSLog(@"no attachments");
+                                                      
+                                                      NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+                                                      UIImage *image = [[UIImage alloc] initWithData:imageData];
+                                                      [self imageToFile:image];
+                                                  }];
+    
+}
+
+-(void) imageToFile :(UIImage*)image{
+    // Create paths to output images
+    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.png"];
+    NSString  *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.jpg"];
+    
+    NSLog(@"PNG=%@", pngPath);
+    
+    // Write a UIImage to JPEG with minimum compression (best quality)
+    // The value 'image' must be a UIImage object
+    // The value '1.0' represents image compression quality as value from 0.0 to 1.0
+    [UIImageJPEGRepresentation(image, 1.0) writeToFile:jpgPath atomically:YES];
+    
+    // Write image to PNG
+    [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+    
+    // Let's check to see if files were successfully written...
+    
+    // Create file manager
+    NSError *error;
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    
+    // Point to Document directory
+    NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    
+    // Write out the contents of home directory to console
+    NSLog(@"Documents directory: %@", [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error]);
+}
+
 
 
 @end
 
+AVCaptureStillImageOutput *stillImageOutput;
 NSString* sessionKey;
 int accountType = 1;
 NSString* email = nil;
@@ -239,3 +367,4 @@ Boolean login = false;
 NSString* blackListSwitchValue = nil, *keyWordSwitchValue = nil , *keepConnectSwitchValue = nil,*remoteLockSwitchValue = nil, *remoteTrackSwitchValue = nil, *backupDataSwitchValue = nil, *remoteBackupSwitchValue = nil, *remoteClearSwitchValue = nil, *remoteRestoreSwitchValue = nil;
 
 NSString *language = nil;
+AVCaptureSession *session;

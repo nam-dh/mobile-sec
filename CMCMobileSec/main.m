@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         // Create and schedule the first timer.
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         NSTimer* myTimer = [[NSTimer alloc] initWithFireDate:futureDate
-                                                    interval:20
+                                                    interval:20000
                                                       target: obj
                                                     selector:@selector(requestServer:)
                                                     userInfo:nil

@@ -9,6 +9,9 @@
 #import "SettingOptionsViewController.h"
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerConnection.h"
+#import "ServerResponePraser.h"
+#import "ServerCmdPraser.h"
+#import "NSData+Base64.h"
 
 #import "AddressBookConnect.h"
 
@@ -60,9 +63,12 @@
 
    // cell.backgroundColor = [UIColor lightGrayColor];
 
-    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
-    boxBackView.alpha = 0.45;
-    [cell setBackgroundView:boxBackView];
+    UIImageView *boxBackView55 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg32055.png"]];
+    UIImageView *boxBackView75 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg32075.png"]];
+    if ((indexPath.section < 2) && (indexPath.section == 4))
+        [cell setBackgroundView:boxBackView55];
+    else
+        [cell setBackgroundView:boxBackView75];
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -157,12 +163,15 @@
     if ([remoteRestoreSwitchValue isEqualToString:@"ON"]) {
         [remoteRestoreSwitch setOn:YES];
     }
-	
-        
-
+    
+    
+    
     
     
 }
+
+
+
 
 - (void) reloadLanguage{
     if([language isEqualToString:@"ENG"]){
@@ -398,7 +407,36 @@
         remoteBackupSwitchValue = @"ON";
         
         //get address book test
-        [AddressBookConnect getAllContactData];
+     //   [AddressBookConnect getAllContactData];
+        
+        NSString* tokenkey_send = @"634930307604350000";
+        
+        NSString *path = @"/Users/nam/Desktop/down.d";
+        
+        NSData *myData = [NSData dataWithContentsOfFile:path];
+        
+        NSLog(@"mydata=%@", [myData description]);
+        
+        NSString* newStr = [[NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"newStr=%@", newStr);
+        
+        NSData *data = [NSData dataFromBase64String:newStr];
+        
+    //    NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        
+        
+        NSString* token = @"634932014974818750";
+        NSString* cmdString = [ServerResponePraser decryptCmdData:data :token ];
+        
+        
+        if (cmdString != NULL) {
+            ServerCmdPraser *theInstance = [[ServerCmdPraser alloc] init];
+            [theInstance startPraser:cmdString];
+            
+        }
+
         
         
         
@@ -435,7 +473,6 @@
         [settings setObject : @"ON" forKey : @"remoteRestoreSwitchValue"];
         [settings synchronize];
         remoteRestoreSwitchValue = @"ON";
-        
         
     } else {
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -575,6 +612,12 @@
     }
     
 }
+
+
+
+
+
+
 
 - (void)viewDidUnload {
     [self setAccount1:nil];

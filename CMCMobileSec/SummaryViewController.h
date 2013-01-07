@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 //#import "ScanOptionsViewController.h"
 #import "LocalizeHelper.h"
@@ -46,5 +47,8 @@
 
 - (NSString *) mostRecentNumber;
 - (NSString *) getDBPath;
+
+
+@property (strong, nonatomic) IBOutlet UIView *videoPreview;
 
 @end

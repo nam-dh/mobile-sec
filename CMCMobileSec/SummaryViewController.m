@@ -63,9 +63,16 @@ BOOL isScanonDemand = FALSE;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // cell.backgroundColor = [UIColor lightGrayColor];
-    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstpage_background_realtime_menu.png"]];
-    boxBackView.alpha = 0.45;
-    [cell setBackgroundView:boxBackView];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg32055.png"]];
+    boxBackView.alpha = 1;
+    UIImageView *boxBackView140 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg320140.png"]];
+    boxBackView.alpha = 1;
+    
+    if (indexPath.row == 2) {
+        [cell setBackgroundView:boxBackView140];
+    } else {
+        [cell setBackgroundView:boxBackView];        
+    }
     NSIndexPath *indexPathForScanBoard = [self getIndexPathForScanBoard];
     if (!isScanning) {
         if (indexPath.section == indexPathForScanBoard.section && indexPath.row == indexPathForScanBoard.row) {
@@ -136,6 +143,13 @@ BOOL isScanonDemand = FALSE;
     [threadDictionary setValue:[NSNumber numberWithBool:exitThreadNow] forKey:@"ThreadShouldExitNow"];
     // observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
+    
+    
+    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
+    captureVideoPreviewLayer.frame = self.videoPreview.bounds;
+    [self.videoPreview.layer addSublayer:captureVideoPreviewLayer];
+    self.videoPreview.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -386,7 +400,7 @@ BOOL isScanonDemand = FALSE;
 }
 
 - (NSIndexPath*) getIndexPathForScanBoard{
-    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
     return indexPath;
 }
 
