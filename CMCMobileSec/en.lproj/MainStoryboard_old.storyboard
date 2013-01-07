@@ -1457,7 +1457,6 @@ Mobile Security:</string>
         <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
-<<<<<<< HEAD
     <classes>
         <class className="BlackListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
@@ -1590,8 +1589,6 @@ Mobile Security:</string>
             </relationships>
         </class>
     </classes>
-=======
->>>>>>> f42ba2e39ca13bf4410b41dd33ed2cc3df0ed7bd
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
