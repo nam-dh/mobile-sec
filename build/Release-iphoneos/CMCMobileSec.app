@@ -1,0 +1,1 @@
+/tmp/CMCMobileSec.dst/Applications/CMCMobileSec.app
