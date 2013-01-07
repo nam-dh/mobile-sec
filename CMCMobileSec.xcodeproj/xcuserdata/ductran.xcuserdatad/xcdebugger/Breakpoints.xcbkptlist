@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/FileSelectionViewController.m"
-         timestampString = "378235202.660558"
+         timestampString = "379271168.212587"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "230"
-         endingLineNumber = "230"
+         startingLineNumber = "231"
+         endingLineNumber = "231"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -93,6 +93,19 @@
          endingLineNumber = "16"
          landmarkName = "@interface SettingOptionsViewController"
          landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CMCMobileSec/SummaryViewController.m"
+         timestampString = "379269510.966883"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "318"
+         endingLineNumber = "318"
+         landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -63,8 +63,8 @@ int detectedVirusNum = 0;
     threadDict = [[NSThread currentThread] threadDictionary];
     [threadDict setValue:[NSNumber numberWithBool:exitNow] forKey:@"ThreadShouldExitNow"];
 
-    // observer
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
+//    // observer
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"scanOnDemand" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanOnDemand) name:@"reloadTableView" object:nil];
     

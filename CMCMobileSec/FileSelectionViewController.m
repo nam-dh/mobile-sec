@@ -201,7 +201,8 @@ BOOL isLoadByUpButton = false;
     
     // add button for checkmark
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGRect frame = CGRectMake(267.0, 3.0, 38.0, 38.0);
+//    CGRect frame = CGRectMake(267.0, 3.0, 38.0, 38.0);
+     CGRect frame = CGRectMake(267.0, 3.0, theImage.size.width, theImage.size.height);
     button.frame = frame;
     [button setBackgroundImage:theImage forState:UIControlStateNormal];
     [button addTarget:self action:@selector(checkButtonTapped:event:)  forControlEvents:UIControlEventTouchUpInside];
@@ -354,9 +355,7 @@ BOOL isLoadByUpButton = false;
 }
 - (IBAction)discardButton:(id)sender {
     NSLog(@"discard Button");
-    ScanOptionViewController * scanOption = [self.storyboard
-                                             instantiateViewControllerWithIdentifier:@"scan_view"];
-    [self.navigationController pushViewController:scanOption animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)resetButton:(id)sender {
