@@ -365,6 +365,20 @@
         [settings synchronize];
         backupDataSwitchValue = @"ON";
         
+        if ((accountType == 2) && (login== false)){
+            ServerConnection *theInstance = [[ServerConnection alloc] init];
+            [theInstance userLogin:email :password :sessionKey];
+        }
+        
+        if (login) {
+            
+            NSString *type = @"cmd";
+            
+            ServerConnection *theInstance = [[ServerConnection alloc] init];
+            [theInstance downloadFile:sessionKey :type];
+            
+        }
+        
         
     } else {
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];

@@ -174,16 +174,18 @@ qualifiedName:(NSString *)qName
         //---displays the country---
         NSLog(@"ReportLocationResult=%@",soapResults);
         
+        NSString* tokenkey_send = @"634930307604350000";
+        
         if ([soapResults isEqualToString:@"0"]) {
-            NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_TRACK</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>12/27/2012 23:35:52</FinishTime>\r\n    <ResultDetail></ResultDetail>\r\n    <LicKey1></LicKey1>\r\n    <LicKey2></LicKey2>\r\n    <LicKey3></LicKey3>\r\n    <Cmdid>1171</Cmdid>\r\n  </Command>\r\n  <Command>\r\n    <CmdKey>CMC_ALERT</CmdKey>\r\n    <CmdStatus>DONE</CmdStatus>\r\n    <FinishTime>12/28/2012 23:35:52</FinishTime>\r\n    <ResultDetail></ResultDetail>\r\n    <LicKey1></LicKey1>\r\n    <LicKey2></LicKey2>\r\n    <LicKey3></LicKey3>\r\n    <Cmdid>1142</Cmdid>\r\n  </Command>\r\n<Command>";
+            NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_LOCATE</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>1/6/2013 1:13:26</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <Cmdid>1213</Cmdid>\r\n  </Command>\r\n</Commands>";
             
             
-            NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenKey];
+            NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
             
             
             ServerConnection *serverConnect = [[ServerConnection alloc] init];
             
-            [serverConnect uploadFile:base64String :@"cmd" :tokenKey :sessionKey];
+            [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
             
         }
         
@@ -270,6 +272,9 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         
+        
+        NSLog(@"token key=%@", tokenKey);
+        
         NSLog(@"md5hash=%@",soapResults);
         md5hash = [soapResults copy];
         
@@ -301,6 +306,7 @@ qualifiedName:(NSString *)qName
         //---displays the country---
         
         tokenKey = [soapResults copy];
+        NSLog(@"token key=%@", tokenKey);
         [soapResults setString:@""];
         elementFound = FALSE;
     }
@@ -373,7 +379,8 @@ qualifiedName:(NSString *)qName
     
     NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
     
-    password = @"123456";
+    NSLog(@"password=%@",password);
+    NSLog(@"data=%@", data);
     
     NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[data dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
     

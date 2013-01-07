@@ -63,5 +63,6 @@ int main(int argc, char *argv[])
                                         repeats:YES];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     }
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     
 }

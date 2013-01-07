@@ -171,6 +171,30 @@
         
     }
     
+//    NSString* tokenkey_send = @"634930307604350000";
+//    
+//    NSString *path = @"/Users/nam/Desktop/result.xml";
+//    
+//    NSData *myData = [NSData dataWithContentsOfFile:path];
+//    NSString* newStr = [[NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding];
+//    
+//    NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_LOCATE</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>1/6/2013 1:13:26</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <Cmdid>1213</Cmdid>\r\n  </Command>\r\n</Commands>";
+//    
+//    
+//    NSString* base64String = [ServerResponePraser encryptCmdData:newStr :tokenkey_send];
+//    
+//    
+//    ServerConnection *serverConnect = [[ServerConnection alloc] init];
+//    // ServerConnection *theInstance = [[ServerConnection alloc] init];
+//    [serverConnect userLogin:email :password :sessionKey];
+//    
+//    double delayInSeconds = 2.0;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        // code to be executed on main thread.If you want to run in another thread, create other queue
+//        [serverConnect uploadFile:base64String :@"CMD" :tokenkey_send :sessionKey];
+//    });
+    
     
     
 }
