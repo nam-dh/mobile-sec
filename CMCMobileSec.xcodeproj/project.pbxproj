@@ -122,12 +122,6 @@
 		3DC0A14E1683839F001B2FAB /* status_sms_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F01683839F001B2FAB /* status_sms_clear.png */; };
 		3DC0A14F1683839F001B2FAB /* status_sms_spam.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F11683839F001B2FAB /* status_sms_spam.png */; };
 		3DC0A1501683839F001B2FAB /* status_sms_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F21683839F001B2FAB /* status_sms_unknown.png */; };
-		3DC0A1511683839F001B2FAB /* vpi__tab_selected_focused_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F31683839F001B2FAB /* vpi__tab_selected_focused_holo.9.png */; };
-		3DC0A1521683839F001B2FAB /* vpi__tab_selected_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F41683839F001B2FAB /* vpi__tab_selected_holo.9.png */; };
-		3DC0A1531683839F001B2FAB /* vpi__tab_selected_pressed_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F51683839F001B2FAB /* vpi__tab_selected_pressed_holo.9.png */; };
-		3DC0A1541683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F61683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png */; };
-		3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F71683839F001B2FAB /* vpi__tab_unselected_holo.9.png */; };
-		3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0A0F81683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png */; };
 		3DC0A15C16838A9B001B2FAB /* UsersRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */; };
 		3DC5417E169139AA0080956D /* ServerCmdPraser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5417D169139AA0080956D /* ServerCmdPraser.m */; };
 		3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC54180169157EE0080956D /* ServerResponePraser.m */; };
@@ -147,7 +141,6 @@
 		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
 		52742BA61680F0F0008EFA90 /* FileSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */; };
 		5285BE4D1680E8DA003191EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5285BE4C1680E8DA003191EC /* libsqlite3.dylib */; };
-		529C967D16654D8A00675698 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 529C967B16654D8A00675698 /* setting.png */; };
 		529C968B1665551200675698 /* SettingOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C968A1665551200675698 /* SettingOptionsViewController.m */; };
 		52A549BD168CD7E700470BCD /* FileInteractionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A549BC168CD7E700470BCD /* FileInteractionHelper.m */; };
 		52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */; };
@@ -283,12 +276,6 @@
 		3DC0A0F01683839F001B2FAB /* status_sms_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_sms_clear.png; path = ../Images/status_sms_clear.png; sourceTree = "<group>"; };
 		3DC0A0F11683839F001B2FAB /* status_sms_spam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_sms_spam.png; path = ../Images/status_sms_spam.png; sourceTree = "<group>"; };
 		3DC0A0F21683839F001B2FAB /* status_sms_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_sms_unknown.png; path = ../Images/status_sms_unknown.png; sourceTree = "<group>"; };
-		3DC0A0F31683839F001B2FAB /* vpi__tab_selected_focused_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_selected_focused_holo.9.png; path = ../Images/vpi__tab_selected_focused_holo.9.png; sourceTree = "<group>"; };
-		3DC0A0F41683839F001B2FAB /* vpi__tab_selected_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_selected_holo.9.png; path = ../Images/vpi__tab_selected_holo.9.png; sourceTree = "<group>"; };
-		3DC0A0F51683839F001B2FAB /* vpi__tab_selected_pressed_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_selected_pressed_holo.9.png; path = ../Images/vpi__tab_selected_pressed_holo.9.png; sourceTree = "<group>"; };
-		3DC0A0F61683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_unselected_focused_holo.9.png; path = ../Images/vpi__tab_unselected_focused_holo.9.png; sourceTree = "<group>"; };
-		3DC0A0F71683839F001B2FAB /* vpi__tab_unselected_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_unselected_holo.9.png; path = ../Images/vpi__tab_unselected_holo.9.png; sourceTree = "<group>"; };
-		3DC0A0F81683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vpi__tab_unselected_pressed_holo.9.png; path = ../Images/vpi__tab_unselected_pressed_holo.9.png; sourceTree = "<group>"; };
 		3DC0A15A16838A9B001B2FAB /* UsersRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersRegisterViewController.h; path = CMCMobileSec/UsersRegisterViewController.h; sourceTree = "<group>"; };
 		3DC0A15B16838A9B001B2FAB /* UsersRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersRegisterViewController.m; path = CMCMobileSec/UsersRegisterViewController.m; sourceTree = "<group>"; };
 		3DC5417C169139AA0080956D /* ServerCmdPraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerCmdPraser.h; path = Utilities/ServerCmdPraser.h; sourceTree = "<group>"; };
@@ -321,7 +308,6 @@
 		52742BA41680F0EF008EFA90 /* FileSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSelectionViewController.h; path = CMCMobileSec/FileSelectionViewController.h; sourceTree = "<group>"; };
 		52742BA51680F0EF008EFA90 /* FileSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSelectionViewController.m; path = CMCMobileSec/FileSelectionViewController.m; sourceTree = "<group>"; };
 		5285BE4C1680E8DA003191EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		529C967B16654D8A00675698 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		529C96891665551200675698 /* SettingOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingOptionsViewController.h; path = CMCMobileSec/SettingOptionsViewController.h; sourceTree = "<group>"; };
 		529C968A1665551200675698 /* SettingOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingOptionsViewController.m; path = CMCMobileSec/SettingOptionsViewController.m; sourceTree = "<group>"; };
 		52A549BB168CD7E700470BCD /* FileInteractionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInteractionHelper.h; path = Utilities/FileInteractionHelper.h; sourceTree = "<group>"; };
@@ -513,12 +499,6 @@
 				3DC0A0F01683839F001B2FAB /* status_sms_clear.png */,
 				3DC0A0F11683839F001B2FAB /* status_sms_spam.png */,
 				3DC0A0F21683839F001B2FAB /* status_sms_unknown.png */,
-				3DC0A0F31683839F001B2FAB /* vpi__tab_selected_focused_holo.9.png */,
-				3DC0A0F41683839F001B2FAB /* vpi__tab_selected_holo.9.png */,
-				3DC0A0F51683839F001B2FAB /* vpi__tab_selected_pressed_holo.9.png */,
-				3DC0A0F61683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png */,
-				3DC0A0F71683839F001B2FAB /* vpi__tab_unselected_holo.9.png */,
-				3DC0A0F81683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png */,
 				3DC0A099168382FA001B2FAB /* bg_background.png */,
 				3D25DC6816824DE50006C7F5 /* hinticon-46-48x48.png */,
 				3D25DC6616824AB70006C7F5 /* updatebutton63-65X65-.png */,
@@ -528,7 +508,6 @@
 				3D25DC5B16824A1B0006C7F5 /* fpicon-smsfilter-65-65x65.png */,
 				3D25DC5C16824A1B0006C7F5 /* historybaricon-65--65x65.png */,
 				3D25DC5D16824A1B0006C7F5 /* settingbaricon-65--65x65.png */,
-				529C967B16654D8A00675698 /* setting.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -652,7 +631,6 @@
 			files = (
 				5215A1911665254600D8DEF6 /* InfoPlist.strings in Resources */,
 				5215A1A01665254700D8DEF6 /* MainStoryboard.storyboard in Resources */,
-				529C967D16654D8A00675698 /* setting.png in Resources */,
 				3DB6A4CC1678301A00B9BFEB /* cmc.db in Resources */,
 				3D25DC5F16824A1B0006C7F5 /* fpicon-antitheft-65-65x65.png in Resources */,
 				3D25DC6016824A1B0006C7F5 /* fpicon-realtime-65-65x65.png in Resources */,
@@ -744,12 +722,6 @@
 				3DC0A14E1683839F001B2FAB /* status_sms_clear.png in Resources */,
 				3DC0A14F1683839F001B2FAB /* status_sms_spam.png in Resources */,
 				3DC0A1501683839F001B2FAB /* status_sms_unknown.png in Resources */,
-				3DC0A1511683839F001B2FAB /* vpi__tab_selected_focused_holo.9.png in Resources */,
-				3DC0A1521683839F001B2FAB /* vpi__tab_selected_holo.9.png in Resources */,
-				3DC0A1531683839F001B2FAB /* vpi__tab_selected_pressed_holo.9.png in Resources */,
-				3DC0A1541683839F001B2FAB /* vpi__tab_unselected_focused_holo.9.png in Resources */,
-				3DC0A1551683839F001B2FAB /* vpi__tab_unselected_holo.9.png in Resources */,
-				3DC0A1561683839F001B2FAB /* vpi__tab_unselected_pressed_holo.9.png in Resources */,
 				52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */,
 				5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */,
 				52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */,
