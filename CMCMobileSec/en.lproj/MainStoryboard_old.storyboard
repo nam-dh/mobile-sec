@@ -491,7 +491,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="System storage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="97a-9O-Ebb">
-                                                    <rect key="frame" x="20" y="4" width="119" height="21"/>
+                                                    <rect key="frame" x="20" y="4" width="192" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -529,7 +529,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HINT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="baC-mi-kFk">
-                                                    <rect key="frame" x="20" y="4" width="40" height="21"/>
+                                                    <rect key="frame" x="20" y="4" width="198" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -541,7 +541,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click button to view history!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gsu-C8-8qf">
-                                                    <rect key="frame" x="20" y="40" width="170" height="21"/>
+                                                    <rect key="frame" x="20" y="40" width="204" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -573,7 +573,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan Board" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WZd-J1-6P8">
-                                                    <rect key="frame" x="20" y="10" width="89" height="21"/>
+                                                    <rect key="frame" x="20" y="10" width="118" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -585,13 +585,13 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total detected:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDL-cS-Lt4">
-                                                    <rect key="frame" x="19" y="70" width="93" height="18"/>
+                                                    <rect key="frame" x="19" y="70" width="134" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scanning:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BJc-3P-HZU">
-                                                    <rect key="frame" x="20" y="96" width="63" height="18"/>
+                                                    <rect key="frame" x="20" y="96" width="78" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -624,7 +624,7 @@ Restoreing data is sent from CMC InfoSec</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="filename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A43-fX-5P4">
-                                                    <rect key="frame" x="91" y="98" width="189" height="16"/>
+                                                    <rect key="frame" x="99" y="98" width="181" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -751,12 +751,15 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="numberOfScanned" destination="Pgt-wN-zRe" id="rFE-hO-smq"/>
                         <outlet property="receivedHeaderLabel" destination="UWS-Bg-UsL" id="Ma6-3i-S9v"/>
                         <outlet property="recentHeaderLabel" destination="upo-Bq-9tZ" id="4Qp-ei-Hz8"/>
+                        <outlet property="scanStatus" destination="BJc-3P-HZU" id="yDm-Nc-HQd"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
                         <outlet property="spamHeaderLabel" destination="EH7-U8-HZk" id="h0L-w1-dcO"/>
                         <outlet property="storageTextLabel" destination="97a-9O-Ebb" id="piA-zk-n7b"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
                         <outlet property="systemStorageButton" destination="Zdz-pm-7np" id="hG6-VJ-m1m"/>
+                        <outlet property="totalDetectedLabel" destination="wDL-cS-Lt4" id="Zgb-Yw-NBR"/>
                         <outlet property="totalReceived" destination="giU-mI-grd" id="KHt-7N-lOf"/>
+                        <outlet property="totalScanLabel" destination="UTS-gz-mE0" id="Ec4-Dm-R54"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voo-qu-1s4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1777,12 +1780,15 @@ Mobile Security:</string>
                 <relationship kind="outlet" name="numberOfScanned" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scanStatus" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="spamHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="storageTextLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalDetectedLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScanLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="UsersRegisterViewController" superclassName="UIViewController">

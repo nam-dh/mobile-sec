@@ -42,4 +42,40 @@
     
 
 }
+
++ (float)getTotalDiskSpace {
+	float totalSpace = 0.0f;
+	NSError *error = nil;
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+	if (dictionary) {
+		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemSize];
+		totalSpace = [fileSystemSizeInBytes floatValue];
+	} else {
+        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
+        NSLog(@"Erro Obtaining File System Info");
+	}
+    
+    return totalSpace/pow(2.0f,30);
+}
+
+
++ (float)getFreeDiskSpace {
+	float totalSpace = 0.0f;
+	NSError *error = nil;
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+	if (dictionary) {
+		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
+		totalSpace = [fileSystemSizeInBytes floatValue];
+	} else {
+        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
+        NSLog(@"Erro Obtaining File System Info");
+	}
+    
+    return totalSpace/pow(2.0f,30);
+}
+
 @end

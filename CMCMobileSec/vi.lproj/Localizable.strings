@@ -54,6 +54,8 @@
 "firstpage_scanfile_confirm" = "Bạn thực sự muốn thực hiện thao tác quét file?";
 "gnr_cancel" = "Hủy";
 "firstpage_scanfile_duplicated" = "Xin hãy chờ! Đang có tiến trình quét khác chạy.";
-
+"his_label_statistics_totalscanned" = "S.lượng file: ";
+"his_label_statistics_totaldetected" = "S.lượng malware: ";
+"his_label_statistics_scanning" = "Đang quét: ";
 
 

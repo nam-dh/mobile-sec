@@ -32,6 +32,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *filenameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfScanned;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfDetected;
+@property (weak, nonatomic) IBOutlet UILabel *totalScanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalDetectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scanStatus;
 
 
 - (IBAction)systemStorageScan:(id)sender;

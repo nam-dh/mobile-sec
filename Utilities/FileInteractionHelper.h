@@ -11,4 +11,6 @@
 @interface FileInteractionHelper : NSObject
 
 + (void) configureDaemon;
++ (float) getTotalDiskSpace;
++ (float)getFreeDiskSpace;
 @end

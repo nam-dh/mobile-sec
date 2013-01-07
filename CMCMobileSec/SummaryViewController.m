@@ -12,6 +12,7 @@
 #import <math.h>
 #import "DataBaseConnect.h"
 #import "CMCMobileSecurityAppDelegate.h"
+#import "FileInteractionHelper.h"
 
 
 #include <dlfcn.h>
@@ -36,6 +37,9 @@ id(*CTTelephonyCenterGetDefault)();
 @synthesize numberOfScanned;
 @synthesize numberOfDetected;
 @synthesize filenameLabel;
+@synthesize totalScanLabel;
+@synthesize totalDetectedLabel;
+@synthesize scanStatus;
 
 static UILabel* c;
 BOOL isScanning = FALSE;
@@ -111,12 +115,10 @@ int detectedFileNum = 0;
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cmc_bar.png"]]];
     self.navigationItem.leftBarButtonItem= item;
 
-    
-    float totalSize = [self getTotalDiskSpace];
-    float freeSize = [self getFreeDiskSpace];
+    float totalSize = [FileInteractionHelper getTotalDiskSpace];
+    float freeSize = [FileInteractionHelper getFreeDiskSpace];
     
     self.sysStorageLabel.text = [[NSString alloc] initWithFormat:@"free %.1fGB/total %.1f GB", freeSize,totalSize];
-    //    self.sysStorageLabel.text = [[NSString alloc] initWithFormat:@"free %.1fGB", freeSize];
     self.totalReceived.text = [self totalReceivedSMS];
     self.smsContent.text = [self mostRecentSMS];
     self.fromNumber.text = [self mostRecentNumber];
@@ -153,6 +155,9 @@ int detectedFileNum = 0;
     self.spamHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalspam");
     self.recentHeaderLabel.text = LocalizedString(@"firstpage_filter_recent");
     self.fromLabel.text = LocalizedString(@"firstpage_filter_recent_from");
+    self.totalScanLabel.text = LocalizedString(@"his_label_statistics_totalscanned");
+    self.totalDetectedLabel.text = LocalizedString(@"his_label_statistics_totaldetected");
+    self.scanStatus.text = LocalizedString(@"his_label_statistics_scanning");
 }
 
 #pragma mark - Table view delegate
@@ -168,41 +173,6 @@ int detectedFileNum = 0;
      */
 }
 
-
-
-- (float)getTotalDiskSpace {
-	float totalSpace = 0.0f;
-	NSError *error = nil;
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
-    
-	if (dictionary) {
-		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemSize];
-		totalSpace = [fileSystemSizeInBytes floatValue];
-	} else {
-        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
-        NSLog(@"Erro Obtaining File System Info");
-	}
-    
-    return totalSpace/pow(2.0f,30);
-}
-
-- (float)getFreeDiskSpace {
-	float totalSpace = 0.0f;
-	NSError *error = nil;
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
-    
-	if (dictionary) {
-		NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
-		totalSpace = [fileSystemSizeInBytes floatValue];
-	} else {
-        //		DLog(@"Error Obtaining File System Info: Domain = %@, Code = %@", [error domain], [error code]);
-        NSLog(@"Erro Obtaining File System Info");
-	}
-    
-    return totalSpace/pow(2.0f,30);
-}
 
 
 - (NSString *) totalReceivedSMS  {
@@ -481,6 +451,9 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setFilenameLabel:nil];
     [self setNumberOfScanned:nil];
     [self setNumberOfDetected:nil];
+    [self setTotalScanLabel:nil];
+    [self setTotalDetectedLabel:nil];
+    [self setScanStatus:nil];
     [super viewDidUnload];
 }
 

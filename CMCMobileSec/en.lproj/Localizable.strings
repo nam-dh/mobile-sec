@@ -54,7 +54,9 @@
 "firstpage_scanfile_confirm" = "Do you really want to scan?";
 "gnr_cancel" = "Cancel";
 "firstpage_scanfile_duplicated" = "Please wait! Other scanner is running.";
-
+"his_label_statistics_totalscanned" = "Total scanned: ";
+"his_label_statistics_totaldetected" = "Total detected: ";
+"his_label_statistics_scanning" = "Scanning:";
 
 
 
