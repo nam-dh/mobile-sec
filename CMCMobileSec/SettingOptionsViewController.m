@@ -97,6 +97,7 @@
 {
     [super viewDidLoad];
 
+
     UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_background.png"]];
     [self.tableView setBackgroundView:boxBackView];
     
@@ -175,6 +176,7 @@
 }
 
 - (void) configureView{
+    self.title = LocalizedString(@"set_settings");
     self.account1.text = LocalizedString(@"set_acc_title_unregistered");
     
     self.account2.lineBreakMode = UILineBreakModeWordWrap;

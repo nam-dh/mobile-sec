@@ -11,6 +11,7 @@
 //#import "ScanOptionsViewController.h"
 #import "LocalizeHelper.h"
 #import "FileSelectionViewController.h"
+#import "ScanHistoryViewController.h"
 
 @interface SummaryViewController : UITableViewController<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *sysStorageLabel;

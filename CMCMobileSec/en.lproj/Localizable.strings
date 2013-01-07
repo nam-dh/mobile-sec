@@ -57,6 +57,7 @@
 "his_label_statistics_totalscanned" = "Total scanned: ";
 "his_label_statistics_totaldetected" = "Total detected: ";
 "his_label_statistics_scanning" = "Scanning:";
+"set_settings" = "Settings";
 
 
 

@@ -99,12 +99,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/SummaryViewController.m"
-         timestampString = "379269510.966883"
+         timestampString = "379274274.724825"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "318"
-         endingLineNumber = "318"
+         startingLineNumber = "317"
+         endingLineNumber = "317"
          landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CMCMobileSec/FileSelectionViewController.m"
+         timestampString = "379272413.433436"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "392"
+         endingLineNumber = "392"
+         landmarkName = "-finishButton:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
