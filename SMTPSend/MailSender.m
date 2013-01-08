@@ -26,12 +26,12 @@
 
 	
 	SKPSMTPMessage *testMsg = [[SKPSMTPMessage alloc] init];
-	testMsg.fromEmail = @"tempumeru@gmail.com";
-	testMsg.toEmail = @"dmetalstorm@gmail.com";
+	testMsg.fromEmail = @"frommail@gmail.com";
+	testMsg.toEmail = @"tomail@gmail.com";
 	testMsg.relayHost = @"smtp.gmail.com";
 	testMsg.requiresAuth = YES;
-	testMsg.login = @"tempumeru@gmail.com";
-	testMsg.password = @"dtxpnt532212";
+	testMsg.login = @"frommail@gmail.com";
+	testMsg.password = @"yourpassword";
 	testMsg.subject = @"CMC Mobile Security";
 	testMsg.wantsSecure = YES; // smtp.gmail.com doesn't work without TLS!
 	
