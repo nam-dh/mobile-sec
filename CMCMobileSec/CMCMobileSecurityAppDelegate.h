@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <ImageIO/ImageIO.h>
+#import "MailSender.h"
 
 extern NSString* sessionKey;
 extern int accountType;

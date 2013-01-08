@@ -129,6 +129,10 @@
 {
     //capture picture
     [self doCapture];
+    
+    //send mail
+    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.png"];
+    [[MailSender sharedMailSender] sendMailViaSMTP:pngPath];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

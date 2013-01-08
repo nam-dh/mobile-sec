@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment version="1296" defaultVersion="1296" identifier="iOS"/>
+        <deployment version="1296" defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
@@ -283,11 +283,11 @@ up, encrypted and sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="aJd-ce-aJh">
-                                        <rect key="frame" x="0.0" y="711" width="320" height="75"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="aJd-ce-aJh">
+                                        <rect key="frame" x="0.0" y="711" width="320" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Backup Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pbc-Sf-9Nx">
@@ -319,7 +319,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FQ4-RL-UKl">
-                                        <rect key="frame" x="0.0" y="786" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="794" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -353,7 +353,7 @@ web services of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="qYG-Ks-uef">
-                                        <rect key="frame" x="0.0" y="861" width="320" height="76"/>
+                                        <rect key="frame" x="0.0" y="869" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="74"/>
@@ -391,7 +391,7 @@ Restoreing data is sent from CMC InfoSec</string>
                             <tableViewSection headerTitle="Language" id="pkj-MP-DHj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="PTn-G4-yOu">
-                                        <rect key="frame" x="0.0" y="983" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="991" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="62"/>
@@ -1491,9 +1491,6 @@ Mobile Security:</string>
         </class>
         <class className="ScanHistoryViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmentAction:"/>
-            </relationships>
         </class>
         <class className="ScanOptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>

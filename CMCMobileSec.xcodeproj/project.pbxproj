@@ -146,6 +146,13 @@
 		52A549C0168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A549BF168D292C00470BCD /* com.cmcinfosec.CMCMobileSec.plist */; };
 		52B3B039168B4D740070B3B6 /* HistoryNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */; };
 		52B3B03F168B68840070B3B6 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */; };
+		52BD891A169BC895004F524C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BD8919169BC895004F524C /* CFNetwork.framework */; };
+		52BD8926169BC900004F524C /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD891D169BC900004F524C /* Base64Transcoder.m */; };
+		52BD8927169BC900004F524C /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD891F169BC900004F524C /* HSK_CFUtilities.m */; };
+		52BD8928169BC900004F524C /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD8921169BC900004F524C /* NSData+Base64Additions.m */; };
+		52BD8929169BC900004F524C /* NSStream+SKPSMTPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD8923169BC900004F524C /* NSStream+SKPSMTPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		52BD892A169BC900004F524C /* SKPSMTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD8925169BC900004F524C /* SKPSMTPMessage.m */; };
+		52BD892D169BC9B3004F524C /* MailSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD892C169BC9B3004F524C /* MailSender.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		52C0E57016894A19007E3176 /* ConfirmActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */; };
 		52D322B116875A1C00AD4AE5 /* ic_folder_small_ip.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */; };
 		52D6D2ED1665BBA100FCEB2F /* ScanOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D2EC1665BBA100FCEB2F /* ScanOptionViewController.m */; };
@@ -317,6 +324,19 @@
 		52B3B038168B4D740070B3B6 /* HistoryNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryNavigationController.m; path = CMCMobileSec/HistoryNavigationController.m; sourceTree = "<group>"; };
 		52B3B03D168B68840070B3B6 /* ScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanHistoryViewController.h; path = CMCMobileSec/ScanHistoryViewController.h; sourceTree = "<group>"; };
 		52B3B03E168B68840070B3B6 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanHistoryViewController.m; path = CMCMobileSec/ScanHistoryViewController.m; sourceTree = "<group>"; };
+		52BD8919169BC895004F524C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		52BD891C169BC900004F524C /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		52BD891D169BC900004F524C /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Transcoder.m; sourceTree = "<group>"; };
+		52BD891E169BC900004F524C /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
+		52BD891F169BC900004F524C /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
+		52BD8920169BC900004F524C /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		52BD8921169BC900004F524C /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		52BD8922169BC900004F524C /* NSStream+SKPSMTPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+SKPSMTPExtensions.h"; sourceTree = "<group>"; };
+		52BD8923169BC900004F524C /* NSStream+SKPSMTPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+SKPSMTPExtensions.m"; sourceTree = "<group>"; };
+		52BD8924169BC900004F524C /* SKPSMTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPSMTPMessage.h; sourceTree = "<group>"; };
+		52BD8925169BC900004F524C /* SKPSMTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPSMTPMessage.m; sourceTree = "<group>"; };
+		52BD892B169BC9B3004F524C /* MailSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSender.h; sourceTree = "<group>"; };
+		52BD892C169BC9B3004F524C /* MailSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSender.m; sourceTree = "<group>"; };
 		52C0E56E16894A19007E3176 /* ConfirmActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmActionViewController.h; path = CMCMobileSec/ConfirmActionViewController.h; sourceTree = "<group>"; };
 		52C0E56F16894A19007E3176 /* ConfirmActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmActionViewController.m; path = CMCMobileSec/ConfirmActionViewController.m; sourceTree = "<group>"; };
 		52D322B016875A1C00AD4AE5 /* ic_folder_small_ip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_folder_small_ip.png; path = Images/ic_folder_small_ip.png; sourceTree = SOURCE_ROOT; };
@@ -330,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BD891A169BC895004F524C /* CFNetwork.framework in Frameworks */,
 				3D045EA5169B473C007F281D /* QuartzCore.framework in Frameworks */,
 				3D045EA3169B4735007F281D /* ImageIO.framework in Frameworks */,
 				3D045EA1169B4724007F281D /* AVFoundation.framework in Frameworks */,
@@ -515,6 +536,8 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				52BD891B169BC900004F524C /* SMTPSend */,
+				52BD8919169BC895004F524C /* CFNetwork.framework */,
 				3D8B49EB168A33E3008BF51F /* Utilities */,
 				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
 				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
@@ -571,6 +594,25 @@
 			);
 			name = "Supporting Files";
 			path = CMCMobileSec;
+			sourceTree = "<group>";
+		};
+		52BD891B169BC900004F524C /* SMTPSend */ = {
+			isa = PBXGroup;
+			children = (
+				52BD891C169BC900004F524C /* Base64Transcoder.h */,
+				52BD891D169BC900004F524C /* Base64Transcoder.m */,
+				52BD891E169BC900004F524C /* HSK_CFUtilities.h */,
+				52BD891F169BC900004F524C /* HSK_CFUtilities.m */,
+				52BD8920169BC900004F524C /* NSData+Base64Additions.h */,
+				52BD8921169BC900004F524C /* NSData+Base64Additions.m */,
+				52BD8922169BC900004F524C /* NSStream+SKPSMTPExtensions.h */,
+				52BD8923169BC900004F524C /* NSStream+SKPSMTPExtensions.m */,
+				52BD8924169BC900004F524C /* SKPSMTPMessage.h */,
+				52BD8925169BC900004F524C /* SKPSMTPMessage.m */,
+				52BD892B169BC9B3004F524C /* MailSender.h */,
+				52BD892C169BC9B3004F524C /* MailSender.m */,
+			);
+			path = SMTPSend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -797,6 +839,12 @@
 				3DC54181169157EE0080956D /* ServerResponePraser.m in Sources */,
 				3D3F51E3169372ED00767C2A /* AddressBookConnect.m in Sources */,
 				525620141693CED800A49C5A /* LocalizeHelper.m in Sources */,
+				52BD8926169BC900004F524C /* Base64Transcoder.m in Sources */,
+				52BD8927169BC900004F524C /* HSK_CFUtilities.m in Sources */,
+				52BD8928169BC900004F524C /* NSData+Base64Additions.m in Sources */,
+				52BD8929169BC900004F524C /* NSStream+SKPSMTPExtensions.m in Sources */,
+				52BD892A169BC900004F524C /* SKPSMTPMessage.m in Sources */,
+				52BD892D169BC9B3004F524C /* MailSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +950,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -914,6 +963,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -937,6 +987,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMCMobileSec/CMCMobileSec-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = "CMCMobileSec/CMCMobileSec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -948,6 +999,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";

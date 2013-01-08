@@ -12,6 +12,7 @@
 #import "UsersRegisterViewController.h"
 #import "LocalizeHelper.h"
 
+
 @interface SettingOptionsViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UISwitch *trackingLocationSwitch;
 }

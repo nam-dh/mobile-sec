@@ -35,7 +35,7 @@
 "set_antitheft_sub_report" = "You can track position of this device by using web\nservices of CMC InfoSec";
 "set_antitheft_sub_autobackup" = "Periodically, your Contact and SMS will be backed up,\nencrypted and sent to CMC InfoSec server";
 "set_antitheft_sub_clear" = "Remotely clear all Contacts and SMS by SMS or\nweb services of CMC InfoSec";
-"set_antitheft_sub_restore" = "Remotely restore your Contact and SMS. Restoring data\nis sent from CMC InfoSec";
+"set_antitheft_sub_restore" = "Remotely restore your Contact and SMS. Restoring data is sent from CMC InfoSec";
 
 
 "firstpage_scanfile_name" = "Scan File";

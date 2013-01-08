@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/SettingOptionsViewController.h"
-         timestampString = "378960522.202625"
+         timestampString = "379310069.541908"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "@interface SettingOptionsViewController"
          landmarkType = "2">
       </FileBreakpoint>
@@ -104,7 +104,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "317"
          endingLineNumber = "317"
-         landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkName = "-showConfirmAlert"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -118,6 +118,19 @@
          startingLineNumber = "392"
          endingLineNumber = "392"
          landmarkName = "-finishButton:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SMTPSend/MailSender.m"
+         timestampString = "379359689.584295"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "+sharedMailSender"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

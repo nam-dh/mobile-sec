@@ -164,11 +164,7 @@
     if ([remoteRestoreSwitchValue isEqualToString:@"ON"]) {
         [remoteRestoreSwitch setOn:YES];
     }
-    
-    
-    
-    
-    
+
 }
 
 
