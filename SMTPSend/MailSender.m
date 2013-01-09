@@ -21,17 +21,17 @@
     return theMailSender;
 }
 
-- (void) sendMailViaSMTP: (NSString *) attachment{
+- (void) sendMailViaSMTP: (NSString*) toMail:(NSString *) attachment{
     NSLog(@"Start Sending");
 
 	
 	SKPSMTPMessage *testMsg = [[SKPSMTPMessage alloc] init];
-	testMsg.fromEmail = @"frommail@gmail.com";
-	testMsg.toEmail = @"tomail@gmail.com";
+	testMsg.fromEmail = @"cmc.test001@gmail.com";
+	testMsg.toEmail = toMail;
 	testMsg.relayHost = @"smtp.gmail.com";
 	testMsg.requiresAuth = YES;
-	testMsg.login = @"frommail@gmail.com";
-	testMsg.password = @"yourpassword";
+	testMsg.login = @"cmc.test001@gmail.com";
+	testMsg.password = @"cmctest001";
 	testMsg.subject = @"CMC Mobile Security";
 	testMsg.wantsSecure = YES; // smtp.gmail.com doesn't work without TLS!
 	
@@ -48,9 +48,12 @@
     if (attachment == nil) {
         attachment = [[NSBundle mainBundle] pathForResource:@"Icon" ofType:@"png"];
     }
+    
+    //attachment = [[NSBundle mainBundle] pathForResource:@"Icon" ofType:@"png"];
+    
     NSData *dataObj = [NSData dataWithContentsOfFile:attachment];
-	NSDictionary *vcfPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/directory;\r\n\tx-unix-mode=0644;\r\n\tname=\"filenametoshow.png\"",kSKPSMTPPartContentTypeKey,
-							 @"attachment;\r\n\tfilename=\"filenametoshow.png\"",kSKPSMTPPartContentDispositionKey,[dataObj encodeBase64ForData],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];
+	NSDictionary *vcfPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/directory;\r\n\tx-unix-mode=0644;\r\n\tname=\"filenametoshow.jpg\"",kSKPSMTPPartContentTypeKey,
+							 @"attachment;\r\n\tfilename=\"filenametoshow.jpg\"",kSKPSMTPPartContentDispositionKey,[dataObj encodeBase64ForData],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];
 //	
 	testMsg.parts = [NSArray arrayWithObjects:plainPart,
 					 vcfPart,

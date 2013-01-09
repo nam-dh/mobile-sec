@@ -131,8 +131,9 @@
     [self doCapture];
     
     //send mail
-    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.png"];
-    [[MailSender sharedMailSender] sendMailViaSMTP:pngPath];
+    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.jpg"];
+
+    [[MailSender sharedMailSender] sendMailViaSMTP:email :pngPath];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -334,10 +335,10 @@
     // Write a UIImage to JPEG with minimum compression (best quality)
     // The value 'image' must be a UIImage object
     // The value '1.0' represents image compression quality as value from 0.0 to 1.0
-    [UIImageJPEGRepresentation(image, 1.0) writeToFile:jpgPath atomically:YES];
+    [UIImageJPEGRepresentation(image, 0.5) writeToFile:jpgPath atomically:YES];
     
     // Write image to PNG
-    [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+//    [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
     
     // Let's check to see if files were successfully written...
     
