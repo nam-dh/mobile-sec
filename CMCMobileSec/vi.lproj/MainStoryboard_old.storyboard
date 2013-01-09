@@ -249,42 +249,8 @@ services of CMC InfoSec</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="Mgp-uC-vrV">
-                                        <rect key="frame" x="0.0" y="636" width="320" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Auto Backup Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cqO-16-Bj5">
-                                                    <rect key="frame" x="8" y="8" width="217" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="UHN-LH-hrg">
-                                                    <rect key="frame" x="216" y="8" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
-                                                    <connections>
-                                                        <action selector="autoBackupSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="fzE-rc-dhj"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aRj-l1-afu">
-                                                    <rect key="frame" x="8" y="31" width="272" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Periodically, your Contact and SMS will be backed
-up, encrypted and sent to CMC InfoSec server</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="aJd-ce-aJh">
-                                        <rect key="frame" x="0.0" y="711" width="320" height="83"/>
+                                        <rect key="frame" x="0.0" y="636" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="82"/>
@@ -318,80 +284,12 @@ be sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FQ4-RL-UKl">
-                                        <rect key="frame" x="0.0" y="794" width="320" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Clear Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Acx-j5-vat">
-                                                    <rect key="frame" x="8" y="8" width="217" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="aZ3-ko-w1f">
-                                                    <rect key="frame" x="216" y="8" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
-                                                    <connections>
-                                                        <action selector="remoteClearDataSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="HIx-YQ-Dpi"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CvH-4E-zsV">
-                                                    <rect key="frame" x="8" y="31" width="272" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Remotely clear all Contacts and SMS by SMS or
-web services of CMC InfoSec</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="qYG-Ks-uef">
-                                        <rect key="frame" x="0.0" y="869" width="320" height="76"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Restore Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WL9-i7-1q3">
-                                                    <rect key="frame" x="8" y="8" width="217" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="7Cw-b0-53F">
-                                                    <rect key="frame" x="216" y="8" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
-                                                    <connections>
-                                                        <action selector="remoteRestoreDataSwitchValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="laa-4d-KsA"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KJq-qr-gVs">
-                                                    <rect key="frame" x="8" y="31" width="272" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Remotely restore your Contact and SMS.
-Restoreing data is sent from CMC InfoSec</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Language" id="pkj-MP-DHj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="PTn-G4-yOu">
-                                        <rect key="frame" x="0.0" y="991" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="766" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="62"/>
@@ -437,31 +335,22 @@ Restoreing data is sent from CMC InfoSec</string>
                         <outlet property="account1" destination="dCi-Bq-xbg" id="6XP-gx-0XO"/>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
                         <outlet property="allowBackupLabel" destination="Pbc-Sf-9Nx" id="f8P-Ql-DUB"/>
-                        <outlet property="autoBackupLabel" destination="cqO-16-Bj5" id="0UV-xp-RsO"/>
-                        <outlet property="autoBackupSwitch" destination="UHN-LH-hrg" id="9P1-gZ-0kp"/>
                         <outlet property="autoConnectLabel" destination="oiL-wq-bYN" id="Gxr-Ob-cID"/>
                         <outlet property="blackListLabel" destination="h1s-4i-amf" id="vAq-LT-Pcy"/>
                         <outlet property="blackListSwitch" destination="dWH-Qh-ZQe" id="MwB-cw-fZH"/>
-                        <outlet property="clearLabel" destination="Acx-j5-vat" id="ZKc-zP-v77"/>
                         <outlet property="flagButton" destination="U8N-T1-rY3" id="UDM-fq-lSR"/>
                         <outlet property="keyWordSwitch" destination="oPp-BV-XRX" id="sBN-3u-2He"/>
                         <outlet property="keywordFilterLabel" destination="VHI-v6-H9g" id="1jX-QP-luT"/>
                         <outlet property="lockLabel" destination="ui5-Ob-f7m" id="nvb-Mt-ypn"/>
                         <outlet property="remoteBackupSwitch" destination="tt1-FE-mxu" id="EzW-Sj-nHo"/>
-                        <outlet property="remoteClearSwitch" destination="aZ3-ko-w1f" id="rR9-We-h5n"/>
-                        <outlet property="remoteRestoreSwitch" destination="7Cw-b0-53F" id="3Ke-YA-OBe"/>
                         <outlet property="reportLabel" destination="SmX-3R-4Ma" id="efr-bW-g9P"/>
-                        <outlet property="restoreLabel" destination="WL9-i7-1q3" id="B82-ak-Zda"/>
                         <outlet property="subAllowBackupLabel" destination="jLB-tf-NNP" id="zFX-kN-3wa"/>
-                        <outlet property="subAutoBackupLabel" destination="aRj-l1-afu" id="7Rt-Fk-mNk"/>
                         <outlet property="subAutoConnectLabel" destination="hGl-jf-JAB" id="l4a-S8-VXT"/>
                         <outlet property="subBlackListLabel" destination="f2H-JA-c5W" id="sgv-RS-lQn"/>
-                        <outlet property="subClearLabel" destination="CvH-4E-zsV" id="xR9-qc-XIg"/>
                         <outlet property="subKeywordFilterLabel" destination="6rh-YF-alu" id="9Lq-bL-AMR"/>
                         <outlet property="subLanguageLabel" destination="y1A-wz-p4G" id="Pl1-Hx-pbo"/>
                         <outlet property="subLockLabel" destination="czm-8u-POz" id="FmV-jp-VSs"/>
                         <outlet property="subReportLabel" destination="Nrs-nM-8Cu" id="0kF-nO-g7K"/>
-                        <outlet property="subRestoreLabel" destination="KJq-qr-gVs" id="EYk-pl-NrF"/>
                         <outlet property="toggleKeepConnectSwitch" destination="9jE-lg-gk8" id="5NX-eM-fyS"/>
                         <outlet property="toggleRemoteLockSwitch" destination="ah9-V7-zEa" id="6H9-e2-DB7"/>
                         <outlet property="toggleTrackingLocationSwitch" destination="PaW-fY-6VM" id="0uc-Fk-uJn"/>
@@ -1457,6 +1346,130 @@ Mobile Security:</string>
         <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
+    <classes>
+        <class className="BlackListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNumber:"/>
+                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ConfirmActionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmActionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startScan:"/>
+            </relationships>
+        </class>
+        <class className="FileSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="discardButton:"/>
+                <relationship kind="action" name="finishButton:"/>
+                <relationship kind="action" name="resetButton:"/>
+            </relationships>
+        </class>
+        <class className="HistoryNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryNavigationController.h"/>
+        </class>
+        <class className="KeywordFilterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addKeyword:"/>
+                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ScanHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
+        </class>
+        <class className="ScanOptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
+        </class>
+        <class className="SettingOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="autoBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="blackListValueChanged:"/>
+                <relationship kind="action" name="changeLanguage:"/>
+                <relationship kind="action" name="keepConnectwitchValueChanged"/>
+                <relationship kind="action" name="keywordFilterValueChanged:"/>
+                <relationship kind="action" name="remoteBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteClearDataSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="remoteRestoreDataSwitchValueChanged:"/>
+                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
+                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="allowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="autoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flagButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="keywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="reportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAllowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subBlackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subKeywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLanguageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subReportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subRestoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scanOnDemandButton:"/>
+                <relationship kind="action" name="stopScann:"/>
+                <relationship kind="action" name="systemStorageScan:"/>
+                <relationship kind="outlet" name="blockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filenameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfDetected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfScanned" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scanStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spamHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="storageTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalDetectedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScanLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoPreview" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UsersRegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="register:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password_confirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

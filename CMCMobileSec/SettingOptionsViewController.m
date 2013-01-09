@@ -326,21 +326,6 @@
 
 -(IBAction) remoteLockSwitchValueChanged{
     if (toggleRemoteLockSwitch.on) {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-        
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-        {
-            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-        }
-        else
-        {
-            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        }
-        [imagePicker setDelegate:self];
-        [self presentModalViewController:imagePicker animated:YES];
-       // [imagePicker takePicture];
-        
-        
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
         [settings setObject : @"ON" forKey : @"remoteLockSwitchValue"];
         [settings synchronize];

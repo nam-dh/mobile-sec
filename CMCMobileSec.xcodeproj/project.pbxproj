@@ -297,7 +297,7 @@
 		5215A18A1665254600D8DEF6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5215A18E1665254600D8DEF6 /* CMCMobileSec-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMCMobileSec-Info.plist"; sourceTree = "<group>"; };
 		5215A1901665254600D8DEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5215A1921665254600D8DEF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5215A1921665254600D8DEF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CMCMobileSec/main.m; sourceTree = "<group>"; };
 		5215A1941665254600D8DEF6 /* CMCMobileSec-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMCMobileSec-Prefix.pch"; sourceTree = "<group>"; };
 		5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CMCMobileSecurityAppDelegate.h; path = CMCMobileSec/CMCMobileSecurityAppDelegate.h; sourceTree = "<group>"; };
 		5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CMCMobileSecurityAppDelegate.m; path = CMCMobileSec/CMCMobileSecurityAppDelegate.m; sourceTree = "<group>"; };
@@ -401,6 +401,7 @@
 		3D8B49EB168A33E3008BF51F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52BD891B169BC900004F524C /* SMTPSend */,
 				3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */,
 				3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */,
 				52A549BB168CD7E700470BCD /* FileInteractionHelper.h */,
@@ -536,11 +537,10 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
-				52BD891B169BC900004F524C /* SMTPSend */,
-				52BD8919169BC895004F524C /* CFNetwork.framework */,
 				3D8B49EB168A33E3008BF51F /* Utilities */,
 				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
 				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,
+				5215A1921665254600D8DEF6 /* main.m */,
 				5215A19E1665254700D8DEF6 /* MainStoryboard.storyboard */,
 				3D5EEBFE168CBFA20017CAA3 /* ViewController */,
 				5215A18D1665254600D8DEF6 /* Supporting Files */,
@@ -560,6 +560,7 @@
 		5215A1851665254600D8DEF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52BD8919169BC895004F524C /* CFNetwork.framework */,
 				3D045EA4169B473C007F281D /* QuartzCore.framework */,
 				3D045EA2169B4735007F281D /* ImageIO.framework */,
 				3D045EA0169B4724007F281D /* AVFoundation.framework */,
@@ -589,7 +590,6 @@
 				3D8B49F6168A343D008BF51F /* Images */,
 				5215A18E1665254600D8DEF6 /* CMCMobileSec-Info.plist */,
 				5215A18F1665254600D8DEF6 /* InfoPlist.strings */,
-				5215A1921665254600D8DEF6 /* main.m */,
 				5215A1941665254600D8DEF6 /* CMCMobileSec-Prefix.pch */,
 			);
 			name = "Supporting Files";

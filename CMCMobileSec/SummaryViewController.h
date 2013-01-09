@@ -21,12 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;
 
 @property (weak, nonatomic) IBOutlet UIButton *systemStorageButton;
-@property (weak, nonatomic) IBOutlet UIButton *historyScanButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *storageTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
-@property (weak, nonatomic) IBOutlet UILabel *memoryClearLabel;
-@property (weak, nonatomic) IBOutlet UILabel *hintClearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *receivedHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spamHeaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *recentHeaderLabel;
@@ -43,7 +39,6 @@
 
 
 - (IBAction)systemStorageScan:(id)sender;
-- (IBAction)showScanHistory:(id)sender;
 - (IBAction)stopScann:(id)sender;
 
 - (NSString *) mostRecentNumber;

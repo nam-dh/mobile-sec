@@ -26,9 +26,6 @@ id(*CTTelephonyCenterGetDefault)();
 
 @implementation SummaryViewController
 @synthesize storageTextLabel;
-@synthesize hintLabel;
-@synthesize hintClearLabel;
-@synthesize memoryClearLabel;
 @synthesize receivedHeaderLabel;
 @synthesize spamHeaderLabel;
 @synthesize recentHeaderLabel;
@@ -171,9 +168,6 @@ BOOL isScanonDemand = FALSE;
 - (void) configureView{
     self.title = @"CMC\nMOBILE SECURITY";
     self.storageTextLabel.text = LocalizedString(@"firstpage_scanfile_header_systemstorage");
-    self.hintLabel.text = LocalizedString(@"firstpage_scanfile_hint");
-    self.memoryClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
-    self.hintClearLabel.text = LocalizedString(@"firstpage_scanfile_hint_clear_instruction");
     self.receivedHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalreceived");
     self.spamHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalspam");
     self.recentHeaderLabel.text = LocalizedString(@"firstpage_filter_recent");
@@ -534,11 +528,7 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setTotalReceived:nil];
     [self setSysStorageLabel:nil];
     [self setSystemStorageButton:nil];
-    [self setHistoryScanButton:nil];
     [self setStorageTextLabel:nil];
-    [self setHintLabel:nil];
-    [self setMemoryClearLabel:nil];
-    [self setHintClearLabel:nil];
     [self setReceivedHeaderLabel:nil];
     [self setSpamHeaderLabel:nil];
     [self setRecentHeaderLabel:nil];
