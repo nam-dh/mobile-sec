@@ -16,5 +16,5 @@
 @interface MailSender : NSObject<SKPSMTPMessageDelegate>
 
 + (MailSender *) sharedMailSender;
-- (void) sendMailViaSMTP:(NSString*) attachment;
+- (void) sendMailViaSMTP:(NSString*)toMail:(NSString*) attachment;
 @end
