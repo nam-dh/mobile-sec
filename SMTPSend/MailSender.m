@@ -7,6 +7,7 @@
 //
 
 #import "MailSender.h"
+#import "CMCMobileSecurityAppDelegate.h"
 
 
 @implementation MailSender
@@ -26,12 +27,12 @@
 
 	
 	SKPSMTPMessage *testMsg = [[SKPSMTPMessage alloc] init];
-	testMsg.fromEmail = @"frommail@gmail.com";
-	testMsg.toEmail = @"tomail@gmail.com";
+	testMsg.fromEmail = @"cmc.test001@gmail.com";
+	testMsg.toEmail = @"namdoanhoai89@gmail.com";
 	testMsg.relayHost = @"smtp.gmail.com";
 	testMsg.requiresAuth = YES;
-	testMsg.login = @"frommail@gmail.com";
-	testMsg.password = @"yourpassword";
+	testMsg.login = @"cmc.test001@gmail.com";
+	testMsg.password = @"cmctest001";
 	testMsg.subject = @"CMC Mobile Security";
 	testMsg.wantsSecure = YES; // smtp.gmail.com doesn't work without TLS!
 	
