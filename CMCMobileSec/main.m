@@ -26,8 +26,12 @@ int main(int argc, char *argv[])
     NSLog(@"i=%d", i);
     accountType = i;
     if (accountType != 0) {
-        email = [DataBaseConnect getEmail:dbPath];
-        password = [DataBaseConnect getPassword:dbPath];
+        
+        NSUserDefaults *pass = [NSUserDefaults standardUserDefaults];
+        [pass setObject : [DataBaseConnect getPassword:dbPath] forKey : @"password"];
+        [pass setObject : [DataBaseConnect getEmail:dbPath] forKey : @"email"];
+        [pass synchronize];
+        
         
         ServerConnection *theInstance = [[ServerConnection alloc] init];
         [theInstance getsessionKey];

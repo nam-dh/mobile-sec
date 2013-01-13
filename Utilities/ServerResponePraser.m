@@ -84,6 +84,9 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"%@",soapResults);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* password = [defaults objectForKey:@"password"];
+        NSString* email = [defaults objectForKey:@"email"];
         
         if ([soapResults isEqualToString:@"true"] == 1) {
             accountType = 1;
@@ -144,10 +147,13 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"LoginResult=%@",soapResults);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* password = [defaults objectForKey:@"password"];
+        NSString* email = [defaults objectForKey:@"email"];
         
         
         if ([soapResults isEqualToString:@"true"] == 1) {
-            login = true;
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"logged_in"];
             accountType = 2;
             //send notification
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
@@ -175,6 +181,9 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"ReportLocationResult=%@",soapResults);
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* password = [defaults objectForKey:@"password"];
         
         NSString* tokenkey_send = @"634930307604350000";
         
@@ -279,6 +288,7 @@ qualifiedName:(NSString *)qName
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString* token = [defaults objectForKey:@"tokenKey"];
         
+        NSString* password = [defaults objectForKey:@"password"];
         
         NSLog(@"token key=%@", token);
         
@@ -325,6 +335,9 @@ qualifiedName:(NSString *)qName
 -(void) userLogin {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    NSString* password = [defaults objectForKey:@"password"];
+    NSString* email = [defaults objectForKey:@"email"];
+    
     ServerConnection *theInstance2 = [[ServerConnection alloc] init];
     [theInstance2 userLogin:email :password :sessionKey];
 }

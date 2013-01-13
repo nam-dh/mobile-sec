@@ -14,13 +14,9 @@
 #import "MailSender.h"
 
 extern int accountType;
-extern NSString* email;
-extern NSString* password;
 extern NSMutableArray* gItemToScan;
 extern NSMutableArray* gScanHistory;
-extern NSString *deviceID;
 extern NSString *downloadFile;
-extern Boolean login;
 extern NSString* blackListSwitchValue, *keyWordSwitchValue, *keepConnectSwitchValue ,*remoteLockSwitchValue, *remoteTrackSwitchValue, *backupDataSwitchValue, *remoteBackupSwitchValue, *remoteClearSwitchValue, *remoteRestoreSwitchValue;
 extern NSString *language;
 extern AVCaptureStillImageOutput *stillImageOutput;

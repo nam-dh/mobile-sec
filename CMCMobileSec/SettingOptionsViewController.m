@@ -189,6 +189,8 @@
     self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    NSString* password = [defaults objectForKey:@"password"];
+    NSString* email = [defaults objectForKey:@"email"];
     
     if (accountType == 2) {
         ServerConnection *theInstance = [[ServerConnection alloc] init];
@@ -256,6 +258,9 @@
 
 - (void)makeTheChange
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* email = [defaults objectForKey:@"email"];
+    
     self.account1.text = @"Email";
     self.account2.text = email;
 
@@ -269,6 +274,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    
     NSLog(@"accountType=%d", accountType);
     if (accountType == 1) {
         self.account1.text = LocalizedString(@"set_acc_title_waiting");
@@ -276,6 +282,8 @@
     }
     if (accountType == 2) {
         self.account1.text = @"Email";
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* email = [defaults objectForKey:@"email"];
         self.account2.text = email;
     }
 }
@@ -358,6 +366,10 @@
         [settings setObject : @"ON" forKey : @"backupDataSwitchValue"];
         [settings synchronize];
         backupDataSwitchValue = @"ON";
+        
+        NSString* password = [settings objectForKey:@"password"];
+        NSString* email = [settings objectForKey:@"email"];
+        Boolean login = [[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"];
         
         if ((accountType == 2) && (login== false)){
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -531,6 +543,27 @@
             }
         }
     }
+    if (section == 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Update" message:@"Searching for latest version" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        [alert show];
+        
+        if(alert != nil) {
+            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            
+            indicator.center = CGPointMake(alert.bounds.size.width/2, alert.bounds.size.height-45);
+            [indicator startAnimating];
+            [alert addSubview:indicator];
+            
+            [self performSelector:@selector(changeText:) withObject:alert  afterDelay:3];
+            [self performSelector:@selector(stopIndicator:) withObject:indicator  afterDelay:3];
+            
+
+//
+           // [indicator stopAnimating];
+           // [alert dismissWithClickedButtonIndex:0 animated:YES];
+          //  [indicator release];
+        }
+    }
     if (section == 2) {
         if (row == 0) {
             
@@ -557,6 +590,17 @@
     }
 }
 
+-(void) changeText :(UIAlertView*) alert{
+    NSString *newMessage = @"No update is avaiable!";
+    [alert setMessage:newMessage];
+}
+
+-(void) stopIndicator :(UIActivityIndicatorView*) indicator{
+    [indicator stopAnimating];
+}
+
+
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString* detailString = [[alertView textFieldAtIndex:0] text];
     NSLog(@"String is: %@", detailString); //Put it on the debugger
@@ -567,6 +611,7 @@
         //validation account
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+        NSString* email = [defaults objectForKey:@"email"];
         
         ServerConnection *userRegister = [[ServerConnection alloc] init];
         [userRegister activateAccount:email :detailString :sessionKey];

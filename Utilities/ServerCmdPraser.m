@@ -111,8 +111,6 @@
         //    NSData *fileData = [NSData dataWithContentsOfFile: path];
          //   NSString *txtFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
             
-            NSString *txtFileContents = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_ALERT</CmdKey>\r\n    <CmdStatus>DONE</CmdStatus>\r\n    <FinishTime>1/10/2013 17:49:29</FinishTime>\r\n    <ResultDetail />\r\n    <Cmdid>43</Cmdid>\r\n  </Command>\r\n</Commands>";
-            
             NSString *txtContent = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><Commands><Command><CmdKey>CMC_ALERT</CmdKey><CmdStatus>DONE</CmdStatus><ResultDetail/><FinishTime>01/10/2013 16:36:00</FinishTime><Cmdid>43</Cmdid></Command></Commands>";
             
             NSLog(@"file=%@", txtContent);
@@ -121,8 +119,7 @@
             
          //   NSString* base64String = [self base64forData:fileData];
             NSLog(@"cmdString=%@", cmdString);
-        //    base64String = [fileData base64EncodedString];
-         //   NSLog(@"base64=%@", base64String);
+            
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             

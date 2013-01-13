@@ -83,6 +83,9 @@
     NSData* fileData = [NSData dataWithContentsOfFile: path];
     NSLog(@"fileData = %@", [fileData description]);
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* password = [defaults objectForKey:@"password"];
+    
     NSString* cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
 //
 //    tokenkey_send = @"1357637835055";
@@ -212,6 +215,9 @@
     [self doCapture];
     
     //send mail
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* email = [defaults objectForKey:@"email"];
+    
     NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.jpg"];
 
     [[MailSender sharedMailSender] sendMailViaSMTP:email :pngPath];
@@ -249,6 +255,9 @@
     NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    NSString* password = [defaults objectForKey:@"password"];
+    NSString* email = [defaults objectForKey:@"email"];
+    Boolean login = [[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"];
     
     if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
         
@@ -446,13 +455,9 @@
 
 AVCaptureStillImageOutput *stillImageOutput;
 int accountType = 1;
-NSString* email = nil;
-NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
 NSMutableArray * gScanHistory = nil;
-NSString *deviceID = @"123";
 NSString *downloadFile = nil;
-Boolean login = false;
 NSString* blackListSwitchValue = nil, *keyWordSwitchValue = nil , *keepConnectSwitchValue = nil,*remoteLockSwitchValue = nil, *remoteTrackSwitchValue = nil, *backupDataSwitchValue = nil, *remoteBackupSwitchValue = nil, *remoteClearSwitchValue = nil, *remoteRestoreSwitchValue = nil;
 
 NSString *language = nil;
