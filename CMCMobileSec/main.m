@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         // Create and schedule the first timer.
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         NSTimer* myTimer = [[NSTimer alloc] initWithFireDate:futureDate
-                                                    interval:20000
+                                                    interval:2000
                                                       target: obj
                                                     selector:@selector(requestServer:)
                                                     userInfo:nil
@@ -56,13 +56,13 @@ int main(int argc, char *argv[])
         [myRunLoop addTimer:myTimer forMode:NSDefaultRunLoopMode];
         
         // Create and schedule the second timer.
-        [NSTimer scheduledTimerWithTimeInterval:10.0
+        [NSTimer scheduledTimerWithTimeInterval:20
                                          target:obj
                                        selector:@selector(requestServer:)
                                        userInfo:nil
                                         repeats:YES];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     }
-//    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
+ //   return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     
 }

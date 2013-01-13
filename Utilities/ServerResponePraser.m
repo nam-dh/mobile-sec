@@ -69,20 +69,17 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         NSLog(@"%@",soapResults);
-//        UIAlertView *alert = [[UIAlertView alloc]
-//                              initWithTitle:@"Session Key!"
-//                              message:soapResults
-//                              delegate:self
-//                              cancelButtonTitle:@"OK"
-//                              otherButtonTitles:nil];
-//        [alert show];
         
-        sessionKey = [soapResults copy];
-        NSLog(@"Sessionkey = %@", sessionKey);
+        NSUserDefaults *sessionKey = [NSUserDefaults standardUserDefaults];
+        [sessionKey setObject : soapResults forKey : @"sessionKey"];
+        [sessionKey synchronize];
+        
+        
         //[alert release];
         [soapResults setString:@""];
-        NSLog(@"Sessionkey = %@", sessionKey);
         elementFound = FALSE;
+    
+        
     } else if ([elementName isEqualToString:@"RegisterResult"])
     {
         //---displays the country---
@@ -159,8 +156,13 @@ qualifiedName:(NSString *)qName
             
             failed = false;
             
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+            
             ServerConnection *serverConnect = [[ServerConnection alloc] init];
             [serverConnect deviceNameReporting:sessionKey];
+
+            
             
         } else {
             failed = true;
@@ -180,9 +182,11 @@ qualifiedName:(NSString *)qName
             NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_LOCATE</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>1/6/2013 1:13:26</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <Cmdid>1213</Cmdid>\r\n  </Command>\r\n</Commands>";
             
             
-            NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
+            NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send :password];
             
             
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             ServerConnection *serverConnect = [[ServerConnection alloc] init];
             
             [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
@@ -272,11 +276,11 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* token = [defaults objectForKey:@"tokenKey"];
         
-        NSLog(@"token key=%@", tokenKey);
         
-        NSLog(@"md5hash=%@",soapResults);
-        md5hash = [soapResults copy];
+        NSLog(@"token key=%@", token);
         
         //Decode Base64 String to NSData
         NSData* data = nil;
@@ -284,9 +288,9 @@ qualifiedName:(NSString *)qName
         
         if (data) {
             //check md5 and lenght
-            if ([md5hash isEqualToString:[data MD5]]) {
+            if ([soapResults isEqualToString:[data MD5]]) {
                 
-                NSString* cmdString = [ServerResponePraser decryptCmdData:data :tokenKey ];
+                NSString* cmdString = [ServerResponePraser decryptCmdData:data :token :password];
                 
                 
                 if (cmdString != NULL) {
@@ -305,8 +309,13 @@ qualifiedName:(NSString *)qName
     {
         //---displays the country---
         
-        tokenKey = [soapResults copy];
-        NSLog(@"token key=%@", tokenKey);
+        //tokenKey = [soapResults copy];
+        //NSLog(@"token key=%@", tokenKey);
+        
+        NSUserDefaults *tokenKey = [NSUserDefaults standardUserDefaults];
+        [tokenKey setObject : soapResults forKey : @"tokenKey"];
+        [tokenKey synchronize];
+        
         [soapResults setString:@""];
         elementFound = FALSE;
     }
@@ -314,22 +323,26 @@ qualifiedName:(NSString *)qName
 }
 
 -(void) userLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
     ServerConnection *theInstance2 = [[ServerConnection alloc] init];
     [theInstance2 userLogin:email :password :sessionKey];
 }
 
 +(int)getValueOfHex:(char)hex
 {
-    if (hex > 'a') return hex - 'a' + 10;
+    if (hex >= 'a') return hex - 'a' + 10;
     else return hex - '0';
 }
 
-+(NSString*)decryptCmdData: (NSData*) data :(NSString*) tokenkeyString {
++(NSString*)decryptCmdData: (NSData*) data :(NSString*) tokenkeyString :(NSString*) password {
     
     NSData* tokenKey_bin =[tokenkeyString dataUsingEncoding:NSUTF8StringEncoding];
     
     //get md5 of token key binary
     NSString* x = [tokenKey_bin MD5];
+    
+    NSLog(@"md5=%@", x);
     
     char byte_16[16];
     for (int i =0; i< 15; i++) {
@@ -343,14 +356,16 @@ qualifiedName:(NSString *)qName
     }
     
     NSData *salt_data = [NSData dataWithBytes:salt_byte length:8];
+    NSLog(@"salt_data=%@", [salt_data description]);
+    
     NSData* decrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCDecrypt usingData:data withPassword:password andSalt:salt_data andIterating:20];
+    
+    NSLog(@"decrypt=%@", [decrypt description]);
     
     NSString *path = @"/Users/nam/Desktop/archive.xml";
     [decrypt writeToFile:path options:NSDataWritingAtomic error:nil];
     
     //unsigned char* array = (unsigned char*) [decrypt bytes];
-    
-    NSLog(@"array=%@", [decrypt description]);
     
     NSString* cmdString = [[NSString alloc] initWithData:decrypt encoding:NSUTF8StringEncoding];
     
@@ -359,7 +374,7 @@ qualifiedName:(NSString *)qName
     return cmdString;
 }
 
-+(NSString*) encryptCmdData :(NSString*) data :(NSString*) tokenKey {
++(NSString*) encryptCmdData :(NSString*) data :(NSString*) tokenKey :(NSString*) password {
     
     NSData* tokenKey_bin =[tokenKey dataUsingEncoding:NSUTF8StringEncoding];
     

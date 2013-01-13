@@ -187,6 +187,8 @@
     self.account2.lineBreakMode = UILineBreakModeWordWrap;
     self.account2.numberOfLines = 0;
     self.account2.text = LocalizedString(@"set_acc_sub_unregistered");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
     
     if (accountType == 2) {
         ServerConnection *theInstance = [[ServerConnection alloc] init];
@@ -358,6 +360,8 @@
         backupDataSwitchValue = @"ON";
         
         if ((accountType == 2) && (login== false)){
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             ServerConnection *theInstance = [[ServerConnection alloc] init];
             [theInstance userLogin:email :password :sessionKey];
         }
@@ -365,6 +369,8 @@
         if (login) {
             
             NSString *type = @"cmd";
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             
             ServerConnection *theInstance = [[ServerConnection alloc] init];
             [theInstance downloadFile:sessionKey :type];
@@ -391,34 +397,6 @@
         
         //get address book test
      //   [AddressBookConnect getAllContactData];
-        
-        NSString* tokenkey_send = @"634930307604350000";
-        
-        NSString *path = @"/Users/nam/Desktop/down.d";
-        
-        NSData *myData = [NSData dataWithContentsOfFile:path];
-        
-        NSLog(@"mydata=%@", [myData description]);
-        
-        NSString* newStr = [[NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"newStr=%@", newStr);
-        
-        NSData *data = [NSData dataFromBase64String:newStr];
-        
-    //    NSString* newStr1 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
-        
-        
-        NSString* token = @"634932014974818750";
-        NSString* cmdString = [ServerResponePraser decryptCmdData:data :token ];
-        
-        
-        if (cmdString != NULL) {
-            ServerCmdPraser *theInstance = [[ServerCmdPraser alloc] init];
-            [theInstance startPraser:cmdString];
-            
-        }
 
         
         
@@ -587,6 +565,8 @@
     }
     if (buttonIndex == 1) {
         //validation account
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
         
         ServerConnection *userRegister = [[ServerConnection alloc] init];
         [userRegister activateAccount:email :detailString :sessionKey];
