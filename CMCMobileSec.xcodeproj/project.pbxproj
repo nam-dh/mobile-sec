@@ -29,6 +29,7 @@
 		3D3F51E61693739000767C2A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3F51E41693738000767C2A /* AddressBookUI.framework */; };
 		3D454A8516919AF9007FF3A9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8316919AF9007FF3A9 /* Icon.png */; };
 		3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8416919AF9007FF3A9 /* Icon@2x.png */; };
+		3D5A93A716A5AE280041B09D /* TCMXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5A93A516A5AE280041B09D /* TCMXMLWriter.m */; };
 		3D5EEBFA168CBF620017CAA3 /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */; };
 		3D5EEBFB168CBF620017CAA3 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF5168CBF620017CAA3 /* NSData+Base64.m */; };
 		3D5EEBFC168CBF620017CAA3 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF7168CBF620017CAA3 /* NSData+MD5.m */; };
@@ -183,6 +184,8 @@
 		3D3F51E41693738000767C2A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3D454A8316919AF9007FF3A9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
 		3D454A8416919AF9007FF3A9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		3D5A93A416A5AE280041B09D /* TCMXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMXMLWriter.h; path = Utilities/TCMXMLWriter.h; sourceTree = "<group>"; };
+		3D5A93A516A5AE280041B09D /* TCMXMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMXMLWriter.m; path = Utilities/TCMXMLWriter.m; sourceTree = "<group>"; };
 		3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
 		3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileDecryption.m; path = Utilities/FileDecryption.m; sourceTree = "<group>"; };
 		3D5EEBF4168CBF620017CAA3 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Utilities/NSData+Base64.h"; sourceTree = "<group>"; };
@@ -401,6 +404,8 @@
 		3D8B49EB168A33E3008BF51F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3D5A93A416A5AE280041B09D /* TCMXMLWriter.h */,
+				3D5A93A516A5AE280041B09D /* TCMXMLWriter.m */,
 				52BD891B169BC900004F524C /* SMTPSend */,
 				3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */,
 				3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */,
@@ -845,6 +850,7 @@
 				52BD8929169BC900004F524C /* NSStream+SKPSMTPExtensions.m in Sources */,
 				52BD892A169BC900004F524C /* SKPSMTPMessage.m in Sources */,
 				52BD892D169BC9B3004F524C /* MailSender.m in Sources */,
+				3D5A93A716A5AE280041B09D /* TCMXMLWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
