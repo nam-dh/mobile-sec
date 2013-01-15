@@ -7,6 +7,7 @@
 //
 
 #import "MailSender.h"
+#import "CMCMobileSecurityAppDelegate.h"
 
 
 @implementation MailSender

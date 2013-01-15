@@ -13,17 +13,10 @@
 #import <ImageIO/ImageIO.h>
 #import "MailSender.h"
 
-extern NSString* sessionKey;
 extern int accountType;
-extern NSString* email;
-extern NSString* password;
 extern NSMutableArray* gItemToScan;
 extern NSMutableArray* gScanHistory;
-extern NSString *deviceID;
-extern NSString *tokenKey;
-extern NSString *md5hash;
 extern NSString *downloadFile;
-extern Boolean login;
 extern NSString* blackListSwitchValue, *keyWordSwitchValue, *keepConnectSwitchValue ,*remoteLockSwitchValue, *remoteTrackSwitchValue, *backupDataSwitchValue, *remoteBackupSwitchValue, *remoteClearSwitchValue, *remoteRestoreSwitchValue;
 extern NSString *language;
 extern AVCaptureStillImageOutput *stillImageOutput;

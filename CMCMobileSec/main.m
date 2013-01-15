@@ -26,8 +26,12 @@ int main(int argc, char *argv[])
     NSLog(@"i=%d", i);
     accountType = i;
     if (accountType != 0) {
-        email = [DataBaseConnect getEmail:dbPath];
-        password = [DataBaseConnect getPassword:dbPath];
+        
+        NSUserDefaults *pass = [NSUserDefaults standardUserDefaults];
+        [pass setObject : [DataBaseConnect getPassword:dbPath] forKey : @"password"];
+        [pass setObject : [DataBaseConnect getEmail:dbPath] forKey : @"email"];
+        [pass synchronize];
+        
         
         ServerConnection *theInstance = [[ServerConnection alloc] init];
         [theInstance getsessionKey];
@@ -48,7 +52,7 @@ int main(int argc, char *argv[])
         // Create and schedule the first timer.
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         NSTimer* myTimer = [[NSTimer alloc] initWithFireDate:futureDate
-                                                    interval:20000
+                                                    interval:2000
                                                       target: obj
                                                     selector:@selector(requestServer:)
                                                     userInfo:nil
@@ -56,13 +60,13 @@ int main(int argc, char *argv[])
         [myRunLoop addTimer:myTimer forMode:NSDefaultRunLoopMode];
         
         // Create and schedule the second timer.
-        [NSTimer scheduledTimerWithTimeInterval:10.0
+        [NSTimer scheduledTimerWithTimeInterval:20
                                          target:obj
                                        selector:@selector(requestServer:)
                                        userInfo:nil
                                         repeats:YES];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     }
-//    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
+ //   return UIApplicationMain(argc, argv, nil, NSStringFromClass([CMCMobileSecurityAppDelegate class]));
     
 }

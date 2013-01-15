@@ -11,6 +11,6 @@
 @interface ServerResponePraser:NSObject <NSXMLParserDelegate>
 
 -(void) startPraser:(NSMutableData*) xmlData;
-+(NSString*)decryptCmdData: (NSData*) data :(NSString*) tokenkeyString ;
-+(NSString*) encryptCmdData :(NSString*) data :(NSString*) tokenKey ;
++(NSString*)decryptCmdData: (NSData*) data :(NSString*) tokenkeyString :(NSString*) password;
++(NSString*) encryptCmdData :(NSString*) data :(NSString*) tokenKey :(NSString*) password;
 @end

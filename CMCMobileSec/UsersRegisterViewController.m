@@ -46,7 +46,6 @@
     [theInstance getsessionKey];
     
     userRegisterView = self.view;
-    NSLog(@"%@", sessionKey);
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,11 +67,21 @@
     NSLog(@"%@",_email.text);
     NSLog(@"%@",_password.text);
     NSLog(@"%@",_password_confirm.text);
-    email = _email.text;
-    password = _password.text;
+    
+    NSUserDefaults *pass = [NSUserDefaults standardUserDefaults];
+    [pass setObject : _password.text forKey : @"password"];
+    [pass setObject:_email.text forKey:@"text"];
+    [pass synchronize];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    
+    
+    
     
     ServerConnection *theInstance = [[ServerConnection alloc] init];
-    [theInstance userLogin:email :password :sessionKey];
+    [theInstance userLogin:_email.text :_password.text :sessionKey];
     
     if (failed == false){
         
@@ -86,8 +95,14 @@
     NSLog(@"%@",_email.text);
     NSLog(@"%@",_password.text);
     NSLog(@"%@",_password_confirm.text);
-    email = _email.text;
-    password = _password.text;
+    
+    NSUserDefaults *pass = [NSUserDefaults standardUserDefaults];
+    [pass setObject : _password.text forKey : @"password"];
+    [pass setObject:_email.text forKey:@"email"];
+    [pass synchronize];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
     
     ServerConnection *theInstance = [[ServerConnection alloc] init];
     [theInstance registerAccount:_email.text :_password.text :sessionKey];

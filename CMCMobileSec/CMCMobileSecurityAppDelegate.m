@@ -68,9 +68,9 @@
                                                            selector:@selector(prepareHistory) object:nil];
     [prepareHistoryThread start];
     
-   // [self testEncrypt];
-    
     [self setupAVCapture];
+    
+    [self testEncrypt];
     
     return YES;
 }
@@ -78,27 +78,111 @@
 
 -(void) testEncrypt{
     
-    NSString* tokenkey_send = @"634925929652812500";
+    NSString*tokenkey_send = @"1357637775056";
+    NSString*path = @"/Users/nam/Desktop/files/.upload/1357637775056.enc";//put the path to your file here
+    NSData* fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* password = [defaults objectForKey:@"password"];
+    
+    NSString* cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+//
+//    tokenkey_send = @"1357637835055";
+//    path = @"/Users/nam/Desktop/files/.upload/1357637835055.enc";//put the path to your file here
+//    fileData = [NSData dataWithContentsOfFile: path];
+//    NSLog(@"fileData = %@", [fileData description]);
+//    
+//    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+//    
+//    tokenkey_send = @"1357637895055";
+//    path = @"/Users/nam/Desktop/files/.upload/1357637895055.enc";//put the path to your file here
+//    fileData = [NSData dataWithContentsOfFile: path];
+//    NSLog(@"fileData = %@", [fileData description]);
+//    
+//    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+}
+
+-(void) testDecrypt{
+    
+    NSString* tokenkey_send = @"634932586993881250";
+    NSString* password = @"123";
+    
+    NSString *path = @"/Users/nam/Desktop/files/.upload/634932586993881250.enc";//put the path to your file here
+    NSData *fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    NSString* cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+    tokenkey_send = @"634932587347318750";
+    path = @"/Users/nam/Desktop/files/.download/634932587347318750.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+    tokenkey_send = @"634932587947475000";
+    path = @"/Users/nam/Desktop/files/.download/634932587947475000.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+    tokenkey_send = @"634932588547006250";
+    path = @"/Users/nam/Desktop/files/.download/634932588547006250.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
     
     
-    NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_TRACK</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>12/31/2012 15:41:55</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <LicKey1>\r\n    </LicKey1>\r\n    <LicKey2>\r\n    </LicKey2>\r\n    <LicKey3>\r\n    </LicKey3>\r\n  </Command>\r\n</Commands>";
+    tokenkey_send = @"634932596347162500";
+    path = @"/Users/nam/Desktop/files/.download/634932596347162500.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
     
     
-    NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
+    tokenkey_send = @"634932597546693750";
+    path = @"/Users/nam/Desktop/files/.download/634932597546693750.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
     
-    NSData* data = nil;
-    data = [NSData dataFromBase64String:base64String];
-    NSString* data1 = [ServerResponePraser decryptCmdData:data :tokenkey_send];
-    NSLog(@"data after =%@", data1);
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
     
-    ServerConnection *serverConnect = [[ServerConnection alloc] init];
+    tokenkey_send = @"634932598147006250";
+    path = @"/Users/nam/Desktop/files/.download/634932598147006250.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
     
-    [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+    tokenkey_send = @"634932598746537500";
+    path = @"/Users/nam/Desktop/files/.download/634932598746537500.enc";//put the path to your file here
+    fileData = [NSData dataWithContentsOfFile: path];
+    NSLog(@"fileData = %@", [fileData description]);
+    
+    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
+    
+    
+    
+//    NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
+//    
+//    NSData* data = nil;
+//    data = [NSData dataFromBase64String:base64String];
+//    NSString* data1 = [ServerResponePraser decryptCmdData:data :tokenkey_send];
+//    NSLog(@"data after =%@", data1);
+//    
+//    ServerConnection *serverConnect = [[ServerConnection alloc] init];
+//    
+//    [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
 }
 
 -(int)getValueOfHex:(char)hex
 {
-    if (hex > 'a') return hex - 'a' + 10;
+    if (hex >= 'a') return hex - 'a' + 10;
     else return hex - '0';
 }
 
@@ -131,6 +215,9 @@
     [self doCapture];
     
     //send mail
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* email = [defaults objectForKey:@"email"];
+    
     NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.jpg"];
 
     [[MailSender sharedMailSender] sendMailViaSMTP:email :pngPath];
@@ -166,6 +253,11 @@
 - (void) requestServer:(NSTimer *) timer {
     
     NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    NSString* password = [defaults objectForKey:@"password"];
+    NSString* email = [defaults objectForKey:@"email"];
+    Boolean login = [[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"];
     
     if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
         
@@ -182,6 +274,8 @@
         if (login) {
             
             NSString *type = @"cmd";
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             
             ServerConnection *theInstance = [[ServerConnection alloc] init];
             [theInstance downloadFile:sessionKey :type];
@@ -235,7 +329,9 @@
     long lnumber = [timeStampObj longValue];
     
     NSString* vector = [NSString stringWithFormat:@"%ld:%f:%f", lnumber, latt, longi];
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
+    
     ServerConnection *theInstance = [[ServerConnection alloc] init];
     [theInstance locationReport:vector :sessionKey];
 }
@@ -358,17 +454,10 @@
 @end
 
 AVCaptureStillImageOutput *stillImageOutput;
-NSString* sessionKey;
 int accountType = 1;
-NSString* email = nil;
-NSString* password = nil;
 NSMutableArray * gItemToScan = nil;
 NSMutableArray * gScanHistory = nil;
-NSString *deviceID = @"123";
-NSString *tokenKey = nil;
-NSString *md5hash = nil;
 NSString *downloadFile = nil;
-Boolean login = false;
 NSString* blackListSwitchValue = nil, *keyWordSwitchValue = nil , *keepConnectSwitchValue = nil,*remoteLockSwitchValue = nil, *remoteTrackSwitchValue = nil, *backupDataSwitchValue = nil, *remoteBackupSwitchValue = nil, *remoteClearSwitchValue = nil, *remoteRestoreSwitchValue = nil;
 
 NSString *language = nil;
