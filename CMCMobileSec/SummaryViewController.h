@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *fromNumber;
 @property (weak, nonatomic) IBOutlet UILabel *smsContent;
 @property (weak, nonatomic) IBOutlet UILabel *totalReceived;
+@property (weak, nonatomic) IBOutlet UILabel *demandScan;
+@property (weak, nonatomic) IBOutlet UILabel *detailDemandScan;
+@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
+@property (weak, nonatomic) IBOutlet UILabel *clearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hintButtonLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *systemStorageButton;
 
@@ -34,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalScanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalDetectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scanStatus;
+
+- (IBAction)viewHistoryButton:(id)sender;
 
 - (IBAction)scanOnDemandButton:(id)sender;
 

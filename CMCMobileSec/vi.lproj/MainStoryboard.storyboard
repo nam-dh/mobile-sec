@@ -370,7 +370,7 @@ be sent to CMC InfoSec server</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Ff6-q6-9pV">
-                            <rect key="frame" x="0.0" y="604" width="320" height="20"/>
+                            <rect key="frame" x="0.0" y="696" width="320" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -453,8 +453,53 @@ be sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="92" id="7Fw-hP-TOA">
+                                        <rect key="frame" x="0.0" y="157" width="320" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HINT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qhh-Km-kUF">
+                                                    <rect key="frame" x="20" y="4" width="192" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="All memory is CLEAR!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LsQ-PD-nry">
+                                                    <rect key="frame" x="20" y="23" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P32-as-oSm">
+                                                    <rect key="frame" x="239" y="6" width="41" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button" image="hinticon-46-48x48.png" backgroundImage="hinticon-46-48x48.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="scanOnDemandButton:" destination="NyY-Ev-1Sm" eventType="touchUpInside" id="iCZ-tv-GHx"/>
+                                                        <action selector="viewHistoryButton:" destination="NyY-Ev-1Sm" eventType="touchUpInside" id="2bE-WQ-0cz"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click button to view history!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2cx-Xd-5ex">
+                                                    <rect key="frame" x="20" y="50" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="140" id="Wvz-9n-uAp">
-                                        <rect key="frame" x="0.0" y="157" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="249" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="139"/>
@@ -526,7 +571,7 @@ be sent to CMC InfoSec server</string>
                             <tableViewSection headerTitle="SMS Filter" id="rsH-YD-5OP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="6zM-Xc-3sG">
-                                        <rect key="frame" x="0.0" y="343" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="435" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="54"/>
@@ -550,7 +595,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="ATs-a7-7cN">
-                                        <rect key="frame" x="0.0" y="399" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="491" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="54"/>
@@ -574,7 +619,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="140" id="0jA-qA-kw5">
-                                        <rect key="frame" x="0.0" y="454" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="546" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="139"/>
@@ -628,9 +673,14 @@ be sent to CMC InfoSec server</string>
                     <navigationItem key="navigationItem" title="Summary" id="PEX-Ys-a3f"/>
                     <connections>
                         <outlet property="blockLabel" destination="cIr-gP-HKf" id="Gp6-rB-PSb"/>
+                        <outlet property="clearLabel" destination="LsQ-PD-nry" id="lTK-xx-H0U"/>
+                        <outlet property="demandScan" destination="OQJ-VI-IUF" id="iV0-H8-75p"/>
+                        <outlet property="detailDemandScan" destination="iRh-kp-KVa" id="HSS-q9-f2y"/>
                         <outlet property="filenameLabel" destination="A43-fX-5P4" id="5zI-lq-ftt"/>
                         <outlet property="fromLabel" destination="MIt-Pa-bcz" id="A1N-GR-lV0"/>
                         <outlet property="fromNumber" destination="COF-ZK-X5T" id="6o0-Wo-bRp"/>
+                        <outlet property="hintButtonLabel" destination="2cx-Xd-5ex" id="Chp-Io-Lwj"/>
+                        <outlet property="hintLabel" destination="qhh-Km-kUF" id="jnm-Oo-V6V"/>
                         <outlet property="numberOfDetected" destination="juC-TN-iwW" id="vL5-cH-XnP"/>
                         <outlet property="numberOfScanned" destination="Pgt-wN-zRe" id="rFE-hO-smq"/>
                         <outlet property="receivedHeaderLabel" destination="UWS-Bg-UsL" id="Ma6-3i-S9v"/>
@@ -1341,6 +1391,7 @@ Mobile Security:</string>
         <image name="bg_background.png" width="480" height="780"/>
         <image name="firstpage_menuicon_scanfile.png" width="25" height="25"/>
         <image name="fpicon-realtime-65-65x65.png" width="65" height="65"/>
+        <image name="hinticon-46-48x48.png" width="48" height="48"/>
         <image name="history_icon_realtimescan50.png" width="50" height="50"/>
         <image name="ic_up.png" width="56" height="56"/>
         <image name="setting_baricon.png" width="25" height="25"/>

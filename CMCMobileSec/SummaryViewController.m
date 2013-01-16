@@ -38,6 +38,7 @@ id(*CTTelephonyCenterGetDefault)();
 @synthesize totalDetectedLabel;
 @synthesize scanStatus;
 
+
 static UILabel* c;
 BOOL isScanning = FALSE;
 BOOL exitThreadNow;
@@ -268,6 +269,9 @@ BOOL isScanonDemand = FALSE;
     return text;
 }
 
+- (IBAction)viewHistoryButton:(id)sender {
+}
+
 - (IBAction)scanOnDemandButton:(id)sender {
     isScanonDemand = TRUE;
     isScanAll = FALSE;
@@ -398,7 +402,7 @@ BOOL isScanonDemand = FALSE;
 }
 
 - (NSIndexPath*) getIndexPathForScanBoard{
-    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     return indexPath;
 }
 
@@ -540,6 +544,11 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setTotalScanLabel:nil];
     [self setTotalDetectedLabel:nil];
     [self setScanStatus:nil];
+    [self setDemandScan:nil];
+    [self setDetailDemandScan:nil];
+    [self setHintLabel:nil];
+    [self setClearLabel:nil];
+    [self setHintButtonLabel:nil];
     [super viewDidUnload];
 }
 

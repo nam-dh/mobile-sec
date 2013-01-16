@@ -250,8 +250,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void) requestServer:(NSTimer *) timer {
+- (void) showPopUp{
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm" message:@"test" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+
+
+ 
+}
+
+- (void) requestServer:(NSTimer *) timer {
+    [self showPopUp];
     NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
