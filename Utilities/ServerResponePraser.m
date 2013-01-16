@@ -15,6 +15,7 @@
 #import "NSData+MD5.h"
 #import "FileDecryption.h"
 #import "ServerCmdPraser.h"
+#import "TCMXMLWriter.h"
 
 @implementation ServerResponePraser {
     NSXMLParser *xmlParser;
@@ -188,17 +189,44 @@ qualifiedName:(NSString *)qName
         NSString* tokenkey_send = @"634930307604350000";
         
         if ([soapResults isEqualToString:@"0"]) {
-            NSString *report = @"<?xml version=\"1.0\" standalone=\"yes\"?>\r\n<Commands>\r\n  <Command>\r\n    <CmdKey>CMC_LOCATE</CmdKey>\r\n    <CmdStatus>PROCESSING</CmdStatus>\r\n    <FinishTime>1/6/2013 1:13:26</FinishTime>\r\n    <ResultDetail>\r\n    </ResultDetail>\r\n    <Cmdid>1213</Cmdid>\r\n  </Command>\r\n</Commands>";
+            
+            TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
+            [writer instructXML];
+            [writer tag:@"Commands" attributes:nil contentBlock:^{
+                [writer tag:@"Command" attributes:nil contentBlock:^{
+                        [writer tag:@"CmdKey" attributes:nil contentText:@"CMC_LOCATE"];
+                        [writer tag:@"CmdStatus" attributes:nil contentText:@"PROCESSING"];
+                        [writer tag:@"FinishTime" attributes:nil contentText:@"1/15/2013 1:27:47"];
+                    [writer tag:@"ResultDetail" attributes:nil contentText:nil];
+                    [writer tag:@"Cmdid" attributes:nil contentText:@"58"];
+                        
+                }];
+            }];
+            
+            NSLog(@"xml=%@", writer.XMLString);
             
             
-            NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send :password];
+            NSString* base64String = [ServerResponePraser encryptCmdData:writer.XMLString :tokenkey_send :password];
+            
+            
+//            NSData *data = [NSData dataFromBase64String:base64String];
+//            NSString *cmdString = [ServerResponePraser decryptCmdData:data :tokenkey_send :password ];
             
             
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             ServerConnection *serverConnect = [[ServerConnection alloc] init];
             
-            [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
+            NSLog(@"len =%d", downloadFile.length);
+            
+            NSData* data = nil;
+            data = [NSData dataFromBase64String:downloadFile];
+            
+            NSLog(@"data leng= %d", data.length);
+            
+            NSString* token = [defaults objectForKey:@"tokenKey"];
+            [serverConnect uploadFile:downloadFile :@"cmd" :token :sessionKey];
+            
             
         }
         
@@ -295,6 +323,8 @@ qualifiedName:(NSString *)qName
         //Decode Base64 String to NSData
         NSData* data = nil;
         data = [NSData dataFromBase64String:downloadFile];
+        
+        NSLog(@"data leng= %d", data.length);
         
         if (data) {
             //check md5 and lenght
@@ -413,9 +443,23 @@ qualifiedName:(NSString *)qName
     NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[data dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
     
     
-    NSString* base64String = [encrypt base64EncodedString];
+    NSString* base64String = [encrypt base64EncodedStringWithSeparateLines:FALSE];
     
     NSLog(@"base64String=%@", base64String);
+    //make a file name to write the data to using the documents directory:
+    
+            NSString *fileName = @"/Users/nam/Desktop/downloadFile.txt";
+    
+            //save content to the documents directory
+    
+            [base64String writeToFile:fileName
+    
+                      atomically:NO
+    
+                        encoding:NSStringEncodingConversionAllowLossy
+    
+                           error:nil];
+    
     return base64String;
 }
 

@@ -12,6 +12,7 @@
 #import "ServerConnection.h"
 #import "FileInteractionHelper.h"
 #import "DataBaseConnect.h"
+#import "TCMXMLWriter.h"
 
 int main(int argc, char *argv[])
 {

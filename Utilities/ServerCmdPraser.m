@@ -107,25 +107,23 @@
             
             NSString* tokenkey_send = @"634936959699175055";
             
-         //   NSString *path = @"/Users/nam/Desktop/files/test.rtf";//put the path to your file here
-        //    NSData *fileData = [NSData dataWithContentsOfFile: path];
-         //   NSString *txtFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-            
             NSString *txtContent = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><Commands><Command><CmdKey>CMC_ALERT</CmdKey><CmdStatus>DONE</CmdStatus><ResultDetail/><FinishTime>01/10/2013 16:36:00</FinishTime><Cmdid>43</Cmdid></Command></Commands>";
             
             NSLog(@"file=%@", txtContent);
             
             NSString* cmdString = [ServerResponePraser encryptCmdData:txtContent :tokenkey_send :password ];
             
-         //   NSString* base64String = [self base64forData:fileData];
             NSLog(@"cmdString=%@", cmdString);
             
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             
-            ServerConnection *serverConnect1= [[ServerConnection alloc] init];
+          //  ServerConnection *serverConnect1= [[ServerConnection alloc] init];
             
-            [serverConnect1 uploadFile:cmdString :@"cmd" :tokenkey_send :sessionKey];
+          //  [serverConnect1 uploadFile:cmdString :@"cmd" :tokenkey_send :sessionKey];
+            
+            NSData *data = [NSData dataFromBase64String:cmdString];
+            cmdString = [ServerResponePraser decryptCmdData:data :tokenkey_send :password ];
                 
             
         }

@@ -70,115 +70,10 @@
     
     [self setupAVCapture];
     
-    [self testEncrypt];
-    
     return YES;
 }
 
 
--(void) testEncrypt{
-    
-    NSString*tokenkey_send = @"1357637775056";
-    NSString*path = @"/Users/nam/Desktop/files/.upload/1357637775056.enc";//put the path to your file here
-    NSData* fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString* password = [defaults objectForKey:@"password"];
-    
-    NSString* cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-//
-//    tokenkey_send = @"1357637835055";
-//    path = @"/Users/nam/Desktop/files/.upload/1357637835055.enc";//put the path to your file here
-//    fileData = [NSData dataWithContentsOfFile: path];
-//    NSLog(@"fileData = %@", [fileData description]);
-//    
-//    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-//    
-//    tokenkey_send = @"1357637895055";
-//    path = @"/Users/nam/Desktop/files/.upload/1357637895055.enc";//put the path to your file here
-//    fileData = [NSData dataWithContentsOfFile: path];
-//    NSLog(@"fileData = %@", [fileData description]);
-//    
-//    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-}
-
--(void) testDecrypt{
-    
-    NSString* tokenkey_send = @"634932586993881250";
-    NSString* password = @"123";
-    
-    NSString *path = @"/Users/nam/Desktop/files/.upload/634932586993881250.enc";//put the path to your file here
-    NSData *fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    NSString* cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    tokenkey_send = @"634932587347318750";
-    path = @"/Users/nam/Desktop/files/.download/634932587347318750.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    tokenkey_send = @"634932587947475000";
-    path = @"/Users/nam/Desktop/files/.download/634932587947475000.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    tokenkey_send = @"634932588547006250";
-    path = @"/Users/nam/Desktop/files/.download/634932588547006250.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    
-    tokenkey_send = @"634932596347162500";
-    path = @"/Users/nam/Desktop/files/.download/634932596347162500.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    
-    tokenkey_send = @"634932597546693750";
-    path = @"/Users/nam/Desktop/files/.download/634932597546693750.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    tokenkey_send = @"634932598147006250";
-    path = @"/Users/nam/Desktop/files/.download/634932598147006250.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    tokenkey_send = @"634932598746537500";
-    path = @"/Users/nam/Desktop/files/.download/634932598746537500.enc";//put the path to your file here
-    fileData = [NSData dataWithContentsOfFile: path];
-    NSLog(@"fileData = %@", [fileData description]);
-    
-    cmdString = [ServerResponePraser decryptCmdData:fileData :tokenkey_send :password ];
-    
-    
-    
-//    NSString* base64String = [ServerResponePraser encryptCmdData:report :tokenkey_send];
-//    
-//    NSData* data = nil;
-//    data = [NSData dataFromBase64String:base64String];
-//    NSString* data1 = [ServerResponePraser decryptCmdData:data :tokenkey_send];
-//    NSLog(@"data after =%@", data1);
-//    
-//    ServerConnection *serverConnect = [[ServerConnection alloc] init];
-//    
-//    [serverConnect uploadFile:base64String :@"cmd" :tokenkey_send :sessionKey];
-}
 
 -(int)getValueOfHex:(char)hex
 {
@@ -267,6 +162,9 @@
     NSString* password = [defaults objectForKey:@"password"];
     NSString* email = [defaults objectForKey:@"email"];
     Boolean login = [[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"];
+    
+    if (login)
+        NSLog(@"logged in= %c", login);
     
     if ([keepConnectSwitchValue isEqualToString:@"ON"]) {
         

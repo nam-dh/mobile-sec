@@ -9,6 +9,7 @@
 #import "ServerConnection.h"
 #import "CMCMobileSecurityAppDelegate.h"
 #import "ServerResponePraser.h"
+#import "TCMXMLWriter.h"
 
 @implementation ServerConnection {
     NSMutableData *responeData;
@@ -133,11 +134,28 @@
     NSString *soap_action = @"http://cmcinfosec.com/UploadFile";
     
     // construct envelope (not optimized, intended to show basic steps)
-    NSString *uploadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <fs>%@</fs>\n" " <type>%@</type>\n" " <token>%@</token>\n" " <sessionkey>%@</sessionkey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, fContent, type, token, sessionKey, method_name];
+//    NSString *uploadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <fs>%@</fs>\n" " <type>%@</type>\n" " <token>%@</token>\n" " <sessionkey>%@</sessionkey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, fContent, type, token, sessionKey, method_name];
+//    
+    TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
+    [writer instructXML];
+    [writer tag:@"soap12:Envelope" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://www.w3.org/2001/XMLSchema-instance",@"xmlns:xsi", @"http://www.w3.org/2001/XMLSchema",@"xmlns:xsd", @"http://www.w3.org/2003/05/soap-envelope", @"xmlns:soap12", nil]  contentBlock:^{
+        [writer tag:@"soap12:Body" attributes:nil contentBlock:^{
+            [writer tag:@"UploadFile" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://cmcinfosec.com/", @"xmlns", nil]  contentBlock:^{
+                
+            [writer tag:@"fs" attributes:nil contentText:fContent];
+            [writer tag:@"type" attributes:nil contentText:type];
+            [writer tag:@"token" attributes:nil contentText:token];
+            [writer tag:@"sessionkey" attributes:nil contentText:sessionKey];
+            }];
+        }];
+    }];
     
-    NSLog (@"%@",uploadFileEnvelopeText);
+    NSLog (@"%@",writer.XMLString);
     
-    [self connectSOAP:url :soap_action :uploadFileEnvelopeText];
+    NSString*path = @"/Users/nam/Desktop/1358270565054.up";
+    NSString *txtFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    
+    [self connectSOAP:url :soap_action :txtFileContents];
     
 }
 
