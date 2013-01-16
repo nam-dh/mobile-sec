@@ -137,6 +137,7 @@
 		5215A1C41665332900D8DEF6 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215A1C31665332900D8DEF6 /* SummaryViewController.m */; };
 		522654C516918D61003A5276 /* history_icon_realtimescan50.png in Resources */ = {isa = PBXBuildFile; fileRef = 522654C416918D61003A5276 /* history_icon_realtimescan50.png */; };
 		52279BF51693EC5B00AE2A2A /* localize.py in Resources */ = {isa = PBXBuildFile; fileRef = 52279BF41693EC5B00AE2A2A /* localize.py */; };
+		525126A816A65A5100CB84F5 /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 525126A716A65A5100CB84F5 /* libobjc.A.dylib */; };
 		525620141693CED800A49C5A /* LocalizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 525620131693CED800A49C5A /* LocalizeHelper.m */; };
 		5256201B1693D13700A49C5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525620191693D13700A49C5A /* Localizable.strings */; };
 		5257F558168A1A4600C00465 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5257F557168A1A4600C00465 /* Default-568h@2x.png */; };
@@ -311,6 +312,7 @@
 		52279BED1693D17800AE2A2A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = CMCMobileSec/vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52279BEE1693D88300AE2A2A /* vi */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = vi; path = vi.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		52279BF41693EC5B00AE2A2A /* localize.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = localize.py; sourceTree = "<group>"; };
+		525126A716A65A5100CB84F5 /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		525620121693CED800A49C5A /* LocalizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizeHelper.h; path = Utilities/LocalizeHelper.h; sourceTree = "<group>"; };
 		525620131693CED800A49C5A /* LocalizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizeHelper.m; path = Utilities/LocalizeHelper.m; sourceTree = "<group>"; };
 		5256201A1693D13700A49C5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = CMCMobileSec/en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525126A816A65A5100CB84F5 /* libobjc.A.dylib in Frameworks */,
 				52BD891A169BC895004F524C /* CFNetwork.framework in Frameworks */,
 				3D045EA5169B473C007F281D /* QuartzCore.framework in Frameworks */,
 				3D045EA3169B4735007F281D /* ImageIO.framework in Frameworks */,
@@ -542,6 +545,7 @@
 		5215A1771665254600D8DEF6 = {
 			isa = PBXGroup;
 			children = (
+				525126A716A65A5100CB84F5 /* libobjc.A.dylib */,
 				3D8B49EB168A33E3008BF51F /* Utilities */,
 				5215A1951665254700D8DEF6 /* CMCMobileSecurityAppDelegate.h */,
 				5215A1961665254700D8DEF6 /* CMCMobileSecurityAppDelegate.m */,

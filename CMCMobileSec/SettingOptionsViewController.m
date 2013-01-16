@@ -254,6 +254,8 @@
     self.subRestoreLabel.numberOfLines = 0;
     self.subRestoreLabel.text = LocalizedString(@"set_antitheft_sub_restore");
     
+    self.subLanguageLabel.text = LocalizedString(@"detail_language");
+    
 }
 
 - (void)makeTheChange

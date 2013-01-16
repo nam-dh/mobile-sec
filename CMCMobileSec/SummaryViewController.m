@@ -37,6 +37,11 @@ id(*CTTelephonyCenterGetDefault)();
 @synthesize totalScanLabel;
 @synthesize totalDetectedLabel;
 @synthesize scanStatus;
+@synthesize hintLabel;
+@synthesize hintButtonLabel;
+@synthesize clearLabel;
+@synthesize demandScan;
+@synthesize detailDemandScan;
 
 
 static UILabel* c;
@@ -169,6 +174,12 @@ BOOL isScanonDemand = FALSE;
 - (void) configureView{
     self.title = @"CMC\nMOBILE SECURITY";
     self.storageTextLabel.text = LocalizedString(@"firstpage_scanfile_header_systemstorage");
+    self.demandScan.text = LocalizedString(@"menu_title_scan_custom");
+    self.detailDemandScan.text = LocalizedString(@"menu_detail_scan_custom");
+    self.hintLabel.text = LocalizedString(@"firstpage_scanfile_hint");
+    self.clearLabel.text = LocalizedString(@"firstpage_scanfile_hint_storageclear");
+    self.hintButtonLabel.text = LocalizedString(@"firstpage_scanfile_hint_clear_instruction");
+    
     self.receivedHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalreceived");
     self.spamHeaderLabel.text = LocalizedString(@"firstpage_filter_header_totalspam");
     self.recentHeaderLabel.text = LocalizedString(@"firstpage_filter_recent");

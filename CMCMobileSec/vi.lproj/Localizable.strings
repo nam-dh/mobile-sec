@@ -6,6 +6,7 @@
   Copyright (c) 2013 CMC. All rights reserved.
 */
 "menu_title_scan_custom" = "Quét theo chỉ định";
+"menu_detail_scan_custom" = "Chọn file và thư mục để quét";
 "menu_title_scan_full" = "Quét toàn bộ";
 "gnr_stop" = "Dừng";
 "set_settings" = "Tùy chỉnh";
@@ -16,6 +17,7 @@
 "set_menu_header_filter" = "Bộ lọc tin";
 "set_menu_header_antitheft" = "Chống thất lạc";
 "language" = "Tiếng Việt";
+"detail_language" = "Tuỳ chọn ngôn ngữ";
 "set_acc_title_waiting" = "Điền mã xác nhận";
 "set_acc_sub_waiting" = "Mã xác nhận đã gửi tới Email\nBấm vào đây, điền mã và gửi đi để hoàn tất thủ tục\nXin cảm ơn!";
 "ftr_blacklist" = "Chặn số điện thoại";

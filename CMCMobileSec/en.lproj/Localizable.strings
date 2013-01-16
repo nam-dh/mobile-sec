@@ -6,6 +6,7 @@
   Copyright (c) 2013 CMC. All rights reserved.
 */
 "menu_title_scan_custom" = "Scan ondemand";
+"menu_detail_scan_custom" = "Select file and folder to scan";
 "menu_title_scan_full" = "Scan whole system";
 "gnr_stop" = "Stop";
 "set_settings" = "Settings";
@@ -16,6 +17,7 @@
 "set_menu_header_filter" = "SMS Filter";
 "set_menu_header_antitheft" = "Anti-Theft";
 "language" = "English";
+"detail_language" = "Choose your language";
 "set_acc_title_waiting" = "Waiting for Confirmation Code";
 "set_acc_sub_waiting" = "Confirmation code was sent to Email\nClick here and send us your code to complete registration\nThank you!";
 "ftr_blacklist" = "Blacklist";

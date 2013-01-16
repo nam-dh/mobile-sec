@@ -155,7 +155,7 @@
 }
 
 - (void) requestServer:(NSTimer *) timer {
-    [self showPopUp];
+//    [self showPopUp];
     NSLog(@"keepConnectSwitchValue=%@",keepConnectSwitchValue);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
