@@ -191,12 +191,13 @@ qualifiedName:(NSString *)qName
         if ([soapResults isEqualToString:@"0"]) {
             
             TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
-            [writer instructXML];
+            [writer instructXMLStandaloneNoEncoding];
             [writer tag:@"Commands" attributes:nil contentBlock:^{
                 [writer tag:@"Command" attributes:nil contentBlock:^{
                         [writer tag:@"CmdKey" attributes:nil contentText:@"CMC_LOCATE"];
+                        [writer tag:@"FinishTime" attributes:nil contentText:@"01/15/2013 1:27:47"];
                         [writer tag:@"CmdStatus" attributes:nil contentText:@"PROCESSING"];
-                        [writer tag:@"FinishTime" attributes:nil contentText:@"1/15/2013 1:27:47"];
+                        
                     [writer tag:@"ResultDetail" attributes:nil contentText:nil];
                     [writer tag:@"Cmdid" attributes:nil contentText:@"58"];
                         
@@ -217,15 +218,15 @@ qualifiedName:(NSString *)qName
             NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             ServerConnection *serverConnect = [[ServerConnection alloc] init];
             
-            NSLog(@"len =%d", downloadFile.length);
-            
-            NSData* data = nil;
-            data = [NSData dataFromBase64String:downloadFile];
-            
-            NSLog(@"data leng= %d", data.length);
+//            NSLog(@"len =%d", downloadFile.length);
+//            
+//            NSData* data = nil;
+//            data = [NSData dataFromBase64String:downloadFile];
+//            
+//            NSLog(@"data leng= %d", data.length);
             
             NSString* token = [defaults objectForKey:@"tokenKey"];
-            [serverConnect uploadFile:downloadFile :@"cmd" :token :sessionKey];
+            [serverConnect uploadFile:base64String :@"cmd" :token :sessionKey];
             
             
         }
@@ -443,7 +444,9 @@ qualifiedName:(NSString *)qName
     NSData* encrypt = [FileDecryption cryptPBEWithMD5AndDES:kCCEncrypt usingData:[data dataUsingEncoding:NSUTF8StringEncoding] withPassword:password andSalt:salt_data andIterating:20];
     
     
-    NSString* base64String = [encrypt base64EncodedStringWithSeparateLines:FALSE];
+  //  NSString* base64String = [encrypt base64EncodedStringWithSeparateLines:FALSE];
+    
+    NSString* base64String = [NSData base64StringFromData:encrypt length:[encrypt length]];
     
     NSLog(@"base64String=%@", base64String);
     //make a file name to write the data to using the documents directory:

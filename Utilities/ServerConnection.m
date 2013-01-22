@@ -118,12 +118,22 @@
     NSString *method_name = @"DownloadFile";
     NSString *soap_action = @"http://cmcinfosec.com/DownloadFile";
     
-    // construct envelope (not optimized, intended to show basic steps)
-    NSString *downloadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema- to instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <sessionkey>%@</sessionkey>\n" " <type>%@</type>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, sessionKey, type ,method_name];
+    
+    TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
+    [writer instructXML];
+    [writer tag:@"soap12:Envelope" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://www.w3.org/2001/XMLSchema-instance",@"xmlns:xsi", @"http://www.w3.org/2001/XMLSchema",@"xmlns:xsd", @"http://www.w3.org/2003/05/soap-envelope", @"xmlns:soap12", nil]  contentBlock:^{
+        [writer tag:@"soap12:Body" attributes:nil contentBlock:^{
+            [writer tag:method_name attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://cmcinfosec.com/", @"xmlns", nil]  contentBlock:^{
+                
+                [writer tag:@"sessionkey" attributes:nil contentText:sessionKey];
+                [writer tag:@"type" attributes:nil contentText:type];
+            }];
+        }];
+    }];
     
   //  NSLog (@"%@",downloadFileEnvelopeText);
     
-    [self connectSOAP:url :soap_action :downloadFileEnvelopeText];
+    [self connectSOAP:url :soap_action :writer.XMLString];
     
 }
 
@@ -133,14 +143,12 @@
     NSString *method_name = @"UploadFile";
     NSString *soap_action = @"http://cmcinfosec.com/UploadFile";
     
-    // construct envelope (not optimized, intended to show basic steps)
-//    NSString *uploadFileEnvelopeText = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n" " <soap12:Body>\n" " <%@ xmlns=\"http://cmcinfosec.com/\">\n" " <fs>%@</fs>\n" " <type>%@</type>\n" " <token>%@</token>\n" " <sessionkey>%@</sessionkey>\n" " </%@>\n" " </soap12:Body>\n" "</soap12:Envelope>", method_name, fContent, type, token, sessionKey, method_name];
 //    
     TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
     [writer instructXML];
     [writer tag:@"soap12:Envelope" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://www.w3.org/2001/XMLSchema-instance",@"xmlns:xsi", @"http://www.w3.org/2001/XMLSchema",@"xmlns:xsd", @"http://www.w3.org/2003/05/soap-envelope", @"xmlns:soap12", nil]  contentBlock:^{
         [writer tag:@"soap12:Body" attributes:nil contentBlock:^{
-            [writer tag:@"UploadFile" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://cmcinfosec.com/", @"xmlns", nil]  contentBlock:^{
+            [writer tag:method_name attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"http://cmcinfosec.com/", @"xmlns", nil]  contentBlock:^{
                 
             [writer tag:@"fs" attributes:nil contentText:fContent];
             [writer tag:@"type" attributes:nil contentText:type];
@@ -152,10 +160,7 @@
     
     NSLog (@"%@",writer.XMLString);
     
-    NSString*path = @"/Users/nam/Desktop/1358270565054.up";
-    NSString *txtFileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-    
-    [self connectSOAP:url :soap_action :txtFileContents];
+    [self connectSOAP:url :soap_action :writer.XMLString];
     
 }
 
@@ -186,11 +191,9 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     
-    
-    [request addValue:soap_action forHTTPHeaderField:@"SOAPAction"];
-    
-    
     [request setHTTPMethod:@"POST"];
+  //  [request addValue:soap_action forHTTPHeaderField:@"SOAPAction"];
+    [request setValue:@"mobi.cmcinfosec.com" forHTTPHeaderField:@"Host"];
     [request setHTTPBody:envelope];
     [request setValue:@"application/soap+xml; charset=utf-8"
    forHTTPHeaderField:@"Content-Type"];

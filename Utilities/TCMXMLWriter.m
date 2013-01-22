@@ -166,11 +166,15 @@
 }
 
 - (void)instructXML {
-	[self instruct:@"xml" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"1.0",@"version",@"UTF-8",@"encoding", nil]];
+	[self instruct:@"xml" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"1.0",@"version",@"utf-8",@"encoding", nil]];
 }
 
 - (void)instructXMLStandalone {
-	[self instruct:@"xml" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"1.0",@"version",@"UTF-8",@"encoding",@"yes",@"standalone", nil]];
+	[self instruct:@"xml" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"1.0",@"version",@"utf-8",@"encoding",@"yes",@"standalone", nil]];
+}
+
+- (void)instructXMLStandaloneNoEncoding {
+	[self instruct:@"xml" attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"1.0",@"version",@"yes",@"standalone", nil]];
 }
 
 - (void)instruct:(NSString *)anInstructionName attributes:(NSDictionary *)anAttributeDictionary {

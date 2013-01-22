@@ -12,6 +12,7 @@
 #import "ServerConnection.h"
 #import "SettingOptionsViewController.h"
 #import "NSData+Base64.h"
+#import "TCMXMLWriter.h"
 
 @implementation  ServerCmdPraser {
     NSXMLParser *xmlParser;
@@ -102,29 +103,36 @@
                                                                      selector:@selector(alert) object:nil];
             [alertSound start];
             
-            
-            NSString* password = @"123";
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString* password = [defaults objectForKey:@"password"];
+            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             
             NSString* tokenkey_send = @"634936959699175055";
             
-            NSString *txtContent = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><Commands><Command><CmdKey>CMC_ALERT</CmdKey><CmdStatus>DONE</CmdStatus><ResultDetail/><FinishTime>01/10/2013 16:36:00</FinishTime><Cmdid>43</Cmdid></Command></Commands>";
+            TCMXMLWriter *writer = [[TCMXMLWriter alloc] initWithOptions:TCMXMLWriterOptionPrettyPrinted];
+            [writer instructXML];
+            [writer tag:@"Commands" attributes:nil contentBlock:^{
+                [writer tag:@"Command" attributes:nil contentBlock:^{
+                    [writer tag:@"CmdKey" attributes:nil contentText:@"CMC_ALERT"];
+                    [writer tag:@"CmdStatus" attributes:nil contentText:@"DONE"];
+                    [writer tag:@"FinishTime" attributes:nil contentText:@"1/15/2013 1:27:47"];
+                    [writer tag:@"ResultDetail" attributes:nil contentText:nil];
+                   // [writer tag:@"Cmdid" attributes:nil contentText:@"58"];
+                    
+                }];
+            }];
             
-            NSLog(@"file=%@", txtContent);
+            NSLog(@"xml=%@", writer.XMLString);
             
-            NSString* cmdString = [ServerResponePraser encryptCmdData:txtContent :tokenkey_send :password ];
+            NSString* cmdString = [ServerResponePraser encryptCmdData:writer.XMLString :tokenkey_send :password ];
             
             NSLog(@"cmdString=%@", cmdString);
             
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            NSString* sessionKey = [defaults objectForKey:@"sessionKey"];
             
-          //  ServerConnection *serverConnect1= [[ServerConnection alloc] init];
             
-          //  [serverConnect1 uploadFile:cmdString :@"cmd" :tokenkey_send :sessionKey];
+            ServerConnection *serverConnect1= [[ServerConnection alloc] init];
             
-            NSData *data = [NSData dataFromBase64String:cmdString];
-            cmdString = [ServerResponePraser decryptCmdData:data :tokenkey_send :password ];
-                
+           // [serverConnect1 uploadFile:cmdString :@"cmd" :tokenkey_send :sessionKey];
             
         }
         

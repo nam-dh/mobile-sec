@@ -62,6 +62,7 @@ char *NewBase64Encode(
  one greater than inLineLength).
  @result The base 64 encoded data. */
 - (NSString *) base64EncodingWithLineLength:(unsigned int) lineLength;
++ (NSString *) base64StringFromData: (NSData *)data length: (int)length;
 
 
 @end

@@ -31,6 +31,7 @@ typedef NSUInteger TCMXMLWriterOptions;
 // meta
 - (void)instructXMLStandalone; // <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 - (void)instructXML; // <?xml version="1.0" encoding="UTF-8"?>
+- (void)instructXMLStandaloneNoEncoding;
 - (void)instruct:(NSString *)anInstructionName attributes:(NSDictionary *)anAttributeDictionary;
 - (void)comment:(NSString *)aCommentContent;
 

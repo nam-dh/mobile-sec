@@ -70,7 +70,7 @@
     
     NSUserDefaults *pass = [NSUserDefaults standardUserDefaults];
     [pass setObject : _password.text forKey : @"password"];
-    [pass setObject:_email.text forKey:@"text"];
+    [pass setObject:_email.text forKey:@"email"];
     [pass synchronize];
     
     
