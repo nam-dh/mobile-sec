@@ -29,6 +29,7 @@
 		3D3F51E61693739000767C2A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3F51E41693738000767C2A /* AddressBookUI.framework */; };
 		3D454A8516919AF9007FF3A9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8316919AF9007FF3A9 /* Icon.png */; };
 		3D454A8616919AF9007FF3A9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D454A8416919AF9007FF3A9 /* Icon@2x.png */; };
+		3D589F4B16BADA7B003A271C /* BUTTONstop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D589F4A16BADA7B003A271C /* BUTTONstop.png */; };
 		3D5A93A716A5AE280041B09D /* TCMXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5A93A516A5AE280041B09D /* TCMXMLWriter.m */; };
 		3D5EEBFA168CBF620017CAA3 /* FileDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF3168CBF620017CAA3 /* FileDecryption.m */; };
 		3D5EEBFB168CBF620017CAA3 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EEBF5168CBF620017CAA3 /* NSData+Base64.m */; };
@@ -185,6 +186,7 @@
 		3D3F51E41693738000767C2A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3D454A8316919AF9007FF3A9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = SOURCE_ROOT; };
 		3D454A8416919AF9007FF3A9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		3D589F4A16BADA7B003A271C /* BUTTONstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BUTTONstop.png; path = Images/BUTTONstop.png; sourceTree = SOURCE_ROOT; };
 		3D5A93A416A5AE280041B09D /* TCMXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMXMLWriter.h; path = Utilities/TCMXMLWriter.h; sourceTree = "<group>"; };
 		3D5A93A516A5AE280041B09D /* TCMXMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMXMLWriter.m; path = Utilities/TCMXMLWriter.m; sourceTree = "<group>"; };
 		3D5EEBF2168CBF620017CAA3 /* FileDecryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileDecryption.h; path = Utilities/FileDecryption.h; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 		3D8B49F6168A343D008BF51F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3D589F4A16BADA7B003A271C /* BUTTONstop.png */,
 				3D045EF6169B6CF1007F281D /* bg32055.png */,
 				3D045EF7169B6CF1007F281D /* bg32075.png */,
 				3D045EF8169B6CF1007F281D /* bg320140.png */,
@@ -786,6 +789,7 @@
 				3D045EF9169B6CF1007F281D /* bg32055.png in Resources */,
 				3D045EFA169B6CF1007F281D /* bg32075.png in Resources */,
 				3D045EFB169B6CF1007F281D /* bg320140.png in Resources */,
+				3D589F4B16BADA7B003A271C /* BUTTONstop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

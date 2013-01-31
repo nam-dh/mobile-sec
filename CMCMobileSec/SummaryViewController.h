@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalScanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalDetectedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scanStatus;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
 - (IBAction)viewHistoryButton:(id)sender;
 

@@ -42,6 +42,7 @@ id(*CTTelephonyCenterGetDefault)();
 @synthesize clearLabel;
 @synthesize demandScan;
 @synthesize detailDemandScan;
+@synthesize stopButton;
 
 
 static UILabel* c;
@@ -67,7 +68,7 @@ BOOL isScanonDemand = FALSE;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // cell.backgroundColor = [UIColor lightGrayColor];
-    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg32055.png"]];
+    UIImageView *boxBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg32075.png"]];
     boxBackView.alpha = 1;
     UIImageView *boxBackView140 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg320140.png"]];
     boxBackView.alpha = 1;
@@ -154,6 +155,9 @@ BOOL isScanonDemand = FALSE;
     [self.videoPreview.layer addSublayer:captureVideoPreviewLayer];
     self.videoPreview.hidden = YES;
     
+    [stopButton setBackgroundImage:[UIImage imageNamed:@"BUTTONstop.png"]
+                        forState:UIControlStateNormal];
+    [stopButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -560,6 +564,7 @@ void telephonyEventCallback(CFNotificationCenterRef center, void *observer, CFSt
     [self setHintLabel:nil];
     [self setClearLabel:nil];
     [self setHintButtonLabel:nil];
+    [self setStopButton:nil];
     [super viewDidUnload];
 }
 

@@ -262,7 +262,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* email = [defaults objectForKey:@"email"];
-    
+    NSLog(@"validate success");
     self.account1.text = @"Email";
     self.account2.text = email;
 
@@ -270,6 +270,7 @@
 
 - (void)changeToValidate
 {
+    NSLog(@"register success");
     self.account1.text = LocalizedString(@"set_acc_title_waiting");
     self.account2.text = LocalizedString(@"set_acc_sub_waiting");
     

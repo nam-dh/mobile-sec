@@ -98,7 +98,7 @@ qualifiedName:(NSString *)qName
             failed = false;
             
             //send notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"registerSuccess" object:nil];
             
         } else {
             failed = true;
@@ -127,14 +127,6 @@ qualifiedName:(NSString *)qName
             
         } else {
             failed = true;
-            message = @"Failed";
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Confirm code submitting"
-                                  message:message
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-            [alert show];
         }
         
         
@@ -297,14 +289,14 @@ qualifiedName:(NSString *)qName
         NSLog(@"%d", failed);
         
         if (failed == true) {
-            NSLog(@"message=%@",soapResults);
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Error!"
-                                  message:soapResults
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-            [alert show];
+//            NSLog(@"message=%@",soapResults);
+//            UIAlertView *alert = [[UIAlertView alloc]
+//                                  initWithTitle:@"Error!"
+//                                  message:soapResults
+//                                  delegate:self
+//                                  cancelButtonTitle:@"OK"
+//                                  otherButtonTitles:nil];
+//            [alert show];
         }
         //resultLabel.text=soapResults;
         [soapResults setString:@""];

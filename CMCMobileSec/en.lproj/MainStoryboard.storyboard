@@ -16,21 +16,21 @@
                         <sections>
                             <tableViewSection headerTitle="Account" id="0sp-bU-H2l">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="pnz-9U-QCK">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="62"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="pnz-9U-QCK">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="59"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="account1" text="User Account is not registered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dCi-Bq-xbg">
-                                                    <rect key="frame" x="20" y="5" width="228" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="228" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to register and unlock all advance options" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KZA-V2-K4g">
-                                                    <rect key="frame" x="20" y="23" width="292" height="36"/>
+                                                    <rect key="frame" x="15" y="28" width="292" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,33 +43,33 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Update" id="ZXS-yU-UPW">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="lB1-Cv-dfv">
-                                        <rect key="frame" x="0.0" y="154" width="320" height="62"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="lB1-Cv-dfv">
+                                        <rect key="frame" x="0.0" y="169" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="59"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OVw-gz-wLk">
-                                                    <rect key="frame" x="20" y="4" width="74" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="74" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last update" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bdj-ZD-oEf">
-                                                    <rect key="frame" x="20" y="24" width="74" height="21"/>
+                                                    <rect key="frame" x="15" y="34" width="74" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x2h-CC-Ank">
-                                                    <rect key="frame" x="128" y="4" width="44" height="21"/>
+                                                    <rect key="frame" x="128" y="5" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="updatebutton63-65X65-.png" id="0Gn-hr-gAt">
-                                                    <rect key="frame" x="244" y="12" width="46" height="35"/>
+                                                    <rect key="frame" x="236" y="13" width="54" height="39"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -79,23 +79,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="SMS Filter" id="fZf-0N-4qR">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="PxO-G4-LdS" userLabel="Black list">
-                                        <rect key="frame" x="0.0" y="262" width="320" height="61"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="PxO-G4-LdS" userLabel="Black list">
+                                        <rect key="frame" x="0.0" y="287" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="59"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Black List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h1s-4i-amf">
-                                                    <rect key="frame" x="9" y="4" width="140" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="140" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to manage your Blacklist" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2H-JA-c5W">
-                                                    <rect key="frame" x="20" y="11" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="25" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -111,28 +111,28 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="LgU-q7-awG" userLabel="Keyword Filter">
-                                        <rect key="frame" x="0.0" y="323" width="320" height="61"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="LgU-q7-awG" userLabel="Keyword Filter">
+                                        <rect key="frame" x="0.0" y="363" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="59"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Keyword Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VHI-v6-H9g">
-                                                    <rect key="frame" x="9" y="4" width="140" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="140" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to manage your Keyword list" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6rh-YF-alu">
-                                                    <rect key="frame" x="20" y="11" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="23" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oPp-BV-XRX">
-                                                    <rect key="frame" x="216" y="13" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
@@ -148,20 +148,20 @@
                             <tableViewSection headerTitle="Anti-Theft" id="axv-Fw-5O7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="GIg-Kn-Bpm">
-                                        <rect key="frame" x="0.0" y="430" width="320" height="91"/>
+                                        <rect key="frame" x="0.0" y="485" width="320" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote  From Website" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oiL-wq-bYN">
-                                                    <rect key="frame" x="8" y="8" width="200" height="34"/>
+                                                    <rect key="frame" x="15" y="10" width="200" height="34"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="9jE-lg-gk8">
-                                                    <rect key="frame" x="203" y="11" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.79999999999999982"/>
                                                     <connections>
@@ -169,7 +169,7 @@
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hGl-jf-JAB">
-                                                    <rect key="frame" x="20" y="43" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="40" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">In order to use Anti-Theft web services of CMC InfoSec, 
 we recommend you to select this option. Thank you!</string>
@@ -182,20 +182,20 @@ we recommend you to select this option. Thank you!</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="Bay-Xz-PcH">
-                                        <rect key="frame" x="0.0" y="521" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="576" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Lock Device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ui5-Ob-f7m">
-                                                    <rect key="frame" x="8" y="10" width="217" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="217" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ah9-V7-zEa">
-                                                    <rect key="frame" x="203" y="10" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
@@ -203,7 +203,7 @@ we recommend you to select this option. Thank you!</string>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czm-8u-POz">
-                                                    <rect key="frame" x="20" y="39" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="40" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Remotely lock this device by SMS or web services 
 of CMC InfoSec</string>
@@ -216,20 +216,20 @@ of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="g26-my-kbG">
-                                        <rect key="frame" x="0.0" y="611" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="666" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Track Device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SmX-3R-4Ma">
-                                                    <rect key="frame" x="8" y="10" width="217" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="217" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="PaW-fY-6VM">
-                                                    <rect key="frame" x="203" y="10" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
@@ -237,7 +237,7 @@ of CMC InfoSec</string>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nrs-nM-8Cu">
-                                                    <rect key="frame" x="20" y="39" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="40" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">You can track position of this device by using web
 services of CMC InfoSec</string>
@@ -250,20 +250,20 @@ services of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="95" id="aJd-ce-aJh">
-                                        <rect key="frame" x="0.0" y="701" width="320" height="96"/>
+                                        <rect key="frame" x="0.0" y="756" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Remote Backup Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pbc-Sf-9Nx">
-                                                    <rect key="frame" x="8" y="8" width="217" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="217" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="tt1-FE-mxu">
-                                                    <rect key="frame" x="203" y="14" width="79" height="27"/>
+                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                                     <connections>
@@ -271,7 +271,7 @@ services of CMC InfoSec</string>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLB-tf-NNP">
-                                                    <rect key="frame" x="20" y="42" width="481" height="43"/>
+                                                    <rect key="frame" x="15" y="40" width="481" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Remotely back your Contact and SMS up by SMS 
 or webservers of CMC InfoSec. The backup data'll 
@@ -288,15 +288,15 @@ be sent to CMC InfoSec server</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="Language" id="pkj-MP-DHj">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="PTn-G4-yOu">
-                                        <rect key="frame" x="0.0" y="843" width="320" height="65"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="PTn-G4-yOu">
+                                        <rect key="frame" x="0.0" y="898" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="62"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose your language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1A-wz-p4G">
-                                                    <rect key="frame" x="8" y="20" width="184" height="21"/>
+                                                    <rect key="frame" x="15" y="20" width="184" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,34 +370,34 @@ be sent to CMC InfoSec server</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Ff6-q6-9pV">
-                            <rect key="frame" x="0.0" y="696" width="320" height="20"/>
+                            <rect key="frame" x="0.0" y="774" width="320" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
                         <sections>
                             <tableViewSection headerTitle="Scan" id="q52-gR-Eoz">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="WX6-06-bZp">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="56"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="WX6-06-bZp">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="54"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="System storage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="97a-9O-Ebb">
-                                                    <rect key="frame" x="20" y="4" width="192" height="21"/>
+                                                    <rect key="frame" x="20" y="6" width="192" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q9A-xz-drY">
-                                                    <rect key="frame" x="20" y="23" width="200" height="21"/>
+                                                    <rect key="frame" x="20" y="37" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zdz-pm-7np">
-                                                    <rect key="frame" x="234" y="4" width="46" height="44"/>
+                                                    <rect key="frame" x="237" y="12" width="43" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Button" image="fpicon-realtime-65-65x65.png" backgroundImage="fpicon-realtime-65-65x65.png">
@@ -415,27 +415,27 @@ be sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="Mj2-xT-Sui">
-                                        <rect key="frame" x="0.0" y="102" width="320" height="55"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="Mj2-xT-Sui">
+                                        <rect key="frame" x="0.0" y="122" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="54"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan onDemand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQJ-VI-IUF">
-                                                    <rect key="frame" x="20" y="4" width="192" height="21"/>
+                                                    <rect key="frame" x="20" y="6" width="192" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to scan ondemand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iRh-kp-KVa">
-                                                    <rect key="frame" x="20" y="23" width="200" height="21"/>
+                                                    <rect key="frame" x="20" y="37" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gra-4c-aGL">
-                                                    <rect key="frame" x="234" y="4" width="46" height="44"/>
+                                                    <rect key="frame" x="237" y="12" width="43" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Button" image="fpicon-realtime-65-65x65.png" backgroundImage="fpicon-realtime-65-65x65.png">
@@ -453,27 +453,27 @@ be sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="92" id="7Fw-hP-TOA">
-                                        <rect key="frame" x="0.0" y="157" width="320" height="92"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="110" id="7Fw-hP-TOA">
+                                        <rect key="frame" x="0.0" y="197" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="91"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HINT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qhh-Km-kUF">
-                                                    <rect key="frame" x="20" y="4" width="192" height="21"/>
+                                                    <rect key="frame" x="20" y="5" width="192" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="All memory is CLEAR!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LsQ-PD-nry">
-                                                    <rect key="frame" x="20" y="23" width="200" height="21"/>
+                                                    <rect key="frame" x="20" y="29" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P32-as-oSm">
-                                                    <rect key="frame" x="239" y="6" width="41" height="42"/>
+                                                    <rect key="frame" x="237" y="12" width="43" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Button" image="hinticon-46-48x48.png" backgroundImage="hinticon-46-48x48.png">
@@ -489,7 +489,7 @@ be sent to CMC InfoSec server</string>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click button to view history!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2cx-Xd-5ex">
-                                                    <rect key="frame" x="20" y="50" width="200" height="21"/>
+                                                    <rect key="frame" x="20" y="62" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,7 +499,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="140" id="Wvz-9n-uAp">
-                                        <rect key="frame" x="0.0" y="249" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="307" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="139"/>
@@ -530,7 +530,7 @@ be sent to CMC InfoSec server</string>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QjF-GX-BEv">
-                                                    <rect key="frame" x="222" y="10" width="58" height="27"/>
+                                                    <rect key="frame" x="230" y="9" width="60" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <state key="normal" title="Stop">
@@ -570,15 +570,15 @@ be sent to CMC InfoSec server</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="SMS Filter" id="rsH-YD-5OP">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="6zM-Xc-3sG">
-                                        <rect key="frame" x="0.0" y="435" width="320" height="56"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="6zM-Xc-3sG">
+                                        <rect key="frame" x="0.0" y="493" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="54"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UWS-Bg-UsL">
-                                                    <rect key="frame" x="20" y="16" width="224" height="21"/>
+                                                    <rect key="frame" x="20" y="20" width="224" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,15 +594,15 @@ be sent to CMC InfoSec server</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="ATs-a7-7cN">
-                                        <rect key="frame" x="0.0" y="491" width="320" height="55"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="ATs-a7-7cN">
+                                        <rect key="frame" x="0.0" y="559" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="54"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total spam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EH7-U8-HZk">
-                                                    <rect key="frame" x="20" y="16" width="220" height="21"/>
+                                                    <rect key="frame" x="20" y="20" width="220" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -619,7 +619,7 @@ be sent to CMC InfoSec server</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="140" id="0jA-qA-kw5">
-                                        <rect key="frame" x="0.0" y="546" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="624" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="139"/>
@@ -688,6 +688,7 @@ be sent to CMC InfoSec server</string>
                         <outlet property="scanStatus" destination="BJc-3P-HZU" id="yDm-Nc-HQd"/>
                         <outlet property="smsContent" destination="0gA-UE-5fn" id="r9C-nH-KN9"/>
                         <outlet property="spamHeaderLabel" destination="EH7-U8-HZk" id="h0L-w1-dcO"/>
+                        <outlet property="stopButton" destination="QjF-GX-BEv" id="HgX-Rx-cdl"/>
                         <outlet property="storageTextLabel" destination="97a-9O-Ebb" id="piA-zk-n7b"/>
                         <outlet property="sysStorageLabel" destination="Q9A-xz-drY" id="hTU-RS-vCe"/>
                         <outlet property="systemStorageButton" destination="Zdz-pm-7np" id="hG6-VJ-m1m"/>
@@ -1397,6 +1398,138 @@ Mobile Security:</string>
         <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
+    <classes>
+        <class className="BlackListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNumber:"/>
+                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ConfirmActionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmActionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startScan:"/>
+            </relationships>
+        </class>
+        <class className="FileSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="discardButton:"/>
+                <relationship kind="action" name="finishButton:"/>
+                <relationship kind="action" name="resetButton:"/>
+            </relationships>
+        </class>
+        <class className="HistoryNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryNavigationController.h"/>
+        </class>
+        <class className="KeywordFilterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addKeyword:"/>
+                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ScanHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
+        </class>
+        <class className="ScanOptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
+        </class>
+        <class className="SettingOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="autoBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="blackListValueChanged:"/>
+                <relationship kind="action" name="changeLanguage:"/>
+                <relationship kind="action" name="keepConnectwitchValueChanged"/>
+                <relationship kind="action" name="keywordFilterValueChanged:"/>
+                <relationship kind="action" name="remoteBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteClearDataSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="remoteRestoreDataSwitchValueChanged:"/>
+                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
+                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="allowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="autoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flagButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="keywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="reportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAllowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subBlackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subKeywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLanguageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subReportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subRestoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scanOnDemandButton:"/>
+                <relationship kind="action" name="showScanHistory:"/>
+                <relationship kind="action" name="stopScann:"/>
+                <relationship kind="action" name="systemStorageScan:"/>
+                <relationship kind="action" name="viewHistoryButton:"/>
+                <relationship kind="outlet" name="blockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="demandScan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailDemandScan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filenameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintButtonLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfDetected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfScanned" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scanStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spamHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="storageTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalDetectedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScanLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoPreview" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UsersRegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="register:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password_confirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
