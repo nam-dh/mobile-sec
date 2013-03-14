@@ -44,7 +44,8 @@
 
     // segmented control as the custom title view
     
-	NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"SMS", @""), NSLocalizedString(@"Statistics", @""), NSLocalizedString(@"Detected", @""),nil];
+//	NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"SMS", @""), NSLocalizedString(@"Statistics", @""), NSLocalizedString(@"Detected", @""),nil];
+    NSArray *segmentTextContent = [NSArray arrayWithObjects:NSLocalizedString(@"Statistics", @""), NSLocalizedString(@"Detected", @""),nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
 	segmentedControl.selectedSegmentIndex = 1;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;

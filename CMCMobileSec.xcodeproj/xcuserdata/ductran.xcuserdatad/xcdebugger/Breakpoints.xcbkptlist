@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CMCMobileSec/ScanHistoryViewController.m"
-         timestampString = "378642240.171013"
+         timestampString = "384979847.63529"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "174"
+         endingLineNumber = "174"
          landmarkName = "@implementation ScanHistoryViewController"
          landmarkType = "3">
       </FileBreakpoint>
