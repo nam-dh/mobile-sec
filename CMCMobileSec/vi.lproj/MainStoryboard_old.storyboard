@@ -77,78 +77,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="SMS Filter" id="fZf-0N-4qR">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="PxO-G4-LdS" userLabel="Black list">
-                                        <rect key="frame" x="0.0" y="287" width="320" height="76"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Black List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h1s-4i-amf">
-                                                    <rect key="frame" x="15" y="10" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to manage your Blacklist" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2H-JA-c5W">
-                                                    <rect key="frame" x="15" y="25" width="481" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="dWH-Qh-ZQe">
-                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
-                                                    <connections>
-                                                        <action selector="blackListValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="zn2-JC-adB"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="LgU-q7-awG" userLabel="Keyword Filter">
-                                        <rect key="frame" x="0.0" y="363" width="320" height="76"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Keyword Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VHI-v6-H9g">
-                                                    <rect key="frame" x="15" y="10" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Click to manage your Keyword list" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6rh-YF-alu">
-                                                    <rect key="frame" x="15" y="23" width="481" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oPp-BV-XRX">
-                                                    <rect key="frame" x="215" y="11" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
-                                                    <connections>
-                                                        <action selector="keywordFilterValueChanged:" destination="fX4-Xy-e3k" eventType="valueChanged" id="Rxo-lk-e6P"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Anti-Theft" id="axv-Fw-5O7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="GIg-Kn-Bpm">
-                                        <rect key="frame" x="0.0" y="485" width="320" height="91"/>
+                                        <rect key="frame" x="0.0" y="287" width="320" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="89"/>
@@ -182,7 +114,7 @@ we recommend you to select this option. Thank you!</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="Bay-Xz-PcH">
-                                        <rect key="frame" x="0.0" y="576" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="378" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="89"/>
@@ -216,7 +148,7 @@ of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="g26-my-kbG">
-                                        <rect key="frame" x="0.0" y="666" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="468" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="89"/>
@@ -250,7 +182,7 @@ services of CMC InfoSec</string>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="95" id="aJd-ce-aJh">
-                                        <rect key="frame" x="0.0" y="756" width="320" height="96"/>
+                                        <rect key="frame" x="0.0" y="558" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="94"/>
@@ -289,7 +221,7 @@ be sent to CMC InfoSec server</string>
                             <tableViewSection headerTitle="Language" id="pkj-MP-DHj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="PTn-G4-yOu">
-                                        <rect key="frame" x="0.0" y="898" width="320" height="77"/>
+                                        <rect key="frame" x="0.0" y="700" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="74"/>
@@ -336,18 +268,12 @@ be sent to CMC InfoSec server</string>
                         <outlet property="account2" destination="KZA-V2-K4g" id="tGD-hT-LKn"/>
                         <outlet property="allowBackupLabel" destination="Pbc-Sf-9Nx" id="f8P-Ql-DUB"/>
                         <outlet property="autoConnectLabel" destination="oiL-wq-bYN" id="Gxr-Ob-cID"/>
-                        <outlet property="blackListLabel" destination="h1s-4i-amf" id="vAq-LT-Pcy"/>
-                        <outlet property="blackListSwitch" destination="dWH-Qh-ZQe" id="MwB-cw-fZH"/>
                         <outlet property="flagButton" destination="U8N-T1-rY3" id="UDM-fq-lSR"/>
-                        <outlet property="keyWordSwitch" destination="oPp-BV-XRX" id="sBN-3u-2He"/>
-                        <outlet property="keywordFilterLabel" destination="VHI-v6-H9g" id="1jX-QP-luT"/>
                         <outlet property="lockLabel" destination="ui5-Ob-f7m" id="nvb-Mt-ypn"/>
                         <outlet property="remoteBackupSwitch" destination="tt1-FE-mxu" id="EzW-Sj-nHo"/>
                         <outlet property="reportLabel" destination="SmX-3R-4Ma" id="efr-bW-g9P"/>
                         <outlet property="subAllowBackupLabel" destination="jLB-tf-NNP" id="zFX-kN-3wa"/>
                         <outlet property="subAutoConnectLabel" destination="hGl-jf-JAB" id="l4a-S8-VXT"/>
-                        <outlet property="subBlackListLabel" destination="f2H-JA-c5W" id="sgv-RS-lQn"/>
-                        <outlet property="subKeywordFilterLabel" destination="6rh-YF-alu" id="9Lq-bL-AMR"/>
                         <outlet property="subLanguageLabel" destination="y1A-wz-p4G" id="Pl1-Hx-pbo"/>
                         <outlet property="subLockLabel" destination="czm-8u-POz" id="FmV-jp-VSs"/>
                         <outlet property="subReportLabel" destination="Nrs-nM-8Cu" id="0kF-nO-g7K"/>
@@ -1289,6 +1215,137 @@ Mobile Security:</string>
         <image name="setting_baricon.png" width="25" height="25"/>
         <image name="updatebutton63-65X65-.png" width="65" height="65"/>
     </resources>
+    <classes>
+        <class className="BlackListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlackListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNumber:"/>
+                <relationship kind="outlet" name="blackListTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ConfirmActionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmActionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startScan:"/>
+            </relationships>
+        </class>
+        <class className="FileSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FileSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="discardButton:"/>
+                <relationship kind="action" name="finishButton:"/>
+                <relationship kind="action" name="resetButton:"/>
+            </relationships>
+        </class>
+        <class className="HistoryNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryNavigationController.h"/>
+        </class>
+        <class className="KeywordFilterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeywordFilterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addKeyword:"/>
+                <relationship kind="outlet" name="keywordTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ScanHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanHistoryViewController.h"/>
+        </class>
+        <class className="ScanOptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanOptionViewController.h"/>
+        </class>
+        <class className="SettingOptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="autoBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="blackListValueChanged:"/>
+                <relationship kind="action" name="changeLanguage:"/>
+                <relationship kind="action" name="keepConnectwitchValueChanged"/>
+                <relationship kind="action" name="keywordFilterValueChanged:"/>
+                <relationship kind="action" name="remoteBackupSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteClearDataSwitchValueChanged:"/>
+                <relationship kind="action" name="remoteLockSwitchValueChanged"/>
+                <relationship kind="action" name="remoteRestoreDataSwitchValueChanged:"/>
+                <relationship kind="action" name="trackingLocationSwitchValueChanged"/>
+                <relationship kind="outlet" name="accCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="account1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="account2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="allowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="autoBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="autoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blackListSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flagButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyWordSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="keywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="remoteBackupSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteClearSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="remoteRestoreSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="reportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAllowBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoBackupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subAutoConnectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subBlackListLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subClearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subKeywordFilterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLanguageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subReportLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subRestoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleKeepConnectSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleRemoteLockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="toggleTrackingLocationSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="updateStatusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scanOnDemandButton:"/>
+                <relationship kind="action" name="stopScann:"/>
+                <relationship kind="action" name="systemStorageScan:"/>
+                <relationship kind="action" name="viewHistoryButton:"/>
+                <relationship kind="outlet" name="blockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="clearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="demandScan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailDemandScan" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filenameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintButtonLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfDetected" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberOfScanned" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="receivedHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scanStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smsContent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spamHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="storageTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sysStorageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStorageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalDetectedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalReceived" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScanLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoPreview" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UsersRegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="register:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password_confirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -81,11 +81,11 @@
         label.text = LocalizedString(@"set_menu_header_acc");
     } else if (section == 1) {
         label.text = LocalizedString(@"set_menu_header_update");
-    } else if ( section == 2) {
-        label.text = LocalizedString(@"set_menu_header_filter");
-    } else if (section == 3){
+//    } else if ( section == 2) {
+//        label.text = LocalizedString(@"set_menu_header_filter");
+    } else if (section == 2){
         label.text = LocalizedString(@"set_menu_header_antitheft");
-    } else if (section == 4) {
+    } else if (section == 3) {
         label.text = LocalizedString(@"language");
     }
 	label.font = [UIFont boldSystemFontOfSize:15.5];
