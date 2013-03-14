@@ -226,9 +226,6 @@
     
     float latt = newLocation.coordinate.latitude;
     float longi = newLocation.coordinate.longitude;
-    //latt = 21.01;
-    //longi = 105.7981;
-    
     
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     // NSTimeInterval is defined as double

@@ -85,7 +85,7 @@
 	if (aString.length > 0) {
 		if (!self.outputStream) [self createAndOpenStream];
 		// TODO: needs to handle output stream capacity problems, so probably one idirection is still in order.
-		CFDataRef dataRef = CFStringCreateExternalRepresentation(NULL, (CFStringRef)aString, kCFStringEncodingUTF8, 0);
+		CFDataRef dataRef = CFStringCreateExternalRepresentation(NULL, (__bridge CFStringRef)aString, kCFStringEncodingUTF8, 0);
 		if (dataRef) {
 			UInt8 *bytes = (UInt8 *)CFDataGetBytePtr(dataRef);
 			UInt8 *endOfBytes = bytes + CFDataGetLength(dataRef);
