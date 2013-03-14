@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
         [myRunLoop addTimer:myTimer forMode:NSDefaultRunLoopMode];
         
         // Create and schedule the second timer.
-        [NSTimer scheduledTimerWithTimeInterval:20
+        [NSTimer scheduledTimerWithTimeInterval:120
                                          target:obj
                                        selector:@selector(requestServer:)
                                        userInfo:nil
