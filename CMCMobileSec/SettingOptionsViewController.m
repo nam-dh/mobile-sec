@@ -149,7 +149,7 @@
         [toggleTrackingLocationSwitch setOn:YES];
     }
     
-    if ([remoteClearSwitchValue isEqualToString:@"ON"]) {
+    if ([remoteLockSwitchValue isEqualToString:@"ON"]) {
         [toggleRemoteLockSwitch setOn:YES];
     }
     if ([backupDataSwitchValue isEqualToString:@"ON"]) {
